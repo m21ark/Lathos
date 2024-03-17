@@ -31,11 +31,18 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
         // Move the player horizontally
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        Vector3 movement = (cameraPivot.forward * moveVertical + cameraPivot.right * moveHorizontal).normalized * moveSpeed * Time.deltaTime;
-        rb.MovePosition(transform.position + movement);
+        float moveHorizontal = 0f;
+        float moveVertical = 0f;
+        
+        if (Input.GetKey(KeyCode.D)) moveHorizontal = 1f;
+        else if (Input.GetKey(KeyCode.A))  moveHorizontal = -1f;
+        if (Input.GetKey(KeyCode.W)) moveVertical = 1f;
+        else if (Input.GetKey(KeyCode.S)) moveVertical = -1f;
+
+        Vector3 movement = (cameraPivot.forward * moveVertical + cameraPivot.right * moveHorizontal).normalized * moveSpeed;
+        rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
 
         // Jumping
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
