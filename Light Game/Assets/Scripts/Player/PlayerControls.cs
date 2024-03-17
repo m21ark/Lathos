@@ -44,14 +44,14 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
         }
 
-        // Roll TODO: The dashing part is working but rotation is not
+        // Roll
         if (Input.GetKeyDown(KeyCode.LeftShift))
             StartCoroutine(Roll());
         
 
         // Shooting if ammo reloaded
         bool ammoReloaded = Time.time - lastShotTime >= projectileLoadingTime;
-        if (ammoReloaded && Input.GetKeyDown(KeyCode.K)){
+        if (ammoReloaded && (Input.GetKeyDown(KeyCode.K) || Input.GetMouseButtonDown(0))){
             ShootProjectile();
             lastShotTime = Time.time;
         }
@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
         while (elapsedTime < duration)
         {
             float t = elapsedTime / duration;
-            transform.position += transform.forward * rollSpeed * Time.deltaTime;
+            transform.position +=  (cameraPivot.forward + cameraPivot.right).normalized  * rollSpeed * Time.deltaTime;
 
             // Rotate the player smoothly
             transform.rotation = Quaternion.Slerp(startRotation, endRotation, t);

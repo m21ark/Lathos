@@ -37,6 +37,10 @@ public class GameLogic : MonoBehaviour
         if(player == null) Debug.Log("Couldn't find player object...");
         
         gameTime = 0.0f;   
+
+        
+        Cursor.visible = false; //set mouse cursor to be invisible
+        Cursor.lockState = CursorLockMode.Locked; //set mouse position to the center of the screen
     }
 
     // Update is called once per frame
