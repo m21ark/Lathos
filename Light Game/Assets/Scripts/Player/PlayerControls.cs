@@ -4,11 +4,12 @@ using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f; // Speed at which the player moves
-    public float jumpForce = 10f; // Force applied when the player jumps
+    public float moveSpeed = 8f; 
+    public float jumpForce = 10f;
+    public GameObject projectilePrefab;
+
     private Rigidbody rb;
     private bool isGrounded = false;
-
     private GameLogic gameLogic;
 
     void Start()
@@ -37,6 +38,12 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(Roll());
         }
+
+        // Shooting
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            ShootProjectile();
+        }
     }
 
     IEnumerator Roll(){
@@ -62,6 +69,18 @@ public class PlayerController : MonoBehaviour
         transform.rotation = endRotation;
     }
 
+    void ShootProjectile()
+    {
+        float projectileSpeed = 50f;
+
+        GameObject projectile = Instantiate(projectilePrefab, transform.position + transform.forward, Quaternion.identity);
+        
+        Rigidbody projectileRb = projectile.GetComponent<Rigidbody>();
+        if (projectileRb != null)
+            projectileRb.velocity = transform.forward * projectileSpeed;
+        
+    }
+
     void OnCollisionEnter(Collision collision)
     {
         // Check if the player is touching the ground
@@ -71,11 +90,11 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        // if collision with boss, damage both player and boss for now
+        // if collision with boss, damage both player and boss (for now)
         if (collision.gameObject.CompareTag("Boss"))
         {
-            gameLogic.damagePlayer(1);   
-            gameLogic.damageBoss(5);   
+            gameLogic.damagePlayer(20);   
+            gameLogic.damageBoss(1);   
         }
     }
 }
