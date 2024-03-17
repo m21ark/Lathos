@@ -8,6 +8,7 @@ TagManager:
   - HUD
   - Boss
   - Projectile
+  - Minion
   layers:
   - Default
   - TransparentFX

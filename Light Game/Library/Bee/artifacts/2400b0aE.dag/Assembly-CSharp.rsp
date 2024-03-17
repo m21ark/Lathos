@@ -350,6 +350,8 @@
 -r:"Library/Bee/artifacts/2400b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"/home/m/Unity/Hub/Editor/2022.3.20f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"/home/m/Unity/Hub/Editor/2022.3.20f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
+"Assets/Scripts/Enemies/Boss.cs"
+"Assets/Scripts/Enemies/Minion.cs"
 "Assets/Scripts/GameLogic.cs"
 "Assets/Scripts/Player/PlayerControls.cs"
 "Assets/Scripts/Player/ProjectileHitEnemy.cs"

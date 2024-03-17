@@ -8,10 +8,10 @@ public class GameLogic : MonoBehaviour
 {
 
     public GameObject player;
-    public GameObject hud;
+    private GameObject hud;
 
-    private int playerHealth = 100;
-    private int bossHealth = 300;
+    public int playerHealth = 100;
+    public int bossHealth = 300;
 
     private float gameTime = 0.0f;
 
@@ -32,6 +32,10 @@ public class GameLogic : MonoBehaviour
             hud_boss_health = hud.transform.Find("BossHealth").GetComponent<TextMeshProUGUI>();
             hud_end_msg = hud.transform.Find("EndGameSMS").GetComponent<TextMeshProUGUI>();
         }
+
+        player = GameObject.FindWithTag("Player");
+        if(player == null) Debug.Log("Couldn't find player object...");
+        
         gameTime = 0.0f;   
     }
 
@@ -75,8 +79,8 @@ public class GameLogic : MonoBehaviour
         hud_timer.text = string.Format("Time: {0:0}:{1:00}", minutes, seconds);
 
         // Update boss and player's health 
-        hud_player_health.text = string.Format("Health: {0}", playerHealth);
-        hud_boss_health.text = string.Format("Boss Health: {0}", bossHealth);
+        hud_player_health.text = string.Format("Health: {0}", playerHealth > 0 ? playerHealth : 0);
+        hud_boss_health.text = string.Format("Boss Health: {0}", bossHealth > 0 ? bossHealth : 0);
     }
 
     public void damageBoss(int damage){

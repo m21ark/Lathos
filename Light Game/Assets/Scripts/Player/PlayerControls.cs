@@ -12,10 +12,14 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded = false;
     private GameLogic gameLogic;
 
+    private float projectileLoadingTime = 0.5f;
+    private float lastShotTime = 0;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
+        lastShotTime = Time.time;
     }
 
     void Update()
@@ -35,15 +39,21 @@ public class PlayerController : MonoBehaviour
 
         // Roll TODO: The dashing part is working but rotation is not
         if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
             StartCoroutine(Roll());
+        
+
+        // Shooting if ammo reloaded
+        bool ammoReloaded = Time.time - lastShotTime >= projectileLoadingTime;
+        if (ammoReloaded && Input.GetKeyDown(KeyCode.K)){
+            ShootProjectile();
+            lastShotTime = Time.time;
         }
 
-        // Shooting
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            ShootProjectile();
-        }
+        rotateCamera();
+    }
+
+    void rotateCamera(){
+        // TODO
     }
 
     IEnumerator Roll(){
@@ -87,14 +97,6 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Floor"))
         {
             isGrounded = true;
-        }
-
-
-        // if collision with boss, damage both player and boss (for now)
-        if (collision.gameObject.CompareTag("Boss"))
-        {
-            gameLogic.damagePlayer(20);   
-            gameLogic.damageBoss(1);   
         }
     }
 }
