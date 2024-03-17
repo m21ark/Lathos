@@ -15,11 +15,18 @@ public class PlayerController : MonoBehaviour
     private float projectileLoadingTime = 0.5f;
     private float lastShotTime = 0;
 
+    private Transform cameraPivot;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
         lastShotTime = Time.time;
+
+        // Camera Rotation Pivot
+        cameraPivot = transform.Find("CameraPivot");
+        if (cameraPivot == null)
+            Debug.LogError("CameraPivot not found. Make sure to create an empty GameObject as a child of the player and name it 'CameraPivot'.");
     }
 
     void Update()
@@ -27,7 +34,7 @@ public class PlayerController : MonoBehaviour
         // Move the player horizontally
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical) * moveSpeed * Time.deltaTime;
+        Vector3 movement = (cameraPivot.forward * moveVertical + cameraPivot.right * moveHorizontal).normalized * moveSpeed * Time.deltaTime;
         rb.MovePosition(transform.position + movement);
 
         // Jumping
@@ -53,7 +60,14 @@ public class PlayerController : MonoBehaviour
     }
 
     void rotateCamera(){
-        // TODO
+        // Rotate the camera based on mouse movement
+        float mouseX = Input.GetAxis("Mouse X");
+        float mouseY = Input.GetAxis("Mouse Y");
+
+        float rotationX = cameraPivot.localEulerAngles.y + mouseX;
+        float rotationY = cameraPivot.localEulerAngles.x - mouseY;
+
+        cameraPivot.localEulerAngles = new Vector3(rotationY, rotationX, 0);
     }
 
     IEnumerator Roll(){
@@ -83,12 +97,18 @@ public class PlayerController : MonoBehaviour
     {
         float projectileSpeed = 50f;
 
-        GameObject projectile = Instantiate(projectilePrefab, transform.position + transform.forward, Quaternion.identity);
-        
+        // Calculate the direction of the camera
+        Vector3 cameraDirection = cameraPivot.forward;
+
+        // Instantiate the projectile slightly in front of the player
+        GameObject projectile = Instantiate(projectilePrefab, transform.position + cameraDirection, Quaternion.identity);
+
+        // Get the rigidbody of the projectile
         Rigidbody projectileRb = projectile.GetComponent<Rigidbody>();
+
+        // If the projectile has a rigidbody component, apply velocity in the camera direction
         if (projectileRb != null)
-            projectileRb.velocity = transform.forward * projectileSpeed;
-        
+            projectileRb.velocity = cameraDirection * projectileSpeed;
     }
 
     void OnCollisionEnter(Collision collision)
