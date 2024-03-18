@@ -6,13 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    public static bool isGamePaused = false;
-
     public GameObject pauseMenuObj;
     public GameObject instructionsMenuObj;
+    public GameObject classSelectMenuObj;
 
     private GameLogic gameLogic;
-
 
     void Start(){
         try{
@@ -27,15 +25,21 @@ public class MenuController : MonoBehaviour
          // Check if ESC is pressed to pause Game
         if (Input.GetKeyDown(KeyCode.Escape))
             TogglePauseGame();
+
+        // Check if E is pressed to invoke class selection
+        if (Input.GetKeyDown(KeyCode.E))
+            ToggleClassSelectMenu();
     }
     
     public void StartGame()
     {
         Debug.Log("Loading Boss Arena");
         SceneManager.LoadScene("BossArena");
-        if(isGamePaused) ResumeGame();
     }
 
+    public void ResumeGame(){
+        TogglePauseGame();
+    }
 
     public void RestartGame()
     {
@@ -55,34 +59,57 @@ public class MenuController : MonoBehaviour
         SceneManager.LoadScene("StartMenu");
     }
 
-    public void ResumeGame()
-    {
-        // Disable mouse cursor again for gameplay
-        gameLogic.toggleCursor(false);
-
-        Time.timeScale = 1f;
-        isGamePaused = false;
-        if(pauseMenuObj != null)
-            pauseMenuObj.SetActive(false);
-    }
-
-    public void PauseGame()
-    {
-        if(gameLogic == null) gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
-        
-        // Re enable mouse cursor for the pause menu
-        gameLogic.toggleCursor(true);
-        
-        Time.timeScale = 0f;
-        isGamePaused = true;
-        if(pauseMenuObj != null)
-            pauseMenuObj.SetActive(true);
-    }
 
     public void TogglePauseGame()
     {
-        if (isGamePaused) ResumeGame();
-        else PauseGame();
+        if(gameLogic == null) gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
+
+        if (gameLogic.isPaused){
+            // Resume Game
+                    
+            // Disable mouse cursor again for gameplay
+            gameLogic.toggleCursor(false);
+
+            Time.timeScale = 1f;
+            gameLogic.isPaused = false;
+            if(pauseMenuObj != null)
+                pauseMenuObj.SetActive(false);
+        }
+        else{
+        
+            // Pause Game
+            
+            // Re enable mouse cursor for the pause menu
+            gameLogic.toggleCursor(true);
+            
+            Time.timeScale = 0f;
+            gameLogic.isPaused = true;
+            if(pauseMenuObj != null)
+                pauseMenuObj.SetActive(true);
+        }
+    }
+
+    public void ToggleClassSelectMenu(){
+        if(gameLogic == null) gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
+
+        if (gameLogic.isPaused){                    
+            // Hide Class Selection Menu
+            gameLogic.toggleCursor(false);
+
+            Time.timeScale = 1f;
+            gameLogic.isPaused = false;
+            if(classSelectMenuObj != null)
+                classSelectMenuObj.SetActive(false);
+        }
+        else{
+            // Show Class Selection Menu
+            gameLogic.toggleCursor(true);
+            
+            Time.timeScale = 0f;
+            gameLogic.isPaused = true;
+            if(classSelectMenuObj != null)
+                classSelectMenuObj.SetActive(true);
+        }
     }
 
 }
