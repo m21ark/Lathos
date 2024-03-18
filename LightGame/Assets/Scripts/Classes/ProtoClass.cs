@@ -1,13 +1,12 @@
 using UnityEngine;
 
-public class ProtoClass : MonoBehaviour
+public class ProtoClass: MonoBehaviour
 {
-    public int health = 100;
-    public int damage = 10;
-    public float moveSpeed = 5f;
-    public float armor = 1f;
-    public float attackSpeed = 1.0f;
-
+    public int health;
+    public int damage;
+    public float moveSpeed;
+    public float armor;
+    public float attackSpeed;
 
     public void TakeDamage(int damage)
     {
@@ -37,5 +36,10 @@ public class ProtoClass : MonoBehaviour
     public virtual void SpecialAbility()
     {
         // Special ability
+    }
+
+    public virtual void InitializeAttributes(ClassAttribLoader loader)
+    {
+        // Load common attributes here
     }
 }

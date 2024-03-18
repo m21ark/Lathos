@@ -1,0 +1,4 @@
+Class,health,damage,armor,moveSpeed,attackSpeed
+BaseClass,100,20,30,10,1
+Ranger,80,30,10,20,1
+Rogue,70,25,15,30,1

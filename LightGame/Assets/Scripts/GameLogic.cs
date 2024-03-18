@@ -20,6 +20,7 @@ public class GameLogic : MonoBehaviour
 
     public bool isPaused = false;
 
+    private ClassAttribLoader classLoader;
 
     // HUD Text Elements
     TextMeshProUGUI hud_timer;
@@ -40,6 +41,27 @@ public class GameLogic : MonoBehaviour
         gameTime = 0.0f;  
 
         toggleCursor(false); // Hide cursor during gameplay
+
+
+        loadClass();
+    }
+
+    void loadClass(){
+        // Load all class attributes
+        classLoader = new ClassAttribLoader();
+        classLoader.LoadAttributesFromCSV("Assets/Scripts/Classes/ClassAttributes.csv");
+
+        // Select a class
+        RogueClass rogue = new RogueClass();
+        rogue.InitializeAttributes(classLoader);
+
+        // Print results
+        Debug.Log("Rogue Health: " + rogue.health);
+        Debug.Log("Rogue Damage: " + rogue.damage);
+        Debug.Log("Rogue Armor: " + rogue.armor);
+        Debug.Log("Rogue Speed: " + rogue.moveSpeed);
+        Debug.Log("Rogue Attack Speed: " + rogue.attackSpeed);
+
     }
 
     void HUDLoadElements(){

@@ -3,9 +3,6 @@ using UnityEngine;
 public class RogueClass : RangerClass
 {
     
-    public new int damage = 10;
-    public float attackSpeed = 1.4f;
-
     public override void Attack(Projectile projectile)
     {
         projectile.Fire();
@@ -20,5 +17,20 @@ public class RogueClass : RangerClass
     {
         // Special ability
     }
+
+    public override void InitializeAttributes(ClassAttribLoader loader)
+    {
+        base.InitializeAttributes(loader);
+
+        if (loader.classAttributesDict.ContainsKey("Rogue"))
+        {
+            var attributes = loader.classAttributesDict["Rogue"];
+            if (attributes.ContainsKey("damage"))
+                damage = int.Parse(attributes["damage"]);
+            if (attributes.ContainsKey("attackSpeed"))
+                attackSpeed = float.Parse(attributes["attackSpeed"]);
+        }
+    }
 }
+
 
