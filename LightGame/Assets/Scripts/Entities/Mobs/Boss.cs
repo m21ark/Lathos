@@ -10,6 +10,8 @@ public class Boss : MonoBehaviour
     private GameLogic gameLogic;
 
     private float lastSummonTime;
+
+    GameObject player;
    
 
     // Start is called before the first frame update
@@ -23,6 +25,8 @@ public class Boss : MonoBehaviour
     void Update()
     {
         FollowPlayer();
+
+        player = gameLogic.player.getGameObject();
 
         // Summon minion if 10s cooldown has passed
         if (Time.time - lastSummonTime >= 10.0f) SummonMinions();   
@@ -50,8 +54,6 @@ public class Boss : MonoBehaviour
 
     void FollowPlayer()
     {
-        GameObject player = gameLogic.player.getGameObject();
-
         if (player != null)
         {
             // Calculate direction vector towards the player
@@ -68,8 +70,6 @@ public class Boss : MonoBehaviour
 
     void JumpAwayFromPlayer()
     {
-        GameObject player = gameLogic.player.getGameObject();
-
         // Calculate direction away from the player
         Vector3 direction = transform.position - player.transform.position;
         direction.y = 0f; 
@@ -83,7 +83,7 @@ public class Boss : MonoBehaviour
     {
         // Deal Damage
         if (collision.gameObject.CompareTag("Player")){
-            gameLogic.damagePlayer(30);
+            gameLogic.player.TakeDamage(30);
             JumpAwayFromPlayer();
         }
       

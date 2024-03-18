@@ -120,10 +120,6 @@ public class GameLogic : MonoBehaviour
         bossHealth -= damage;   
     }
 
-    public void damagePlayer(int damage){
-        player.health -= damage;   
-    }
-
     public void toggleCursor(bool show){
         // Lock mouse and make it invisible during gameplay
         // And show it again in menus for selection
