@@ -4,14 +4,12 @@ public class ProtoProjectile : MonoBehaviour
 {
     
     private float gravityStrength = 1.0f;
-
     public float realGravity = 9.8f;
-
     private int projDamage = 10;
 
     private Rigidbody projectileRb;
-
     public GameObject projectilePrefab;
+
     public void Fire(int damage = 10, Vector3 direction = default(Vector3), float speed = 1.0f, float gravity = 0.0f){
         GameObject projectile = Instantiate(projectilePrefab, transform.position + direction, Quaternion.identity);
         projectileRb = projectile.GetComponent<Rigidbody>();

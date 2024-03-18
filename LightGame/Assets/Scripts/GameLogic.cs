@@ -11,10 +11,6 @@ public class GameLogic : MonoBehaviour
     public Player player;
     public GameObject endMenu;
 
-    // Private Utils
-    private GameObject hud;
-    private ClassAttribLoader classLoader;
-
     public int bossHealth = 300;
 
     // Game Logic Fields
@@ -22,10 +18,11 @@ public class GameLogic : MonoBehaviour
     public bool isPaused = false;
 
     // HUD Text Elements
-    TextMeshProUGUI hud_timer;
-    TextMeshProUGUI hud_player_health;
-    TextMeshProUGUI hud_boss_health;
-    TextMeshProUGUI hud_light;
+    private GameObject hud;
+    private TextMeshProUGUI hud_timer;
+    private TextMeshProUGUI hud_player_health;
+    private TextMeshProUGUI hud_boss_health;
+    private TextMeshProUGUI hud_light;
 
     // Start is called before the first frame update
     void Start()
@@ -44,18 +41,6 @@ public class GameLogic : MonoBehaviour
         gameTime = 0.0f;  
 
         toggleCursor(false); // Hide cursor during gameplay
-    }
-
-    void loadClass(){
-        // Load all class attributes
-        classLoader = new ClassAttribLoader();
-        classLoader.LoadAttributesFromCSV("Assets/Scripts/Entities/Player/Classes/Utils/ClassAttributes.csv");
-
-        // Select a class
-        RogueClass rogue = new RogueClass();
-        string[] classNames = {"Base", "Ranger", "Rogue"};
-        rogue.InitializeAttributes(classLoader, classNames);
-
     }
 
     void HUDLoadElements(){

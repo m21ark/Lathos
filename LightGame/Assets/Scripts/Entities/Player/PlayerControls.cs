@@ -59,9 +59,10 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(Dash());
         
         // Shoot
-        if (Input.GetKeyDown(KeyCode.K) || Input.GetMouseButtonDown(0))
-            ShootProjectile();
-        
+        if (Input.GetKeyDown(KeyCode.K) || Input.GetMouseButtonDown(0)){
+            player.Attack();
+        }
+   
     }
 
     void rotateCamera(){
@@ -106,13 +107,6 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
         isDashing = false;
-    }
-
-    void ShootProjectile()
-    {
-       /*  ProtoProjectile projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity).GetComponent<ProtoProjectile>();
-        projectile.Fire(10, cameraPivot.forward, 20f, 0.0f); */
-        Debug.Log("Shoot projectile is not implemented");
     }
 
     void OnCollisionEnter(Collision collision)
