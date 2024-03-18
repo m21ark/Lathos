@@ -17,7 +17,7 @@ public class Minion1 : ProtoMob
 
     public override void Move()
     {
-        GameObject player = gameLogic.player;
+        GameObject player = gameLogic.player.getGameObject();
 
         if (player != null)
         {
@@ -46,7 +46,7 @@ public class Minion1 : ProtoMob
 
     void JumpAwayFromPlayer()
     {
-        GameObject player = gameLogic.player;
+        GameObject player = gameLogic.player.getGameObject();
 
         // Calculate direction away from the player
         Vector3 direction = transform.position - player.transform.position;

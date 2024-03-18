@@ -7,20 +7,19 @@ using UnityEngine.SceneManagement;
 public class GameLogic : MonoBehaviour
 {
 
-    public GameObject player;
+    // Entities
+    public Player player;
     public GameObject endMenu;
-    private GameObject hud;
 
-    public int playerHealth = 100;
+    // Private Utils
+    private GameObject hud;
+    private ClassAttribLoader classLoader;
+
     public int bossHealth = 300;
 
-    public int playerLight = 0;
-
+    // Game Logic Fields
     private float gameTime = 0.0f;
-
     public bool isPaused = false;
-
-    private ClassAttribLoader classLoader;
 
     // HUD Text Elements
     TextMeshProUGUI hud_timer;
@@ -33,17 +32,18 @@ public class GameLogic : MonoBehaviour
     {
         HUDLoadElements();
 
-        player = GameObject.FindWithTag("Player");
-        if(player == null) Debug.Log("Couldn't find player object...");
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        if (player == null){
+            Debug.Log("PLAYER NOT FOUND");
+            Time.timeScale = 0;
+            return;
+        }
         
         // Set start time variables
         Time.timeScale = 1;
         gameTime = 0.0f;  
 
         toggleCursor(false); // Hide cursor during gameplay
-
-
-        loadClass();
     }
 
     void loadClass(){
@@ -55,14 +55,6 @@ public class GameLogic : MonoBehaviour
         RogueClass rogue = new RogueClass();
         string[] classNames = {"Base", "Ranger", "Rogue"};
         rogue.InitializeAttributes(classLoader, classNames);
-
-
-        // Print results
-        Debug.Log("Rogue Health: " + rogue.health);
-        Debug.Log("Rogue Damage: " + rogue.damage);
-        Debug.Log("Rogue Armor: " + rogue.armor);
-        Debug.Log("Rogue Speed: " + rogue.moveSpeed);
-        Debug.Log("Rogue Attack Speed: " + rogue.attackSpeed);
 
     }
 
@@ -94,7 +86,7 @@ public class GameLogic : MonoBehaviour
         // If boss or player dead, end game
         if(bossHealth <= 0)
             endGame(true);
-        else if(playerHealth <= 0)
+        else if(!player.isAlive())
             endGame(false);
     }
 
@@ -119,9 +111,9 @@ public class GameLogic : MonoBehaviour
         hud_timer.text = string.Format("Time: {0:0}:{1:00}", minutes, seconds);
 
         // Update boss and player's health 
-        hud_player_health.text = string.Format("Health: {0}", playerHealth > 0 ? playerHealth : 0);
+        hud_player_health.text = string.Format("Health: {0}", player.health > 0 ? player.health : 0);
         hud_boss_health.text = string.Format("Boss Health: {0}", bossHealth > 0 ? bossHealth : 0);
-        hud_light.text = string.Format("Light: {0}", playerLight);
+        hud_light.text = string.Format("Light: {0}", player.light);
     }
 
     public void damageBoss(int damage){
@@ -129,7 +121,7 @@ public class GameLogic : MonoBehaviour
     }
 
     public void damagePlayer(int damage){
-        playerHealth -= damage;   
+        player.health -= damage;   
     }
 
     public void toggleCursor(bool show){

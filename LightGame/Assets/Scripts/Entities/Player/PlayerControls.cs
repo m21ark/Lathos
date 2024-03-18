@@ -4,59 +4,53 @@ using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 8f; 
-    public float jumpForce = 10f;
-    public GameObject projectilePrefab;
-
     private Rigidbody rb;
-    private bool isGrounded = false;
-
-    private bool isDashing = false;
     private GameLogic gameLogic;
+    private Player player;
 
-    private float projectileLoadingTime = 0.5f;
-    private float lastShotTime = 0;
+    private bool isGrounded = false;
+    private bool isDashing = false;
 
     private Transform cameraPivot;
-
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        // Get GameLogic and Player 
         gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
-        lastShotTime = Time.time;
 
         // Camera Rotation Pivot
         cameraPivot = transform.Find("CameraPivot");
-        if (cameraPivot == null)
-            Debug.LogError("CameraPivot not found. Make sure to create an empty GameObject as a child of the player and name it 'CameraPivot'.");
     }
 
     void Update()
     {
-        Move();
-
-        if(!gameLogic.isPaused)
+        if(!gameLogic.isPaused){
+            Move();
             rotateCamera();
+        }     
     }
 
     void Move(){
         // Move the player horizontally
         float moveHorizontal = 0f;
         float moveVertical = 0f;
+
+        player = gameLogic.player;
         
         if (Input.GetKey(KeyCode.D)) moveHorizontal = 1f;
         else if (Input.GetKey(KeyCode.A))  moveHorizontal = -1f;
         if (Input.GetKey(KeyCode.W)) moveVertical = 1f;
         else if (Input.GetKey(KeyCode.S)) moveVertical = -1f;
 
-        Vector3 movement = (cameraPivot.forward * moveVertical + cameraPivot.right * moveHorizontal).normalized * moveSpeed;
+        Vector3 movement = (cameraPivot.forward * moveVertical + cameraPivot.right * moveHorizontal).normalized * player.moveSpeed;
         rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
 
         // Jumping
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * player.jumpForce, ForceMode.Impulse);
             isGrounded = false;
         }
 
@@ -64,12 +58,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing)
             StartCoroutine(Dash());
         
-        // Shooting if ammo reloaded
-        bool ammoReloaded = Time.time - lastShotTime >= projectileLoadingTime;
-        if (ammoReloaded && (Input.GetKeyDown(KeyCode.K) || Input.GetMouseButtonDown(0))){
+        // Shoot
+        if (Input.GetKeyDown(KeyCode.K) || Input.GetMouseButtonDown(0))
             ShootProjectile();
-            lastShotTime = Time.time;
-        }
+        
     }
 
     void rotateCamera(){
@@ -92,35 +84,24 @@ public class PlayerController : MonoBehaviour
         // Calculate movement direction based on player input
         Vector3 moveDirection = Vector3.zero;
 
-
-
-        if (Input.GetKey(KeyCode.W)) {
+        // Apply dash direction according to the key presses
+        if (Input.GetKey(KeyCode.W)) 
             moveDirection += cameraPivot.forward;
-        }
-        if (Input.GetKey(KeyCode.S)) {
+        if (Input.GetKey(KeyCode.S)) 
             moveDirection -= cameraPivot.forward;
-        }
-        if (Input.GetKey(KeyCode.D)) {
+        if (Input.GetKey(KeyCode.D)) 
             moveDirection += cameraPivot.right;
-        }
-        if (Input.GetKey(KeyCode.A)) {
+        if (Input.GetKey(KeyCode.A))
             moveDirection -= cameraPivot.right;
-        }
-        if (moveDirection == Vector3.zero) {
+        if (moveDirection == Vector3.zero)
             moveDirection = cameraPivot.forward;
-        }
 
         while (elapsedTime < duration)
         {
             float t = elapsedTime / duration;
-
-            // Ensure the movement remains horizontal
             moveDirection.y = 0;
             moveDirection.Normalize();
-
-            // Apply movement
             transform.position += moveDirection * dashSpeed * Time.deltaTime;
-
             elapsedTime += Time.deltaTime;
             yield return null;
         }
@@ -129,8 +110,9 @@ public class PlayerController : MonoBehaviour
 
     void ShootProjectile()
     {
-        ProtoProjectile projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity).GetComponent<ProtoProjectile>();
-        projectile.Fire(10, cameraPivot.forward, 20f, 0.0f);
+       /*  ProtoProjectile projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity).GetComponent<ProtoProjectile>();
+        projectile.Fire(10, cameraPivot.forward, 20f, 0.0f); */
+        Debug.Log("Shoot projectile is not implemented");
     }
 
     void OnCollisionEnter(Collision collision)

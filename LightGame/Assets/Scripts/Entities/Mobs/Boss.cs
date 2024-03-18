@@ -50,7 +50,7 @@ public class Boss : MonoBehaviour
 
     void FollowPlayer()
     {
-        GameObject player = gameLogic.player;
+        GameObject player = gameLogic.player.getGameObject();
 
         if (player != null)
         {
@@ -68,7 +68,7 @@ public class Boss : MonoBehaviour
 
     void JumpAwayFromPlayer()
     {
-        GameObject player = gameLogic.player;
+        GameObject player = gameLogic.player.getGameObject();
 
         // Calculate direction away from the player
         Vector3 direction = transform.position - player.transform.position;
