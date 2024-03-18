@@ -8,7 +8,6 @@ public class MenuController : MonoBehaviour
 {
     public GameObject pauseMenuObj;
     public GameObject instructionsMenuObj;
-    public GameObject classSelectMenuObj;
 
     private GameLogic gameLogic;
 
@@ -25,10 +24,6 @@ public class MenuController : MonoBehaviour
          // Check if ESC is pressed to pause Game
         if (Input.GetKeyDown(KeyCode.Escape))
             TogglePauseGame();
-
-        // Check if E is pressed to invoke class selection
-        if (Input.GetKeyDown(KeyCode.E))
-            ToggleClassSelectMenu();
     }
     
     public void StartGame()
@@ -86,29 +81,6 @@ public class MenuController : MonoBehaviour
             gameLogic.isPaused = true;
             if(pauseMenuObj != null)
                 pauseMenuObj.SetActive(true);
-        }
-    }
-
-    public void ToggleClassSelectMenu(){
-        if(gameLogic == null) gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
-
-        if (gameLogic.isPaused){                    
-            // Hide Class Selection Menu
-            gameLogic.toggleCursor(false);
-
-            Time.timeScale = 1f;
-            gameLogic.isPaused = false;
-            if(classSelectMenuObj != null)
-                classSelectMenuObj.SetActive(false);
-        }
-        else{
-            // Show Class Selection Menu
-            gameLogic.toggleCursor(true);
-            
-            Time.timeScale = 0f;
-            gameLogic.isPaused = true;
-            if(classSelectMenuObj != null)
-                classSelectMenuObj.SetActive(true);
         }
     }
 
