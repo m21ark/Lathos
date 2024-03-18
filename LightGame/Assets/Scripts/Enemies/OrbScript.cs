@@ -12,10 +12,13 @@ public class OrbScript : MonoBehaviour
 
     public float baseSpeed = 0.5f; // Base speed at which the object moves
 
+    private GameLogic gameLogic; // Reference to the GameLogic script
+
     private void Start()
     {
         // Find the lamp object in the scene
         lamp = GameObject.FindWithTag("Lamp");
+        gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
     }
 
     private void Update()
@@ -29,7 +32,6 @@ public class OrbScript : MonoBehaviour
             // Check if the distance is within 10 meters
             if (distance <= maxDistance)
             {
-                Debug.Log("Distance: " + distance);
 
                 // Calculate direction towards the orb
                 Vector3 direction = (lamp.transform.position - transform.position).normalized;
@@ -45,6 +47,9 @@ public class OrbScript : MonoBehaviour
         // Check if the object collides with the orb
         if (other.gameObject == lamp)
         {
+            Debug.Log("Orb collided with lamp");
+            gameLogic.playerLight += 1; // Increase the player's light by 1
+
             // Despawn this object
             Destroy(gameObject);
         }

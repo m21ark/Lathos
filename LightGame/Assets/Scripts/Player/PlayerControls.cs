@@ -10,12 +10,15 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
     private bool isGrounded = false;
+
+    private bool isDashing = false;
     private GameLogic gameLogic;
 
     private float projectileLoadingTime = 0.5f;
     private float lastShotTime = 0;
 
     private Transform cameraPivot;
+
 
     void Start()
     {
@@ -57,9 +60,9 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
         }
 
-        // Roll
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-            StartCoroutine(Roll());
+        // Dash
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing)
+            StartCoroutine(Dash());
         
         // Shooting if ammo reloaded
         bool ammoReloaded = Time.time - lastShotTime >= projectileLoadingTime;
@@ -80,30 +83,48 @@ public class PlayerController : MonoBehaviour
         cameraPivot.localEulerAngles = new Vector3(rotationY, rotationX, 0);
     }
 
-    IEnumerator Roll(){
+    IEnumerator Dash(){
         float duration = 0.5f; 
-        float rollSpeed = 25f;
-        Quaternion startRotation = transform.rotation;
-        Quaternion endRotation = transform.rotation * Quaternion.Euler(0f, 360f, 0f);
+        float dashSpeed = 25f;
 
         float elapsedTime = 0f;
+
+        // Calculate movement direction based on player input
+        Vector3 moveDirection = Vector3.zero;
+
+
+
+        if (Input.GetKey(KeyCode.W)) {
+            moveDirection += cameraPivot.forward;
+        }
+        if (Input.GetKey(KeyCode.S)) {
+            moveDirection -= cameraPivot.forward;
+        }
+        if (Input.GetKey(KeyCode.D)) {
+            moveDirection += cameraPivot.right;
+        }
+        if (Input.GetKey(KeyCode.A)) {
+            moveDirection -= cameraPivot.right;
+        }
+        if (moveDirection == Vector3.zero) {
+            moveDirection = cameraPivot.forward;
+        }
+
         while (elapsedTime < duration)
         {
             float t = elapsedTime / duration;
 
-            // Calculate movement direction based on camera pivot
-            Vector3 rollDirection = (cameraPivot.forward).normalized;
-            transform.position += rollDirection * rollSpeed * Time.deltaTime;
+            // Ensure the movement remains horizontal
+            moveDirection.y = 0;
+            moveDirection.Normalize();
 
-            // Rotate the player smoothly
-            transform.rotation = Quaternion.Slerp(startRotation, endRotation, t);
+            // Apply movement
+            transform.position += moveDirection * dashSpeed * Time.deltaTime;
 
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-
-        // Ensure the player ends up with the correct rotation
-        transform.rotation = endRotation;
+        isDashing = false;
     }
 
     void ShootProjectile()

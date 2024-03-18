@@ -14,6 +14,8 @@ public class GameLogic : MonoBehaviour
     public int playerHealth = 100;
     public int bossHealth = 300;
 
+    public int playerLight = 0;
+
     private float gameTime = 0.0f;
 
     public bool isPaused = false;
@@ -23,6 +25,7 @@ public class GameLogic : MonoBehaviour
     TextMeshProUGUI hud_timer;
     TextMeshProUGUI hud_player_health;
     TextMeshProUGUI hud_boss_health;
+    TextMeshProUGUI hud_light;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +48,7 @@ public class GameLogic : MonoBehaviour
             hud_timer = hud.transform.Find("Timer").GetComponent<TextMeshProUGUI>();
             hud_player_health = hud.transform.Find("PlayerHealth").GetComponent<TextMeshProUGUI>();
             hud_boss_health = hud.transform.Find("BossHealth").GetComponent<TextMeshProUGUI>();
+            hud_light = hud.transform.Find("LightCounter").GetComponent<TextMeshProUGUI>();
         }
     }
 
@@ -93,6 +97,7 @@ public class GameLogic : MonoBehaviour
         // Update boss and player's health 
         hud_player_health.text = string.Format("Health: {0}", playerHealth > 0 ? playerHealth : 0);
         hud_boss_health.text = string.Format("Boss Health: {0}", bossHealth > 0 ? bossHealth : 0);
+        hud_light.text = string.Format("Light: {0}", playerLight);
     }
 
     public void damageBoss(int damage){
