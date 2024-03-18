@@ -9,6 +9,8 @@ TagManager:
   - Boss
   - Projectile
   - Minion
+  - PauseMenu
+  - OrbXP
   layers:
   - Default
   - TransparentFX

@@ -9,6 +9,8 @@ public class Minion : MonoBehaviour
 
     private GameLogic gameLogic;
 
+    public GameObject xpOrbPreFab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,9 +60,7 @@ public class Minion : MonoBehaviour
         if (collision.gameObject.CompareTag("Projectile")){
             health -= 10; // hardcoded for now
 
-            if(health <= 0){
-                Destroy(gameObject);
-            }
+            if(health <= 0) Die();
 
             Destroy(collision.gameObject);
         }
@@ -72,4 +72,28 @@ public class Minion : MonoBehaviour
         }
       
     }
+
+    void Die(){
+        int enemyLevel = 3; 
+
+        // Randomly determine the number of orbs to spawn based on enemy level
+        int numOrbs = Random.Range(enemyLevel, enemyLevel * 2);
+
+        // Spawn orbs
+        for (int i = 0; i < numOrbs; i++) {
+            // Calculate random offset from the center
+            float xOffset = Random.Range(-1f, 1f);
+            float zOffset = Random.Range(-1f, 1f);
+            Vector3 spawnPosition = gameObject.transform.position + new Vector3(xOffset, 0, zOffset);
+
+            // Instantiate orb with slight offset
+            GameObject orb = Instantiate(xpOrbPreFab, spawnPosition, Quaternion.identity);
+
+            Destroy(orb, 10f); // Despawn orbs if not collected in 10s
+        }
+
+        // Destroy the enemy GameObject
+        Destroy(gameObject);
+    }
+
 }
