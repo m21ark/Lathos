@@ -8,13 +8,13 @@ public class BaseClass : ProtoClass
         projectile.Fire();
     }  
 
-    public override void InitializeAttributes(ClassAttribLoader loader)
+    public override void InitializeAttributes(ClassAttribLoader loader, string className)
     {
         base.InitializeAttributes(loader);
 
-        if (loader.classAttributesDict.ContainsKey("BaseClass"))
+        if (loader.classAttributesDict.ContainsKey(className))
         {
-            var attributes = loader.classAttributesDict["BaseClass"];
+            var attributes = loader.classAttributesDict[className];
             
             if (attributes.ContainsKey("health") && attributes["health"] != "X")
                 health = int.Parse(attributes["health"]);

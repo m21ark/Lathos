@@ -22,9 +22,9 @@ public class RogueClass : RangerClass
     {
         base.InitializeAttributes(loader);
 
-        if (loader.classAttributesDict.ContainsKey("BaseClass"))
+        if (loader.classAttributesDict.ContainsKey("Rogue"))
         {
-            var attributes = loader.classAttributesDict["BaseClass"];
+            var attributes = loader.classAttributesDict["Rogue"];
             
             if (attributes.ContainsKey("health") && attributes["health"] != "X")
                 health = int.Parse(attributes["health"]);
