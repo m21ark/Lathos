@@ -13,6 +13,7 @@ TagManager:
   - EndMenu
   - PauseMenu
   - Lamp
+  - Mob
   layers:
   - Default
   - TransparentFX

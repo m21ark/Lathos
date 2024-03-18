@@ -679,6 +679,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1623613954216201591, guid: 792a1537b0f992083b045a526f9e2ff9, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3480677460117250105, guid: 792a1537b0f992083b045a526f9e2ff9, type: 3}
       propertyPath: hoverSpeed
       value: 2

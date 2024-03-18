@@ -8,19 +8,20 @@ public class ProtoProjectile : MonoBehaviour
     private int projDamage = 10;
 
     private Rigidbody projectileRb;
-    public GameObject projectilePrefab;
 
-    void Start(){
-        projectilePrefab = gameObject;
-    }
+    void Start(){}
 
-    public void Fire(int damage = 10, Vector3 direction = default(Vector3), float speed = 1.0f, float gravity = 0.0f){
-        GameObject projectile = Instantiate(projectilePrefab, transform.position + direction, Quaternion.identity);
+    public void Fire(int damage = 10, Vector3 direction = default(Vector3), float speed = 1.0f, float gravity = 0.0f, GameObject projectile = null){
+        
+        if(projectile == null){
+            Debug.Log("Tried to shot a null prefab");
+            return;
+        }
+
         projectileRb = projectile.GetComponent<Rigidbody>();
 
-        if (projectileRb != null){
+        if (projectileRb != null)
             projectileRb.velocity = direction * speed;
-        }
 
         gravityStrength = gravity;
         projDamage = damage;
@@ -29,8 +30,14 @@ public class ProtoProjectile : MonoBehaviour
         Destroy(projectile, 7.5f);
     }   
 
+    public void FirePiu(GameObject projectilePrefab, Vector3 direction){
+        Fire(10, direction, 80.0f, 0.0f, projectilePrefab);
+    }
+
     void FixedUpdate()
     {
+        projectileRb = GetComponent<Rigidbody>();
+
         // Calculate the custom gravity vector
         Vector3 customGravity = -transform.up * gravityStrength * realGravity;
 
@@ -41,12 +48,14 @@ public class ProtoProjectile : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         // Check if the projectile is touching the ground
-        if (collision.gameObject.CompareTag("Mob"))
+        if (collision.gameObject.CompareTag("Mob") || collision.gameObject.CompareTag("Minion") || collision.gameObject.CompareTag("Boss"))
         {
-            // Get the Mob component
+           /*  // Get the Mob component
             ProtoMob mob = collision.gameObject.GetComponent<ProtoMob>();
 
-            mob.TakeDamage(projDamage);
+            mob.TakeDamage(projDamage); */ // TODO: IMPLEMENT LATER THE MOBS FOR MINIONS AND BOSS
+
+            Destroy(collision.gameObject); // TODO: FOR NOW OBLITERATE ENEMY
 
             // Destroy the projectile
             Destroy(gameObject);

@@ -15,10 +15,16 @@ public class Player : MonoBehaviour
     // private string playerClassName = "Base";
     private BaseClass playerClass;
     private ClassAttribLoader classLoader;
+    private Transform cameraPivot;
 
     void Start(){
         loadClassInfo();
         setBaseClass();
+        cameraPivot = transform.Find("CameraPivot");
+    }
+
+    public Transform getCameraPivot(){
+        return cameraPivot;
     }
 
     public BaseClass getClass(){
@@ -61,7 +67,7 @@ public class Player : MonoBehaviour
     }
 
     public void Attack(){
-        playerClass.Attack();
+        playerClass.Attack(cameraPivot.forward, transform.position);
     }
 
     public void BaseAbility(){
