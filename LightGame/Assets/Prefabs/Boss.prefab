@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8902843198567734521}
   - component: {fileID: 8288740205868752253}
   - component: {fileID: 2834755986434708875}
-  - component: {fileID: 6180293005089704273}
+  - component: {fileID: 7032751588042279935}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Boss
@@ -134,7 +134,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &6180293005089704273
+--- !u!114 &7032751588042279935
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7349030119126674524}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca0767e9f5bd1de4e805ae1fc7673a9d, type: 3}
+  m_Script: {fileID: 11500000, guid: 47b5df04f407cf843aa084903aa240f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class OrbScript : MonoBehaviour
+public class LightOrbBehavior : MonoBehaviour
 {
     public GameObject lamp; // Reference to the orb GameObject
     public float accelerationSpeed = 40f; // Speed at which the object accelerates towards the orb

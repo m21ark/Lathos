@@ -49,7 +49,7 @@ public class GameLogic : MonoBehaviour
     void loadClass(){
         // Load all class attributes
         classLoader = new ClassAttribLoader();
-        classLoader.LoadAttributesFromCSV("Assets/Scripts/Classes/ClassAttributes.csv");
+        classLoader.LoadAttributesFromCSV("Assets/Scripts/Entities/Player/Classes/Utils/ClassAttributes.csv");
 
         // Select a class
         RogueClass rogue = new RogueClass();

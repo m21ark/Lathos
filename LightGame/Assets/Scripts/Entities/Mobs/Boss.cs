@@ -2,25 +2,50 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Minion : MonoBehaviour
+public class Boss : MonoBehaviour
 {
-    public int health = 100;
-    public float moveSpeed = 5f;
+    public float moveSpeed = 2f;
+    public GameObject minionPrefab;
 
     private GameLogic gameLogic;
 
-    public GameObject xpOrbPreFab;
+    private float lastSummonTime;
+   
 
     // Start is called before the first frame update
     void Start()
     {
         gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
+        lastSummonTime = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-       FollowPlayer();
+        FollowPlayer();
+
+        // Summon minion if 10s cooldown has passed
+        if (Time.time - lastSummonTime >= 10.0f) SummonMinions();   
+    }
+
+    void SummonMinions(){
+        float summonRadius = 12f; 
+        float summonProbability = 0.3f;
+
+        // If randomize hits, summon 2 minions
+        if (Random.value < summonProbability)
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                Vector3 randomOffset = Random.insideUnitSphere * summonRadius;
+                randomOffset.y = 0f;
+                Vector3 summonPosition = transform.position + randomOffset;
+                GameObject newMinion = Instantiate(minionPrefab, summonPosition, Quaternion.identity);
+            }
+
+            // Reset the cooldown timer
+            lastSummonTime = Time.time;
+        }
     }
 
     void FollowPlayer()
@@ -50,50 +75,17 @@ public class Minion : MonoBehaviour
         direction.y = 0f; 
         direction.Normalize();
 
-        float jumpForce = 10.0f;
+        float jumpForce = 1000.0f;
         GetComponent<Rigidbody>().AddForce(direction * jumpForce, ForceMode.Impulse);
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        // Take damage
-        if (collision.gameObject.CompareTag("Projectile")){
-            health -= 10; // hardcoded for now
-
-            if(health <= 0) Die();
-
-            Destroy(collision.gameObject);
-        }
-
         // Deal Damage
         if (collision.gameObject.CompareTag("Player")){
-            gameLogic.damagePlayer(10);
+            gameLogic.damagePlayer(30);
             JumpAwayFromPlayer();
         }
       
     }
-
-    void Die(){
-        int enemyLevel = 3; 
-
-        // Randomly determine the number of orbs to spawn based on enemy level
-        int numOrbs = Random.Range(enemyLevel, enemyLevel * 2);
-
-        // Spawn orbs
-        for (int i = 0; i < numOrbs; i++) {
-            // Calculate random offset from the center
-            float xOffset = Random.Range(-1f, 1f);
-            float zOffset = Random.Range(-1f, 1f);
-            Vector3 spawnPosition = gameObject.transform.position + new Vector3(xOffset, 0, zOffset);
-
-            // Instantiate orb with slight offset
-            GameObject orb = Instantiate(xpOrbPreFab, spawnPosition, Quaternion.identity);
-
-            Destroy(orb, 10f); // Despawn orbs if not collected in 10s
-        }
-
-        // Destroy the enemy GameObject
-        Destroy(gameObject);
-    }
-
 }
