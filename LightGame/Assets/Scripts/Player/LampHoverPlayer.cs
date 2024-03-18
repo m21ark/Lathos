@@ -90,7 +90,6 @@ public class LampHoverPlayer : MonoBehaviour
             // If there's no nearest orb, stop seeking and resume hovering around the player
             seekingOrb = false;
             SetRandomTargetPosition();
-            Debug.Log("No orb found. Resumed hovering around the player.");
             return;
         }
 
@@ -101,7 +100,6 @@ public class LampHoverPlayer : MonoBehaviour
             // If the nearest orb is too far away, stop seeking and resume hovering around the player
             seekingOrb = false;
             SetRandomTargetPosition();
-            Debug.Log("Orb is too far away. Resumed hovering around the player.");
             return;
         }
 
@@ -150,9 +148,6 @@ public class LampHoverPlayer : MonoBehaviour
             Destroy(other.gameObject);
             seekingOrb = false;
             SetRandomTargetPosition();
-            Debug.Log("Destroyed the XP orb.");
-        }else{
-            Debug.Log(other.tag);
         }
     }
 }

@@ -8,6 +8,7 @@ public class GameLogic : MonoBehaviour
 {
 
     public GameObject player;
+    public GameObject endMenu;
     private GameObject hud;
 
     public int playerHealth = 100;
@@ -22,7 +23,6 @@ public class GameLogic : MonoBehaviour
     TextMeshProUGUI hud_timer;
     TextMeshProUGUI hud_player_health;
     TextMeshProUGUI hud_boss_health;
-    TextMeshProUGUI hud_end_msg;
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +45,6 @@ public class GameLogic : MonoBehaviour
             hud_timer = hud.transform.Find("Timer").GetComponent<TextMeshProUGUI>();
             hud_player_health = hud.transform.Find("PlayerHealth").GetComponent<TextMeshProUGUI>();
             hud_boss_health = hud.transform.Find("BossHealth").GetComponent<TextMeshProUGUI>();
-            hud_end_msg = hud.transform.Find("EndGameSMS").GetComponent<TextMeshProUGUI>();
         }
     }
 
@@ -72,7 +71,10 @@ public class GameLogic : MonoBehaviour
     }
 
     void endGame(bool playerWon){
-        hud_end_msg.text = string.Format("{0}", playerWon? "You won!" : "You died!" );
+        TextMeshProUGUI end_msg = endMenu.transform.Find("EndGameSMS").GetComponent<TextMeshProUGUI>();
+        end_msg.text = string.Format("{0}", playerWon? "You won!" : "You died!" );
+        endMenu.SetActive(true);
+        toggleCursor(true);
     }
 
     public void ResetScene()
