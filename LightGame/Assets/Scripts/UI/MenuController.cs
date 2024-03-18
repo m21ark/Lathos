@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,11 +9,18 @@ public class MenuController : MonoBehaviour
     public static bool isGamePaused = false;
 
     public GameObject pauseMenuObj;
+    public GameObject instructionsMenuObj;
+
     private GameLogic gameLogic;
 
 
     void Start(){
-        gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
+        try{
+            gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
+        }
+        catch (Exception e){
+            Debug.Log(e);
+        }
     }
 
     void Update(){
@@ -60,6 +68,8 @@ public class MenuController : MonoBehaviour
 
     public void PauseGame()
     {
+        if(gameLogic == null) gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
+        
         // Re enable mouse cursor for the pause menu
         gameLogic.toggleCursor(true);
         
