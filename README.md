@@ -22,3 +22,5 @@ The game main concept is about a battle between the player and a boss with multi
 ![pause](https://github.com/m21ark/light_game/assets/72521279/dc90c606-f7a0-47a8-9645-a297f3deb371)
 
 ![class_select](https://github.com/m21ark/light_game/assets/72521279/060668c5-f148-4d58-912d-f20ce283aa7f)
+
+![Screenshot from 2024-03-18 12-19-54](https://github.com/m21ark/light_game/assets/72521279/5a8c16e6-41ff-4beb-a1a4-24a0d7ddcb2a)
