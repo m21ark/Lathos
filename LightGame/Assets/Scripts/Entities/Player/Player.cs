@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public new int light = 0;
 
     // Class Related
-    private string playerClassName = "Base";
+    // private string playerClassName = "Base";
     private BaseClass playerClass;
     private ClassAttribLoader classLoader;
 
@@ -61,7 +61,15 @@ public class Player : MonoBehaviour
     }
 
     public void Attack(){
-        BaseProjectile projectile = (new GameObject("Projectile")).AddComponent<BaseProjectile>();
-        playerClass.Attack(projectile);
+        playerClass.Attack();
     }
+
+    public void BaseAbility(){
+        Debug.Log("Main Base Attack");
+    }
+
+    public void SpecialAbility(){
+        Debug.Log("Special Attack");
+    }
+
 }

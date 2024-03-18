@@ -10,6 +10,10 @@ public class ProtoProjectile : MonoBehaviour
     private Rigidbody projectileRb;
     public GameObject projectilePrefab;
 
+    void Start(){
+        projectilePrefab = gameObject;
+    }
+
     public void Fire(int damage = 10, Vector3 direction = default(Vector3), float speed = 1.0f, float gravity = 0.0f){
         GameObject projectile = Instantiate(projectilePrefab, transform.position + direction, Quaternion.identity);
         projectileRb = projectile.GetComponent<Rigidbody>();

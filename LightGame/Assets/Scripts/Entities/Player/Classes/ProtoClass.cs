@@ -8,6 +8,10 @@ public class ProtoClass : MonoBehaviour
     public float armor;
     public float attackSpeed;
 
+    public GameObject simpleAttackPrefab;
+    public GameObject classAttackPrefab;
+    public GameObject specialAttackPrefab;
+
     public virtual void InitializeAttributes(ClassAttribLoader loader, string[] classNames)
     {
         foreach (string className in classNames)
@@ -52,6 +56,11 @@ public class ProtoClass : MonoBehaviour
     public virtual void Attack(ProtoProjectile projectile)
     {
         projectile.Fire();
+    }   
+
+    public virtual void Attack()
+    {
+        // Simple Attack
     }   
 
     public virtual void BaseAbility()

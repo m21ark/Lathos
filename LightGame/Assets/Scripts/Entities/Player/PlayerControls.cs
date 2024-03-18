@@ -58,11 +58,14 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing)
             StartCoroutine(Dash());
         
-        // Shoot
-        if (Input.GetKeyDown(KeyCode.K) || Input.GetMouseButtonDown(0)){
+        // Basic Attack
+        if (Input.GetKeyDown(KeyCode.K) || Input.GetMouseButtonDown(0))
             player.Attack();
-        }
-   
+        // Base Class Attack
+        if (Input.GetKeyDown(KeyCode.J)) player.BaseAbility();
+        // Special Class Attack
+        if (Input.GetKeyDown(KeyCode.L)) player.SpecialAbility();
+
     }
 
     void rotateCamera(){
