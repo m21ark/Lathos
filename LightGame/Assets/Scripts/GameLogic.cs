@@ -110,10 +110,12 @@ public class GameLogic : MonoBehaviour
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
             isPaused = true;
+            Time.timeScale = 0;
         }else{
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             isPaused = false;
+            Time.timeScale = 1;
         }
     }
 
