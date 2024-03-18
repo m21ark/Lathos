@@ -3,38 +3,51 @@ using UnityEngine;
 public class ProtoProjectile : MonoBehaviour
 {
     
+    private float gravityStrength = 1.0f;
+
+    public float realGravity = 9.8f;
+
+    private int projDamage = 10;
+
+    private Rigidbody projectileRb;
 
     public GameObject projectilePrefab;
-    public void Fire(int damage, Vector3 direction, float speed, float gravity, Vector3 cameraForward){
-        GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-        Rigidbody projectileRb = projectile.GetComponent<Rigidbody>();
+    public void Fire(int damage = 10, Vector3 direction = default(Vector3), float speed = 1.0f, float gravity = 0.0f){
+        GameObject projectile = Instantiate(projectilePrefab, transform.position + direction, Quaternion.identity);
+        projectileRb = projectile.GetComponent<Rigidbody>();
 
         if (projectileRb != null){
-            projectileRb.velocity = cameraForward * speed;
-            projectileRb.useGravity = true;
+            projectileRb.velocity = direction * speed;
         }
+
+        gravityStrength = gravity;
+        projDamage = damage;
+
+        // Destroy the projectile after 5 seconds
+        Destroy(projectile, 7.5f);
     }   
 
-    public void Despawn(){
-        Destroy(gameObject);
+    void FixedUpdate()
+    {
+        // Calculate the custom gravity vector
+        Vector3 customGravity = -transform.up * gravityStrength * realGravity;
+
+        // Apply the custom gravity force to the Rigidbody
+        projectileRb.AddForce(customGravity, ForceMode.Acceleration);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        // Check if the projectile is touching the ground
+        if (collision.gameObject.CompareTag("Mob"))
+        {
+            // Get the Mob component
+            ProtoMob mob = collision.gameObject.GetComponent<ProtoMob>();
+
+            mob.TakeDamage(projDamage);
+
+            // Destroy the projectile
+            Destroy(gameObject);
+        }
     }
 }
-70 25 15 30 1
-
-   void ShootProjectile()
-    {
-        float projectileSpeed = 50f;
-
-        // Calculate the direction of the camera
-        Vector3 cameraDirection = cameraPivot.forward;
-
-        // Instantiate the projectile slightly in front of the player
-        GameObject projectile = Instantiate(projectilePrefab, transform.position + cameraDirection, Quaternion.identity);
-
-        // Get the rigidbody of the projectile
-        Rigidbody projectileRb = projectile.GetComponent<Rigidbody>();
-
-        // If the projectile has a rigidbody component, apply velocity in the camera direction
-        if (projectileRb != null)
-            projectileRb.velocity = cameraDirection * projectileSpeed;
-    }

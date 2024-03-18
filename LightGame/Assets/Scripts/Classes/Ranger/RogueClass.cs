@@ -3,7 +3,7 @@ using UnityEngine;
 public class RogueClass : RangerClass
 {
     
-    public override void Attack(Projectile projectile)
+    public override void Attack(ProtoProjectile projectile)
     {
         projectile.Fire();
     }

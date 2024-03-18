@@ -49,7 +49,7 @@ public class ProtoClass : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public virtual void Attack(Projectile projectile)
+    public virtual void Attack(ProtoProjectile projectile)
     {
         projectile.Fire();
     }   

@@ -6,7 +6,7 @@ public class KnightClass : FighterClass
     public new int damage = 15;
     public new float armor = 1.8f;
 
-    public override void Attack(Projectile projectile)
+    public override void Attack(ProtoProjectile projectile)
     {
         projectile.Fire();
     }

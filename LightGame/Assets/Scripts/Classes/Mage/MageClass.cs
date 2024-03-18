@@ -4,7 +4,7 @@ public class MageClass : BaseClass
 {
 
     public new float armor = 0.5f;
-    public override void Attack(Projectile projectile)
+    public override void Attack(ProtoProjectile projectile)
     {
         projectile.Fire();
     }

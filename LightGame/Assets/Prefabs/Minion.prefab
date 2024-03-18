@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8589632405299163380}
   - component: {fileID: 4804049025235858312}
   - component: {fileID: 7156309416430731313}
-  - component: {fileID: 349179392716392750}
+  - component: {fileID: 259703948879761937}
   m_Layer: 0
   m_Name: Minion
   m_TagString: Minion
@@ -134,7 +134,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &349179392716392750
+--- !u!114 &259703948879761937
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,9 +143,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5547836219333771790}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af15417f15ac6ab4caf122babb62598e, type: 3}
+  m_Script: {fileID: 11500000, guid: 3735568964f19d54ab365fc98dfd162a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 20
+  enemyLevel: 1
+  xpOrbPreFab: {fileID: 0}
   moveSpeed: 5
-  xpOrbPreFab: {fileID: 4996593011877861837, guid: bc7ac9ed2742903e987703b6155afe32, type: 3}
+  damage: 10

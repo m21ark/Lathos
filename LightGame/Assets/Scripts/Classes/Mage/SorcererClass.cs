@@ -6,7 +6,7 @@ public class SorcererClass : MageClass
     public new int damage = 15;
     public float attackSpeed = 1.2f;
 
-    public override void Attack(Projectile projectile)
+    public override void Attack(ProtoProjectile projectile)
     {
         projectile.Fire();
     }

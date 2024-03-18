@@ -129,20 +129,8 @@ public class PlayerController : MonoBehaviour
 
     void ShootProjectile()
     {
-        float projectileSpeed = 50f;
-
-        // Calculate the direction of the camera
-        Vector3 cameraDirection = cameraPivot.forward;
-
-        // Instantiate the projectile slightly in front of the player
-        GameObject projectile = Instantiate(projectilePrefab, transform.position + cameraDirection, Quaternion.identity);
-
-        // Get the rigidbody of the projectile
-        Rigidbody projectileRb = projectile.GetComponent<Rigidbody>();
-
-        // If the projectile has a rigidbody component, apply velocity in the camera direction
-        if (projectileRb != null)
-            projectileRb.velocity = cameraDirection * projectileSpeed;
+        ProtoProjectile projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity).GetComponent<ProtoProjectile>();
+        projectile.Fire(10, cameraPivot.forward, 20f, 0.0f);
     }
 
     void OnCollisionEnter(Collision collision)

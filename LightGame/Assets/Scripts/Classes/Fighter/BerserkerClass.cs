@@ -7,7 +7,7 @@ public class BersekerClass : FighterClass
     public new int damage = 20;
     public new float armor = 1.0f;
 
-    public override void Attack(Projectile projectile)
+    public override void Attack(ProtoProjectile projectile)
     {
         projectile.Fire();
     }

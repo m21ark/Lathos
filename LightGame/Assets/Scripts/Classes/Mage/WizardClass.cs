@@ -6,7 +6,7 @@ public class WizardClass : MageClass
     public new int damage = 30;
     public float attackSpeed = 0.4f;
 
-    public override void Attack(Projectile projectile)
+    public override void Attack(ProtoProjectile projectile)
     {
         projectile.Fire();
     }

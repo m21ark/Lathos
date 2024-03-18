@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 10
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 3606385658551136691, guid: c54e80394c05dee4b9830345e197a9c3, type: 3}
 --- !u!54 &240153140390415211
 Rigidbody:
   m_ObjectHideFlags: 0
