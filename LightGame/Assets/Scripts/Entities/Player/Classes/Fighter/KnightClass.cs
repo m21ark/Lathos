@@ -1,11 +1,7 @@
 using UnityEngine;
 
-public class WizardClass : MageClass
+public class KnightClass : FighterClass
 {
-    
-    public new int damage = 30;
-    public float attackSpeed = 0.4f;
-
     public override void Attack(ProtoProjectile projectile)
     {
         projectile.Fire();

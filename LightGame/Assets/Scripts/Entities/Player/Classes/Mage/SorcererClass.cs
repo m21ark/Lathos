@@ -1,9 +1,7 @@
 using UnityEngine;
 
-public class MageClass : BaseClass
+public class SorcererClass : MageClass
 {
-
-    public new float armor = 0.5f;
     public override void Attack(ProtoProjectile projectile)
     {
         projectile.Fire();
@@ -13,4 +11,10 @@ public class MageClass : BaseClass
     {
         // Base ability
     }
+
+    public override void SpecialAbility()
+    {
+        // Special ability
+    }
+    
 }

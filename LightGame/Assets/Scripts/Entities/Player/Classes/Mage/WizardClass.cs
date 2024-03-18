@@ -1,12 +1,7 @@
 using UnityEngine;
 
-
-public class BersekerClass : FighterClass
+public class WizardClass : MageClass
 {
-    
-    public new int damage = 20;
-    public new float armor = 1.0f;
-
     public override void Attack(ProtoProjectile projectile)
     {
         projectile.Fire();
@@ -21,5 +16,5 @@ public class BersekerClass : FighterClass
     {
         // Special ability
     }
+    
 }
-
