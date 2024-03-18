@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7551499270620568453}
   - component: {fileID: 7889465802850588484}
   - component: {fileID: 8989969700989373473}
+  - component: {fileID: 4578458795267940404}
   m_Layer: 0
   m_Name: OrbXP
   m_TagString: OrbXP
@@ -114,7 +115,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4996593011877861837}
   serializedVersion: 4
-  m_Mass: 10000
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -128,8 +129,24 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4578458795267940404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4996593011877861837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45eb60741a0e7374b988d043107a0923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lamp: {fileID: 0}
+  accelerationSpeed: 7.5
+  maxDistance: 30
+  baseSpeed: 0.75

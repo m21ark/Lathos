@@ -11,6 +11,8 @@ TagManager:
   - Minion
   - OrbXP
   - EndMenu
+  - PauseMenu
+  - Lamp
   layers:
   - Default
   - TransparentFX

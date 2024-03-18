@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 2233090269682523613}
   m_Layer: 0
   m_Name: PlayerLamp
-  m_TagString: Untagged
+  m_TagString: Lamp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -229,7 +229,7 @@ MonoBehaviour:
   hoverRadius: 2
   hoverHeight: 1
   hoverSpeed: 1
-  returnSpeed: 10
+  returnSpeed: 30
 --- !u!135 &2233090269682523613
 SphereCollider:
   m_ObjectHideFlags: 0
