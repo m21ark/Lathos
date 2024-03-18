@@ -31,7 +31,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        Move();
 
+        if(!gameLogic.isPaused)
+            rotateCamera();
+    }
+
+    void Move(){
         // Move the player horizontally
         float moveHorizontal = 0f;
         float moveVertical = 0f;
@@ -55,15 +61,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift))
             StartCoroutine(Roll());
         
-
         // Shooting if ammo reloaded
         bool ammoReloaded = Time.time - lastShotTime >= projectileLoadingTime;
         if (ammoReloaded && (Input.GetKeyDown(KeyCode.K) || Input.GetMouseButtonDown(0))){
             ShootProjectile();
             lastShotTime = Time.time;
         }
-
-        rotateCamera();
     }
 
     void rotateCamera(){
@@ -79,15 +82,18 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Roll(){
         float duration = 0.5f; 
-        float rollSpeed = 50f;
+        float rollSpeed = 25f;
         Quaternion startRotation = transform.rotation;
-        Quaternion endRotation = transform.rotation * Quaternion.Euler(360f, 360f, 360f);
+        Quaternion endRotation = transform.rotation * Quaternion.Euler(0f, 360f, 0f);
 
         float elapsedTime = 0f;
         while (elapsedTime < duration)
         {
             float t = elapsedTime / duration;
-            transform.position +=  (cameraPivot.forward + cameraPivot.right).normalized  * rollSpeed * Time.deltaTime;
+
+            // Calculate movement direction based on camera pivot
+            Vector3 rollDirection = (cameraPivot.forward).normalized;
+            transform.position += rollDirection * rollSpeed * Time.deltaTime;
 
             // Rotate the player smoothly
             transform.rotation = Quaternion.Slerp(startRotation, endRotation, t);

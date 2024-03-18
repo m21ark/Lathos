@@ -15,6 +15,8 @@ public class GameLogic : MonoBehaviour
 
     private float gameTime = 0.0f;
 
+    public bool isPaused = false;
+
 
     // HUD Text Elements
     TextMeshProUGUI hud_timer;
@@ -25,6 +27,19 @@ public class GameLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        HUDLoadElements();
+
+        player = GameObject.FindWithTag("Player");
+        if(player == null) Debug.Log("Couldn't find player object...");
+        
+        // Set start time variables
+        Time.timeScale = 1;
+        gameTime = 0.0f;  
+
+        toggleCursor(false); // Hide cursor during gameplay
+    }
+
+    void HUDLoadElements(){
         hud = GameObject.FindWithTag("HUD");
         if(hud){
             hud_timer = hud.transform.Find("Timer").GetComponent<TextMeshProUGUI>();
@@ -32,15 +47,6 @@ public class GameLogic : MonoBehaviour
             hud_boss_health = hud.transform.Find("BossHealth").GetComponent<TextMeshProUGUI>();
             hud_end_msg = hud.transform.Find("EndGameSMS").GetComponent<TextMeshProUGUI>();
         }
-
-        player = GameObject.FindWithTag("Player");
-        if(player == null) Debug.Log("Couldn't find player object...");
-        
-        gameTime = 0.0f;   
-
-        
-        Cursor.visible = false; //set mouse cursor to be invisible
-        Cursor.lockState = CursorLockMode.Locked; //set mouse position to the center of the screen
     }
 
     // Update is called once per frame
@@ -93,6 +99,20 @@ public class GameLogic : MonoBehaviour
 
     public void damagePlayer(int damage){
         playerHealth -= damage;   
+    }
+
+    public void toggleCursor(bool show){
+        // Lock mouse and make it invisible during gameplay
+        // And show it again in menus for selection
+        if(show){
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            isPaused = true;
+        }else{
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            isPaused = false;
+        }
     }
 
 }

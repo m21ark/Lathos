@@ -51,5 +51,8 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Light Game.sln"
+    "dotnet.defaultSolution": "LightGame.sln",
+    "cSpell.words": [
+        "gameplay"
+    ]
 }
