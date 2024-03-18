@@ -53,7 +53,9 @@ public class GameLogic : MonoBehaviour
 
         // Select a class
         RogueClass rogue = new RogueClass();
-        rogue.InitializeAttributes(classLoader);
+        string[] classNames = {"Base", "Ranger", "Rogue"};
+        rogue.InitializeAttributes(classLoader, classNames);
+
 
         // Print results
         Debug.Log("Rogue Health: " + rogue.health);
