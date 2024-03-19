@@ -58,7 +58,7 @@ public class ProtoClass : MonoBehaviour
 
     public void Die()
     {
-        Destroy(gameObject);
+        // Don't destroy the player object because it holds the camera 
     }
 
     public virtual void Attack() // Vector3 position = default(Vector3), Vector3 direction = default(Vector3)
