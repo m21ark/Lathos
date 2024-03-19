@@ -11,14 +11,9 @@ public class ProtoAttack : MonoBehaviour
 
     void Start(){}
 
-    public void Fire(int damage = 10, Vector3 direction = default(Vector3), float speed = 1.0f, float gravity = 0.0f, GameObject attack = null){
-        
-        if(attack == null){
-            Debug.Log("Tried to shot a null prefab");
-            return;
-        }
+    public void Fire(int damage = 10, Vector3 direction = default(Vector3), float speed = 1.0f, float gravity = 0.0f){
 
-        attackRb = attack.GetComponent<Rigidbody>();
+        attackRb = gameObject.GetComponent<Rigidbody>();
 
         if (attackRb != null)
             attackRb.velocity = direction * speed;
@@ -27,12 +22,8 @@ public class ProtoAttack : MonoBehaviour
         projDamage = damage;
 
         // Destroy the attack after 5 seconds
-        Destroy(attack, 7.5f);
+        Destroy(gameObject, 7.5f);
     }   
-
-    public void FirePiu(GameObject attackPrefab, Vector3 direction){
-        Fire(10, direction, 80.0f, 0.0f, attackPrefab);
-    }
 
     void FixedUpdate()
     {

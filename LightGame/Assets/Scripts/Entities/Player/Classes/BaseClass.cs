@@ -2,12 +2,16 @@ using UnityEngine;
 
 public class BaseClass : ProtoClass
 {
-   /*  public override void Attack()
+    public override void Attack() 
     {
-        // Basic attack
+        GameObject attackEntity = Instantiate(simpleAttackPrefab, cameraPivot.position, Quaternion.identity);
+        Vector3 attackDirection = cameraPivot.forward;
+        ProtoAttack attack = attackEntity.GetComponent<ProtoAttack>();
+        attack.Fire(10, attackDirection, 50, 0);
+     
     }
 
-    public override void BaseAbility()
+/*  public override void BaseAbility()
     {
         // Base ability
     }

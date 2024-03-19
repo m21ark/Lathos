@@ -148,6 +148,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   enemyLevel: 1
-  xpOrbPreFab: {fileID: 0}
   moveSpeed: 5
   damage: 10
+  xpOrbPreFab: {fileID: 4996593011877861837, guid: cad7373686d79a81e963d2881c27666a, type: 3}
