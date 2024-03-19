@@ -47,7 +47,6 @@ public class LightOrbBehavior : MonoBehaviour
         // Check if the object collides with the orb
         if (other.gameObject == lamp)
         {
-            Debug.Log("Orb collided with lamp");
             gameLogic.player.light += 1; // Increase the player's light by 1
 
             // Despawn this object

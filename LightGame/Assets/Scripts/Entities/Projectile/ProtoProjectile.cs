@@ -48,17 +48,19 @@ public class ProtoProjectile : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         // Check if the projectile is touching the ground
-        if (collision.gameObject.CompareTag("Mob") || collision.gameObject.CompareTag("Minion") || collision.gameObject.CompareTag("Boss"))
+        if (collision.gameObject.CompareTag("Minion"))
         {
-           /*  // Get the Mob component
+           /// Get the Mob component
             ProtoMob mob = collision.gameObject.GetComponent<ProtoMob>();
 
-            mob.TakeDamage(projDamage); */ // TODO: IMPLEMENT LATER THE MOBS FOR MINIONS AND BOSS
-
-            Destroy(collision.gameObject); // TODO: FOR NOW OBLITERATE ENEMY
+            mob.TakeDamage(projDamage); 
 
             // Destroy the projectile
             Destroy(gameObject);
+        }
+
+        if(collision.gameObject.CompareTag("Boss")){
+            // TODO: boss may have different behavior
         }
     }
 }

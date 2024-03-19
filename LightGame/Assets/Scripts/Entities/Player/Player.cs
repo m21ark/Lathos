@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public new int light = 0;
 
     // Attack rates / reload times
-    public float basicAttackRate = 0.5f;
+    public float basicAttackRate = 0.3f;
     public float baseAttackRate = 1f;
     public float abilityAttackRate = 2f;
 
