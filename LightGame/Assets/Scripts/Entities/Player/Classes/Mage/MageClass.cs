@@ -2,13 +2,18 @@ using UnityEngine;
 
 public class MageClass : BaseClass
 {
-    public override void Attack(ProtoProjectile projectile)
+    public override void Attack()
     {
-        projectile.Fire();
+        // Basic attack
     }
 
     public override void BaseAbility()
     {
         // Base ability
+    }
+
+    public override void SpecialAbility()
+    {
+        // Special ability
     }
 }

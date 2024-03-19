@@ -1,53 +1,53 @@
 using UnityEngine;
 
-public class ProtoProjectile : MonoBehaviour
+public class ProtoAttack : MonoBehaviour
 {
     
     private float gravityStrength = 1.0f;
     public float realGravity = 9.8f;
     private int projDamage = 10;
 
-    private Rigidbody projectileRb;
+    private Rigidbody attackRb;
 
     void Start(){}
 
-    public void Fire(int damage = 10, Vector3 direction = default(Vector3), float speed = 1.0f, float gravity = 0.0f, GameObject projectile = null){
+    public void Fire(int damage = 10, Vector3 direction = default(Vector3), float speed = 1.0f, float gravity = 0.0f, GameObject attack = null){
         
-        if(projectile == null){
+        if(attack == null){
             Debug.Log("Tried to shot a null prefab");
             return;
         }
 
-        projectileRb = projectile.GetComponent<Rigidbody>();
+        attackRb = attack.GetComponent<Rigidbody>();
 
-        if (projectileRb != null)
-            projectileRb.velocity = direction * speed;
+        if (attackRb != null)
+            attackRb.velocity = direction * speed;
 
         gravityStrength = gravity;
         projDamage = damage;
 
-        // Destroy the projectile after 5 seconds
-        Destroy(projectile, 7.5f);
+        // Destroy the attack after 5 seconds
+        Destroy(attack, 7.5f);
     }   
 
-    public void FirePiu(GameObject projectilePrefab, Vector3 direction){
-        Fire(10, direction, 80.0f, 0.0f, projectilePrefab);
+    public void FirePiu(GameObject attackPrefab, Vector3 direction){
+        Fire(10, direction, 80.0f, 0.0f, attackPrefab);
     }
 
     void FixedUpdate()
     {
-        projectileRb = GetComponent<Rigidbody>();
+        attackRb = GetComponent<Rigidbody>();
 
         // Calculate the custom gravity vector
         Vector3 customGravity = -transform.up * gravityStrength * realGravity;
 
         // Apply the custom gravity force to the Rigidbody
-        projectileRb.AddForce(customGravity, ForceMode.Acceleration);
+        attackRb.AddForce(customGravity, ForceMode.Acceleration);
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        // Check if the projectile is touching the ground
+        // Check if the attack is touching the ground
         if (collision.gameObject.CompareTag("Minion"))
         {
            /// Get the Mob component
@@ -55,7 +55,7 @@ public class ProtoProjectile : MonoBehaviour
 
             mob.TakeDamage(projDamage); 
 
-            // Destroy the projectile
+            // Destroy the attack
             Destroy(gameObject);
         }
 

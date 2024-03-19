@@ -2,75 +2,77 @@ using UnityEngine;
 
 public class ProtoClass : MonoBehaviour
 {
-    public int health;
-    public int damage;
-    public float moveSpeed;
-    public float armor;
-    public float attackSpeed;
 
+    // Camera / Movement Related
+    public float moveSpeed = 8f;
+    public float jumpForce = 10f;
+    public float dashCooldown = 1f;
+    private Transform cameraPivot;
+
+    // In-game Attributes
+    public int maxHealth = 100;
+    public int health = 100;
+    public int damage = 10;
+    public float armor = 1;
+    public int collectedLight = 0;
+
+    // Attack reload time
+    public float basicAttackReloadTime = 0.3f;
+    public float baseAttackReloadTime = 1f;
+    public float abilityAttackReloadTime = 2f;
+
+    // Attack charge rate to launch
+    public float basicAttackRate = 0f;
+    public float baseAttackRate = 0f;
+    public float abilityAttackRate = 0f;
+
+    // Attack prefabs
     public GameObject simpleAttackPrefab;
     public GameObject classAttackPrefab;
     public GameObject specialAttackPrefab;
 
-    public virtual void InitializeAttributes(ClassAttribLoader loader, string[] classNames)
-    {
-        foreach (string className in classNames)
-        {
-            if (loader.classAttributesDict.ContainsKey(className))
-            {
-                var attributes = loader.classAttributesDict[className];
+    void Start(){
+        cameraPivot = transform.Find("CameraPivot");
+    }
 
-                if (attributes.ContainsKey("health") && attributes["health"] != "X")
-                    health = int.Parse(attributes["health"]);
-
-                if (attributes.ContainsKey("damage") && attributes["damage"] != "X")
-                    damage = int.Parse(attributes["damage"]);
-
-                if (attributes.ContainsKey("moveSpeed") && attributes["moveSpeed"] != "X")
-                    moveSpeed = float.Parse(attributes["moveSpeed"]);
-
-                if (attributes.ContainsKey("armor") && attributes["armor"] != "X")
-                    armor = float.Parse(attributes["armor"]);
-
-                if (attributes.ContainsKey("attackSpeed") && attributes["attackSpeed"] != "X")
-                    attackSpeed = float.Parse(attributes["attackSpeed"]);
-            }
-        }
+    public bool isAlive(){
+        return health > 0;
     }
 
     public void TakeDamage(int damage)
     {
         health -= damage;
         if (health <= 0)
-        {
             Die();
-        }
+    }
+
+    public GameObject getGameObject(){
+        return gameObject;
+    }
+
+    public void Heal(int heal){
+        health += heal;
+        if(health > maxHealth) health = maxHealth;
     }
 
     public void Die()
     {
-        // Die
         Destroy(gameObject);
     }
 
-    public virtual void Attack(ProtoProjectile projectile)
+    public virtual void Attack() // Vector3 position = default(Vector3), Vector3 direction = default(Vector3)
     {
-        projectile.Fire();
-    }   
-
-    public virtual void Attack()
-    {
-        // Simple Attack
+        Debug.Log("Basic Attack");
     }   
 
     public virtual void BaseAbility()
     {
-        // Base ability
+        Debug.Log("Main Base Attack");
     }
 
     public virtual void SpecialAbility()
     {
-        // Special ability
+        Debug.Log("Special Attack");
     }
 
 }

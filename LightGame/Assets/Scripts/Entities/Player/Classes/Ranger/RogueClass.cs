@@ -2,10 +2,9 @@ using UnityEngine;
 
 public class RogueClass : RangerClass
 {
-    
-    public override void Attack(ProtoProjectile projectile)
+    public override void Attack()
     {
-        projectile.Fire();
+        // Basic attack
     }
 
     public override void BaseAbility()
@@ -17,7 +16,6 @@ public class RogueClass : RangerClass
     {
         // Special ability
     }
-
 }
 
 

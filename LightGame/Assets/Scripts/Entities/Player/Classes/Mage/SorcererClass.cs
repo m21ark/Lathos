@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class SorcererClass : MageClass
 {
-    public override void Attack(ProtoProjectile projectile)
+    public override void Attack()
     {
-        projectile.Fire();
+        // Basic attack
     }
 
     public override void BaseAbility()
@@ -15,6 +15,5 @@ public class SorcererClass : MageClass
     public override void SpecialAbility()
     {
         // Special ability
-    }
-    
+    } 
 }

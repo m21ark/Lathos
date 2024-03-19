@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2505222267969559506}
   - component: {fileID: 7758124723108771270}
   - component: {fileID: 6117513903580471550}
+  - component: {fileID: 6658680625887553096}
   - component: {fileID: 240153140390415211}
   m_Layer: 0
   m_Name: Player
@@ -122,9 +123,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f897a6a745e823508b2569bb62441ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+--- !u!114 &6658680625887553096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660202787935071235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c80d3ecbfb7aeaf49abfed6b3fdd195e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 8
   jumpForce: 10
-  projectilePrefab: {fileID: 3606385658551136691, guid: c54e80394c05dee4b9830345e197a9c3, type: 3}
+  dashCooldown: 1
+  maxHealth: 100
+  health: 100
+  damage: 10
+  armor: 1
+  collectedLight: 0
+  basicAttackReloadTime: 0.3
+  baseAttackReloadTime: 1
+  abilityAttackReloadTime: 2
+  basicAttackRate: 0
+  baseAttackRate: 0
+  abilityAttackRate: 0
+  simpleAttackPrefab: {fileID: 3606385658551136691, guid: 817690073061f57258f92e2aa5a9cb21, type: 3}
+  classAttackPrefab: {fileID: 0}
+  specialAttackPrefab: {fileID: 0}
 --- !u!54 &240153140390415211
 Rigidbody:
   m_ObjectHideFlags: 0

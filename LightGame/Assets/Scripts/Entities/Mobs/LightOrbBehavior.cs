@@ -47,7 +47,7 @@ public class LightOrbBehavior : MonoBehaviour
         // Check if the object collides with the orb
         if (other.gameObject == lamp)
         {
-            gameLogic.player.light += 1; // Increase the player's light by 1
+            gameLogic.player.collectedLight += 1; // Increase the player's light by 1
 
             // Despawn this object
             Destroy(gameObject);

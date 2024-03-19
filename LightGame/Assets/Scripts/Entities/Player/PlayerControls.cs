@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody rb;
     private GameLogic gameLogic;
-    private Player player;
+    private ProtoClass player;
     private Transform cameraPivot;
 
     private bool isGrounded = false;
@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
             lastAttackTime -= Time.deltaTime;
             if (lastAttackTime <= 0){
                 player.Attack();
-                lastAttackTime = player.basicAttackRate;
+                lastAttackTime = player.basicAttackReloadTime;
             }
         }
     }
@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
             lastBaseAttackTime -= Time.deltaTime;
             if(lastBaseAttackTime <= 0){
                 player.BaseAbility();
-                lastBaseAttackTime = player.baseAttackRate;
+                lastBaseAttackTime = player.baseAttackReloadTime;
             }
         }
     }
@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
             lastAbilityAttackTime -= Time.deltaTime;
             if(lastAbilityAttackTime <= 0){
                 player.SpecialAbility();
-                lastAbilityAttackTime = player.abilityAttackRate;
+                lastAbilityAttackTime = player.abilityAttackReloadTime;
             }
         }
     }

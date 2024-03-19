@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class KnightClass : FighterClass
 {
-    public override void Attack(ProtoProjectile projectile)
+    public override void Attack()
     {
-        projectile.Fire();
+        // Basic attack
     }
 
     public override void BaseAbility()
@@ -16,5 +16,4 @@ public class KnightClass : FighterClass
     {
         // Special ability
     }
-    
 }
