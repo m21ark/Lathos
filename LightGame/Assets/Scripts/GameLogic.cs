@@ -63,11 +63,9 @@ public class GameLogic : MonoBehaviour
         // Update the HUD
         if(hud != null) updateHUD();
 
-        // If R is pressed, reset scene
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            ResetScene();
-        }
+        // For debugging purposes
+        if (Input.GetKeyDown(KeyCode.H))
+            player.Heal(20);
 
         // If boss or player dead, end game
         if(boss.health <= 0)
