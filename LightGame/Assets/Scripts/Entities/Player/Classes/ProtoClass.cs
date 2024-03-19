@@ -7,6 +7,7 @@ public class ProtoClass : MonoBehaviour
     public float moveSpeed = 8f;
     public float jumpForce = 10f;
     public float dashCooldown = 1f;
+    public float dashSpeed = 25f;
     protected Transform cameraPivot;
 
     // In-game Attributes

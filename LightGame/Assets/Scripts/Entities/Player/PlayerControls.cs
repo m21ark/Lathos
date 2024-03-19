@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private Transform cameraPivot;
 
     private bool isGrounded = false;
-    private bool isDashing = false;
+    private float lastDashTime = 0f;
 
     // Fire rate / reload controls
     private float lastAttackTime = 0f;
@@ -62,8 +62,10 @@ public class PlayerController : MonoBehaviour
         }
 
         // Dash
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && lastDashTime <= 0)
             StartCoroutine(Dash());
+        else 
+            lastDashTime -= Time.deltaTime;
         
         // Basic Attack
         BasicAttack();
@@ -133,9 +135,8 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Dash(){
         float duration = 0.5f; 
-        float dashSpeed = 25f;
-
         float elapsedTime = 0f;
+        lastDashTime = player.dashCooldown;
 
         // Calculate movement direction based on player input
         Vector3 moveDirection = Vector3.zero;
@@ -157,11 +158,10 @@ public class PlayerController : MonoBehaviour
             float t = elapsedTime / duration;
             moveDirection.y = 0;
             moveDirection.Normalize();
-            transform.position += moveDirection * dashSpeed * Time.deltaTime;
+            transform.position += moveDirection * player.dashSpeed * Time.deltaTime;
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        isDashing = false;
     }
 
     void OnCollisionEnter(Collision collision)

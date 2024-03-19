@@ -138,6 +138,7 @@ MonoBehaviour:
   moveSpeed: 8
   jumpForce: 10
   dashCooldown: 1
+  dashSpeed: 25
   maxHealth: 100
   health: 100
   damage: 10
