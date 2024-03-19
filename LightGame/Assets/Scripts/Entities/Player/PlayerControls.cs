@@ -7,19 +7,18 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private GameLogic gameLogic;
     private Player player;
+    private Transform cameraPivot;
 
     private bool isGrounded = false;
     private bool isDashing = false;
 
+    // Fire rate / reload controls
+    private float lastAttackTime = 0f;
+    private float lastBaseAttackTime = 0f;
+    private float lastAbilityAttackTime = 0f;
     private bool isAttacking = false;
-
-    public float attackInterval = 0.5f;
-
-    private float nextAttackTime = 0f; // Time when the next attack can occur
-
-
-
-    private Transform cameraPivot;
+    private bool isBaseAttacking = false;
+    private bool isAbilityAttacking = false;
 
     void Start()
     {
@@ -67,46 +66,59 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(Dash());
         
         // Basic Attack
-        if (Input.GetKeyDown(KeyCode.K))
-            player.Attack();
-
-        if (Input.GetMouseButtonDown(0) && Time.time >= nextAttackTime)
-        {
-            StartCoroutine(ContinuousAttack());
-        }
-        else if (Input.GetMouseButtonUp(0))
-        {
-            StopAttack();
-        }
-
+        BasicAttack();
 
         // Base Class Attack
-        if (Input.GetKeyDown(KeyCode.J)) player.BaseAbility();
+        BaseAttack();
+
         // Special Class Attack
-        if (Input.GetKeyDown(KeyCode.L)) player.SpecialAbility();
+        AbilityAttack();
 
     }
 
-    IEnumerator ContinuousAttack()
-    {
-        // Check if player is already attacking to prevent overlapping attacks
-        if (!isAttacking)
-        {
+    void BasicAttack(){
+        if (Input.GetKeyDown(KeyCode.K) || Input.GetMouseButtonDown(0))
             isAttacking = true;
-            while (Input.GetMouseButton(0)) // Keep attacking while mouse button is held down
-            {
-                nextAttackTime = Time.time + attackInterval;
+        
+        if (Input.GetKeyUp(KeyCode.K) || Input.GetMouseButtonUp(0))
+            isAttacking = false;
+
+        if (isAttacking){
+            lastAttackTime -= Time.deltaTime;
+            if (lastAttackTime <= 0){
                 player.Attack();
-                yield return new WaitForSeconds(attackInterval);
+                lastAttackTime = player.basicAttackRate;
             }
         }
     }
 
-    void StopAttack()
-    {
-        StopCoroutine(ContinuousAttack());
-        isAttacking = false;
+
+    void BaseAttack(){
+        if (Input.GetKeyDown(KeyCode.J)) isBaseAttacking = true;
+        if (Input.GetKeyUp(KeyCode.J)) isBaseAttacking = false;
+
+        if(isBaseAttacking){
+            lastBaseAttackTime -= Time.deltaTime;
+            if(lastBaseAttackTime <= 0){
+                player.BaseAbility();
+                lastBaseAttackTime = player.baseAttackRate;
+            }
+        }
     }
+
+    void AbilityAttack(){
+        if (Input.GetKeyDown(KeyCode.L)) isAbilityAttacking = true;
+        if (Input.GetKeyUp(KeyCode.L)) isAbilityAttacking = false;
+
+        if(isAbilityAttacking){
+            lastAbilityAttackTime -= Time.deltaTime;
+            if(lastAbilityAttackTime <= 0){
+                player.SpecialAbility();
+                lastAbilityAttackTime = player.abilityAttackRate;
+            }
+        }
+    }
+
 
     void rotateCamera(){
         // Rotate the camera based on mouse movement

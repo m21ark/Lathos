@@ -11,6 +11,11 @@ public class Player : MonoBehaviour
     public int health = 100;
     public new int light = 0;
 
+    // Attack rates / reload times
+    public float basicAttackRate = 0.5f;
+    public float baseAttackRate = 1f;
+    public float abilityAttackRate = 2f;
+
     // Class Related
     // private string playerClassName = "Base";
     private BaseClass playerClass;
