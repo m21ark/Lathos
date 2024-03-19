@@ -63,17 +63,17 @@ public class ProtoClass : MonoBehaviour
 
     public virtual void Attack() // Vector3 position = default(Vector3), Vector3 direction = default(Vector3)
     {
-        Debug.Log("Basic Attack");
+        Debug.Log("Basic Attack is not implemented for this player class");
     }   
 
     public virtual void BaseAbility()
     {
-        Debug.Log("Main Base Attack");
+        Debug.Log("Main Base Attack is not implemented for this player class");
     }
 
     public virtual void SpecialAbility()
     {
-        Debug.Log("Special Attack");
+        Debug.Log("Special Attack is not implemented for this player class");
     }
 
 }

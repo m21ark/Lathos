@@ -8,6 +8,5 @@ public class BaseClass : ProtoClass
         Vector3 attackDirection = cameraPivot.forward;
         ProtoAttack attack = attackEntity.GetComponent<ProtoAttack>();
         attack.Fire(10, attackDirection, 50, 0); // Hardcoded for now
-     
     }
 }
