@@ -39,7 +39,7 @@ public class ProtoAttack : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         // Check if the attack is touching the ground
-        if (collision.gameObject.CompareTag("Minion"))
+        if (collision.gameObject.CompareTag("Minion") || collision.gameObject.CompareTag("Boss"))
         {
            /// Get the Mob component
             ProtoMob mob = collision.gameObject.GetComponent<ProtoMob>();
@@ -48,10 +48,6 @@ public class ProtoAttack : MonoBehaviour
 
             // Destroy the attack
             Destroy(gameObject);
-        }
-
-        if(collision.gameObject.CompareTag("Boss")){
-            // TODO: boss may have different behavior
         }
     }
 }

@@ -8,7 +8,7 @@ public class ProtoMob : MonoBehaviour
     public int enemyLevel = 5; // For now ... see level progression later  
     public float moveSpeed = 5f;
     public int damage = 10;
-    
+
     public GameObject xpOrbPreFab;
 
     public virtual void Attack()
@@ -23,6 +23,8 @@ public class ProtoMob : MonoBehaviour
 
     public void Die()
     {
+        // GameObject xpOrbPreFab = Resources.Load<GameObject>("OrbXP");
+
         // Randomly determine the number of orbs to spawn based on enemy level
         int numOrbs = Random.Range(enemyLevel, enemyLevel * 2);
 

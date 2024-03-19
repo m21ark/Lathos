@@ -146,5 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b5df04f407cf843aa084903aa240f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 300
+  enemyLevel: 5
   moveSpeed: 2
+  damage: 10
+  xpOrbPreFab: {fileID: 4996593011877861837, guid: cad7373686d79a81e963d2881c27666a, type: 3}
   minionPrefab: {fileID: 5547836219333771790, guid: dd4ade5d01f8c9ec8ae0adf3e6063f29, type: 3}

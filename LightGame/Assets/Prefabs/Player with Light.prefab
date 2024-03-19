@@ -354,33 +354,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1660202787935071235, guid: 5d8824a41b0ad29e6a35332d9bec40d0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 749483481785987549}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d8824a41b0ad29e6a35332d9bec40d0, type: 3}
---- !u!1 &2348951816358395033 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1660202787935071235, guid: 5d8824a41b0ad29e6a35332d9bec40d0, type: 3}
-  m_PrefabInstance: {fileID: 4004578135696167066}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &749483481785987549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2348951816358395033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a73877a71995f326b3ae2bd68468bfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 8
-  jumpForce: 10
-  health: 100
-  light: 0
-  playerClass: Base
 --- !u!4 &2833555742979912594 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1207476486607643400, guid: 5d8824a41b0ad29e6a35332d9bec40d0, type: 3}

@@ -2,34 +2,64 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss : MonoBehaviour
+public class Boss : ProtoMob
 {
-    public float moveSpeed = 2f;
     public GameObject minionPrefab;
-
     private GameLogic gameLogic;
-
     private float lastSummonTime;
-
     GameObject player;
-   
 
-    // Start is called before the first frame update
     void Start()
     {
         gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
         lastSummonTime = Time.time;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        FollowPlayer();
+        Move();
 
         player = gameLogic.player.getGameObject();
 
         // Summon minion if 10s cooldown has passed
         if (Time.time - lastSummonTime >= 10.0f) SummonMinions();   
+    }
+
+    public override void Move()
+    {
+        if (player != null)
+        {
+            // Calculate direction vector towards the player
+            Vector3 direction = player.transform.position - transform.position;
+            direction.y = 0f; // Ensure the minion doesn't move up or down
+
+            // Normalize the direction vector
+            direction.Normalize();
+
+            // Move the minion towards the player
+            transform.Translate(direction * moveSpeed * Time.deltaTime);
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        // Deal Damage
+        if (collision.gameObject.CompareTag("Player")){
+            gameLogic.player.TakeDamage(30);
+            JumpAwayFromPlayer();
+        }
+      
+    }
+
+    void JumpAwayFromPlayer()
+    {
+        // Calculate direction away from the player
+        Vector3 direction = transform.position - player.transform.position;
+        direction.y = 0f; 
+        direction.Normalize();
+
+        float jumpForce = 1000.0f;
+        GetComponent<Rigidbody>().AddForce(direction * jumpForce, ForceMode.Impulse);
     }
 
     void SummonMinions(){
@@ -50,42 +80,5 @@ public class Boss : MonoBehaviour
             // Reset the cooldown timer
             lastSummonTime = Time.time;
         }
-    }
-
-    void FollowPlayer()
-    {
-        if (player != null)
-        {
-            // Calculate direction vector towards the player
-            Vector3 direction = player.transform.position - transform.position;
-            direction.y = 0f; // Ensure the minion doesn't move up or down
-
-            // Normalize the direction vector
-            direction.Normalize();
-
-            // Move the minion towards the player
-            transform.Translate(direction * moveSpeed * Time.deltaTime);
-        }
-    }
-
-    void JumpAwayFromPlayer()
-    {
-        // Calculate direction away from the player
-        Vector3 direction = transform.position - player.transform.position;
-        direction.y = 0f; 
-        direction.Normalize();
-
-        float jumpForce = 1000.0f;
-        GetComponent<Rigidbody>().AddForce(direction * jumpForce, ForceMode.Impulse);
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        // Deal Damage
-        if (collision.gameObject.CompareTag("Player")){
-            gameLogic.player.TakeDamage(30);
-            JumpAwayFromPlayer();
-        }
-      
     }
 }

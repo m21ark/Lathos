@@ -9,9 +9,8 @@ public class GameLogic : MonoBehaviour
 
     // Entities
     public ProtoClass player;
+    public Boss boss;
     public GameObject endMenu;
-
-    public int bossHealth = 300;
 
     // Game Logic Fields
     private float gameTime = 0.0f;
@@ -30,6 +29,8 @@ public class GameLogic : MonoBehaviour
         HUDLoadElements();
 
         player = GameObject.FindWithTag("Player").GetComponent<ProtoClass>();
+        boss = GameObject.FindWithTag("Boss").GetComponent<Boss>();
+
         if (player == null){
             Debug.Log("PLAYER NOT FOUND");
             Time.timeScale = 0;
@@ -69,7 +70,7 @@ public class GameLogic : MonoBehaviour
         }
 
         // If boss or player dead, end game
-        if(bossHealth <= 0)
+        if(boss.health <= 0)
             endGame(true);
         else if(!player.isAlive())
             endGame(false);
@@ -97,12 +98,8 @@ public class GameLogic : MonoBehaviour
 
         // Update boss and player's health 
         hud_player_health.text = string.Format("Health: {0}", player.health > 0 ? player.health : 0);
-        hud_boss_health.text = string.Format("Boss Health: {0}", bossHealth > 0 ? bossHealth : 0);
+        hud_boss_health.text = string.Format("Boss Health: {0}", boss.health > 0 ? boss.health : 0);
         hud_light.text = string.Format("Light: {0}", player.collectedLight);
-    }
-
-    public void damageBoss(int damage){
-        bossHealth -= damage;   
     }
 
     public void toggleCursor(bool show){

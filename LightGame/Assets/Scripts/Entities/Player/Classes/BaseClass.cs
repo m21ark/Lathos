@@ -7,17 +7,7 @@ public class BaseClass : ProtoClass
         GameObject attackEntity = Instantiate(simpleAttackPrefab, cameraPivot.position, Quaternion.identity);
         Vector3 attackDirection = cameraPivot.forward;
         ProtoAttack attack = attackEntity.GetComponent<ProtoAttack>();
-        attack.Fire(10, attackDirection, 50, 0);
+        attack.Fire(10, attackDirection, 50, 0); // Hardcoded for now
      
     }
-
-/*  public override void BaseAbility()
-    {
-        // Base ability
-    }
-
-    public override void SpecialAbility()
-    {
-        // Special ability
-    } */
 }
