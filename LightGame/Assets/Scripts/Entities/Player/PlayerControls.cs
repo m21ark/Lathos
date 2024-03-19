@@ -11,6 +11,14 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded = false;
     private bool isDashing = false;
 
+    private bool isAttacking = false;
+
+    public float attackInterval = 0.5f;
+
+    private float nextAttackTime = 0f; // Time when the next attack can occur
+
+
+
     private Transform cameraPivot;
 
     void Start()
@@ -59,13 +67,45 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(Dash());
         
         // Basic Attack
-        if (Input.GetKeyDown(KeyCode.K) || Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.K))
             player.Attack();
+
+        if (Input.GetMouseButtonDown(0) && Time.time >= nextAttackTime)
+        {
+            StartCoroutine(ContinuousAttack());
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            StopAttack();
+        }
+
+
         // Base Class Attack
         if (Input.GetKeyDown(KeyCode.J)) player.BaseAbility();
         // Special Class Attack
         if (Input.GetKeyDown(KeyCode.L)) player.SpecialAbility();
 
+    }
+
+    IEnumerator ContinuousAttack()
+    {
+        // Check if player is already attacking to prevent overlapping attacks
+        if (!isAttacking)
+        {
+            isAttacking = true;
+            while (Input.GetMouseButton(0)) // Keep attacking while mouse button is held down
+            {
+                nextAttackTime = Time.time + attackInterval;
+                player.Attack();
+                yield return new WaitForSeconds(attackInterval);
+            }
+        }
+    }
+
+    void StopAttack()
+    {
+        StopCoroutine(ContinuousAttack());
+        isAttacking = false;
     }
 
     void rotateCamera(){
