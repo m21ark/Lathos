@@ -6,8 +6,14 @@ public class Boss : ProtoMob
 {
     public GameObject minionPrefab;
     private GameLogic gameLogic;
-    private float lastSummonTime;
     GameObject player;
+
+    private float lastSummonTime;
+
+    // Phase Logic
+    public int currentBossPhase = 1;
+    public int bossPhaseThreshold2 = 200;
+    public int bossPhaseThreshold3 = 100;
 
     void Start()
     {
@@ -17,7 +23,28 @@ public class Boss : ProtoMob
 
     void Update()
     {
-        Move();
+        // Check if boss needs to switch to new phase
+        currentBossPhase = 1;
+        if(health <= bossPhaseThreshold2) currentBossPhase = 2;
+        if (health <= bossPhaseThreshold3) currentBossPhase = 3;
+
+        // Apply different boss behavior depending on current phase  
+        switch(currentBossPhase){
+            case 1: Phase1Behavior(); break;
+            case 2: Phase2Behavior(); break;
+            case 3: Phase3Behavior(); break;
+            default: Debug.LogError("Boss Phase ID not found"); break;
+        }
+    }
+
+    private void Phase1Behavior(){
+        // Do nothing
+    }
+
+    private void Phase2Behavior(){
+        ChangeColor(Color.blue);
+        // Summoning phase and follow player
+        Move2();
         
         if(gameLogic.player)
             player = gameLogic.player.getGameObject();
@@ -26,7 +53,12 @@ public class Boss : ProtoMob
         if (Time.time - lastSummonTime >= 10.0f) SummonMinions();   
     }
 
-    public override void Move()
+    private void Phase3Behavior(){
+        // Do nothing
+        ChangeColor(Color.green);
+    }
+
+    public void Move2()
     {
         if (player != null)
         {
@@ -45,22 +77,8 @@ public class Boss : ProtoMob
     void OnCollisionEnter(Collision collision)
     {
         // Deal Damage
-        if (collision.gameObject.CompareTag("Player")){
+        if (collision.gameObject.CompareTag("Player"))
             gameLogic.player.TakeDamage(30);
-            JumpAwayFromPlayer();
-        }
-      
-    }
-
-    void JumpAwayFromPlayer()
-    {
-        // Calculate direction away from the player
-        Vector3 direction = transform.position - player.transform.position;
-        direction.y = 0f; 
-        direction.Normalize();
-
-        float jumpForce = 1000.0f;
-        GetComponent<Rigidbody>().AddForce(direction * jumpForce, ForceMode.Impulse);
     }
 
     void SummonMinions(){
@@ -81,5 +99,12 @@ public class Boss : ProtoMob
             // Reset the cooldown timer
             lastSummonTime = Time.time;
         }
+    }
+
+    private void ChangeColor(Color newColor){
+        Renderer renderer = gameObject.GetComponent<Renderer>();
+        Material material = new Material(renderer.material);
+        material.color = newColor;
+        renderer.material = material;
     }
 }
