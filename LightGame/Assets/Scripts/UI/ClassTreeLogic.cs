@@ -40,7 +40,9 @@ public class ClassTreeLogic : MonoBehaviour
         GameObject oldPlayer = GameObject.FindGameObjectWithTag("Player");
         Transform pivot = oldPlayer.transform.Find("CameraPivot").transform;
         Vector3 oldPlayerPosition = oldPlayer.transform.position;
-        Quaternion oldPlayerRotation = pivot.rotation;
+ 
+        // Set old player rotation to have x-axis and z-axis rotation as 0
+        Quaternion oldPlayerRotation = Quaternion.Euler(0f, pivot.rotation.eulerAngles.y, 0f);
 
         // Generate the new player
         GameObject newPlayer = Instantiate(newPlayerPrefab, oldPlayerPosition, oldPlayerRotation);
