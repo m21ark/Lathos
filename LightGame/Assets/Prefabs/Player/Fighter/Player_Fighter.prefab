@@ -196,7 +196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1547184242331172084}
   m_Layer: 0
-  m_Name: Player_FighterClass
+  m_Name: Player_Fighter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

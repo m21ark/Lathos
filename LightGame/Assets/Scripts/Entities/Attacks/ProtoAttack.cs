@@ -11,7 +11,7 @@ public class ProtoAttack : MonoBehaviour
 
     void Start(){}
 
-    public void Fire(int damage = 10, Vector3 direction = default(Vector3), float speed = 1.0f, float gravity = 0.0f){
+    public virtual void Fire(int damage = 10, Vector3 direction = default(Vector3), float speed = 200.0f, float gravity = 0.0f, float despawnTime = 7.5f){
 
         attackRb = gameObject.GetComponent<Rigidbody>();
 
@@ -21,8 +21,8 @@ public class ProtoAttack : MonoBehaviour
         gravityStrength = gravity;
         projDamage = damage;
 
-        // Destroy the attack after 5 seconds
-        Destroy(gameObject, 7.5f);
+        // Despawn attack after a while
+        Destroy(gameObject, despawnTime);
     }   
 
     void FixedUpdate()

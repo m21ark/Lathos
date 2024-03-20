@@ -13,8 +13,13 @@ public class ProtoClass : MonoBehaviour
     // In-game Attributes
     public int maxHealth = 100;
     public int health = 100;
-    public int damage = 10;
     public float armor = 1;
+
+    // Damage attacks
+    public int baseDamage = 10;
+    public int classDamage = 20;
+    public int abilityDamage = 30;
+
     public int collectedLight = 0;
 
     // Attack reload time
