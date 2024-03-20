@@ -81,6 +81,14 @@ public class ProtoClass : MonoBehaviour
         Debug.Log("Special Attack is not implemented for this player class");
     }
 
+    public string getClassName(){
+        System.Type scriptType = this.GetType();
+        string className = scriptType.Name;
+        if (className.EndsWith("Class"))
+            className = className.Substring(0, className.Length - "Class".Length);
+        return className;
+    }
+
     public void GenerateAttackAim(GameObject prefab, out ProtoAttack attack, out Vector3 attackDirection){
         GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
         Vector3 attackDirectionTemp;

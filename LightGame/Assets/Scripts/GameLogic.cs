@@ -22,6 +22,7 @@ public class GameLogic : MonoBehaviour
     private TextMeshProUGUI hud_player_health;
     private TextMeshProUGUI hud_boss_health;
     private TextMeshProUGUI hud_light;
+    private TextMeshProUGUI hud_playerClassName;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +52,7 @@ public class GameLogic : MonoBehaviour
             hud_player_health = hud.transform.Find("PlayerHealth").GetComponent<TextMeshProUGUI>();
             hud_boss_health = hud.transform.Find("BossHealth").GetComponent<TextMeshProUGUI>();
             hud_light = hud.transform.Find("LightCounter").GetComponent<TextMeshProUGUI>();
+            hud_playerClassName = hud.transform.Find("CurrentPlayerClass").GetComponent<TextMeshProUGUI>();
         }
     }
 
@@ -98,6 +100,7 @@ public class GameLogic : MonoBehaviour
         hud_player_health.text = string.Format("Health: {0}", player.health > 0 ? player.health : 0);
         hud_boss_health.text = string.Format("Boss Health: {0}", boss.health > 0 ? boss.health : 0);
         hud_light.text = string.Format("Light: {0}", player.collectedLight);
+        hud_playerClassName.text = string.Format("Class: {0}", player.getClassName());
     }
 
     public void toggleCursor(bool show){
