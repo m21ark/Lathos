@@ -86,7 +86,7 @@ public class GameLogic : MonoBehaviour
             player.Heal(20);
 
         // If boss or player dead, end game
-        if(boss != null && boss.health <= 0)
+        if(boss.health <= 0)
             endGame(true);
         else if(!player.isAlive())
             endGame(false);

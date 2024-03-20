@@ -7,6 +7,6 @@ public class FighterClass : BaseClass
         ProtoAttack attack;
         Vector3 attackDirection;
         GenerateAttackAim(classAttackPrefab, out attack, out attackDirection);
-        attack.Fire(classDamage, attackDirection);  // hardcoded damage of 20 for now
+        attack.Fire(classDamage, attackDirection);
     }
 }

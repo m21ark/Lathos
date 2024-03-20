@@ -456,6 +456,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameController
       objectReference: {fileID: 0}
+    - target: {fileID: 5438314137459281368, guid: c73ce45e99f9011d4985dd35dd0435cd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826706621548093825, guid: c73ce45e99f9011d4985dd35dd0435cd, type: 3}
+      propertyPath: classAPrefab
+      value: 
+      objectReference: {fileID: 1162234724972830604, guid: a52d7bc8de8b8e09587cfd61f3a322fc, type: 3}
+    - target: {fileID: 5826706621548093825, guid: c73ce45e99f9011d4985dd35dd0435cd, type: 3}
+      propertyPath: classBPrefab
+      value: 
+      objectReference: {fileID: 1162234724972830604, guid: 7ba604d326e030a17bbdc027ccc9f5d0, type: 3}
+    - target: {fileID: 5826706621548093825, guid: c73ce45e99f9011d4985dd35dd0435cd, type: 3}
+      propertyPath: classCPrefab
+      value: 
+      objectReference: {fileID: 1162234724972830604, guid: d9c756ec5ce2edfc8bb1a74634da49a7, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

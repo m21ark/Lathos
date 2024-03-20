@@ -2913,7 +2913,7 @@ GameObject:
   m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6850115626629204071
 Transform:
@@ -2962,9 +2962,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   classSelectMenuObj: {fileID: 8735401470687510587}
   isSelecting: 0
-  classAPrefab: {fileID: 1162234724972830604, guid: 57e8aec487d2cf5ec9d7d9f6d19147e1, type: 3}
-  classBPrefab: {fileID: 1162234724972830604, guid: d0a8dcd21db899f6ea1615659ac1287a, type: 3}
-  classCPrefab: {fileID: 1162234724972830604, guid: 0ec7f8f26b33fb4248572e211ba16bea, type: 3}
+  classAPrefab: {fileID: 1162234724972830604, guid: a52d7bc8de8b8e09587cfd61f3a322fc, type: 3}
+  classBPrefab: {fileID: 1162234724972830604, guid: 7ba604d326e030a17bbdc027ccc9f5d0, type: 3}
+  classCPrefab: {fileID: 1162234724972830604, guid: d9c756ec5ce2edfc8bb1a74634da49a7, type: 3}
 --- !u!1 &5506855188412385266
 GameObject:
   m_ObjectHideFlags: 0

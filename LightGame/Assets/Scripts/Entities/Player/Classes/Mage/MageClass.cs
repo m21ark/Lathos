@@ -4,6 +4,9 @@ public class MageClass : BaseClass
 {
     public override void BaseAbility()
     {
-        // Base ability
+        ProtoAttack attack;
+        Vector3 attackDirection;
+        GenerateAttackAim(classAttackPrefab, out attack, out attackDirection);
+        attack.Fire(classDamage, attackDirection);
     }
 }
