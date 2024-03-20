@@ -87,8 +87,8 @@ public class PlayerController : MonoBehaviour
 
 
     void BaseAttack(){
-        if (Input.GetKeyDown(KeyCode.J)) player.isBaseAttacking = true;
-        if (Input.GetKeyUp(KeyCode.J)) player.isBaseAttacking = false;
+        if (Input.GetKeyDown(KeyCode.E)) player.isBaseAttacking = true;
+        if (Input.GetKeyUp(KeyCode.E)) player.isBaseAttacking = false;
 
         player.lastBaseAttackTime -= Time.deltaTime;
         if(player.isBaseAttacking){
@@ -100,8 +100,8 @@ public class PlayerController : MonoBehaviour
     }
 
     void AbilityAttack(){
-        if (Input.GetKeyDown(KeyCode.L)) player.isAbilityAttacking = true;
-        if (Input.GetKeyUp(KeyCode.L)) player.isAbilityAttacking = false;
+        if (Input.GetKeyDown(KeyCode.Q)) player.isAbilityAttacking = true;
+        if (Input.GetKeyUp(KeyCode.Q)) player.isAbilityAttacking = false;
         
         player.lastAbilityAttackTime -= Time.deltaTime;
         if(player.isAbilityAttacking){

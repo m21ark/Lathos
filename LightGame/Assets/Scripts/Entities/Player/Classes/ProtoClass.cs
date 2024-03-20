@@ -103,7 +103,7 @@ public class ProtoClass : MonoBehaviour
         Vector3 attackDirectionTemp;
         RaycastHit ray;
 
-        bool hit = Physics.Raycast(camera.transform.position, camera.transform.forward, out ray, 50f);
+        bool hit = Physics.Raycast(camera.transform.position, camera.transform.forward, out ray, 50f, ~LayerMask.GetMask("LampLight"));
 
         if(hit){
             attackDirectionTemp = ray.point - cameraPivot.position;

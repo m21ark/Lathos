@@ -11,7 +11,7 @@ public class ProtoAttack : MonoBehaviour
 
     void Start(){}
 
-    public virtual void Fire(int damage = 10, Vector3 direction = default(Vector3), float speed = 200.0f, float gravity = 0.0f, float despawnTime = 7.5f){
+    public virtual void Fire(int damage = 10, Vector3 direction = default(Vector3), float speed = 50.0f, float gravity = 0.0f, float despawnTime = 7.5f){
 
         attackRb = gameObject.GetComponent<Rigidbody>();
 
@@ -46,8 +46,10 @@ public class ProtoAttack : MonoBehaviour
 
             mob.TakeDamage(projDamage); 
 
-            // Destroy the attack
-            Destroy(gameObject);
         }
+
+        // Destroy the attack
+        Destroy(gameObject);
+
     }
 }
