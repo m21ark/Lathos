@@ -4,9 +4,9 @@ public class BaseClass : ProtoClass
 {
     public override void Attack() 
     {
-        GameObject attackEntity = Instantiate(simpleAttackPrefab, cameraPivot.position, Quaternion.identity);
-        Vector3 attackDirection = cameraPivot.forward;
-        ProtoAttack attack = attackEntity.GetComponent<ProtoAttack>();
-        attack.Fire(10, attackDirection, 50, 0); // Hardcoded for now
+        ProtoAttack attack;
+        Vector3 attackDirection;
+        GenerateAttackAim(simpleAttackPrefab, out attack, out attackDirection);
+        attack.Fire(10, attackDirection, 200, 0.0f); // Hardcoded for now
     }
 }

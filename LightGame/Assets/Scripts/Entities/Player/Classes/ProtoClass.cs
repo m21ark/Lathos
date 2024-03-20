@@ -76,4 +76,24 @@ public class ProtoClass : MonoBehaviour
         Debug.Log("Special Attack is not implemented for this player class");
     }
 
+    public void GenerateAttackAim(GameObject prefab, out ProtoAttack attack, out Vector3 attackDirection){
+        GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
+        Vector3 attackDirectionTemp;
+        RaycastHit ray;
+
+        bool hit = Physics.Raycast(camera.transform.position, camera.transform.forward, out ray, 50f);
+
+        if(hit){
+            attackDirectionTemp = ray.point - cameraPivot.position;
+            attackDirectionTemp.Normalize();
+        } else attackDirectionTemp = camera.transform.forward;
+
+        Vector3 startPos = cameraPivot.transform.position + cameraPivot.transform.forward;
+        GameObject attackEntity = Instantiate(prefab, startPos, Quaternion.identity);
+        ProtoAttack attackTemp = attackEntity.GetComponent<ProtoAttack>();
+
+        // Return values
+        attack = attackTemp;
+        attackDirection = attackDirectionTemp;
+    }
 }
