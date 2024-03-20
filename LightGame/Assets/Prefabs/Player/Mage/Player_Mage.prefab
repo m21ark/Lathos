@@ -327,7 +327,7 @@ MonoBehaviour:
   health: 100
   armor: 1
   baseDamage: 10
-  classDamage: 20
+  classDamage: 50
   abilityDamage: 30
   collectedLight: 0
   basicAttackReloadTime: 0.3
