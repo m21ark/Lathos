@@ -1702,7 +1702,7 @@ GameObject:
   - component: {fileID: 8844946920453446572}
   - component: {fileID: 2722441615066442746}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: TextA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2966,6 +2966,12 @@ MonoBehaviour:
   prefab_fighter: {fileID: 1162234724972830604, guid: a52d7bc8de8b8e09587cfd61f3a322fc, type: 3}
   prefab_ranger: {fileID: 1162234724972830604, guid: 7ba604d326e030a17bbdc027ccc9f5d0, type: 3}
   prefab_mage: {fileID: 1162234724972830604, guid: d9c756ec5ce2edfc8bb1a74634da49a7, type: 3}
+  prefab_knight: {fileID: 1162234724972830604, guid: e41f615346b916cea859ccce13c46444, type: 3}
+  prefab_berserker: {fileID: 1162234724972830604, guid: abbee569ec4dba711965b37d79f8bab9, type: 3}
+  prefab_sharpshooter: {fileID: 1162234724972830604, guid: d05f9d98792ab139aa438e112c614bea, type: 3}
+  prefab_rogue: {fileID: 1162234724972830604, guid: 73e466dd46bf656009a711f8d5f89944, type: 3}
+  prefab_sorcerer: {fileID: 1162234724972830604, guid: 9fddacc934f44f214a0a485e7aeb4662, type: 3}
+  prefab_wizard: {fileID: 1162234724972830604, guid: 75beeb8f5e4c565618c0fe5a60c8e05d, type: 3}
 --- !u!1 &5506855188412385266
 GameObject:
   m_ObjectHideFlags: 0
@@ -4474,7 +4480,7 @@ GameObject:
   - component: {fileID: 1323870896724396875}
   - component: {fileID: 5997767036959469167}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: TextB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

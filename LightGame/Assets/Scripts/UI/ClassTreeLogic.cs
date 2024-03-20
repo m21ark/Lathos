@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class ClassTreeLogic : MonoBehaviour
 {
@@ -8,11 +10,21 @@ public class ClassTreeLogic : MonoBehaviour
     
     private GameLogic gameLogic;
     public bool isSelecting = false;
+    private int activeMenu = 0;
 
     // Class Objects
     public GameObject prefab_fighter;
     public GameObject prefab_ranger;
     public GameObject prefab_mage;
+    // Fighter
+    public GameObject prefab_knight;
+    public GameObject prefab_berserker;
+    // Ranger
+    public GameObject prefab_sharpshooter;
+    public GameObject prefab_rogue;
+    // Mage
+    public GameObject prefab_sorcerer;
+    public GameObject prefab_wizard;
 
     void Start(){
         gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
@@ -23,6 +35,12 @@ public class ClassTreeLogic : MonoBehaviour
             case "Fighter": ReplacePlayer(prefab_fighter); break;
             case "Ranger": ReplacePlayer(prefab_ranger); break;
             case "Mage": ReplacePlayer(prefab_mage); break;
+            case "Knight": ReplacePlayer(prefab_knight); break;
+            case "Berserker": ReplacePlayer(prefab_berserker); break;
+            case "Sharpshooter": ReplacePlayer(prefab_sharpshooter); break;
+            case "Rogue": ReplacePlayer(prefab_rogue); break;
+            case "Sorcerer": ReplacePlayer(prefab_sorcerer); break;
+            case "Wizard": ReplacePlayer(prefab_wizard); break;
             default: Debug.LogError("Class Prefab ID out of range"); break;
         }
     }
@@ -44,7 +62,7 @@ public class ClassTreeLogic : MonoBehaviour
         Destroy(oldPlayer.transform.parent.gameObject);
 
         // Remove menu after choice is made
-        ToggleClassSelectMenu(class1SelectMenuObj);
+        ToggleClassSelectMenu(activeMenu == 1? class1SelectMenuObj : class2SelectMenuObj);
     }
 
     public void ToggleClassSelectMenu(GameObject menu){
@@ -73,8 +91,58 @@ public class ClassTreeLogic : MonoBehaviour
     }
 
     public void InvokeMenuClassSelect(int num){
+        activeMenu = num;
         if(num == 1) ToggleClassSelectMenu(class1SelectMenuObj);
-        else if(num == 2) ToggleClassSelectMenu(class2SelectMenuObj);
+        else if(num == 2){ 
+            SetMenu2Options();
+            ToggleClassSelectMenu(class2SelectMenuObj);
+        }
         else Debug.LogError("Invalid Class Menu Selection");
     }
+
+   private void SetMenu2Options(){
+        if (gameLogic == null)
+        {
+            Debug.LogError("GameLogic is not assigned.");
+            return;
+        }
+
+        string currClass = gameLogic.player.getClassName();
+        Transform menuTransform = class2SelectMenuObj.transform;
+
+        switch (currClass)
+        {
+            case "Fighter":
+                Menu2ButtonSet(menuTransform, "ClassBtnA", "Berserker");
+                Menu2ButtonSet(menuTransform, "ClassBtnB", "Knight");
+                break;
+            case "Ranger":
+                Menu2ButtonSet(menuTransform, "ClassBtnA", "Sharpshooter");
+                Menu2ButtonSet(menuTransform, "ClassBtnB", "Rogue");
+                break;
+            case "Mage":
+                // Customize Mage menu options
+                Menu2ButtonSet(menuTransform, "ClassBtnA", "Sorcerer");
+                Menu2ButtonSet(menuTransform, "ClassBtnB", "Wizard");
+                break;
+            default:
+                Debug.LogError("Invalid player class.");
+                break;
+        }
+    }
+
+    private void Menu2ButtonSet(Transform menuTransform, string btnName, string className)
+    {
+        TMP_Text buttonText = menuTransform.Find(btnName).GetComponentInChildren<TMP_Text>();
+        buttonText.text = className;
+
+        BindButtonAction(menuTransform.Find(btnName), buttonText.text, () => ClassSelect(className));
+    }
+
+    private void BindButtonAction(Transform buttonTransform, string buttonText, UnityEngine.Events.UnityAction action)
+    {
+        buttonTransform.GetComponent<Button>().onClick.RemoveAllListeners(); // Remove any previous listeners
+        buttonTransform.GetComponent<Button>().onClick.AddListener(action);
+    }
+
 }
