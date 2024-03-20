@@ -36,7 +36,7 @@ public class GameLogic : MonoBehaviour
     {
         HUDLoadElements();
 
-        player = GameObject.FindWithTag("Player").GetComponent<ProtoClass>();
+        RefreshPlayer();
         boss = GameObject.FindWithTag("Boss").GetComponent<Boss>();
 
         classTreeLogic = gameObject.GetComponent<ClassTreeLogic>();
@@ -54,6 +54,10 @@ public class GameLogic : MonoBehaviour
         toggleCursor(false); // Hide cursor during gameplay
     }
 
+    private void RefreshPlayer(){
+        player = GameObject.FindWithTag("Player").GetComponent<ProtoClass>();
+    }
+
     void HUDLoadElements(){
         hud = GameObject.FindWithTag("HUD");
         if(hud){
@@ -69,6 +73,8 @@ public class GameLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        RefreshPlayer();
+
         // Update the game time
         gameTime += Time.deltaTime;
 
@@ -85,8 +91,8 @@ public class GameLogic : MonoBehaviour
         else if(!player.isAlive())
             endGame(false);
 
-        // if(!classTreeLogic.isSelecting)
-            // checkClassSelectionTrigger();
+        if(!classTreeLogic.isSelecting)
+            checkClassSelectionTrigger();
     }
 
     void checkClassSelectionTrigger(){
@@ -95,15 +101,19 @@ public class GameLogic : MonoBehaviour
         if(player.collectedLight >= class1Cost && player.getClassName() == "Base"){ 
             Debug.Log("Trigger Class 1 Selection");
             classTreeLogic.ToggleClassSelectMenu();
+            class1Cost = int.MaxValue; // This line is necessary
         }
 
         // Second class 
         List<string> classes1Names = new List<string> { "Fighter", "Ranger", "Mage" };
 
         // Check if the player's class name is in the list
-        if (player.collectedLight >= class2Cost && classes1Names.Contains(player.getClassName()))
+        if (player.collectedLight >= class2Cost && classes1Names.Contains(player.getClassName())){
             Debug.Log("Trigger Class 2 Selection");
-        
+            class2Cost = int.MaxValue; // This line is necessary
+        }
+
+        RefreshPlayer();
     }
 
     void endGame(bool playerWon){

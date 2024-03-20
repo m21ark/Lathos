@@ -30,6 +30,16 @@ public class LampHoverPlayer : MonoBehaviour
 
     void Update()
     {
+        // If player is lost, try to find it again
+        if(player == null){
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+
+            if(player == null){ 
+                Debug.LogError("Player cannot be found");
+                return;
+                }
+        }
+
         // Move towards target
         MoveTowardsTarget();
     }

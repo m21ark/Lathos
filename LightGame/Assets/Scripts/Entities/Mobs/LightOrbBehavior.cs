@@ -23,6 +23,8 @@ public class LightOrbBehavior : MonoBehaviour
 
     private void Update()
     {
+        lamp = GameObject.FindWithTag("Lamp");
+        
         // Check if the orb object is set
         if (lamp != null)
         {
@@ -47,10 +49,10 @@ public class LightOrbBehavior : MonoBehaviour
         // Check if the object collides with the orb
         if (other.gameObject == lamp)
         {
-            gameLogic.player.collectedLight += 1; // Increase the player's light by 1
-
             // Despawn this object
             Destroy(gameObject);
+            
+            gameLogic.player.collectedLight += 1; // Increase the player's light by 1
         }
     }
 }

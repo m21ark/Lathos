@@ -317,7 +317,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 306b0d2299be3b62c83f9f40d574f92f, type: 2}
+  - {fileID: 2100000, guid: d5bd6640c0df1bdf49385364525f13a3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -430,7 +430,14 @@ MonoBehaviour:
   basicAttackRate: 0
   baseAttackRate: 0
   abilityAttackRate: 0
-  simpleAttackPrefab: {fileID: 0}
+  lastAttackTime: 0
+  lastBaseAttackTime: 0
+  lastAbilityAttackTime: 0
+  isAttacking: 0
+  isBaseAttacking: 0
+  isAbilityAttacking: 0
+  lastDashTime: 0
+  simpleAttackPrefab: {fileID: 3606385658551136691, guid: 6716d1986080f0f7f93d47f11f168849, type: 3}
   classAttackPrefab: {fileID: 0}
   specialAttackPrefab: {fileID: 0}
 --- !u!1 &5940330435187617133

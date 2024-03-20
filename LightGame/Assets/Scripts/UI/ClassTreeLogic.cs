@@ -4,37 +4,49 @@ using UnityEngine.UI;
 public class ClassTreeLogic : MonoBehaviour
 {
     public GameObject classSelectMenuObj;
-    
     private GameLogic gameLogic;
-
     public bool isSelecting = false;
+
+    // Class Objects
+    public GameObject classAPrefab; 
+    public GameObject classBPrefab;
+    public GameObject classCPrefab;
 
     void Start(){
         gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
     }
     
-    public void selectClassA()
+    public void SelectClassA()
     {
         Debug.Log("Selected Class A");
-        ChangePlayerColor(Color.red);
+        ReplacePlayer(classAPrefab);
     }
 
-    public void selectClassB()
+    public void SelectClassB()
     {
         Debug.Log("Selected Class B");
-        ChangePlayerColor(Color.blue);
+        ReplacePlayer(classBPrefab);
     }
 
-    public void selectClassC()
+    public void SelectClassC()
     {
         Debug.Log("Selected Class C");
-        ChangePlayerColor(Color.green);
+        ReplacePlayer(classCPrefab);
     }
 
-    private void ChangePlayerColor(Color color){
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        Renderer playerRenderer = player.GetComponent<Renderer>();
-        playerRenderer.material.color = color;
+    private void ReplacePlayer(GameObject newPlayerPrefab)
+    {
+        // Get old player info
+        GameObject oldPlayer = GameObject.FindGameObjectWithTag("Player");
+        Transform pivot = oldPlayer.transform.Find("CameraPivot").transform;
+        Vector3 oldPlayerPosition = oldPlayer.transform.position;
+        Quaternion oldPlayerRotation = pivot.rotation;
+
+        // Generate the new player
+        GameObject newPlayer = Instantiate(newPlayerPrefab, oldPlayerPosition, oldPlayerRotation);
+
+        // Remove old player
+        Destroy(oldPlayer.transform.parent.gameObject);
 
         // Remove menu after choice is made
         ToggleClassSelectMenu();
