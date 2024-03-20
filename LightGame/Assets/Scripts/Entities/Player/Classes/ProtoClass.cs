@@ -15,36 +15,41 @@ public class ProtoClass : MonoBehaviour
     public int health = 100;
     public float armor = 1;
 
-    // Damage attacks
-    public int baseDamage = 10;
-    public int classDamage = 20;
-    public int abilityDamage = 30;
+
+
+    // A0 - Basic Attack
+    public GameObject A0Prefab;
+    public int A0Damage = 10;
+    public float A0ReloadTime = 0.3f;
+    public float A0ChargeRate = 0f;
+
+
+    // A1 - Ability 1
+    public GameObject A1Prefab;
+    public int A1Damage = 20;
+    public float A1ReloadTime = 1f;
+    public float A1ChargeRate = 0f;
+
+
+    // A2 - Ability 2
+    public GameObject A2Prefab;
+    public int A2Damage = 30;
+    public float A2ReloadTime = 2f;
+    public float A2ChargeRate = 0f;
+
+
 
     public int collectedLight = 0;
 
-    // Attack reload time
-    public float basicAttackReloadTime = 0.3f;
-    public float baseAttackReloadTime = 1f;
-    public float abilityAttackReloadTime = 2f;
-
-    // Attack charge rate to launch
-    public float basicAttackRate = 0f;
-    public float baseAttackRate = 0f;
-    public float abilityAttackRate = 0f;
-
     // Fire rate / reload controls
     [HideInInspector] public float lastAttackTime = 0f;
-    [HideInInspector] public float lastBaseAttackTime = 0f;
-    [HideInInspector] public float lastAbilityAttackTime = 0f;
+    [HideInInspector] public float lastAttack1Time = 0f;
+    [HideInInspector] public float lastAttack2Time = 0f;
     [HideInInspector] public bool isAttacking = false;
-    [HideInInspector] public bool isBaseAttacking = false;
-    [HideInInspector] public bool isAbilityAttacking = false;
+    [HideInInspector] public bool isAttack1ing = false;
+    [HideInInspector] public bool isAttack2ing = false;
     [HideInInspector] public float lastDashTime = 0f;
 
-    // Attack prefabs
-    public GameObject simpleAttackPrefab;
-    public GameObject classAttackPrefab;
-    public GameObject specialAttackPrefab;
 
     void Start(){
         cameraPivot = transform.Find("CameraPivot");

@@ -3,9 +3,9 @@ using UnityEngine;
 public class ProtoAttack : MonoBehaviour
 {
     
-    private float gravityStrength = 1.0f;
-    public float realGravity = 9.8f;
-    private int projDamage = 10;
+    public float gravityStrength = 1.0f;
+    private float realGravity = 9.8f;
+    protected int projDamage = 10;
 
     private Rigidbody attackRb;
 
@@ -36,7 +36,7 @@ public class ProtoAttack : MonoBehaviour
         attackRb.AddForce(customGravity, ForceMode.Acceleration);
     }
 
-    void OnCollisionEnter(Collision collision)
+    public virtual void OnTriggerEnter(Collider collision)
     {
         // Check if the attack is touching the ground
         if (collision.gameObject.CompareTag("Minion") || collision.gameObject.CompareTag("Boss"))

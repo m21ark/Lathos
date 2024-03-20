@@ -2945,7 +2945,7 @@ MonoBehaviour:
   player: {fileID: 0}
   boss: {fileID: 0}
   endMenu: {fileID: 946654975150626795}
-  class1Cost: 100
+  class1Cost: 500
   class2Cost: 500
   isPaused: 0
 --- !u!114 &5826706621548093825

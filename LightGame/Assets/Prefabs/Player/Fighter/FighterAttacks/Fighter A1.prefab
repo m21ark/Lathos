@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 8560551637936380551}
   - component: {fileID: 6947887985605220347}
   - component: {fileID: 5175007579468163309}
-  - component: {fileID: 1554950225467428694}
+  - component: {fileID: 1829564920093360764}
   m_Layer: 0
-  m_Name: SwordSwing
+  m_Name: Fighter A1
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 2.8017337, y: 2.8017337, z: 2.8017337}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -101,11 +101,11 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 3
+  m_Radius: 1.42
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5175007579468163309
 Rigidbody:
@@ -129,12 +129,12 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1554950225467428694
+--- !u!114 &1829564920093360764
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3606385658551136691}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08491618e7aaf84858f324e94e3c0e84, type: 3}
+  m_Script: {fileID: 11500000, guid: c2b24cd745813444eabe86f35b1267cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  realGravity: 9.8
+  gravityStrength: 0

@@ -147,8 +147,8 @@ public class GameLogic : MonoBehaviour
 
         // Update player's cooldowns
         string baseCool = CooldownFormat(player.lastAttackTime);
-        string classCool = CooldownFormat(player.lastBaseAttackTime);
-        string AbilityCool = CooldownFormat(player.lastAbilityAttackTime);
+        string classCool = CooldownFormat(player.lastAttack1Time);
+        string AbilityCool = CooldownFormat(player.lastAttack2Time);
         string DashCool = CooldownFormat(player.lastDashTime);
         hud_playerCooldowns.text = string.Format("Base: {0}\nClass: {1}\nAbility: {2}\nDash: {3}", baseCool, classCool, AbilityCool, DashCool);
         

@@ -59,17 +59,17 @@ public class PlayerController : MonoBehaviour
             player.lastDashTime -= Time.deltaTime;
         
         // Basic Attack
-        BasicAttack();
+        Attack0();
 
         // Base Class Attack
-        BaseAttack();
+        Attack1();
 
         // Special Class Attack
-        AbilityAttack();
+        Attack2();
 
     }
 
-    void BasicAttack(){
+    void Attack0(){
         if (Input.GetKeyDown(KeyCode.K) || Input.GetMouseButtonDown(0))
             player.isAttacking = true;
         
@@ -80,34 +80,34 @@ public class PlayerController : MonoBehaviour
         if (player.isAttacking){
             if (player.lastAttackTime <= 0){
                 player.Attack();
-                player.lastAttackTime = player.basicAttackReloadTime;
+                player.lastAttackTime = player.A0ReloadTime;
             }
         }
     }
 
 
-    void BaseAttack(){
-        if (Input.GetKeyDown(KeyCode.E)) player.isBaseAttacking = true;
-        if (Input.GetKeyUp(KeyCode.E)) player.isBaseAttacking = false;
+    void Attack1(){
+        if (Input.GetKeyDown(KeyCode.E)) player.isAttack1ing = true;
+        if (Input.GetKeyUp(KeyCode.E)) player.isAttack1ing = false;
 
-        player.lastBaseAttackTime -= Time.deltaTime;
-        if(player.isBaseAttacking){
-            if(player.lastBaseAttackTime <= 0){
+        player.lastAttack1Time -= Time.deltaTime;
+        if(player.isAttack1ing){
+            if(player.lastAttack1Time <= 0){
                 player.BaseAbility();
-                player.lastBaseAttackTime = player.baseAttackReloadTime;
+                player.lastAttack1Time = player.A1ReloadTime;
             }
         }
     }
 
-    void AbilityAttack(){
-        if (Input.GetKeyDown(KeyCode.Q)) player.isAbilityAttacking = true;
-        if (Input.GetKeyUp(KeyCode.Q)) player.isAbilityAttacking = false;
+    void Attack2(){
+        if (Input.GetKeyDown(KeyCode.Q)) player.isAttack2ing = true;
+        if (Input.GetKeyUp(KeyCode.Q)) player.isAttack2ing = false;
         
-        player.lastAbilityAttackTime -= Time.deltaTime;
-        if(player.isAbilityAttacking){
-            if(player.lastAbilityAttackTime <= 0){
+        player.lastAttack2Time -= Time.deltaTime;
+        if(player.isAttack2ing){
+            if(player.lastAttack2Time <= 0){
                 player.SpecialAbility();
-                player.lastAbilityAttackTime = player.abilityAttackReloadTime;
+                player.lastAttack2Time = player.A2ReloadTime;
             }
         }
     }

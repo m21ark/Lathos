@@ -6,7 +6,7 @@ public class RangerClass : BaseClass
     {
         ProtoAttack attack;
         Vector3 attackDirection;
-        GenerateAttackAim(classAttackPrefab, out attack, out attackDirection);
-        attack.Fire(classDamage, attackDirection);
+        GenerateAttackAim(A1Prefab, out attack, out attackDirection);
+        attack.Fire(A1Damage, attackDirection);
     }
 }

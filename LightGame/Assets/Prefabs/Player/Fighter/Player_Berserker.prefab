@@ -326,26 +326,27 @@ MonoBehaviour:
   maxHealth: 200
   health: 200
   armor: 1
-  baseDamage: 10
-  classDamage: 20
-  abilityDamage: 30
+  A0Prefab: {fileID: 3606385658551136691, guid: 8480807281365a34ea713a3e1a08b4dd, type: 3}
+  A0Damage: 10
+  A0ReloadTime: 0.3
+  A0ChargeRate: 0
+  A1Prefab: {fileID: 3606385658551136691, guid: 7967f9638ba67f24fb35d6c1bb192916, type: 3}
+  A1Damage: 20
+  A1ReloadTime: 3
+  A1ChargeRate: 0
+  A2Prefab: {fileID: 0}
+  A2Damage: 30
+  A2ReloadTime: 2
+  A2ChargeRate: 0
   collectedLight: 0
-  basicAttackReloadTime: 0.3
-  baseAttackReloadTime: 1
-  abilityAttackReloadTime: 2
-  basicAttackRate: 0
-  baseAttackRate: 0
-  abilityAttackRate: 0
   lastAttackTime: 0
-  lastBaseAttackTime: 0
-  lastAbilityAttackTime: 0
+  lastAttack1Time: 0
+  lastAttack2Time: 0
   isAttacking: 0
-  isBaseAttacking: 0
-  isAbilityAttacking: 0
+  isAttack1ing: 0
+  isAttack2ing: 0
   lastDashTime: 0
-  simpleAttackPrefab: {fileID: 3606385658551136691, guid: 6716d1986080f0f7f93d47f11f168849, type: 3}
-  classAttackPrefab: {fileID: 0}
-  specialAttackPrefab: {fileID: 0}
+  timeBetweenAttacks: 0.4
 --- !u!1001 &7431497500951317251
 PrefabInstance:
   m_ObjectHideFlags: 0
