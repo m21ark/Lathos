@@ -438,7 +438,7 @@ MonoBehaviour:
   isAbilityAttacking: 0
   lastDashTime: 0
   simpleAttackPrefab: {fileID: 3606385658551136691, guid: 6716d1986080f0f7f93d47f11f168849, type: 3}
-  classAttackPrefab: {fileID: 0}
+  classAttackPrefab: {fileID: 3606385658551136691, guid: 817690073061f57258f92e2aa5a9cb21, type: 3}
   specialAttackPrefab: {fileID: 0}
 --- !u!1 &5940330435187617133
 GameObject:

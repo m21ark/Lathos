@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 6645478842094167388}
   - component: {fileID: 7167154328054673508}
   - component: {fileID: 3802775978080279537}
-  - component: {fileID: 6903010888447785026}
+  - component: {fileID: 6476906609638206681}
   m_Layer: 0
   m_Name: PlayerBody
   m_TagString: Player
@@ -401,7 +401,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &6903010888447785026
+--- !u!114 &6476906609638206681
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -410,7 +410,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2348951816358395033}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f717d4a8d198bd74e98dc694b11f1d90, type: 3}
+  m_Script: {fileID: 11500000, guid: 03b2099d1115e484dae7e69cbe0100ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
@@ -438,7 +438,7 @@ MonoBehaviour:
   isAbilityAttacking: 0
   lastDashTime: 0
   simpleAttackPrefab: {fileID: 3606385658551136691, guid: 6716d1986080f0f7f93d47f11f168849, type: 3}
-  classAttackPrefab: {fileID: 0}
+  classAttackPrefab: {fileID: 3606385658551136691, guid: 817690073061f57258f92e2aa5a9cb21, type: 3}
   specialAttackPrefab: {fileID: 0}
 --- !u!1 &5940330435187617133
 GameObject:
