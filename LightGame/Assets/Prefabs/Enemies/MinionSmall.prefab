@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 8589632405299163380}
   - component: {fileID: 4804049025235858312}
   - component: {fileID: 7156309416430731313}
-  - component: {fileID: 259703948879761937}
+  - component: {fileID: 2797957573387479450}
   m_Layer: 0
-  m_Name: Minion
+  m_Name: MinionSmall
   m_TagString: Minion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 5547836219333771790}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 3.5, z: 14.68}
-  m_LocalScale: {x: 1, y: 6.908804, z: 1}
+  m_LocalPosition: {x: 3, y: 2, z: 14.68}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7b66d1a84f1d2f018abe11ec29741bb4, type: 2}
+  - {fileID: 2100000, guid: b700869ed41a7fe0ca4d6842999087b0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -134,7 +134,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &259703948879761937
+--- !u!114 &2797957573387479450
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,11 +143,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5547836219333771790}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3735568964f19d54ab365fc98dfd162a, type: 3}
+  m_Script: {fileID: 11500000, guid: da26bbf7e64a7ef27ba7a520742c2d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
+  health: 10
   enemyLevel: 5
-  moveSpeed: 3
-  damage: 20
+  moveSpeed: 10
+  damage: 10
   xpOrbPreFab: {fileID: 4996593011877861837, guid: cad7373686d79a81e963d2881c27666a, type: 3}
+  summonFrequency: 3

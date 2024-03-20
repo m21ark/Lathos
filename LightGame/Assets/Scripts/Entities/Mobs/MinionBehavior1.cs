@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Minion1 : ProtoMob
+public class MinionBehavior1 : ProtoMob
 {
 
     private GameLogic gameLogic;
@@ -41,7 +41,7 @@ public class Minion1 : ProtoMob
 
         // Deal Damage
         if (collision.gameObject.CompareTag("Player")){
-            gameLogic.player.TakeDamage(10);
+            gameLogic.player.TakeDamage(damage);
             JumpAwayFromPlayer();
         }
       
@@ -54,7 +54,7 @@ public class Minion1 : ProtoMob
         direction.y = 0f; 
         direction.Normalize();
 
-        float jumpForce = 10.0f;
+        float jumpForce = 20.0f;
         GetComponent<Rigidbody>().AddForce(direction * jumpForce, ForceMode.Impulse);
     }
 }

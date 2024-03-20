@@ -9,6 +9,7 @@ public class Boss : ProtoMob
     GameObject player;
 
     private float lastSummonTime;
+    public float summonFrequency = 10.0f;
 
     // Phase Logic
     public int currentBossPhase = 1;
@@ -50,7 +51,7 @@ public class Boss : ProtoMob
             player = gameLogic.player.getGameObject();
 
         // Summon minion if 10s cooldown has passed
-        if (Time.time - lastSummonTime >= 10.0f) SummonMinions();   
+        if (Time.time - lastSummonTime >= summonFrequency) SummonMinions();   
     }
 
     private void Phase3Behavior(){
