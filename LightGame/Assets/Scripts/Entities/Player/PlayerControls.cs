@@ -10,15 +10,6 @@ public class PlayerController : MonoBehaviour
     private Transform cameraPivot;
 
     private bool isGrounded = false;
-    private float lastDashTime = 0f;
-
-    // Fire rate / reload controls
-    private float lastAttackTime = 0f;
-    private float lastBaseAttackTime = 0f;
-    private float lastAbilityAttackTime = 0f;
-    private bool isAttacking = false;
-    private bool isBaseAttacking = false;
-    private bool isAbilityAttacking = false;
 
     void Start()
     {
@@ -62,10 +53,10 @@ public class PlayerController : MonoBehaviour
         }
 
         // Dash
-        if (Input.GetKeyDown(KeyCode.LeftShift) && lastDashTime <= 0)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && player.lastDashTime <= 0)
             StartCoroutine(Dash());
         else 
-            lastDashTime -= Time.deltaTime;
+            player.lastDashTime -= Time.deltaTime;
         
         // Basic Attack
         BasicAttack();
@@ -80,43 +71,43 @@ public class PlayerController : MonoBehaviour
 
     void BasicAttack(){
         if (Input.GetKeyDown(KeyCode.K) || Input.GetMouseButtonDown(0))
-            isAttacking = true;
+            player.isAttacking = true;
         
         if (Input.GetKeyUp(KeyCode.K) || Input.GetMouseButtonUp(0))
-            isAttacking = false;
+            player.isAttacking = false;
 
-        if (isAttacking){
-            lastAttackTime -= Time.deltaTime;
-            if (lastAttackTime <= 0){
+        player.lastAttackTime -= Time.deltaTime;
+        if (player.isAttacking){
+            if (player.lastAttackTime <= 0){
                 player.Attack();
-                lastAttackTime = player.basicAttackReloadTime;
+                player.lastAttackTime = player.basicAttackReloadTime;
             }
         }
     }
 
 
     void BaseAttack(){
-        if (Input.GetKeyDown(KeyCode.J)) isBaseAttacking = true;
-        if (Input.GetKeyUp(KeyCode.J)) isBaseAttacking = false;
+        if (Input.GetKeyDown(KeyCode.J)) player.isBaseAttacking = true;
+        if (Input.GetKeyUp(KeyCode.J)) player.isBaseAttacking = false;
 
-        if(isBaseAttacking){
-            lastBaseAttackTime -= Time.deltaTime;
-            if(lastBaseAttackTime <= 0){
+        player.lastBaseAttackTime -= Time.deltaTime;
+        if(player.isBaseAttacking){
+            if(player.lastBaseAttackTime <= 0){
                 player.BaseAbility();
-                lastBaseAttackTime = player.baseAttackReloadTime;
+                player.lastBaseAttackTime = player.baseAttackReloadTime;
             }
         }
     }
 
     void AbilityAttack(){
-        if (Input.GetKeyDown(KeyCode.L)) isAbilityAttacking = true;
-        if (Input.GetKeyUp(KeyCode.L)) isAbilityAttacking = false;
-
-        if(isAbilityAttacking){
-            lastAbilityAttackTime -= Time.deltaTime;
-            if(lastAbilityAttackTime <= 0){
+        if (Input.GetKeyDown(KeyCode.L)) player.isAbilityAttacking = true;
+        if (Input.GetKeyUp(KeyCode.L)) player.isAbilityAttacking = false;
+        
+        player.lastAbilityAttackTime -= Time.deltaTime;
+        if(player.isAbilityAttacking){
+            if(player.lastAbilityAttackTime <= 0){
                 player.SpecialAbility();
-                lastAbilityAttackTime = player.abilityAttackReloadTime;
+                player.lastAbilityAttackTime = player.abilityAttackReloadTime;
             }
         }
     }
@@ -136,7 +127,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator Dash(){
         float duration = 0.5f; 
         float elapsedTime = 0f;
-        lastDashTime = player.dashCooldown;
+        player.lastDashTime = player.dashCooldown;
 
         // Calculate movement direction based on player input
         Vector3 moveDirection = Vector3.zero;

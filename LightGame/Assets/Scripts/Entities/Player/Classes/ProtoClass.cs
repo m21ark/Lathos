@@ -32,6 +32,15 @@ public class ProtoClass : MonoBehaviour
     public float baseAttackRate = 0f;
     public float abilityAttackRate = 0f;
 
+    // Fire rate / reload controls
+    [HideInInspector] public float lastAttackTime = 0f;
+    [HideInInspector] public float lastBaseAttackTime = 0f;
+    [HideInInspector] public float lastAbilityAttackTime = 0f;
+    [HideInInspector] public bool isAttacking = false;
+    [HideInInspector] public bool isBaseAttacking = false;
+    [HideInInspector] public bool isAbilityAttacking = false;
+    [HideInInspector] public float lastDashTime = 0f;
+
     // Attack prefabs
     public GameObject simpleAttackPrefab;
     public GameObject classAttackPrefab;
