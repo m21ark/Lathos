@@ -8,9 +8,15 @@ public class GameLogic : MonoBehaviour
 {
 
     // Entities
-    public ProtoClass player;
-    public Boss boss;
+    [HideInInspector] public ProtoClass player;
+    [HideInInspector] public Boss boss;
     public GameObject endMenu;
+
+    private ClassTreeLogic classTreeLogic;
+
+    // Costs to rank up class
+    public int class1Cost = 5;
+    public int class2Cost = 10;
 
     // Game Logic Fields
     private float gameTime = 0.0f;
@@ -33,8 +39,10 @@ public class GameLogic : MonoBehaviour
         player = GameObject.FindWithTag("Player").GetComponent<ProtoClass>();
         boss = GameObject.FindWithTag("Boss").GetComponent<Boss>();
 
+        classTreeLogic = gameObject.GetComponent<ClassTreeLogic>();
+
         if (player == null){
-            Debug.Log("PLAYER NOT FOUND");
+            Debug.LogError("GameObject with tag 'Player' was not found");
             Time.timeScale = 0;
             return;
         }
@@ -72,10 +80,30 @@ public class GameLogic : MonoBehaviour
             player.Heal(20);
 
         // If boss or player dead, end game
-        if(boss.health <= 0)
+        if(boss != null && boss.health <= 0)
             endGame(true);
         else if(!player.isAlive())
             endGame(false);
+
+        // if(!classTreeLogic.isSelecting)
+            // checkClassSelectionTrigger();
+    }
+
+    void checkClassSelectionTrigger(){
+
+        // First class 
+        if(player.collectedLight >= class1Cost && player.getClassName() == "Base"){ 
+            Debug.Log("Trigger Class 1 Selection");
+            classTreeLogic.ToggleClassSelectMenu();
+        }
+
+        // Second class 
+        List<string> classes1Names = new List<string> { "Fighter", "Ranger", "Mage" };
+
+        // Check if the player's class name is in the list
+        if (player.collectedLight >= class2Cost && classes1Names.Contains(player.getClassName()))
+            Debug.Log("Trigger Class 2 Selection");
+        
     }
 
     void endGame(bool playerWon){

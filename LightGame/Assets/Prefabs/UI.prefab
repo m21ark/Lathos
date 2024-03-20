@@ -143,7 +143,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8026192551466953151}
   - component: {fileID: 8477467161850837931}
-  - component: {fileID: 2319095547119423415}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -184,19 +183,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuObj: {fileID: 3118272961403520860}
   instructionsMenuObj: {fileID: 0}
---- !u!114 &2319095547119423415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1086618217851888812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e648a030c0d061a8992d2c38f0bc1d89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  classSelectMenuObj: {fileID: 4373929312025748595}
 --- !u!1 &1829778364812982167
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,7 +827,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2319095547119423415}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ClassTreeLogic, Assembly-CSharp
         m_MethodName: selectClassB
         m_Mode: 1
@@ -2204,7 +2190,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2319095547119423415}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ClassTreeLogic, Assembly-CSharp
         m_MethodName: selectClassA
         m_Mode: 1
@@ -2228,7 +2214,7 @@ GameObject:
   - component: {fileID: 5289118086226791667}
   - component: {fileID: 4972800144506503638}
   m_Layer: 5
-  m_Name: CurrentClass
+  m_Name: CurrentPlayerClass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2605,7 +2591,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2319095547119423415}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ClassTreeLogic, Assembly-CSharp
         m_MethodName: selectClassC
         m_Mode: 1

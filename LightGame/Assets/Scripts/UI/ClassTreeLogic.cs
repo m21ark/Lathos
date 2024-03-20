@@ -7,17 +7,12 @@ public class ClassTreeLogic : MonoBehaviour
     
     private GameLogic gameLogic;
 
+    public bool isSelecting = false;
+
     void Start(){
         gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
     }
     
-    public void Update(){
-
-        // Check if E is pressed to invoke class selection
-        if (Input.GetKeyDown(KeyCode.E))
-            ToggleClassSelectMenu();
-    }
-
     public void selectClassA()
     {
         Debug.Log("Selected Class A");
@@ -51,6 +46,7 @@ public class ClassTreeLogic : MonoBehaviour
         if (gameLogic.isPaused){                    
             // Hide Class Selection Menu
             gameLogic.toggleCursor(false);
+            isSelecting = false;
 
             Time.timeScale = 1f;
             gameLogic.isPaused = false;
@@ -60,6 +56,7 @@ public class ClassTreeLogic : MonoBehaviour
         else{
             // Show Class Selection Menu
             gameLogic.toggleCursor(true);
+            isSelecting = true;
             
             Time.timeScale = 0f;
             gameLogic.isPaused = true;
