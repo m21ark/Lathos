@@ -3,35 +3,28 @@ using UnityEngine.UI;
 
 public class ClassTreeLogic : MonoBehaviour
 {
-    public GameObject classSelectMenuObj;
+    public GameObject class1SelectMenuObj;
+    public GameObject class2SelectMenuObj;
+    
     private GameLogic gameLogic;
     public bool isSelecting = false;
 
     // Class Objects
-    public GameObject classAPrefab; 
-    public GameObject classBPrefab;
-    public GameObject classCPrefab;
+    public GameObject prefab_fighter;
+    public GameObject prefab_ranger;
+    public GameObject prefab_mage;
 
     void Start(){
         gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
     }
     
-    public void SelectClassA()
-    {
-        Debug.Log("Selected Class A");
-        ReplacePlayer(classAPrefab);
-    }
-
-    public void SelectClassB()
-    {
-        Debug.Log("Selected Class B");
-        ReplacePlayer(classBPrefab);
-    }
-
-    public void SelectClassC()
-    {
-        Debug.Log("Selected Class C");
-        ReplacePlayer(classCPrefab);
+    public void ClassSelect(string name){
+        switch(name){
+            case "Fighter": ReplacePlayer(prefab_fighter); break;
+            case "Ranger": ReplacePlayer(prefab_ranger); break;
+            case "Mage": ReplacePlayer(prefab_mage); break;
+            default: Debug.LogError("Class Prefab ID out of range"); break;
+        }
     }
 
     private void ReplacePlayer(GameObject newPlayerPrefab)
@@ -51,10 +44,10 @@ public class ClassTreeLogic : MonoBehaviour
         Destroy(oldPlayer.transform.parent.gameObject);
 
         // Remove menu after choice is made
-        ToggleClassSelectMenu();
+        ToggleClassSelectMenu(class1SelectMenuObj);
     }
 
-    public void ToggleClassSelectMenu(){
+    public void ToggleClassSelectMenu(GameObject menu){
         if(gameLogic == null) gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
 
         if (gameLogic.isPaused){                    
@@ -64,8 +57,8 @@ public class ClassTreeLogic : MonoBehaviour
 
             Time.timeScale = 1f;
             gameLogic.isPaused = false;
-            if(classSelectMenuObj != null)
-                classSelectMenuObj.SetActive(false);
+            if(menu != null)
+                menu.SetActive(false);
         }
         else{
             // Show Class Selection Menu
@@ -74,8 +67,14 @@ public class ClassTreeLogic : MonoBehaviour
             
             Time.timeScale = 0f;
             gameLogic.isPaused = true;
-            if(classSelectMenuObj != null)
-                classSelectMenuObj.SetActive(true);
+            if(menu != null)
+                menu.SetActive(true);
         }
+    }
+
+    public void InvokeMenuClassSelect(int num){
+        if(num == 1) ToggleClassSelectMenu(class1SelectMenuObj);
+        else if(num == 2) ToggleClassSelectMenu(class2SelectMenuObj);
+        else Debug.LogError("Invalid Class Menu Selection");
     }
 }

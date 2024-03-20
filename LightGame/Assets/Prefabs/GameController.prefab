@@ -308,14 +308,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5826706621548093825}
         m_TargetAssemblyTypeName: ClassTreeLogic, Assembly-CSharp
-        m_MethodName: SelectClassB
-        m_Mode: 1
+        m_MethodName: ClassSelect
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Ranger
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &946654975150626795
@@ -2081,14 +2081,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5826706621548093825}
         m_TargetAssemblyTypeName: ClassTreeLogic, Assembly-CSharp
-        m_MethodName: SelectClassC
-        m_Mode: 1
+        m_MethodName: ClassSelect
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Mage
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &4043932941000190376
@@ -2960,11 +2960,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e648a030c0d061a8992d2c38f0bc1d89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  classSelectMenuObj: {fileID: 8735401470687510587}
+  class1SelectMenuObj: {fileID: 8735401470687510587}
+  class2SelectMenuObj: {fileID: 4043932941000190376}
   isSelecting: 0
-  classAPrefab: {fileID: 1162234724972830604, guid: a52d7bc8de8b8e09587cfd61f3a322fc, type: 3}
-  classBPrefab: {fileID: 1162234724972830604, guid: 7ba604d326e030a17bbdc027ccc9f5d0, type: 3}
-  classCPrefab: {fileID: 1162234724972830604, guid: d9c756ec5ce2edfc8bb1a74634da49a7, type: 3}
+  prefab_fighter: {fileID: 1162234724972830604, guid: a52d7bc8de8b8e09587cfd61f3a322fc, type: 3}
+  prefab_ranger: {fileID: 1162234724972830604, guid: 7ba604d326e030a17bbdc027ccc9f5d0, type: 3}
+  prefab_mage: {fileID: 1162234724972830604, guid: d9c756ec5ce2edfc8bb1a74634da49a7, type: 3}
 --- !u!1 &5506855188412385266
 GameObject:
   m_ObjectHideFlags: 0
@@ -3222,14 +3223,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5826706621548093825}
         m_TargetAssemblyTypeName: ClassTreeLogic, Assembly-CSharp
-        m_MethodName: SelectClassA
-        m_Mode: 1
+        m_MethodName: ClassSelect
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Fighter
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &5713183450123925509
@@ -4680,7 +4681,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96

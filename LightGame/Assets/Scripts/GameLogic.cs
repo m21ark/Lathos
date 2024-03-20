@@ -100,7 +100,7 @@ public class GameLogic : MonoBehaviour
         // First class 
         if(player.collectedLight >= class1Cost && player.getClassName() == "Base"){ 
             Debug.Log("Trigger Class 1 Selection");
-            classTreeLogic.ToggleClassSelectMenu();
+            classTreeLogic.InvokeMenuClassSelect(1);
             class1Cost = int.MaxValue; // This line is necessary
         }
 
@@ -110,6 +110,7 @@ public class GameLogic : MonoBehaviour
         // Check if the player's class name is in the list
         if (player.collectedLight >= class2Cost && classes1Names.Contains(player.getClassName())){
             Debug.Log("Trigger Class 2 Selection");
+            classTreeLogic.InvokeMenuClassSelect(2);
             class2Cost = int.MaxValue; // This line is necessary
         }
 

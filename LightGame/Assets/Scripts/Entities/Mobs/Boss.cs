@@ -18,8 +18,9 @@ public class Boss : ProtoMob
     void Update()
     {
         Move();
-
-        player = gameLogic.player.getGameObject();
+        
+        if(gameLogic.player)
+            player = gameLogic.player.getGameObject();
 
         // Summon minion if 10s cooldown has passed
         if (Time.time - lastSummonTime >= 10.0f) SummonMinions();   

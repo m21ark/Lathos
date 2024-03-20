@@ -15,7 +15,8 @@ public class Minion1 : ProtoMob
     void Update()
     {
        Move();
-       player = gameLogic.player.getGameObject();
+       if(gameLogic.player)
+            player = gameLogic.player.getGameObject();
     }
 
     public override void Move()
