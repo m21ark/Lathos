@@ -264,8 +264,8 @@ GameObject:
   - component: {fileID: 1537778035289099080}
   - component: {fileID: 6645478842094167388}
   - component: {fileID: 7167154328054673508}
-  - component: {fileID: 8851986177132144372}
   - component: {fileID: 3802775978080279537}
+  - component: {fileID: 5813358964246925476}
   m_Layer: 0
   m_Name: PlayerBody
   m_TagString: Player
@@ -374,36 +374,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f897a6a745e823508b2569bb62441ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8851986177132144372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2348951816358395033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f717d4a8d198bd74e98dc694b11f1d90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 8
-  jumpForce: 10
-  dashCooldown: 1
-  dashSpeed: 25
-  maxHealth: 100
-  health: 100
-  damage: 10
-  armor: 1
-  collectedLight: 0
-  basicAttackReloadTime: 0.3
-  baseAttackReloadTime: 1
-  abilityAttackReloadTime: 2
-  basicAttackRate: 0
-  baseAttackRate: 0
-  abilityAttackRate: 0
-  simpleAttackPrefab: {fileID: 3606385658551136691, guid: 6716d1986080f0f7f93d47f11f168849, type: 3}
-  classAttackPrefab: {fileID: 3606385658551136691, guid: 817690073061f57258f92e2aa5a9cb21, type: 3}
-  specialAttackPrefab: {fileID: 0}
 --- !u!54 &3802775978080279537
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -431,6 +401,38 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &5813358964246925476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2348951816358395033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03b2099d1115e484dae7e69cbe0100ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 8
+  jumpForce: 10
+  dashCooldown: 1
+  dashSpeed: 25
+  maxHealth: 100
+  health: 100
+  armor: 1
+  baseDamage: 10
+  classDamage: 20
+  abilityDamage: 30
+  collectedLight: 0
+  basicAttackReloadTime: 0.3
+  baseAttackReloadTime: 1
+  abilityAttackReloadTime: 2
+  basicAttackRate: 0
+  baseAttackRate: 0
+  abilityAttackRate: 0
+  simpleAttackPrefab: {fileID: 0}
+  classAttackPrefab: {fileID: 0}
+  specialAttackPrefab: {fileID: 0}
 --- !u!1 &5940330435187617133
 GameObject:
   m_ObjectHideFlags: 0
