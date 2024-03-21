@@ -133,8 +133,10 @@ public class ProtoClass : MonoBehaviour
 
         Vector3 startPos = cameraPivot.transform.position + cameraPivot.transform.forward;
         // get the y axis rotation from cameraPivot and tranform into quaternion
-        Quaternion cameraYRotation = Quaternion.Euler(0f, cameraPivot.transform.rotation.eulerAngles.y, 0f);
-        GameObject attackEntity = Instantiate(prefab, startPos, cameraYRotation);
+        float randomZAngle = Random.Range(-50f, 50f);
+
+        Quaternion attackRotation = Quaternion.Euler(0f, cameraPivot.transform.rotation.eulerAngles.y, randomZAngle);
+        GameObject attackEntity = Instantiate(prefab, startPos, attackRotation);
         //Find first child of attackEntity and get the ProtoAttack component
         ProtoAttack attackTemp = attackEntity.transform.GetChild(0).GetComponent<ProtoAttack>();
 

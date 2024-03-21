@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5116247390339268929}
   - component: {fileID: 852652030163724910}
   - component: {fileID: 4454172150678372362}
-  - component: {fileID: 1805901410931592434}
+  - component: {fileID: 4298733215349314091}
   m_Layer: 0
-  m_Name: Fighter A1
+  m_Name: Knight A2
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.5000007, y: 0.5000007, z: 0.4999993, w: -0.4999993}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 52.23, y: 52.23, z: 52.23}
+  m_LocalScale: {x: 33.511, y: 33.511, z: 33.511}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2177980000136178687}
@@ -135,7 +135,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1805901410931592434
+--- !u!114 &4298733215349314091
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6167503268719296837}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2b24cd745813444eabe86f35b1267cd, type: 3}
+  m_Script: {fileID: 11500000, guid: cdcd9c8ef88dc3444aaa3afd7f43bc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gravityStrength: 0
@@ -158,7 +158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2177980000136178687}
   m_Layer: 0
-  m_Name: Fighter A1
+  m_Name: Knight A2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,11 +172,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7115518648037137970}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.03890436, w: 0.9992429}
   m_LocalPosition: {x: 4.1039534, y: 0.20000005, z: -0.18165874}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 8.607786, y: 8.607786, z: 8.607786}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1770863497625224265}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.459}
