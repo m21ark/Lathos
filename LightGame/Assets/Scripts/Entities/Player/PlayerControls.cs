@@ -158,9 +158,11 @@ public class PlayerController : MonoBehaviour
             float t = elapsedTime / duration;
             moveDirection.y = 0;
             moveDirection.Normalize();
+
+            Vector3 tempDirection = new Vector3(moveDirection.x, 0, moveDirection.z);
             
             // Instead of modifying transform.position, modify the Rigidbody's velocity
-            rb.velocity = moveDirection * player.dashSpeed;
+            rb.velocity += tempDirection * player.dashSpeed;
             
             elapsedTime += Time.deltaTime;
             yield return null;

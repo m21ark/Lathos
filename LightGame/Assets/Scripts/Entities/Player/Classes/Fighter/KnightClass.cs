@@ -18,7 +18,7 @@ public class KnightClass : FighterClass
         attack.Fire(A1Damage, attackDirection);
     }
     
-    public override void SpecialAbility()
+        public override void SpecialAbility()
     {
         ProtoAttack attack;
         Vector3 attackDirection;

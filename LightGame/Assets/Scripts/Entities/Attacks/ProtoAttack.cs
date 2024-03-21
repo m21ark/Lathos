@@ -11,7 +11,7 @@ public class ProtoAttack : MonoBehaviour
 
     void Start(){}
 
-    public virtual void Fire(int damage = 10, Vector3 direction = default(Vector3), float speed = 50.0f, float gravity = 0.0f, float despawnTime = 7.5f){
+    public virtual void Fire(int damage = 10, Vector3 direction = default(Vector3), float speed = 50.0f, float gravity = 0.0f, float despawnTime = 7.5f, GameObject prefab = null){
 
         attackRb = gameObject.GetComponent<Rigidbody>();
 
@@ -26,6 +26,7 @@ public class ProtoAttack : MonoBehaviour
 
     }   
 
+
     void FixedUpdate()
     {
         attackRb = GetComponent<Rigidbody>();
@@ -39,6 +40,10 @@ public class ProtoAttack : MonoBehaviour
 
     public virtual void OnTriggerEnter(Collider collision)
     {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            return;
+        }
         // Check if the attack is touching the ground
         if (collision.gameObject.CompareTag("Minion") || collision.gameObject.CompareTag("Boss"))
         {
