@@ -9,7 +9,8 @@ public class BersekerClass : FighterClass
 
     public float A1TimeDelta = 0.8f;
     public float A2TimeSpan = 3.0f;
-    public float A2Multiplier = 0.5f;
+    public float A2BuffMult = 1.5f;
+    public float A2DebuffMult = 0.5f;
 
     public override void Attack()
     {
@@ -59,8 +60,8 @@ public class BersekerClass : FighterClass
         float originalArmor = armor;
         int originalBaseDamage = A0Damage;
 
-        armor *= A2Multiplier;
-        A0Damage = Mathf.RoundToInt(A0Damage * A2Multiplier);
+        armor *= A2DebuffMult;
+        A0Damage = Mathf.RoundToInt(A0Damage * A2BuffMult);
 
         yield return new WaitForSeconds(A2TimeSpan);
 
