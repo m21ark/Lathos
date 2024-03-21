@@ -151,12 +151,17 @@ public class PlayerController : MonoBehaviour
         if (moveDirection == Vector3.zero)
             moveDirection = cameraPivot.forward;
 
+        Rigidbody rb = GetComponent<Rigidbody>(); // Assuming this script is attached to the same GameObject as the Rigidbody
+
         while (elapsedTime < duration)
         {
             float t = elapsedTime / duration;
             moveDirection.y = 0;
             moveDirection.Normalize();
-            transform.position += moveDirection * player.dashSpeed * Time.deltaTime;
+            
+            // Instead of modifying transform.position, modify the Rigidbody's velocity
+            rb.velocity = moveDirection * player.dashSpeed;
+            
             elapsedTime += Time.deltaTime;
             yield return null;
         }
