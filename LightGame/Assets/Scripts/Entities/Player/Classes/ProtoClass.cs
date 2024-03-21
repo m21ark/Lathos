@@ -57,7 +57,7 @@ public class ProtoClass : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
+        health -= Mathf.RoundToInt(damage / armor);
         if (health <= 0)
             Die();
     }
