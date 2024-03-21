@@ -48,7 +48,7 @@ public class ProtoClass : MonoBehaviour
 
 
     void Start(){
-        cameraPivot = transform.Find("CameraPivot");
+        cameraPivot = transform.parent.transform.Find("CameraPivot");
     }
 
     public bool isAlive(){
@@ -112,8 +112,31 @@ public class ProtoClass : MonoBehaviour
         } else attackDirectionTemp = camera.transform.forward;
 
         Vector3 startPos = cameraPivot.transform.position + cameraPivot.transform.forward;
-        GameObject attackEntity = Instantiate(prefab, startPos, Quaternion.identity);
-        ProtoAttack attackTemp = attackEntity.GetComponent<ProtoAttack>();
+        GameObject attackEntity = Instantiate(prefab, startPos, cameraPivot.rotation );
+        ProtoAttack attackTemp = attackEntity.transform.GetChild(0).GetComponent<ProtoAttack>();
+
+        // Return values
+        attack = attackTemp;
+        attackDirection = attackDirectionTemp;
+    }
+    public void GenerateAttackPhysical(GameObject prefab, out ProtoAttack attack, out Vector3 attackDirection){
+        GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
+        Vector3 attackDirectionTemp;
+        RaycastHit ray;
+
+        bool hit = Physics.Raycast(camera.transform.position, camera.transform.forward, out ray, 50f, ~LayerMask.GetMask("LampLight"));
+
+        if(hit){
+            attackDirectionTemp = ray.point - cameraPivot.position;
+            attackDirectionTemp.Normalize();
+        } else attackDirectionTemp = camera.transform.forward;
+
+        Vector3 startPos = cameraPivot.transform.position + cameraPivot.transform.forward;
+        // get the y axis rotation from cameraPivot and tranform into quaternion
+        Quaternion cameraYRotation = Quaternion.Euler(0f, cameraPivot.transform.rotation.eulerAngles.y, 0f);
+        GameObject attackEntity = Instantiate(prefab, startPos, cameraYRotation);
+        //Find first child of attackEntity and get the ProtoAttack component
+        ProtoAttack attackTemp = attackEntity.transform.GetChild(0).GetComponent<ProtoAttack>();
 
         // Return values
         attack = attackTemp;

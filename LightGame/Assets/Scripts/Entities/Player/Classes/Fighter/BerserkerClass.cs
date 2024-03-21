@@ -7,10 +7,19 @@ public class BersekerClass : FighterClass
     private ProtoAttack attack;
     private Vector3 attackDirection;
 
-    public float A1timeDelta = 0.8f;
+    public float A1TimeDelta = 0.8f;
     public float A2TimeSpan = 3.0f;
-    public float A2Multiplier = 2.0f;
-    
+    public float A2Multiplier = 0.5f;
+
+    public override void Attack()
+    {
+        ProtoAttack attack;
+        Vector3 attackDirection;
+        GenerateAttackAim(A0Prefab, out attack, out attackDirection);
+        attack.Fire(A0Damage, cameraPivot.transform.forward);
+        Debug.Log(cameraPivot.transform.forward);
+    }
+
     public override void BaseAbility()
     {
         StartCoroutine(RepeatedFire(A1Damage, attackDirection));
@@ -21,17 +30,17 @@ public class BersekerClass : FighterClass
     {
         // Call Fire method initially
         GenerateAttackAim(A1Prefab, out attack, out attackDirection);
-        attack.Fire(baseDamage, attackDirection);
+        attack.Fire(baseDamage, cameraPivot.forward);
 
         // Wait for 0.2 seconds
-        yield return new WaitForSeconds(A1timeDelta);
+        yield return new WaitForSeconds(A1TimeDelta);
 
         // Call Fire method again
         GenerateAttackAim(A1Prefab, out attack, out attackDirection);
         attack.Fire(baseDamage, attackDirection);
 
         // Wait for 0.2 seconds
-        yield return new WaitForSeconds(A1timeDelta);
+        yield return new WaitForSeconds(A1TimeDelta);
 
         // Call Fire method again
         GenerateAttackAim(A1Prefab, out attack, out attackDirection);

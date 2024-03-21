@@ -346,7 +346,9 @@ MonoBehaviour:
   isAttack1ing: 0
   isAttack2ing: 0
   lastDashTime: 0
-  timeBetweenAttacks: 0.4
+  A1TimeDelta: 0.8
+  A2TimeSpan: 3
+  A2Multiplier: 0.25
 --- !u!1001 &7431497500951317251
 PrefabInstance:
   m_ObjectHideFlags: 0

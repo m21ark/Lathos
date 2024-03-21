@@ -122,6 +122,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2833555742979912594}
+  - {fileID: 3636231879042255776}
   - {fileID: 4819313722173484377}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -155,7 +156,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8593029557098329786}
-  m_Father: {fileID: 2833555742979912594}
+  m_Father: {fileID: 1547184242331172084}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2348951816358395033
 GameObject:
@@ -191,8 +192,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3636231879042255776}
+  m_Children: []
   m_Father: {fileID: 1547184242331172084}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7201336405030023799
@@ -326,11 +326,11 @@ MonoBehaviour:
   maxHealth: 100
   health: 100
   armor: 1
-  A0Prefab: {fileID: 3606385658551136691, guid: 817690073061f57258f92e2aa5a9cb21, type: 3}
+  A0Prefab: {fileID: 7115518648037137970, guid: 817690073061f57258f92e2aa5a9cb21, type: 3}
   A0Damage: 5
   A0ReloadTime: 1
   A0ChargeRate: 0.1
-  A1Prefab: {fileID: 3606385658551136691, guid: 25fb7521e080f0c42a9c06201650fa3f, type: 3}
+  A1Prefab: {fileID: 7115518648037137970, guid: 95b36c4753a496d4cb96978abfc6da93, type: 3}
   A1Damage: 20
   A1ReloadTime: 3
   A1ChargeRate: 0

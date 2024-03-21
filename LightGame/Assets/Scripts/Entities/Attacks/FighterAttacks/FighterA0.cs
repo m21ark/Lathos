@@ -9,6 +9,7 @@ public class FighterA0 : ProtoAttack
         base.Fire(damage, direction, speed: 0.0f, despawnTime: 0.1f);
     }
 
+
     public override void OnTriggerEnter(Collider collision)
     {
         // Check if the attack is touching the ground

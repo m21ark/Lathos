@@ -22,7 +22,8 @@ public class ProtoAttack : MonoBehaviour
         projDamage = damage;
 
         // Despawn attack after a while
-        Destroy(gameObject, despawnTime);
+        Destroy(gameObject.transform.parent.gameObject, despawnTime);
+
     }   
 
     void FixedUpdate()

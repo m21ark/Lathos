@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
         gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
 
         // Camera Rotation Pivot
-        cameraPivot = transform.Find("CameraPivot");
+        cameraPivot = transform.parent.transform.Find("CameraPivot");
     }
 
     void Update()
@@ -121,7 +121,14 @@ public class PlayerController : MonoBehaviour
         float rotationX = cameraPivot.localEulerAngles.y + mouseX;
         float rotationY = cameraPivot.localEulerAngles.x - mouseY;
 
+
         cameraPivot.localEulerAngles = new Vector3(rotationY, rotationX, 0);
+
+        // rotate the player based on camera rotation on the y-axis
+        transform.rotation = Quaternion.Euler(0, rotationX, 0);
+
+        // set pivot position to player position
+        cameraPivot.position = transform.position;
     }
 
     IEnumerator Dash(){

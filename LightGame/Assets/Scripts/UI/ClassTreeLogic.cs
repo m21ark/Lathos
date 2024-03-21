@@ -49,7 +49,7 @@ public class ClassTreeLogic : MonoBehaviour
     {
         // Get old player info
         GameObject oldPlayer = GameObject.FindGameObjectWithTag("Player");
-        Transform pivot = oldPlayer.transform.Find("CameraPivot").transform;
+        Transform pivot = oldPlayer.transform.parent.transform.Find("CameraPivot").transform;
         Vector3 oldPlayerPosition = oldPlayer.transform.position;
  
         // Set old player rotation to have x-axis and z-axis rotation as 0
