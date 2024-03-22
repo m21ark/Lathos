@@ -417,16 +417,16 @@ MonoBehaviour:
   jumpForce: 10
   dashCooldown: 1
   dashSpeed: 25
-  maxHealth: 100
+  maxHealth: 80
   health: 100
   armor: 1
-  A0Prefab: {fileID: 0}
-  A0Damage: 10
-  A0ReloadTime: 0.3
+  A0Prefab: {fileID: 4923962845166056162, guid: 6acac3cfa82e1a446a006e7475f36c7c, type: 3}
+  A0Damage: 15
+  A0ReloadTime: 0.8
   A0ChargeRate: 0
-  A1Prefab: {fileID: 0}
-  A1Damage: 20
-  A1ReloadTime: 1
+  A1Prefab: {fileID: 4923962845166056162, guid: f33686e9088711c41b8867184c4d9d1c, type: 3}
+  A1Damage: 30
+  A1ReloadTime: 4
   A1ChargeRate: 0
   A2Prefab: {fileID: 0}
   A2Damage: 30
@@ -440,6 +440,8 @@ MonoBehaviour:
   isAttack1ing: 0
   isAttack2ing: 0
   lastDashTime: 0
+  A1_2Prefab: {fileID: 4923962845166056162, guid: a2124a40c0b66ee488a281732250312b, type: 3}
+  A0_2Prefab: {fileID: 4923962845166056162, guid: e0a2233f62b2a80459c8e1780651b6f7, type: 3}
 --- !u!1 &5940330435187617133
 GameObject:
   m_ObjectHideFlags: 0
