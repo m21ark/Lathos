@@ -10,17 +10,11 @@ public class WizardA2_2 : ProtoAttack
 
     public void OnTriggerStay(Collider collision)
     {
-        Debug.Log(lastTick);
+        //only do damage if the tickrate has passed
         lastTick -= Time.deltaTime;
-        //only do damage if lastTick >= tickRate
         if (Time.time - lastTick >= tickRate)
-        {
             lastTick = Time.time;
-        }
-        else
-        {
-            return;
-        }
+        else return;
         
         if (collision.gameObject.CompareTag("Minion") || collision.gameObject.CompareTag("Boss"))
         {
@@ -37,6 +31,6 @@ public class WizardA2_2 : ProtoAttack
 
     public override void OnTriggerEnter(Collider collision)
     {
-
+        // Overrides the default OnTriggerEnter method with this one that does nothing
     }
 }

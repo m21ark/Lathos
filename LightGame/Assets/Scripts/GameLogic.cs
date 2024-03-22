@@ -13,6 +13,7 @@ public class GameLogic : MonoBehaviour
     public GameObject endMenu;
 
     private ClassTreeLogic classTreeLogic;
+    private bool isInBossBattle;
 
     // Costs to rank up class
     public int class1Cost = 5;
@@ -37,7 +38,15 @@ public class GameLogic : MonoBehaviour
         HUDLoadElements();
 
         RefreshPlayer();
-        boss = GameObject.FindWithTag("Boss").GetComponent<Boss>();
+
+        GameObject bossObj = GameObject.FindWithTag("Boss");
+        
+        if(bossObj == null){
+            isInBossBattle = false;
+        }else{
+            isInBossBattle = true;
+            boss = bossObj.GetComponent<Boss>();
+        }
 
         classTreeLogic = gameObject.GetComponent<ClassTreeLogic>();
 
@@ -86,10 +95,13 @@ public class GameLogic : MonoBehaviour
             player.Heal(20);
 
         // If boss or player dead, end game
-        if(boss.health <= 0)
-            endGame(true);
-        else if(!player.isAlive())
-            endGame(false);
+        if(isInBossBattle){
+            if(boss.health <= 0) endGame(true);
+        }
+        if(!player.isAlive()) endGame(false);
+
+        if(classTreeLogic == null)
+            classTreeLogic = gameObject.GetComponent<ClassTreeLogic>();
 
         if(!classTreeLogic.isSelecting)
             checkClassSelectionTrigger();
@@ -139,7 +151,9 @@ public class GameLogic : MonoBehaviour
 
         // Update boss and player's health 
         hud_player_health.text = string.Format("Health: {0}", player.health > 0 ? player.health : 0);
-        hud_boss_health.text = string.Format("Boss Health: {0}", boss.health > 0 ? boss.health : 0);
+        if(isInBossBattle)
+            hud_boss_health.text = string.Format("Boss Health: {0}", boss.health > 0 ? boss.health : 0);
+        else hud_boss_health.text = "";
 
         // Update light collected and current player class
         hud_light.text = string.Format("Light: {0}", player.collectedLight);

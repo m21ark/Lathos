@@ -12,12 +12,9 @@ public class MenuController : MonoBehaviour
     private GameLogic gameLogic;
 
     void Start(){
-        try{
-            gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
-        }
-        catch (Exception e){
-            Debug.Log(e);
-        }
+        GameObject gameController = GameObject.FindWithTag("GameController");
+        if(gameController != null)
+            gameLogic = gameController.GetComponent<GameLogic>();
     }
 
     void Update(){
@@ -28,8 +25,8 @@ public class MenuController : MonoBehaviour
     
     public void StartGame()
     {
-        Debug.Log("Loading Boss Arena");
-        SceneManager.LoadScene("BossArena");
+        Debug.Log("Starting game...");
+        SceneManager.LoadScene("Room1");
     }
 
     public void ResumeGame(){

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641222, b: 0.57481664, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5464,10 +5464,6 @@ PrefabInstance:
     - target: {fileID: 4216331208773826252, guid: 4485e46bc0f3c6bbda5187ffe089340a, type: 3}
       propertyPath: m_Name
       value: ArenaBorder
-      objectReference: {fileID: 0}
-    - target: {fileID: 5486713934473331230, guid: 4485e46bc0f3c6bbda5187ffe089340a, type: 3}
-      propertyPath: m_Material
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5860464671086182249, guid: 4485e46bc0f3c6bbda5187ffe089340a, type: 3}
       propertyPath: m_LocalScale.x
