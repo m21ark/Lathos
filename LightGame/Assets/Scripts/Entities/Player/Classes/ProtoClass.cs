@@ -76,7 +76,7 @@ public class ProtoClass : MonoBehaviour
         // Don't destroy the player object because it holds the camera 
     }
 
-    public virtual void Attack() // Vector3 position = default(Vector3), Vector3 direction = default(Vector3)
+    public virtual void Attack()
     {
         Debug.Log("Basic Attack is not implemented for this player class");
     }   
@@ -99,7 +99,7 @@ public class ProtoClass : MonoBehaviour
         return className;
     }
 
-    public void GenerateAttackAim(GameObject prefab, out ProtoAttack attack, out Vector3 attackDirection){
+    private void GenerateAttack(bool isPhysical, GameObject prefab, out ProtoAttack attack, out Vector3 attackDirection){
         GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
         Vector3 attackDirectionTemp;
         RaycastHit ray;
@@ -111,37 +111,29 @@ public class ProtoClass : MonoBehaviour
             attackDirectionTemp.Normalize();
         } else attackDirectionTemp = camera.transform.forward;
 
+        GameObject attackEntity;
         Vector3 startPos = cameraPivot.transform.position + cameraPivot.transform.forward;
-        GameObject attackEntity = Instantiate(prefab, startPos, cameraPivot.rotation );
+
+        if(isPhysical){
+            // Apply some randomization to attacks inclination
+            float randomZAngle = Random.Range(-50f, 50f); 
+            Quaternion attackRotation = Quaternion.Euler(0f, cameraPivot.transform.rotation.eulerAngles.y, randomZAngle);
+            attackEntity = Instantiate(prefab, startPos, attackRotation);
+
+        }else attackEntity = Instantiate(prefab, startPos, cameraPivot.rotation);
+        
         ProtoAttack attackTemp = attackEntity.transform.GetChild(0).GetComponent<ProtoAttack>();
 
         // Return values
         attack = attackTemp;
         attackDirection = attackDirectionTemp;
     }
+
+    public void GenerateAttackAim(GameObject prefab, out ProtoAttack attack, out Vector3 attackDirection){
+        GenerateAttack(false, prefab, out attack, out attackDirection);
+    }
+    
     public void GenerateAttackPhysical(GameObject prefab, out ProtoAttack attack, out Vector3 attackDirection){
-        GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
-        Vector3 attackDirectionTemp;
-        RaycastHit ray;
-
-        bool hit = Physics.Raycast(camera.transform.position, camera.transform.forward, out ray, 50f, ~LayerMask.GetMask("LampLight"));
-
-        if(hit){
-            attackDirectionTemp = ray.point - cameraPivot.position;
-            attackDirectionTemp.Normalize();
-        } else attackDirectionTemp = camera.transform.forward;
-
-        Vector3 startPos = cameraPivot.transform.position + cameraPivot.transform.forward;
-        // get the y axis rotation from cameraPivot and tranform into quaternion
-        float randomZAngle = Random.Range(-50f, 50f);
-
-        Quaternion attackRotation = Quaternion.Euler(0f, cameraPivot.transform.rotation.eulerAngles.y, randomZAngle);
-        GameObject attackEntity = Instantiate(prefab, startPos, attackRotation);
-        //Find first child of attackEntity and get the ProtoAttack component
-        ProtoAttack attackTemp = attackEntity.transform.GetChild(0).GetComponent<ProtoAttack>();
-
-        // Return values
-        attack = attackTemp;
-        attackDirection = attackDirectionTemp;
+        GenerateAttack(true, prefab, out attack, out attackDirection);
     }
 }

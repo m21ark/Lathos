@@ -25,23 +25,14 @@ public class SorcererClass : MageClass
 
     IEnumerator RepeatedFire(int baseDamage, Vector3 attackDirection)
     {
-        // Call Fire method initially
-        GenerateAttackAim(A1Prefab, out attack, out attackDirection);
-        attack.Fire(A1Damage, attackDirection, prefab: A1_2Prefab);
+        for(int i = 0; i < 3; i++){
+            // Call Fire method initially
+            GenerateAttackAim(A1Prefab, out attack, out attackDirection);
+            attack.Fire(A1Damage, attackDirection, ("prefab", A1_2Prefab));
 
-        // Wait for 0.2 seconds
-        yield return new WaitForSeconds(A1TimeDelta);
-
-        // Call Fire method again
-        GenerateAttackAim(A1Prefab, out attack, out attackDirection);
-        attack.Fire(A1Damage, attackDirection, prefab: A1_2Prefab);
-
-        // Wait for 0.2 seconds
-        yield return new WaitForSeconds(A1TimeDelta);
-
-        // Call Fire method again
-        GenerateAttackAim(A1Prefab, out attack, out attackDirection);
-        attack.Fire(A1Damage, attackDirection, prefab: A1_2Prefab);
+            // Wait for 0.2 seconds
+            yield return new WaitForSeconds(A1TimeDelta);
+        }
     }
 
     public override void SpecialAbility()
