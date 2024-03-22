@@ -48,7 +48,7 @@ public class ProtoAttack : MonoBehaviour
     public virtual void OnTriggerEnter(Collider collision)
     {
 
-        if(ignorePlayerCol && collision.gameObject.CompareTag("Player"))
+        if(ignorePlayerCol && (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Lamp")))
             return;
         
         // Check if the attack hit enemy and damage it

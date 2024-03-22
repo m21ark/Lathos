@@ -24,9 +24,7 @@ public class RogueClass : RangerClass
     {
         // Double armor and base damage
         float originalAttackSpeed = attackSpeed;
-        Debug.Log("Original attack speed: " + originalAttackSpeed);
         attackSpeed *= A1BuffMult;
-        Debug.Log("New attack speed: " + attackSpeed);
 
         yield return new WaitForSeconds(A1TimeSpan);
 

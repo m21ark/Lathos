@@ -16,7 +16,7 @@ public class WizardA0_1 : ProtoAttack
 
     public override void OnTriggerEnter(Collider collision)
     {
-        if(ignorePlayerCol && collision.gameObject.CompareTag("Player"))
+        if(ignorePlayerCol && (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Lamp")))
             return;
         
         GameObject attack = Instantiate(A0_2Prefab, transform.position, Quaternion.identity);
