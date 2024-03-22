@@ -16,7 +16,7 @@ public class BersekerClass : FighterClass
     {
         ProtoAttack attack;
         Vector3 attackDirection;
-        GenerateAttackAim(A0Prefab, out attack, out attackDirection);
+        GenerateAttackPhysical(A0Prefab, out attack, out attackDirection);
         attack.Fire(A0Damage, cameraPivot.transform.forward);
     }
 
@@ -28,23 +28,14 @@ public class BersekerClass : FighterClass
 
     IEnumerator RepeatedFire(int baseDamage, Vector3 attackDirection)
     {
-        // Call Fire method initially
-        GenerateAttackAim(A1Prefab, out attack, out attackDirection);
-        attack.Fire(baseDamage, cameraPivot.forward);
+        for(int i = 0; i < 3; i++) {
+            // Call Fire method initially
+            GenerateAttackPhysical(A1Prefab, out attack, out attackDirection);
+            attack.Fire(baseDamage, cameraPivot.forward);
 
-        // Wait for 0.2 seconds
-        yield return new WaitForSeconds(A1TimeDelta);
-
-        // Call Fire method again
-        GenerateAttackAim(A1Prefab, out attack, out attackDirection);
-        attack.Fire(baseDamage, attackDirection);
-
-        // Wait for 0.2 seconds
-        yield return new WaitForSeconds(A1TimeDelta);
-
-        // Call Fire method again
-        GenerateAttackAim(A1Prefab, out attack, out attackDirection);
-        attack.Fire(baseDamage, attackDirection);
+            // Wait for 0.2 seconds
+            yield return new WaitForSeconds(A1TimeDelta);
+        }
     }
 
 

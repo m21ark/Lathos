@@ -148,8 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 1
-  speed: 50
-  despawnTime: 5
+  speed: 0
+  despawnTime: 0.1
   ignorePlayerCol: 1
   despawnOnCol: 1
 --- !u!1 &7115518648037137970
