@@ -18,7 +18,6 @@ public class BersekerClass : FighterClass
         Vector3 attackDirection;
         GenerateAttackAim(A0Prefab, out attack, out attackDirection);
         attack.Fire(A0Damage, cameraPivot.transform.forward);
-        Debug.Log(cameraPivot.transform.forward);
     }
 
     public override void BaseAbility()
