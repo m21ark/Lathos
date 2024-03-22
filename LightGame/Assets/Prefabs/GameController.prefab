@@ -222,8 +222,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -92}
-  m_SizeDelta: {x: 308.4545, y: 271.1065}
+  m_AnchoredPosition: {x: 0.000047684, y: -320}
+  m_SizeDelta: {x: 361.3133, y: 143.1396}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7603680631902479179
 CanvasRenderer:
@@ -461,8 +461,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 380, y: -92}
-  m_SizeDelta: {x: 500.1859, y: 271.1065}
+  m_AnchoredPosition: {x: 380, y: -312}
+  m_SizeDelta: {x: 500.1859, y: 129.484}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2790910882611469976
 CanvasRenderer:
@@ -616,7 +616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.055606484, g: 0.055606484, b: 0.3764706, a: 0.29803923}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.627451}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -669,8 +669,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -380, y: -92}
-  m_SizeDelta: {x: 500.1859, y: 271.1065}
+  m_AnchoredPosition: {x: -380, y: -312}
+  m_SizeDelta: {x: 500.1859, y: 129.484}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8731414743248465603
 CanvasRenderer:
@@ -1092,7 +1092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.055606484, g: 0.055606484, b: 0.3764706, a: 0.29803923}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.627451}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2232,8 +2232,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 439.77, y: -92}
-  m_SizeDelta: {x: 308.4545, y: 271.1065}
+  m_AnchoredPosition: {x: 545, y: -320}
+  m_SizeDelta: {x: 361.3133, y: 143.1396}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5359087999802265132
 CanvasRenderer:
@@ -3183,8 +3183,8 @@ MonoBehaviour:
   player: {fileID: 0}
   boss: {fileID: 0}
   endMenu: {fileID: 946654975150626795}
-  class1Cost: 500
-  class2Cost: 500
+  class1Cost: 10
+  class2Cost: 50
   isPaused: 0
 --- !u!114 &5826706621548093825
 MonoBehaviour:
@@ -3202,14 +3202,14 @@ MonoBehaviour:
   class2SelectMenuObj: {fileID: 4043932941000190376}
   isSelecting: 0
   prefab_fighter: {fileID: 1162234724972830604, guid: a52d7bc8de8b8e09587cfd61f3a322fc, type: 3}
-  prefab_ranger: {fileID: 1162234724972830604, guid: 7ba604d326e030a17bbdc027ccc9f5d0, type: 3}
+  prefab_ranger: {fileID: 1162234724972830604, guid: 6e1ea72b67084a045b04dbaa8977a508, type: 3}
   prefab_mage: {fileID: 1162234724972830604, guid: d9c756ec5ce2edfc8bb1a74634da49a7, type: 3}
   prefab_knight: {fileID: 1162234724972830604, guid: e41f615346b916cea859ccce13c46444, type: 3}
   prefab_berserker: {fileID: 1162234724972830604, guid: abbee569ec4dba711965b37d79f8bab9, type: 3}
-  prefab_sharpshooter: {fileID: 1162234724972830604, guid: d05f9d98792ab139aa438e112c614bea, type: 3}
-  prefab_rogue: {fileID: 1162234724972830604, guid: 73e466dd46bf656009a711f8d5f89944, type: 3}
-  prefab_sorcerer: {fileID: 1162234724972830604, guid: 9fddacc934f44f214a0a485e7aeb4662, type: 3}
-  prefab_wizard: {fileID: 1162234724972830604, guid: 75beeb8f5e4c565618c0fe5a60c8e05d, type: 3}
+  prefab_sharpshooter: {fileID: 1162234724972830604, guid: b52ad757266999743a9dbc453d77101f, type: 3}
+  prefab_rogue: {fileID: 1162234724972830604, guid: dd39f731bee5b09489d544388253433b, type: 3}
+  prefab_sorcerer: {fileID: 1162234724972830604, guid: 76b06bcd8e1c7c546b2db2f1fc2e6a4e, type: 3}
+  prefab_wizard: {fileID: 1162234724972830604, guid: 9f429d062caece54da3eacaf67d08874, type: 3}
 --- !u!1 &5506855188412385266
 GameObject:
   m_ObjectHideFlags: 0
@@ -3380,8 +3380,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -439.77, y: -92}
-  m_SizeDelta: {x: 308.4545, y: 271.1065}
+  m_AnchoredPosition: {x: -545, y: -320}
+  m_SizeDelta: {x: 361.3133, y: 143.1396}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2664886169641212834
 CanvasRenderer:
