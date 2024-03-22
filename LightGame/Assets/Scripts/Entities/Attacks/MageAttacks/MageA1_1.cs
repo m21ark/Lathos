@@ -10,7 +10,7 @@ public class MageA1_1 : ProtoAttack
 
     public override void Fire(int damage, Vector3 direction, params (string key, object value)[] kwargs){
             base.Fire(0, direction);
-            A1_2Prefab = (GameObject)getKwarg("prefab");
+            A1_2Prefab = (GameObject)GetKwarg("prefab");
             A1_2Damage = damage;
     }
 

@@ -66,7 +66,7 @@ public class ProtoAttack : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public object getKwarg(string keyName, params (string key, object value)[] kwargs){
+    public object GetKwarg(string keyName, params (string key, object value)[] kwargs){
         return kwargs.FirstOrDefault(pair => pair.key == keyName).value;
     }
 }
