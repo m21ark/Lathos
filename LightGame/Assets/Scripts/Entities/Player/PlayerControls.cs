@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
         if (player.isAttacking){
             if (player.lastAttackTime <= 0){
                 player.Attack();
-                player.lastAttackTime = player.A0ReloadTime;
+                player.lastAttackTime = player.A0ReloadTime * player.attackSpeed;
             }
         }
     }

@@ -15,6 +15,8 @@ public class ProtoClass : MonoBehaviour
     public int health = 100;
     public float armor = 1;
 
+    public float attackSpeed = 1f;
+
     // A0 - Basic Attack
     public GameObject A0Prefab;
     public int A0Damage = 10;
