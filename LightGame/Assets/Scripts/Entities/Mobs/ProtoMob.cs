@@ -5,6 +5,7 @@ using UnityEngine;
 public class ProtoMob : MonoBehaviour
 {
     public int health = 20;
+    public int maxHealth = 20;
     public int enemyLevel = 5;
     public float moveSpeed = 5f;
     public int damage = 10;
