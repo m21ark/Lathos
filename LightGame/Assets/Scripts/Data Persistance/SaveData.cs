@@ -3,7 +3,12 @@ using UnityEngine;
 [System.Serializable]
 public class SaveData
 {
-    public float[] position;
+    // Data to save
+    public int currentPlayerArea = 1; // Current scene the player is in
+    public bool[] unlockedEndings = { false, false, false }; // Endings unlocked by player
+    public string playerClassName = "Base";
+
+    public float[] position; // Player position (TEMPORARY JUST FOR TESTING)
 
     public SaveData(Transform trans)
     {

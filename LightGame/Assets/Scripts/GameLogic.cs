@@ -109,7 +109,7 @@ public class GameLogic : MonoBehaviour
             checkClassSelectionTrigger();
     }
 
-    void DealWithDataSaving(){
+    void DealWithDataSaving(){ // This is just for testing purposes... it will be removed later
         // Save data
         if (Input.GetKeyDown(KeyCode.V)){
             SaveSystem.DataSave(player.transform);

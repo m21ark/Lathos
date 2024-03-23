@@ -3303,6 +3303,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 808385080}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: SavePlayerSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &954458897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5068,8 +5080,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 838, y: -423}
-  m_SizeDelta: {x: 279.5664, y: 110}
+  m_AnchoredPosition: {x: 838, y: -441.25055}
+  m_SizeDelta: {x: 279.5664, y: 73.4989}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1552793045
 MonoBehaviour:
@@ -5164,7 +5176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.74039674, g: 0.10698915, b: 0.10698915, a: 1}
+  m_Color: {r: 1, g: 0.15155488, b: 0.15155488, a: 0.5176471}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

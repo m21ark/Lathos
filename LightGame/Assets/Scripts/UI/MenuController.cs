@@ -23,6 +23,15 @@ public class MenuController : MonoBehaviour
             TogglePauseGame();
     }
 
+    public void SavePlayerSettings(){
+        Debug.Log("Saving new player settings...");
+        GameObject settingsMenu = gameObject.transform.Find("SettingsMenu").gameObject;
+
+        // Get the 2 sliders
+        GameObject slider1 = settingsMenu.transform.Find("SoundSlider").gameObject;
+        GameObject slider2 = settingsMenu.transform.Find("MusicSlider").gameObject;
+    }
+
     public void GotoPlayMenu(){
 
         GameObject playNewMenu = gameObject.transform.Find("PlayNewMenu").gameObject;
