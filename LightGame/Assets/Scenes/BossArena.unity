@@ -222,12 +222,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60435499}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.00000097279}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.9081902, y: -9.279306, z: 13.975295}
   m_LocalScale: {x: 200, y: 0.2, z: 200}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1622114660}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &61342629
 PrefabInstance:
@@ -2484,6 +2484,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1618538026616700013, guid: afe23f8e45035c24ca15c0efc5c236b3, type: 3}
   m_PrefabInstance: {fileID: 889108523}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &900884884 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5860464671086182249, guid: 4485e46bc0f3c6bbda5187ffe089340a, type: 3}
+  m_PrefabInstance: {fileID: 4802008214203688468}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &921565732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2959,14 +2964,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1259581270}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.9081902, y: -9.279306, z: 13.975294}
   m_LocalScale: {x: 1, y: 0.55, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 352967458}
   - {fileID: 1276632669}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1622114660}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1271584333
 PrefabInstance:
@@ -3725,8 +3730,8 @@ GameObject:
   - component: {fileID: 1521463515}
   - component: {fileID: 1521463514}
   m_Layer: 0
-  m_Name: CENTER
-  m_TagString: Untagged
+  m_Name: ArenaCenter
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3810,12 +3815,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1521463513}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.9081902, y: -9.279306, z: 13.975294}
   m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1622114660}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1523021589
 PrefabInstance:
@@ -4127,6 +4132,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1618538026616700013, guid: afe23f8e45035c24ca15c0efc5c236b3, type: 3}
   m_PrefabInstance: {fileID: 1593792231}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1622114659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1622114660}
+  m_Layer: 0
+  m_Name: Arena
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1622114660
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622114659}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.9081902, y: 9.279306, z: -13.975294}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1259581271}
+  - {fileID: 900884884}
+  - {fileID: 1521463517}
+  - {fileID: 60435503}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1648365278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4942,7 +4982,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1622114660}
     m_Modifications:
     - target: {fileID: 3129337675155936671, guid: 4485e46bc0f3c6bbda5187ffe089340a, type: 3}
       propertyPath: m_Enabled
@@ -4966,15 +5006,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5860464671086182249, guid: 4485e46bc0f3c6bbda5187ffe089340a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.9081902
       objectReference: {fileID: 0}
     - target: {fileID: 5860464671086182249, guid: 4485e46bc0f3c6bbda5187ffe089340a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: -7.2793064
       objectReference: {fileID: 0}
     - target: {fileID: 5860464671086182249, guid: 4485e46bc0f3c6bbda5187ffe089340a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 13.975294
       objectReference: {fileID: 0}
     - target: {fileID: 5860464671086182249, guid: 4485e46bc0f3c6bbda5187ffe089340a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4982,15 +5022,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5860464671086182249, guid: 4485e46bc0f3c6bbda5187ffe089340a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5860464671086182249, guid: 4485e46bc0f3c6bbda5187ffe089340a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5860464671086182249, guid: 4485e46bc0f3c6bbda5187ffe089340a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5860464671086182249, guid: 4485e46bc0f3c6bbda5187ffe089340a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5019,12 +5059,9 @@ SceneRoots:
   m_Roots:
   - {fileID: 966987408}
   - {fileID: 705507995}
-  - {fileID: 60435503}
   - {fileID: 2343318555851918694}
   - {fileID: 1182653640}
   - {fileID: 1317648359}
-  - {fileID: 1521463517}
   - {fileID: 578501266}
-  - {fileID: 4802008214203688468}
-  - {fileID: 1259581271}
   - {fileID: 262958125}
+  - {fileID: 1622114660}
