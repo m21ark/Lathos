@@ -22,12 +22,36 @@ public class MenuController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
             TogglePauseGame();
     }
+
+    public void GotoPlayMenu(){
+
+        GameObject playNewMenu = gameObject.transform.Find("PlayNewMenu").gameObject;
+        GameObject loadGameMenu = gameObject.transform.Find("PlayLoadMenu").gameObject;
+
+        if(SaveSystem.SaveExists()){
+            playNewMenu.SetActive(false);
+            loadGameMenu.SetActive(true);
+        }else{
+            playNewMenu.SetActive(true);
+            loadGameMenu.SetActive(false);
+        }
+    }
+
+    public void DeleteGameInstance(){
+        Debug.Log("Deleting game instance...");
+        SaveSystem.DeleteSave();
+    }
     
-    public void StartGame()
+    public void StartNewGame()
     {
-        Debug.Log("Starting game...");
+        Debug.Log("Starting new game...");
         SceneManager.LoadScene("Room1");
     }
+
+    public void StartLoadGame()
+    {
+        Debug.Log("Loading stored game instance...");
+    } 
 
     public void ResumeGame(){
         TogglePauseGame();

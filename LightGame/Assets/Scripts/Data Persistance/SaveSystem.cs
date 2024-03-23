@@ -42,4 +42,10 @@ public static class SaveSystem
         if (File.Exists(path)) File.Delete(path);
         else Debug.Log("Save file not found in " + path);
     }
+
+    public static bool SaveExists()
+    {
+        string path = Application.persistentDataPath + "/data.sav";
+        return File.Exists(path);
+    }
 }
