@@ -84,6 +84,8 @@ public class GameLogic : MonoBehaviour
     {
         RefreshPlayer();
 
+        DealWithDataSaving();
+
         // Update the game time
         gameTime += Time.deltaTime;
 
@@ -105,6 +107,27 @@ public class GameLogic : MonoBehaviour
 
         if(!classTreeLogic.isSelecting)
             checkClassSelectionTrigger();
+    }
+
+    void DealWithDataSaving(){
+        // Save data
+        if (Input.GetKeyDown(KeyCode.V)){
+            SaveSystem.DataSave(player.transform);
+            Debug.Log("Player data saved");
+        }
+
+        // Load data
+        if (Input.GetKeyDown(KeyCode.B)){
+            SaveData data = SaveSystem.DataLoad();
+            player.transform.position = new Vector3(data.position[0], data.position[1], data.position[2]);
+            Debug.Log("Player data loaded");
+        }
+
+        // Delete save
+        if (Input.GetKeyDown(KeyCode.N)){
+            SaveSystem.DeleteSave();
+            Debug.Log("Save deleted");
+        }
     }
 
     void checkClassSelectionTrigger(){
