@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class MenuController : MonoBehaviour
         GameObject gameController = GameObject.FindWithTag("GameController");
         if(gameController != null)
             gameLogic = gameController.GetComponent<GameLogic>();
+        
+        LoadPlayerSettings();
     }
 
     void Update(){
@@ -28,8 +31,24 @@ public class MenuController : MonoBehaviour
         GameObject settingsMenu = gameObject.transform.Find("SettingsMenu").gameObject;
 
         // Get the 2 sliders
-        GameObject slider1 = settingsMenu.transform.Find("SoundSlider").gameObject;
-        GameObject slider2 = settingsMenu.transform.Find("MusicSlider").gameObject;
+        Slider sfxVolumeSlider = settingsMenu.transform.Find("SoundSlider").GetComponent<Slider>();
+        Slider musicVolumeSlider = settingsMenu.transform.Find("MusicSlider").GetComponent<Slider>();
+
+        // Save player preferences for the sliders
+        PlayerPrefs.SetFloat("SFXVolume", sfxVolumeSlider.value);
+        PlayerPrefs.SetFloat("MusicVolume", musicVolumeSlider.value);
+        PlayerPrefs.Save();
+    }
+
+    public void LoadPlayerSettings(){
+        GameObject settingsMenu = gameObject.transform.Find("SettingsMenu").gameObject;
+
+        // Get the 2 sliders
+        Slider sfxVolumeSlider = settingsMenu.transform.Find("SoundSlider").GetComponent<Slider>();
+        Slider musicVolumeSlider = settingsMenu.transform.Find("MusicSlider").GetComponent<Slider>();
+
+        sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 0.5f);
+        musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.5f);
     }
 
     public void GotoPlayMenu(){
