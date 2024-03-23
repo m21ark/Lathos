@@ -41,14 +41,18 @@ public class MenuController : MonoBehaviour
     }
 
     public void LoadPlayerSettings(){
-        GameObject settingsMenu = gameObject.transform.Find("SettingsMenu").gameObject;
+        try{
+            GameObject settingsMenu = gameObject.transform.Find("SettingsMenu").gameObject;
 
-        // Get the 2 sliders
-        Slider sfxVolumeSlider = settingsMenu.transform.Find("SoundSlider").GetComponent<Slider>();
-        Slider musicVolumeSlider = settingsMenu.transform.Find("MusicSlider").GetComponent<Slider>();
+            // Get the 2 sliders
+            Slider sfxVolumeSlider = settingsMenu.transform.Find("SoundSlider").GetComponent<Slider>();
+            Slider musicVolumeSlider = settingsMenu.transform.Find("MusicSlider").GetComponent<Slider>();
 
-        sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 0.5f);
-        musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.5f);
+            sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 0.5f);
+            musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.5f);
+        }catch{
+            // pass
+        }
     }
 
     public void GotoPlayMenu(){

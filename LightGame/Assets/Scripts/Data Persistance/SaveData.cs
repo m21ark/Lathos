@@ -7,6 +7,7 @@ public class SaveData
     public int currentPlayerArea = 1; // Current scene the player is in
     public bool[] unlockedEndings = { false, false, false }; // Endings unlocked by player
     public string playerClassName = "Base";
+    public int collectedLight = 0;
 
     public float[] position; // Player position (TEMPORARY JUST FOR TESTING)
 
