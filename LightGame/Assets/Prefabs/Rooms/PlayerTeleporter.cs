@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,23 +6,29 @@ public class PlayerTeleporter : MonoBehaviour
 {
     private GameObject loadingScreen;
     private GameObject gameLogic;
+    private CanvasGroup fadeCanvasGroup;
+    private CanvasGroup hudCanvasGroup;
 
+    public float fadeDuration = 0.5f;
     public float teleportDelay = 3f;
-    public string areaName = ""; 
+    public string areaName = "";
 
-    void Start(){
-        
+    void Start()
+    {
         gameLogic = GameObject.FindWithTag("GameController");
         GameObject ui = gameLogic.transform.parent.transform.Find("UI").gameObject;
         loadingScreen = ui.transform.Find("LoadMenu").gameObject;
-
-        if(loadingScreen == null)
-            Debug.LogError("Loading screen not found!");
+        fadeCanvasGroup = ui.transform.Find("FadeCanvas").GetComponent<CanvasGroup>();
+        hudCanvasGroup = ui.transform.Find("HUD").GetComponent<CanvasGroup>();
+        
+        if (loadingScreen == null || fadeCanvasGroup == null)
+            Debug.LogError("Loading screen or fade canvas not found!");
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if(areaName == ""){
+        if (areaName == "")
+        {
             Debug.LogError("Area name not set for teleporter!");
             return;
         }
@@ -32,12 +37,40 @@ public class PlayerTeleporter : MonoBehaviour
             StartCoroutine(GotoArea());
     }
 
-    IEnumerator GotoArea(){
+    IEnumerator GotoArea()
+    {
+        // Pause the game
+        Time.timeScale = 0;
+
+        // Fade to black
+        float timer = 0f;
+        while (timer < fadeDuration)
+        {
+            hudCanvasGroup.alpha = Mathf.Lerp(1f, 0f, timer / fadeDuration);
+            fadeCanvasGroup.alpha = Mathf.Lerp(0f, 1f, timer / fadeDuration);
+            timer += Time.unscaledDeltaTime; 
+            yield return null;
+        }
+        fadeCanvasGroup.alpha = 1f;
+        hudCanvasGroup.alpha = 0f;
+
+        // Activate loading screen
         loadingScreen.SetActive(true);
-        Time.timeScale = 0; // Pause the game
+
+        // Wait for a few seconds
         yield return new WaitForSecondsRealtime(teleportDelay);
-        loadingScreen.SetActive(false);
+
+        timer = 0f;
+        while (timer < fadeDuration)
+        {
+            fadeCanvasGroup.alpha = Mathf.Lerp(0f, 1f, timer / fadeDuration);
+            timer += Time.unscaledDeltaTime; 
+            yield return null;
+        }
+        fadeCanvasGroup.alpha = 1f;
+        hudCanvasGroup.alpha = 1f;
+
+        // Load the new scene
         SceneManager.LoadScene(areaName);
-        Time.timeScale = 1; // Resume the game after loading is complete
     }
 }
