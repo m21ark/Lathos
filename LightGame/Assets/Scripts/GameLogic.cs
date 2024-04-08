@@ -13,6 +13,7 @@ public class GameLogic : MonoBehaviour
 
     public GameObject endMenu;
     public DialogueController dialogueController;
+    public DialogueController fullScreenDialogueController;
 
     private ClassTreeLogic classTreeLogic;
     private bool isInBossBattle;
@@ -24,6 +25,7 @@ public class GameLogic : MonoBehaviour
     // Game Logic Fields
     private float gameTime = 0.0f;
     public bool isPaused = false;
+    public bool isShowingFullScreenDialogue = false;
 
     // HUD Text Elements
     private GameObject hud;
@@ -85,6 +87,10 @@ public class GameLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        // TODO: TEMPORARY MANUAL TRIGGER FOR DialogueController
+        DialogueStuff();
+
         RefreshPlayer();
 
         DealWithDataSaving();
@@ -110,12 +116,30 @@ public class GameLogic : MonoBehaviour
 
         if(!classTreeLogic.isSelecting)
             checkClassSelectionTrigger();
+    }
 
-        // TODO: TEMPORARY MANUAL TRIGGER FOR DialogueController
+    void DialogueStuff(){
         if (Input.GetKeyDown(KeyCode.Return))
         {
             dialogueController.Display();
         }
+        
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            // Stop time and show dialogue
+            toggleCursor(true);
+            isShowingFullScreenDialogue = true;
+            fullScreenDialogueController.Display();
+        }
+
+        // Check if the full screen dialogue is done to unpause the game 
+        if(isShowingFullScreenDialogue){
+            if(!fullScreenDialogueController.isActive){
+                isShowingFullScreenDialogue = false;
+                toggleCursor(false);
+                }
+        }
+
     }
 
     void DealWithDataSaving(){ // This is just for testing purposes... it will be removed later

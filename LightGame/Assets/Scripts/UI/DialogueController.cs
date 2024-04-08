@@ -14,11 +14,14 @@ public class DialogueController : MonoBehaviour
 
     private int index = 0;
     private bool isTyping = false;
+    [HideInInspector] public bool isActive = false;
 
     public void Display(){
+        if(isActive) return;
         gameObject.SetActive(true);
         text.text = "";
         index = 0;
+        isActive = true;
         StartCoroutine(TypeLine());
     }
 
@@ -48,12 +51,12 @@ public class DialogueController : MonoBehaviour
         {
             if(!isTyping) break;
             text.text += c;
-            yield return new WaitForSeconds(textSpeedDelay);
+            yield return new WaitForSecondsRealtime(textSpeedDelay);
         }
         isTyping = false;
 
         if (autoSkip){
-            yield return new WaitForSeconds(nextBoxDelay);
+            yield return new WaitForSecondsRealtime(nextBoxDelay);
             NextLine();
         }
     }
@@ -66,6 +69,9 @@ public class DialogueController : MonoBehaviour
             text.text = "";
             StartCoroutine(TypeLine());
         }
-        else gameObject.SetActive(false);
+        else{
+            gameObject.SetActive(false);
+            isActive = false;
+        }
     }
 }
