@@ -1341,12 +1341,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 4420331912231633116}
-  lines:
-  - "Ol\xE1 mundo!"
-  - Adeus Mundo!
-  - Tenho fome!
-  - "Frase muito longa que n\xE3o consigo pensar mais no que dizer porque estou cansado
-    e com fome para ser mais creativo. It is what it is"
   autoSkip: 1
   isActive: 0
 --- !u!1 &2335839415477855603
@@ -3503,7 +3497,9 @@ MonoBehaviour:
   class1Cost: 500
   class2Cost: 500
   isPaused: 0
-  isShowingFullScreenDialogue: 0
+  dialogueDataList:
+  - {fileID: 11400000, guid: ff4d09296e613201996b1b7b6facae44, type: 2}
+  - {fileID: 11400000, guid: 94b175c3a6673ee688e2cb125e843cca, type: 2}
 --- !u!114 &5826706621548093825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6000,12 +5996,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 3630581502776520027}
-  lines:
-  - "Ol\xE1 mundo!"
-  - Adeus Mundo!
-  - Tenho fome!
-  - "Frase muito longa que n\xE3o consigo pensar mais no que dizer porque estou cansado
-    e com fome para ser mais creativo. It is what it is"
   autoSkip: 1
   isActive: 0
 --- !u!1 &8806994224506371929

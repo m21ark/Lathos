@@ -9,7 +9,7 @@ public class ClassTreeLogic : MonoBehaviour
     public GameObject class2SelectMenuObj;
     
     private GameLogic gameLogic;
-    public bool isSelecting = false;
+    [HideInInspector] public bool isSelecting = false;
     private int activeMenu = 0;
 
     // Class Objects

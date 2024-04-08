@@ -24,8 +24,11 @@ public class GameLogic : MonoBehaviour
 
     // Game Logic Fields
     private float gameTime = 0.0f;
-    public bool isPaused = false;
-    public bool isShowingFullScreenDialogue = false;
+    [HideInInspector] public bool isPaused = false;
+    private bool isShowingFullScreenDialogue = false;
+
+    // Dialogue Data
+    public List<DialogueData> dialogueDataList;
 
     // HUD Text Elements
     private GameObject hud;
@@ -87,10 +90,6 @@ public class GameLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        // TODO: TEMPORARY MANUAL TRIGGER FOR DialogueController
-        DialogueStuff();
-
         RefreshPlayer();
 
         DealWithDataSaving();
@@ -116,30 +115,38 @@ public class GameLogic : MonoBehaviour
 
         if(!classTreeLogic.isSelecting)
             checkClassSelectionTrigger();
+
+        // TODO: TEMPORARY MANUAL TRIGGER FOR DialogueController
+        DialogueStuff();
+
+    }
+
+    void StartDialogue(string key, bool isFullScreen = false)
+    {
+        DialogueData data = dialogueDataList.Find(data => data.dialogueName == key);
+        if (data != null){
+            if(isFullScreen){
+                    toggleCursor(true);
+                    fullScreenDialogueController.Display(data);
+                    isShowingFullScreenDialogue = true;
+            } else
+                dialogueController.Display(data);
+        }
+        else Debug.LogError("Dialogue data with key " + key + " not found.");
     }
 
     void DialogueStuff(){
         if (Input.GetKeyDown(KeyCode.Return))
-        {
-            dialogueController.Display();
-        }
-        
+            StartDialogue("Start Game", true);
+
         if (Input.GetKeyDown(KeyCode.P))
-        {
-            // Stop time and show dialogue
-            toggleCursor(true);
-            isShowingFullScreenDialogue = true;
-            fullScreenDialogueController.Display();
-        }
+            StartDialogue("Fighter Ending");
 
         // Check if the full screen dialogue is done to unpause the game 
-        if(isShowingFullScreenDialogue){
-            if(!fullScreenDialogueController.isActive){
-                isShowingFullScreenDialogue = false;
-                toggleCursor(false);
-                }
+        if(isShowingFullScreenDialogue && !fullScreenDialogueController.isActive){
+            isShowingFullScreenDialogue = false;
+            toggleCursor(false);
         }
-
     }
 
     void DealWithDataSaving(){ // This is just for testing purposes... it will be removed later
