@@ -119,8 +119,7 @@ public class GameLogic : MonoBehaviour
         if(!classTreeLogic.isSelecting)
             checkClassSelectionTrigger();
 
-        // TODO: TEMPORARY MANUAL TRIGGER FOR DialogueController
-        DialogueStuff();
+        CheckDialogue();
     }
 
     void handlePlayerLight() {
@@ -157,13 +156,7 @@ public class GameLogic : MonoBehaviour
         else Debug.LogError("Dialogue data with key '" + key + "' not found.");
     }
 
-    void DialogueStuff(){
-        if (Input.GetKeyDown(KeyCode.Return))
-            StartDialogue("Start Game", true);
-
-        if (Input.GetKeyDown(KeyCode.P))
-            StartDialogue("Fighter Ending");
-
+    void CheckDialogue(){
         // Check if the full screen dialogue is done to unpause the game 
         if(isShowingFullScreenDialogue && !fullScreenDialogueController.isActive){
             isShowingFullScreenDialogue = false;
