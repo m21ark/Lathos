@@ -10,7 +10,9 @@ public class GameLogic : MonoBehaviour
     // Entities
     [HideInInspector] public ProtoClass player;
     [HideInInspector] public Boss boss;
+
     public GameObject endMenu;
+    public DialogueController dialogueController;
 
     private ClassTreeLogic classTreeLogic;
     private bool isInBossBattle;
@@ -50,6 +52,7 @@ public class GameLogic : MonoBehaviour
 
         classTreeLogic = gameObject.GetComponent<ClassTreeLogic>();
 
+        
         if (player == null){
             Debug.LogError("GameObject with tag 'Player' was not found");
             Time.timeScale = 0;
@@ -107,6 +110,12 @@ public class GameLogic : MonoBehaviour
 
         if(!classTreeLogic.isSelecting)
             checkClassSelectionTrigger();
+
+        // TODO: TEMPORARY MANUAL TRIGGER FOR DialogueController
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            dialogueController.Display();
+        }
     }
 
     void DealWithDataSaving(){ // This is just for testing purposes... it will be removed later
