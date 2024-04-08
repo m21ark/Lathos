@@ -14,6 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueName: Start Game
   dialoguePhrases:
-  - In a far away galaxy...
-  - Where the night never sets
-  - A hero arises from the dead to fight for his homeland like the FBI would
+  - "In the radiant realm of D\xE1sos, where a harmonious species of tree folk thrived
+    under eternal sunshine, darkness has now descended. Insects, born from the very
+    shadows that once lingered on the fringes, have wrought devastation upon the
+    land."
+  - "As you journeyed overseas with the relic magic lamp, an artifact that has been
+    your constant companion since childhood, you sensed its unease. Its light flickered
+    erratically, signaling trouble back home. With a heavy heart, you sail back to
+    D\xE1sos."
+  - Upon arrival, despair grips you as you behold the desolation that now consumes
+    your once-glorious homeland. The island is shrouded in a blanket of unyielding
+    night, a stark contrast to the perpetual daylight it once knew.
+  - "The light within your lamp resonates with the darkness that now pervades D\xE1sos,
+    guiding you forward. As one of the tree folk, you cannot bear to remain in the
+    dark. Cherish the remnants of light within your lamp, unravel the mystery of
+    what transpired, and become the hero that reclaims the light that once illuminated
+    your home."
