@@ -141,8 +141,10 @@ public class GameLogic : MonoBehaviour
         }
     }
 
-    void StartDialogue(string key, bool isFullScreen = false)
+    public void StartDialogue(string key, bool isFullScreen = false)
     {
+        if(isFullScreen && isShowingFullScreenDialogue) return;
+
         DialogueData data = dialogueDataList.Find(data => data.dialogueName == key);
         if (data != null){
             if(isFullScreen){
@@ -152,7 +154,7 @@ public class GameLogic : MonoBehaviour
             } else
                 dialogueController.Display(data);
         }
-        else Debug.LogError("Dialogue data with key " + key + " not found.");
+        else Debug.LogError("Dialogue data with key '" + key + "' not found.");
     }
 
     void DialogueStuff(){

@@ -8,6 +8,7 @@ public class FireplaceBehavior : MonoBehaviour
     public bool isLit = false;
     public int healAmount = 1;
     public float lightLimit = 20;
+    public string dialogueName = "";
     public GameObject FireLightObj;
     private GameLogic gameLogic;
 
@@ -16,18 +17,35 @@ public class FireplaceBehavior : MonoBehaviour
         gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
     }
 
+    private void RepelEnemies(Collider other)
+    {
+        if (other.CompareTag("Minion"))
+        {
+            Vector3 directionToCenter = transform.position - other.transform.position;
+            directionToCenter.Normalize();
+            other.GetComponent<Rigidbody>().AddForce(-directionToCenter * 10f, ForceMode.Impulse);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !isLit)
+        if (other.CompareTag("Player"))
         {
-            isLit = true;
-            FireLightObj.SetActive(true);
-            GetComponent<Renderer>().material.color = new Color(1f, 0.5f, 0f);
-        }
+            gameLogic.StartDialogue(dialogueName);
+
+            if(!isLit){
+                isLit = true;
+                FireLightObj.SetActive(true);
+                GetComponent<Renderer>().material.color = new Color(1f, 0.5f, 0f);
+            }
+        }           
+            
+       RepelEnemies(other);
     }
 
     private void OnTriggerStay(Collider other)
     {
+
         if (other.CompareTag("Player"))
         {
             ProtoClass player = other.GetComponent<ProtoClass>();
@@ -35,8 +53,8 @@ public class FireplaceBehavior : MonoBehaviour
             player.Heal(healAmount);
 
             if(player.collectedLight < lightLimit)
-                player.collectedLight += 1;
-            
+                player.collectedLight += 1;            
         }
+        RepelEnemies(other);
     }
 }
