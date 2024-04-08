@@ -24,8 +24,9 @@ public class GameLogic : MonoBehaviour
 
     // Game Logic Fields
     private float gameTime = 0.0f;
-    [HideInInspector] public bool isPaused = false;
+    private float lightDecreaseTimer = 0f;
     private bool isShowingFullScreenDialogue = false;
+    [HideInInspector] public bool isPaused = false;
 
     // Dialogue Data
     public List<DialogueData> dialogueDataList;
@@ -94,6 +95,8 @@ public class GameLogic : MonoBehaviour
 
         DealWithDataSaving();
 
+        handlePlayerLight();
+
         // Update the game time
         gameTime += Time.deltaTime;
 
@@ -118,7 +121,24 @@ public class GameLogic : MonoBehaviour
 
         // TODO: TEMPORARY MANUAL TRIGGER FOR DialogueController
         DialogueStuff();
+    }
 
+    void handlePlayerLight() {
+
+        lightDecreaseTimer += Time.deltaTime;
+        // If one second has passed, decrease the player's light
+        if (lightDecreaseTimer >= 1f) {
+            lightDecreaseTimer -= 1f;
+            if (player.collectedLight > 0) {
+                player.collectedLight -= 1;
+                if (player.collectedLight < 0) player.collectedLight = 0;
+            }
+
+            // If player's light is 0, give him damage
+            if (player.collectedLight == 0) {
+                player.TakeDamage(1);
+            }
+        }
     }
 
     void StartDialogue(string key, bool isFullScreen = false)

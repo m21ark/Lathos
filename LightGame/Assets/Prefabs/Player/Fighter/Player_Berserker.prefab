@@ -326,6 +326,7 @@ MonoBehaviour:
   maxHealth: 200
   health: 200
   armor: 1
+  attackSpeed: 1
   A0Prefab: {fileID: 7115518648037137970, guid: 382030af18117b24397df83d95e9650f, type: 3}
   A0Damage: 10
   A0ReloadTime: 0.3

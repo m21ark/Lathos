@@ -420,6 +420,7 @@ MonoBehaviour:
   maxHealth: 100
   health: 100
   armor: 1
+  attackSpeed: 1
   A0Prefab: {fileID: 4923962845166056162, guid: d25d25d10bad8df4cb5154a551934f71, type: 3}
   A0Damage: 10
   A0ReloadTime: 0.3
@@ -440,6 +441,8 @@ MonoBehaviour:
   isAttack1ing: 0
   isAttack2ing: 0
   lastDashTime: 0
+  A1TimeSpan: 3
+  A1BuffMult: 1.5
 --- !u!1 &5940330435187617133
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,11 +541,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae452b02d92bef9519382ce02d4a9e18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   hoverRadius: 2
   hoverHeight: 1
   hoverSpeed: 1
   returnSpeed: 30
+  lightSource: {fileID: 0}
 --- !u!135 &2233090269682523613
 SphereCollider:
   m_ObjectHideFlags: 0

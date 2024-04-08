@@ -2,46 +2,43 @@ using UnityEngine;
 
 public class LampHoverPlayer : MonoBehaviour
 {
-    public Transform player;
     public float hoverRadius = 3f; // Radius within which the lamp hovers around the player
     public float hoverHeight = 2f; // Height above the player the lamp hovers
     public float hoverSpeed = 1f; // Speed of hovering
     public float returnSpeed = 20f; // Speed of returning to the player if too far
 
+    public GameObject lightSource; // Light source of the lamp
+
     private Vector3 targetPosition;
+    private Transform player;
+    private int playerLight = 0;
 
-    void Start()
-    {
-        if (player == null)
-        {
-            player = GameObject.FindGameObjectWithTag("Player").transform;
+    void GetPlayer(){
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
 
-            if (player == null)
-            {
-                Debug.LogError("Player GameObject not found with the 'Player' tag!");
-                enabled = false; // Disable the script if player reference is not found
-                return;
-            }
+        if(playerObj == null){ 
+            Debug.LogError("Player cannot be found");
+            return;
         }
 
-        // Set initial target position
-        SetPlayerTargetPosition();
+        player = playerObj.transform;
+        ProtoClass playerClass = player.GetComponent<ProtoClass>();
+        if(playerClass)
+            playerLight = playerClass.collectedLight;
     }
 
     void Update()
     {
-        // If player is lost, try to find it again
-        if(player == null){
-            player = GameObject.FindGameObjectWithTag("Player").transform;
-
-            if(player == null){ 
-                Debug.LogError("Player cannot be found");
-                return;
-                }
-        }
-
-        // Move towards target
+        GetPlayer();
+        UpdateLightSource();
         MoveTowardsTarget();
+    }
+
+    // TODO: later adjust values in a more dynamic way
+    void UpdateLightSource(){
+        Light light = lightSource.GetComponent<Light>();
+        light.intensity = playerLight * 3f;
+        light.range = 10f;
     }
 
     void MoveTowardsTarget()

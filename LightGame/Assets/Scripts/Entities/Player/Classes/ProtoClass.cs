@@ -35,8 +35,7 @@ public class ProtoClass : MonoBehaviour
     public float A2ReloadTime = 2f;
     public float A2ChargeRate = 0f;
 
-
-
+    // Light / Energy
     public int collectedLight = 0;
 
     // Fire rate / reload controls
