@@ -1,15 +1,15 @@
-# Light Game
+# Láthos: Chronicles of Dásos
 
 ## About the Project
 
-This game is being developed by students for a university course project. The students are from 3 different courses: 
+This game is being developed by students for a university course project. The students are from 2 different courses: 
 
 - MEIC (Master in Informatics and Computing Engineering)
-- XXX
-- XXX
+- Multimedia / Sound Design
+
 ## The Story
 
-The game main concept is about a battle between the player and a boss with multiple phases and that can summon underlings to make fight more challenging. The player can select some basic RPG classes with different abilities to progress.
+In an island called Dásos, engulfed by eternal darkness, the lone hero Ithiá, armed with a companion magical lamp, sets out to reclaim the stolen light from malevolent insect creatures, confronting the island's darkest secrets to restore radiance to its desolate homeland. Guided by the flickering flame and driven by a quest for revenge, the hero battles through waves of darkness, facing off against the dark insect forces and their ruler to bring hope back to the once-vibrant island.
 
 ## Development Images
 
@@ -26,6 +26,5 @@ The game main concept is about a battle between the player and a boss with multi
 ![Screenshot from 2024-03-18 12-19-54](https://github.com/m21ark/light_game/assets/72521279/5a8c16e6-41ff-4beb-a1a4-24a0d7ddcb2a)
 
 ## Entities Structure
-
 
 ![Untitled-2024-03-14-1945](https://github.com/m21ark/light_game/assets/72521279/7889ab60-79d7-459f-abde-bdc1fd4cfc49)
