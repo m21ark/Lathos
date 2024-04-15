@@ -2111,7 +2111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1975959190090480, guid: eca000ab44c908d4dab395f654753038, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4335282639064450, guid: eca000ab44c908d4dab395f654753038, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2205,7 +2205,7 @@ VFXRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051226508}
   m_Enabled: 1
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -3582,7 +3582,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1853528009240653787, guid: c7a11e7674700c84f9fadef566c66147, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7651501159472184113, guid: c7a11e7674700c84f9fadef566c66147, type: 3}
       propertyPath: m_Name
@@ -3590,7 +3590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7651501159472184113, guid: c7a11e7674700c84f9fadef566c66147, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8703839338881878516, guid: c7a11e7674700c84f9fadef566c66147, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4209,7 +4209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4274653050354540, guid: e55149ba6f4d00741984987e258c3378, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5234,7 +5234,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1862362308499419742, guid: da9ca5e6a7c2266438c395d017f6322b, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2504462620410532605, guid: da9ca5e6a7c2266438c395d017f6322b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5282,7 +5282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7364377615354318112, guid: da9ca5e6a7c2266438c395d017f6322b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5311,7 +5311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4785847192705528205, guid: 71fbdf03f1ef6d5449f729da49d60bfc, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8771218359030906968, guid: 71fbdf03f1ef6d5449f729da49d60bfc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5355,7 +5355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9168998579400611686, guid: 71fbdf03f1ef6d5449f729da49d60bfc, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5370,6 +5370,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3752516359068391452, guid: 7e6d9d9101d1a4b46a792d0942562b07, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6009349947091316140, guid: 7e6d9d9101d1a4b46a792d0942562b07, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5413,6 +5417,10 @@ PrefabInstance:
     - target: {fileID: 8672458740028384209, guid: 7e6d9d9101d1a4b46a792d0942562b07, type: 3}
       propertyPath: m_Name
       value: BeamVFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672458740028384209, guid: 7e6d9d9101d1a4b46a792d0942562b07, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
