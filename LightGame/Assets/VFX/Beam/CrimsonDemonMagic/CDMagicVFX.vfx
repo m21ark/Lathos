@@ -12,15 +12,317 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d01270efd3285ea4a9d6c555cb0a8027, type: 3}
   m_Name: VFXUI
   m_EditorClassIdentifier: 
-  groupInfos: []
+  groupInfos:
+  - title: Magic Circles
+    position:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 100
+      height: 100
+    contents:
+    - model: {fileID: 8926484042661614555}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614613}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614558}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614580}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614672}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614805}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614583}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614585}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614745}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614591}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614681}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614687}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614687}
+      id: 1
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614687}
+      id: 2
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614687}
+      id: 3
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614687}
+      id: 4
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614687}
+      id: 5
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614687}
+      id: 6
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614750}
+      id: 1
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614750}
+      id: 2
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614756}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614758}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614762}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614764}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614779}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614782}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614819}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614788}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614796}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614799}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614802}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614826}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614826}
+      id: 1
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614826}
+      id: 2
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614826}
+      id: 3
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614826}
+      id: 4
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614826}
+      id: 5
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614832}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614836}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614838}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614846}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614849}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614852}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614855}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614870}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614873}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614879}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614886}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614888}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614892}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614908}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614910}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614918}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614921}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614924}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614927}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614942}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614945}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614951}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614958}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614960}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614964}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614968}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614970}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614978}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614981}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614984}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661614987}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615002}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615005}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615011}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615018}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615020}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615024}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615162}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615164}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615172}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615175}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615178}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615181}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615196}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615199}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615205}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615212}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615214}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615218}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615901}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615903}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615911}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615914}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615917}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615920}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615935}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615938}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615944}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615951}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615953}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661615957}
+      id: 0
+      isStickyNote: 0
   stickyNoteInfos: []
   categories: []
   uiBounds:
     serializedVersion: 2
-    x: 718
-    y: -219
-    width: 7618
-    height: 3994
+    x: 693
+    y: -278
+    width: 7643
+    height: 4039
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2277,6 +2579,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615357}
   - {fileID: 8926484042661615404}
   - {fileID: 8926484042661615438}
+  - {fileID: 8926484042661616133}
   m_UIPosition: {x: 3714, y: 1919}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
@@ -2843,7 +3146,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 3714, y: 2689}
+  m_UIPosition: {x: 3714, y: 2765}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -2879,11 +3182,10 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661614737}
-  - {fileID: 8926484042661615377}
   - {fileID: 8926484042661615380}
   - {fileID: 8926484042661615473}
   - {fileID: 8926484042661615478}
-  m_UIPosition: {x: 3714, y: 2857}
+  m_UIPosition: {x: 3714, y: 2920}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -13620,7 +13922,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.Position, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"position":{"x":0.0,"y":39.0,"z":0.0}}'
+      m_SerializableObject: '{"position":{"x":0.0,"y":40.0,"z":0.0}}'
     m_Space: 0
   m_Property:
     name: Position
@@ -17066,102 +17368,6 @@ MonoBehaviour:
   m_Direction: 1
   m_LinkedSlots:
   - {fileID: 8926484042661615362}
---- !u!114 &8926484042661615377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a971fa2e110a0ac42ac1d8dae408704b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UIIgnoredErrors: []
-  m_Parent: {fileID: 8926484042661614734}
-  m_Children: []
-  m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 0
-  m_UISuperCollapsed: 0
-  m_InputSlots:
-  - {fileID: 8926484042661615378}
-  m_OutputSlots: []
-  m_Disabled: 0
-  m_ActivationSlot: {fileID: 8926484042661615379}
-  attribute: size
-  Composition: 0
-  Source: 0
-  Random: 0
-  channels: 6
---- !u!114 &8926484042661615378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f780aa281814f9842a7c076d436932e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UIIgnoredErrors: []
-  m_Parent: {fileID: 0}
-  m_Children: []
-  m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
-  m_UISuperCollapsed: 0
-  m_MasterSlot: {fileID: 8926484042661615378}
-  m_MasterData:
-    m_Owner: {fileID: 8926484042661615377}
-    m_Value:
-      m_Type:
-        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1
-    m_Space: 2147483647
-  m_Property:
-    name: Size
-    m_serializedType:
-      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-  m_Direction: 0
-  m_LinkedSlots: []
---- !u!114 &8926484042661615379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4c11ff25089a324daf359f4b0629b33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UIIgnoredErrors: []
-  m_Parent: {fileID: 0}
-  m_Children: []
-  m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
-  m_UISuperCollapsed: 0
-  m_MasterSlot: {fileID: 8926484042661615379}
-  m_MasterData:
-    m_Owner: {fileID: 8926484042661615377}
-    m_Value:
-      m_Type:
-        m_SerializableType: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: True
-    m_Space: 2147483647
-  m_Property:
-    name: _vfx_enabled
-    m_serializedType:
-      m_SerializableType: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-  m_Direction: 0
-  m_LinkedSlots: []
 --- !u!114 &8926484042661615380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17219,7 +17425,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.AnimationCurve, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"frames":[{"time":0.0,"value":1.0,"inTangent":-2.2271275520324709,"outTangent":-2.2271275520324709,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":1.0,"value":0.3270454406738281,"inTangent":-0.06012018769979477,"outTangent":-0.06012018769979477,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
+      m_SerializableObject: '{"frames":[{"time":0.0,"value":0.5,"inTangent":-0.11147206276655197,"outTangent":-0.11147206276655197,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":1.0,"value":0.10000000149011612,"inTangent":-0.3038906157016754,"outTangent":-0.3038906157016754,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
     m_Space: 2147483647
   m_Property:
     name: Scale_x
@@ -18701,7 +18907,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":2.9960782527923586,"g":1.0409411191940308,"b":0.5392940640449524,"a":1.0},"time":0.0},{"color":{"r":23.9686279296875,"g":8.245208740234375,"b":4.314352989196777,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":1.0,"time":0.17843900620937348},{"alpha":1.0,"time":0.8647134900093079},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":2.9960782527923586,"g":1.0409411191940308,"b":0.5392940640449524,"a":1.0},"time":0.0},{"color":{"r":23.9686279296875,"g":8.245208740234375,"b":4.314352989196777,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":1.0,"time":0.17843900620937348},{"alpha":1.0,"time":0.9470664262771606},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: Color
@@ -32872,6 +33078,102 @@ MonoBehaviour:
   m_MasterSlot: {fileID: 8926484042661616132}
   m_MasterData:
     m_Owner: {fileID: 8926484042661616130}
+    m_Value:
+      m_Type:
+        m_SerializableType: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: True
+    m_Space: 2147483647
+  m_Property:
+    name: _vfx_enabled
+    m_serializedType:
+      m_SerializableType: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+  m_Direction: 0
+  m_LinkedSlots: []
+--- !u!114 &8926484042661616133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a971fa2e110a0ac42ac1d8dae408704b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 8926484042661614701}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 0
+  m_UISuperCollapsed: 0
+  m_InputSlots:
+  - {fileID: 8926484042661616134}
+  m_OutputSlots: []
+  m_Disabled: 0
+  m_ActivationSlot: {fileID: 8926484042661616135}
+  attribute: size
+  Composition: 0
+  Source: 0
+  Random: 0
+  channels: 6
+--- !u!114 &8926484042661616134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f780aa281814f9842a7c076d436932e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 8926484042661616134}
+  m_MasterData:
+    m_Owner: {fileID: 8926484042661616133}
+    m_Value:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 1
+    m_Space: 2147483647
+  m_Property:
+    name: Size
+    m_serializedType:
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+  m_Direction: 0
+  m_LinkedSlots: []
+--- !u!114 &8926484042661616135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4c11ff25089a324daf359f4b0629b33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 8926484042661616135}
+  m_MasterData:
+    m_Owner: {fileID: 8926484042661616133}
     m_Value:
       m_Type:
         m_SerializableType: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
