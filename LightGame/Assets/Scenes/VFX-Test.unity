@@ -5441,11 +5441,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6636002843261425028, guid: d5cde2cb39e3def4a9718a7b3d40ea8a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8012226066587219515, guid: d5cde2cb39e3def4a9718a7b3d40ea8a, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8807386874071056852, guid: d5cde2cb39e3def4a9718a7b3d40ea8a, type: 3}
       propertyPath: m_LocalPosition.x
