@@ -75,7 +75,7 @@ public class BasicAi : MonoBehaviour
     public virtual void AttackPlayer() {
         agent.SetDestination(player.position);
 
-        transform.LookAt(player);
+        //transform.LookAt(player);
 
         if (!alreadyAttacked) {
             // Attack code here
