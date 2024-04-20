@@ -62,7 +62,7 @@ public class BasicAi : MonoBehaviour
 
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
-        if (Physics.Raycast(walkPoint, -transform.up, 7f, whatIsGround)) walkPointSet = true;
+        if (Physics.Raycast(walkPoint, -transform.up, 12f, whatIsGround)) walkPointSet = true;
       
     }
 
