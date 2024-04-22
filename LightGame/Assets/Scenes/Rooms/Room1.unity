@@ -705,7 +705,7 @@ GameObject:
   - component: {fileID: 893750435}
   m_Layer: 3
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -813,7 +813,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 6a95c7f35e7d36442b456500b5dd8440, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 750b5c8339abda34eae4d983f602b200, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1001 &966987408
 PrefabInstance:
