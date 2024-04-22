@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3355108666169386414}
   - component: {fileID: 8012226066587219515}
   m_Layer: 0
-  m_Name: CDMagicVFX
+  m_Name: CrimsonDemonMagicVFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
