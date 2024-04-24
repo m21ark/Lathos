@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Rendering.Universal;
 using UnityEngine;
 
 public class XRayLogic : MonoBehaviour
 {
     [SerializeField] private float xRayDuration;
+    [SerializeField] private ScriptableRendererFeature fullScreenGray;
+    [SerializeField] private Material _material;
+    
 
     // Get all the enemies with the tag Boss or Minion in the scene, and change their layer to RenderAbove
     void Start()
@@ -23,6 +27,9 @@ public class XRayLogic : MonoBehaviour
             ChangeLayerAllChildren(enemy.transform, "RenderAbove");
         }
 
+        // Now that the enemies are x-rayed, we need to change the view to grayscale
+        fullScreenGray.SetActive(true);
+        
         // Wait for xRayDuration seconds, then change the layer of all the enemies back to Default
         StartCoroutine(ResetLayer());
     }
@@ -31,6 +38,10 @@ public class XRayLogic : MonoBehaviour
     {
         yield return new WaitForSeconds(xRayDuration);
 
+        // Change the view back to normal
+        fullScreenGray.SetActive(false);
+
+        // Change the layer of all the enemies back to Default
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Boss");
         foreach (GameObject enemy in enemies)
         {
