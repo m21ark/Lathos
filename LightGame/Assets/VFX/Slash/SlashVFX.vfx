@@ -3873,7 +3873,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614747}
   m_ExposedName: RotationCurve
   m_Exposed: 1
-  m_Order: 0
+  m_Order: 1
   m_Category: 
   m_Min:
     m_Type:
@@ -3961,7 +3961,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614749}
   m_ExposedName: RotationVelocity
   m_Exposed: 1
-  m_Order: 0
+  m_Order: 2
   m_Category: 
   m_Min:
     m_Type:
@@ -4867,7 +4867,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614778}
   m_ExposedName: AlphaCurve
   m_Exposed: 1
-  m_Order: 1
+  m_Order: 3
   m_Category: 
   m_Min:
     m_Type:
