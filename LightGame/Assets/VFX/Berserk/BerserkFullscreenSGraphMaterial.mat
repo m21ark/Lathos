@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GraySGraphMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: 7c4fc179526c4e948b24e5c1710f0276, type: 3}
+  m_Name: BerserkFullscreenSGraphMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: 1b7f9cf10347d684a95ccfd4a721e9aa, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -23,6 +23,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Mask:
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -37,7 +41,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _GrayIntensity: 0
-    - _GreyIntensity: 0
-    m_Colors: []
+    - _CellDensity: 6
+    - _Intensity: 0.00028795004
+    - _MaskPower: 5
+    - _VoronoiPower: 2
+    m_Colors:
+    - _Color: {r: 0.7295597, g: 0, b: 0, a: 0}
+    - _VoronoiSpeed: {r: 1, g: 2, b: 0, a: 0}
   m_BuildTextureStacks: []
