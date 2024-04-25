@@ -42,7 +42,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _CellDensity: 6
-    - _Intensity: 0.00028795004
+    - _Intensity: 0.0015437007
     - _MaskPower: 5
     - _VoronoiPower: 2
     m_Colors:
