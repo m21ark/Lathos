@@ -19,7 +19,7 @@ MonoBehaviour:
       x: 2085
       y: -146
       width: 2744
-      height: 1831
+      height: 1824
     contents:
     - model: {fileID: 8926484042661614756}
       id: 0
@@ -142,7 +142,7 @@ MonoBehaviour:
     x: 2085
     y: -146
     width: 5461
-    height: 1831
+    height: 1824
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1248,7 +1248,7 @@ MonoBehaviour:
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots: []
-  m_Label: 
+  m_Label: Rotating Stars
   m_Data: {fileID: 8926484042661614776}
   m_InputFlowSlot:
   - link:
@@ -2352,7 +2352,7 @@ MonoBehaviour:
   m_InputSlots:
   - {fileID: 8926484042661614841}
   m_OutputSlots: []
-  m_Label: 
+  m_Label: Star Trails
   m_Data: {fileID: 8926484042661614832}
   m_InputFlowSlot:
   - link:
@@ -5488,7 +5488,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661615036}
-  m_UIPosition: {x: 3375, y: 1343}
+  m_UIPosition: {x: 3361, y: 1336}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -8091,7 +8091,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615358}
   - {fileID: 8926484042661615359}
   m_OutputSlots: []
-  m_Label: 
+  m_Label: Ground effect
   m_Data: {fileID: 8926484042661615319}
   m_InputFlowSlot:
   - link:
@@ -9591,7 +9591,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615503}
   - {fileID: 8926484042661615504}
   m_OutputSlots: []
-  m_Label: 
+  m_Label: Center Star
   m_Data: {fileID: 8926484042661615460}
   m_InputFlowSlot:
   - link:
@@ -10743,7 +10743,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615586}
   - {fileID: 8926484042661615587}
   m_OutputSlots: []
-  m_Label: 
+  m_Label: Center Magic Circle
   m_Data: {fileID: 8926484042661615460}
   m_InputFlowSlot:
   - link:
