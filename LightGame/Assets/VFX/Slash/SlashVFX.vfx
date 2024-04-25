@@ -75,6 +75,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615423}
   - {fileID: 8926484042661615432}
   - {fileID: 8926484042661615517}
+  - {fileID: 8926484042661615521}
   m_UIPosition: {x: 0, y: 0}
   m_UICollapsed: 1
   m_UISuperCollapsed: 0
@@ -150,8 +151,8 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
-  - name: InvertedSlashTrailSize
-    path: InvertedSlashTrailSize
+  - name: InvertedSlashTrailSizeX
+    path: InvertedSlashTrailSizeX
     tooltip: 
     sheetType: m_Float
     realType: Single
@@ -160,6 +161,20 @@ MonoBehaviour:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
       m_SerializableObject: 2
+    min: 0
+    max: 5
+    enumValues: []
+    descendantCount: 0
+  - name: InvertedSlashTrailSizeY
+    path: InvertedSlashTrailSizeY
+    tooltip: 
+    sheetType: m_Float
+    realType: Single
+    defaultValue:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 1
     min: 0
     max: 5
     enumValues: []
@@ -7557,7 +7572,7 @@ MonoBehaviour:
   m_InputSlots: []
   m_OutputSlots:
   - {fileID: 8926484042661615391}
-  m_ExposedName: InvertedSlashTrailSize
+  m_ExposedName: InvertedSlashTrailSizeX
   m_Exposed: 1
   m_Order: 5
   m_Category: 
@@ -7723,7 +7738,8 @@ MonoBehaviour:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
   m_Direction: 0
-  m_LinkedSlots: []
+  m_LinkedSlots:
+  - {fileID: 8926484042661615522}
 --- !u!114 &8926484042661615401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7826,7 +7842,8 @@ MonoBehaviour:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
   m_Direction: 0
-  m_LinkedSlots: []
+  m_LinkedSlots:
+  - {fileID: 8926484042661615522}
 --- !u!114 &8926484042661615404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7850,7 +7867,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615405}
   m_ExposedName: SlashTexture
   m_Exposed: 1
-  m_Order: 6
+  m_Order: 7
   m_Category: 
   m_Min:
     m_Type:
@@ -7871,7 +7888,7 @@ MonoBehaviour:
       inputSlot: {fileID: 8926484042661614971}
     - outputSlot: {fileID: 8926484042661615405}
       inputSlot: {fileID: 8926484042661615004}
-    position: {x: 637.3334, y: 1337.3333}
+    position: {x: 637.3334, y: 1368.6666}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661615405
@@ -7933,7 +7950,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615407}
   m_ExposedName: MainColor
   m_Exposed: 1
-  m_Order: 7
+  m_Order: 8
   m_Category: 
   m_Min:
     m_Type:
@@ -8149,7 +8166,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615413}
   m_ExposedName: SecondaryColor
   m_Exposed: 1
-  m_Order: 8
+  m_Order: 9
   m_Category: 
   m_Min:
     m_Type:
@@ -8365,7 +8382,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615419}
   m_ExposedName: ParticlesColor
   m_Exposed: 1
-  m_Order: 10
+  m_Order: 11
   m_Category: 
   m_Min:
     m_Type:
@@ -8445,7 +8462,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615422}
   m_ExposedName: Particles Lifetime
   m_Exposed: 1
-  m_Order: 9
+  m_Order: 10
   m_Category: 
   m_Min:
     m_Type:
@@ -8525,7 +8542,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615424}
   m_ExposedName: ParticlesTriggerRate
   m_Exposed: 1
-  m_Order: 11
+  m_Order: 12
   m_Category: 
   m_Min:
     m_Type:
@@ -9494,3 +9511,88 @@ MonoBehaviour:
   m_Direction: 1
   m_LinkedSlots:
   - {fileID: 8926484042661615515}
+--- !u!114 &8926484042661615521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330e0fca1717dde4aaa144f48232aa64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 114350483966674976}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 0
+  m_UISuperCollapsed: 0
+  m_InputSlots: []
+  m_OutputSlots:
+  - {fileID: 8926484042661615522}
+  m_ExposedName: InvertedSlashTrailSizeY
+  m_Exposed: 1
+  m_Order: 6
+  m_Category: 
+  m_Min:
+    m_Type:
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+    m_SerializableObject: 0
+  m_Max:
+    m_Type:
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+    m_SerializableObject: 5
+  m_IsOutput: 0
+  m_EnumValues: []
+  m_ValueFilter: 1
+  m_Tooltip: 
+  m_Nodes:
+  - m_Id: 0
+    linkedSlots:
+    - outputSlot: {fileID: 8926484042661615522}
+      inputSlot: {fileID: 8926484042661615400}
+    - outputSlot: {fileID: 8926484042661615522}
+      inputSlot: {fileID: 8926484042661615403}
+    position: {x: 611.3334, y: 1337.3333}
+    expandedSlots: []
+    expanded: 0
+--- !u!114 &8926484042661615522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f780aa281814f9842a7c076d436932e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 8926484042661615522}
+  m_MasterData:
+    m_Owner: {fileID: 8926484042661615521}
+    m_Value:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 1
+    m_Space: 2147483647
+  m_Property:
+    name: o
+    m_serializedType:
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+  m_Direction: 1
+  m_LinkedSlots:
+  - {fileID: 8926484042661615400}
+  - {fileID: 8926484042661615403}
