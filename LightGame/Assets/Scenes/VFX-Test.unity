@@ -1689,7 +1689,7 @@ VisualEffect:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 522446446}
   m_Enabled: 1
-  m_Asset: {fileID: 8926484042661614526, guid: 2782c9a02981a114daa1c3b30d520319, type: 3}
+  m_Asset: {fileID: 0}
   m_InitialEventName: OnPlay
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0
@@ -5284,7 +5284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!73398921 &1837143711
 VFXRenderer:
   serializedVersion: 1
@@ -5293,7 +5293,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1837143710}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -6609,7 +6609,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1862362308499419742, guid: da9ca5e6a7c2266438c395d017f6322b, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2504462620410532605, guid: da9ca5e6a7c2266438c395d017f6322b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6621,7 +6621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2504462620410532605, guid: da9ca5e6a7c2266438c395d017f6322b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 7.81
       objectReference: {fileID: 0}
     - target: {fileID: 2504462620410532605, guid: da9ca5e6a7c2266438c395d017f6322b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6651,13 +6651,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3942661150454898428, guid: da9ca5e6a7c2266438c395d017f6322b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3942661150454898428, guid: da9ca5e6a7c2266438c395d017f6322b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.416
+      objectReference: {fileID: 0}
+    - target: {fileID: 3942661150454898428, guid: da9ca5e6a7c2266438c395d017f6322b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3942661150454898428, guid: da9ca5e6a7c2266438c395d017f6322b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3942661150454898428, guid: da9ca5e6a7c2266438c395d017f6322b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 7364377615354318112, guid: da9ca5e6a7c2266438c395d017f6322b, type: 3}
       propertyPath: m_Name
       value: ArrowVFX
       objectReference: {fileID: 0}
     - target: {fileID: 7364377615354318112, guid: da9ca5e6a7c2266438c395d017f6322b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
