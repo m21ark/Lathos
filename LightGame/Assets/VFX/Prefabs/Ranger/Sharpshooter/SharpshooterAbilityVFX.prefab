@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1790783208360878661}
   - component: {fileID: 6577040450384521296}
   m_Layer: 0
-  m_Name: SharpshooterAbilitySoundsOfNatureVFX
+  m_Name: SharpshooterAbilityVFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
