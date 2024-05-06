@@ -6715,7 +6715,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615085}
   m_ExposedName: ParticlesExists
   m_Exposed: 1
-  m_Order: 8
+  m_Order: 6
   m_Category: 
   m_Min:
     m_Type:
@@ -6795,7 +6795,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615087}
   m_ExposedName: ParticlesSpawnRate
   m_Exposed: 1
-  m_Order: 8
+  m_Order: 7
   m_Category: 
   m_Min:
     m_Type:
