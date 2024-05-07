@@ -866,6 +866,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6797267792443685542, guid: 8024facb0fce37449835812249a1e253, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1249,6 +1253,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5100902636437793363, guid: 377955f6dd3fcac4dacb4e38419f7a3e, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5100902636437793363, guid: 377955f6dd3fcac4dacb4e38419f7a3e, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9165153158952912972, guid: 377955f6dd3fcac4dacb4e38419f7a3e, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9165153158952912972, guid: 377955f6dd3fcac4dacb4e38419f7a3e, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Name
+      value: ParticleRadiusInterval
+      objectReference: {fileID: 0}
+    - target: {fileID: 9165153158952912972, guid: 377955f6dd3fcac4dacb4e38419f7a3e, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Value.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9165153158952912972, guid: 377955f6dd3fcac4dacb4e38419f7a3e, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Value.y
+      value: 2.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9165153158952912972, guid: 377955f6dd3fcac4dacb4e38419f7a3e, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Overridden
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2639,7 +2667,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1618538026616700013, guid: afe23f8e45035c24ca15c0efc5c236b3, type: 3}
   m_PrefabInstance: {fileID: 932570118}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &954388555
+--- !u!1 &942637196
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2647,9 +2675,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 954388558}
-  - component: {fileID: 954388557}
-  - component: {fileID: 954388556}
+  - component: {fileID: 942637199}
+  - component: {fileID: 942637198}
+  - component: {fileID: 942637197}
   m_Layer: 0
   m_Name: KnightSpecialVFX
   m_TagString: Untagged
@@ -2657,16 +2685,16 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!73398921 &954388556
+--- !u!73398921 &942637197
 VFXRenderer:
   serializedVersion: 1
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 954388555}
+  m_GameObject: {fileID: 942637196}
   m_Enabled: 1
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -2697,15 +2725,15 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!2083052967 &954388557
+--- !u!2083052967 &942637198
 VisualEffect:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 954388555}
+  m_GameObject: {fileID: 942637196}
   m_Enabled: 1
-  m_Asset: {fileID: 8926484042661614526, guid: b0a1aaf1cc3693f4ab14eb34ef76f62b, type: 3}
+  m_Asset: {fileID: 8926484042661614526, guid: 1f2ce62f812abab48b5a1ef0f4c76df9, type: 3}
   m_InitialEventName: OnPlay
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0
@@ -2714,13 +2742,31 @@ VisualEffect:
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
-      m_Array: []
+      m_Array:
+      - m_Value: 1
+        m_Name: InvertedSlashTrailSizeX
+        m_Overridden: 1
+      - m_Value: 0.8
+        m_Name: InvertedSlashTrailSizeY
+        m_Overridden: 1
+      - m_Value: 1
+        m_Name: Lifetime
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: RotationVelocity
+        m_Overridden: 1
+      - m_Value: 100
+        m_Name: Velocity
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
       m_Array: []
     m_Vector4f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 23.968628, y: 0, z: 0, w: 0}
+        m_Name: SecondaryColor
+        m_Overridden: 1
     m_Uint:
       m_Array: []
     m_Int:
@@ -2728,28 +2774,122 @@ VisualEffect:
     m_Matrix4x4f:
       m_Array: []
     m_AnimationCurve:
-      m_Array: []
+      m_Array:
+      - m_Value:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: -0.1
+            inSlope: -3.137866
+            outSlope: -3.137866
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0.29233444
+          - serializedVersion: 3
+            time: 0.35677946
+            value: -0.6
+            inSlope: -0.9176933
+            outSlope: -0.9176933
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 0.630247
+            value: 6.5619917
+            inSlope: 76.72197
+            outSlope: 76.72197
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 0.7104745
+            value: 45.94806
+            inSlope: 77.63881
+            outSlope: 77.63881
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 0.994751
+            value: 52.212112
+            inSlope: 1.101502
+            outSlope: 1.101502
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_Name: VoronoiPowerCurve
+        m_Overridden: 1
+      - m_Value:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 20.994501
+            outSlope: 20.994501
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0.049148098
+          - serializedVersion: 3
+            time: 0.3
+            value: 4.5
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 1
+            value: 4.5
+            inSlope: -0
+            outSlope: -0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.12057668
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_Name: SizeCurve
+        m_Overridden: 1
     m_Gradient:
       m_Array: []
     m_NamedObject:
-      m_Array: []
+      m_Array:
+      - m_Value: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Name: SlashTexture
+        m_Overridden: 1
     m_Bool:
-      m_Array: []
---- !u!4 &954388558
+      m_Array:
+      - m_Value: 0
+        m_Name: ParticlesExist
+        m_Overridden: 1
+--- !u!4 &942637199
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 954388555}
+  m_GameObject: {fileID: 942637196}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.59, y: 3.5, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 35.98, y: 1.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1001 &1015168562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3492,6 +3632,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8432846702548162960, guid: 266a1ae2747d6ff418dbc029510053f5, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3796,6 +3940,10 @@ PrefabInstance:
     - target: {fileID: 3893072645625008324, guid: 0ca93498916f0724989fadb3703de1d4, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893072645625008324, guid: 0ca93498916f0724989fadb3703de1d4, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6492034450469938276, guid: 0ca93498916f0724989fadb3703de1d4, type: 3}
       propertyPath: m_Name
@@ -5405,7 +5553,7 @@ VFXRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1837143710}
   m_Enabled: 0
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -6389,9 +6537,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 662489348584868324, guid: aae4ff6045c69684ea7c3caecc88c812, type: 3}
+      propertyPath: m_PropertySheet.m_Bool.m_Array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 662489348584868324, guid: aae4ff6045c69684ea7c3caecc88c812, type: 3}
+      propertyPath: m_PropertySheet.m_Bool.m_Array.Array.data[0].m_Name
+      value: ParticlesExist
+      objectReference: {fileID: 0}
+    - target: {fileID: 662489348584868324, guid: aae4ff6045c69684ea7c3caecc88c812, type: 3}
+      propertyPath: m_PropertySheet.m_Bool.m_Array.Array.data[0].m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 662489348584868324, guid: aae4ff6045c69684ea7c3caecc88c812, type: 3}
+      propertyPath: m_PropertySheet.m_Bool.m_Array.Array.data[0].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 662489348584868324, guid: aae4ff6045c69684ea7c3caecc88c812, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[3].m_Overridden
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 805378709913381149, guid: aae4ff6045c69684ea7c3caecc88c812, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 805378709913381149, guid: aae4ff6045c69684ea7c3caecc88c812, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5021200037141473997, guid: aae4ff6045c69684ea7c3caecc88c812, type: 3}
       propertyPath: m_Name
@@ -7497,6 +7669,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2302644481363153233, guid: 01cd86a1afbea3043929da347766363c, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8218871790064392005, guid: 01cd86a1afbea3043929da347766363c, type: 3}
       propertyPath: m_Name
       value: FighterBasicVFX
@@ -7964,8 +8140,9 @@ SceneRoots:
   - {fileID: 6379962098478569601}
   - {fileID: 7975113096953745795}
   - {fileID: 209614114706271975}
-  - {fileID: 452469418}
   - {fileID: 348463276}
+  - {fileID: 452469418}
+  - {fileID: 942637199}
   - {fileID: 1276897861}
   - {fileID: 1249245809}
   - {fileID: 9135977443943296867}
@@ -7985,4 +8162,3 @@ SceneRoots:
   - {fileID: 4886471001321376522}
   - {fileID: 1593761220450274307}
   - {fileID: 152207929909877391}
-  - {fileID: 954388558}

@@ -62,7 +62,7 @@ VisualEffect:
         m_Overridden: 1
       - m_Value: 0
         m_Name: ParticlesTriggerRate
-        m_Overridden: 1
+        m_Overridden: 0
       - m_Value: 1.6
         m_Name: InvertedSlashTrailSizeX
         m_Overridden: 1
@@ -123,7 +123,10 @@ VisualEffect:
         m_Name: SlashTexture
         m_Overridden: 1
     m_Bool:
-      m_Array: []
+      m_Array:
+      - m_Value: 0
+        m_Name: ParticlesExist
+        m_Overridden: 1
 --- !u!73398921 &805378709913381149
 VFXRenderer:
   serializedVersion: 1
@@ -133,7 +136,7 @@ VFXRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5021200037141473997}
   m_Enabled: 1
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
