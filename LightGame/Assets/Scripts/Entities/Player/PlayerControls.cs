@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private Transform cameraPivot;
 
     private bool isGrounded = false;
+    private float rotationSpeed = 10f;
 
     void Start()
     {
@@ -30,20 +31,30 @@ public class PlayerController : MonoBehaviour
         }     
     }
 
-    void Move(){
-        // Move the player horizontally
-        float moveHorizontal = 0f;
-        float moveVertical = 0f;
+    void Move()
+    {
+        // Move the player based on camera direction
+        float moveHorizontal = Input.GetAxisRaw("Horizontal");
+        float moveVertical = Input.GetAxisRaw("Vertical");
 
         player = gameLogic.player;
-        
-        if (Input.GetKey(KeyCode.D)) moveHorizontal = 1f;
-        else if (Input.GetKey(KeyCode.A))  moveHorizontal = -1f;
-        if (Input.GetKey(KeyCode.W)) moveVertical = 1f;
-        else if (Input.GetKey(KeyCode.S)) moveVertical = -1f;
 
-        Vector3 movement = (cameraPivot.forward * moveVertical + cameraPivot.right * moveHorizontal).normalized * player.moveSpeed;
+        Vector3 direction = (cameraPivot.forward * moveVertical + cameraPivot.right * moveHorizontal).normalized;
+
+        // Calculate movement direction relative to camera
+        Vector3 movement = direction * player.moveSpeed;
         rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
+
+        // Rotate the player based on camera rotation on the y-axis only if moving
+        if (direction != Vector3.zero)
+        {
+            Vector3 targetDirection = new Vector3(direction.x, 0, direction.z);
+            Quaternion targetRotation;
+            if(targetDirection != Vector3.zero){
+                targetRotation = Quaternion.LookRotation(targetDirection);
+                 transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+            }
+        }
 
         // Jumping
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
@@ -57,7 +68,7 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(Dash());
         else 
             player.lastDashTime -= Time.deltaTime;
-        
+
         // Basic Attack
         Attack0();
 
@@ -66,8 +77,28 @@ public class PlayerController : MonoBehaviour
 
         // Special Class Attack
         Attack2();
-
     }
+
+    void rotateCamera()
+    {
+        // Rotate the camera based on mouse movement
+        float mouseX = Input.GetAxis("Mouse X");
+        float mouseY = Input.GetAxis("Mouse Y");
+
+        float rotationX = cameraPivot.localEulerAngles.y + mouseX;
+        float rotationY = cameraPivot.localEulerAngles.x - mouseY;
+
+        // Limit rotation Y to the intervals [0, 80] and [280, 360]
+        if (rotationY > 180) rotationY = Mathf.Clamp(rotationY, 360 + 80, 360);
+        else rotationY = Mathf.Clamp(rotationY, 0, 80);
+
+        cameraPivot.localEulerAngles = new Vector3(rotationY, rotationX, 0);
+
+        // Set pivot position to player position
+        cameraPivot.position = transform.position;
+    }
+
+
 
     void Attack0(){
         if (Input.GetKeyDown(KeyCode.K) || Input.GetMouseButtonDown(0))
@@ -113,23 +144,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void rotateCamera(){
-        // Rotate the camera based on mouse movement
-        float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y");
 
-        float rotationX = cameraPivot.localEulerAngles.y + mouseX;
-        float rotationY = cameraPivot.localEulerAngles.x - mouseY;
-
-
-        cameraPivot.localEulerAngles = new Vector3(rotationY, rotationX, 0);
-
-        // rotate the player based on camera rotation on the y-axis
-        transform.rotation = Quaternion.Euler(0, rotationX, 0);
-
-        // set pivot position to player position
-        cameraPivot.position = transform.position;
-    }
 
     IEnumerator Dash(){
         float duration = 0.5f; 
