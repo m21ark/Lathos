@@ -88,9 +88,8 @@ public class PlayerController : MonoBehaviour
         float rotationX = cameraPivot.localEulerAngles.y + mouseX;
         float rotationY = cameraPivot.localEulerAngles.x - mouseY;
 
-        // Limit rotation Y to the intervals [0, 80] and [280, 360]
-        if (rotationY > 180) rotationY = Mathf.Clamp(rotationY, 360 + 80, 360);
-        else rotationY = Mathf.Clamp(rotationY, 0, 80);
+        if (rotationY > 180) rotationY -= 360;
+        rotationY = Mathf.Clamp(rotationY, -85, 85);
 
         cameraPivot.localEulerAngles = new Vector3(rotationY, rotationX, 0);
 
