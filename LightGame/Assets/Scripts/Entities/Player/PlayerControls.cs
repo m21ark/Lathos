@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private Transform cameraPivot;
 
     private bool isGrounded = false;
+    private float rotationSpeed = 10f;
 
     void Start()
     {
@@ -45,14 +46,14 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
 
         // Rotate the player based on camera rotation on the y-axis only if moving
-        if (rb.velocity.magnitude > 0.1f)
+        if (direction != Vector3.zero)
         {
-            float rotationSpeed = 10f;
-
-            // Calculate the target rotation based on the movement direction
-            Quaternion targetRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-            // Smoothly rotate the player torso towards the target rotation using Lerp
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+            Vector3 targetDirection = new Vector3(direction.x, 0, direction.z);
+            Quaternion targetRotation;
+            if(targetDirection != Vector3.zero){
+                targetRotation = Quaternion.LookRotation(targetDirection);
+                 transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+            }
         }
 
         // Jumping
@@ -87,8 +88,8 @@ public class PlayerController : MonoBehaviour
         float rotationX = cameraPivot.localEulerAngles.y + mouseX;
         float rotationY = cameraPivot.localEulerAngles.x - mouseY;
 
-        // Limit rotation Y to avoid flipping the camera
-        // rotationY = Mathf.Clamp(rotationY, -80f, 80f);
+        // Limit rotation Y to avoid flipping the camera upside down
+        // rotationY = Mathf.Clamp(rotationY, -90f, 90f);
 
         cameraPivot.localEulerAngles = new Vector3(rotationY, rotationX, 0);
 
