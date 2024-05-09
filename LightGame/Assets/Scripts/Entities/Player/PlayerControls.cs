@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isGrounded = false;
     private float rotationSpeed = 10f;
+    private Vector3 direction;
 
     void Start()
     {
@@ -25,40 +26,84 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if(!gameLogic.isPaused){
+        if (!gameLogic.isPaused)
+        {
+            this.direction = GetFacedDirection();
+            this.direction = SlopeDirection(this.direction);
             Move();
-            rotateCamera();
-        }     
+            RotateCamera();
+        }
+    }
+
+    private Vector3 SlopeDirection(Vector3 movement)
+    {
+        if (movement == Vector3.zero) return movement;
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 2f))
+            movement = Vector3.ProjectOnPlane(movement, hit.normal);
+        return movement.normalized;
+    }
+
+    private Vector3 GetFacedDirection()
+    {
+        float moveHorizontal = Input.GetAxisRaw("Horizontal");
+        float moveVertical = Input.GetAxisRaw("Vertical");
+        Vector3 direction = (cameraPivot.forward * moveVertical + cameraPivot.right * moveHorizontal);
+        return direction.normalized;
+    }
+
+    private void CharacterFaceDirection()
+    {
+        Vector3 targetDirection = new Vector3(this.direction.x, 0, this.direction.z);
+        Quaternion targetRotation;
+        if (targetDirection != Vector3.zero)
+        {
+            targetRotation = Quaternion.LookRotation(targetDirection);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+        }
+    }
+
+    private void CalculateVel()
+    {
+        player = gameLogic.player;
+
+        // limit the Y velocity to avoid the player flying
+        float y = rb.velocity.y;
+        y = Mathf.Clamp(y, -100, player.jumpForce);
+
+        if (this.direction != Vector3.zero)
+        {
+            rb.velocity = this.direction * player.moveSpeed;
+            rb.velocity = new Vector3(rb.velocity.x, y, rb.velocity.z);
+        }
+        else
+        {
+            rb.velocity = new Vector3(0, rb.velocity.y, 0);
+
+            // check if the player is grounded after the dash (special case for slopes)
+            RaycastHit hit;
+            isGrounded = Physics.Raycast(transform.position, Vector3.down, out hit, 1.65f);
+
+            // to avoid the player jumping on a slope because Y velocity is not 0
+            if (isGrounded) rb.velocity = new Vector3(0, 0, 0);
+        }
     }
 
     void Move()
     {
-        // Move the player based on camera direction
-        float moveHorizontal = Input.GetAxisRaw("Horizontal");
-        float moveVertical = Input.GetAxisRaw("Vertical");
-
         player = gameLogic.player;
+        CalculateVel();
 
-        Vector3 direction = (cameraPivot.forward * moveVertical + cameraPivot.right * moveHorizontal).normalized;
-
-        // Calculate movement direction relative to camera
-        Vector3 movement = direction * player.moveSpeed;
-        rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
+        Debug.Log("isGrounded: " + isGrounded);
 
         // Rotate the player based on camera rotation on the y-axis only if moving
-        if (direction != Vector3.zero)
-        {
-            Vector3 targetDirection = new Vector3(direction.x, 0, direction.z);
-            Quaternion targetRotation;
-            if(targetDirection != Vector3.zero){
-                targetRotation = Quaternion.LookRotation(targetDirection);
-                 transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
-            }
-        }
+        if (this.direction != Vector3.zero)
+            CharacterFaceDirection();
 
         // Jumping
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
+            rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z); // reset the Y velocity
             rb.AddForce(Vector3.up * player.jumpForce, ForceMode.Impulse);
             isGrounded = false;
         }
@@ -66,8 +111,7 @@ public class PlayerController : MonoBehaviour
         // Dash
         if (Input.GetKeyDown(KeyCode.LeftShift) && player.lastDashTime <= 0)
             StartCoroutine(Dash());
-        else 
-            player.lastDashTime -= Time.deltaTime;
+        else player.lastDashTime -= Time.deltaTime;
 
         // Basic Attack
         Attack0();
@@ -79,7 +123,7 @@ public class PlayerController : MonoBehaviour
         Attack2();
     }
 
-    void rotateCamera()
+    void RotateCamera()
     {
         // Rotate the camera based on mouse movement
         float mouseX = Input.GetAxis("Mouse X");
@@ -97,18 +141,42 @@ public class PlayerController : MonoBehaviour
         cameraPivot.position = transform.position;
     }
 
+    IEnumerator Dash()
+    {
+        float duration = 0.5f;
+        float elapsedTime = 0f;
+        player.lastDashTime = player.dashCooldown;
 
+        Vector3 dashDirection = new Vector3(this.direction.x, 0, this.direction.z).normalized;
 
-    void Attack0(){
+        // If the player is not moving in any direction, dash in character's forward
+        if (dashDirection == Vector3.zero)
+            dashDirection = new Vector3(transform.forward.x, 0, transform.forward.z).normalized;
+
+        // Debug.DrawLine(transform.position, transform.position + (dashDirection) * 10f, Color.blue, 1f);
+
+        while (elapsedTime < duration)
+        {
+            float t = elapsedTime / duration;
+            rb.velocity += dashDirection * player.dashSpeed;
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    void Attack0()
+    {
         if (Input.GetKeyDown(KeyCode.K) || Input.GetMouseButtonDown(0))
             player.isAttacking = true;
-        
+
         if (Input.GetKeyUp(KeyCode.K) || Input.GetMouseButtonUp(0))
             player.isAttacking = false;
 
         player.lastAttackTime -= Time.deltaTime;
-        if (player.isAttacking){
-            if (player.lastAttackTime <= 0){
+        if (player.isAttacking)
+        {
+            if (player.lastAttackTime <= 0)
+            {
                 player.Attack();
                 player.lastAttackTime = player.A0ReloadTime * player.attackSpeed;
             }
@@ -116,59 +184,35 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void Attack1(){
-        if (Input.GetKeyDown(KeyCode.E)) player.isAttack1ing = true;
-        if (Input.GetKeyUp(KeyCode.E)) player.isAttack1ing = false;
+    void Attack1()
+    {
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(1)) player.isAttack1ing = true;
+        if (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(1)) player.isAttack1ing = false;
 
         player.lastAttack1Time -= Time.deltaTime;
-        if(player.isAttack1ing){
-            if(player.lastAttack1Time <= 0){
+        if (player.isAttack1ing)
+        {
+            if (player.lastAttack1Time <= 0)
+            {
                 player.BaseAbility();
                 player.lastAttack1Time = player.A1ReloadTime;
             }
         }
     }
 
-    void Attack2(){
+    void Attack2()
+    {
         if (Input.GetKeyDown(KeyCode.Q)) player.isAttack2ing = true;
         if (Input.GetKeyUp(KeyCode.Q)) player.isAttack2ing = false;
-        
+
         player.lastAttack2Time -= Time.deltaTime;
-        if(player.isAttack2ing){
-            if(player.lastAttack2Time <= 0){
+        if (player.isAttack2ing)
+        {
+            if (player.lastAttack2Time <= 0)
+            {
                 player.SpecialAbility();
                 player.lastAttack2Time = player.A2ReloadTime;
             }
-        }
-    }
-
-    IEnumerator Dash(){
-        float duration = 0.5f; 
-        float elapsedTime = 0f;
-        player.lastDashTime = player.dashCooldown;
-
-        // Dash in the direction the player is facing
-        float moveHorizontal = Input.GetAxisRaw("Horizontal");
-        float moveVertical = Input.GetAxisRaw("Vertical");
-        Vector3 moveDirection = (cameraPivot.forward * moveVertical + cameraPivot.right * moveHorizontal).normalized;
-
-        if(moveDirection == Vector3.zero)
-            moveDirection = transform.forward;
-
-        Rigidbody rb = GetComponent<Rigidbody>();
-
-        while (elapsedTime < duration)
-        {
-            float t = elapsedTime / duration;
-            moveDirection.y = 0;
-            moveDirection.Normalize();
-
-            Vector3 tempDirection = new Vector3(moveDirection.x, 0, moveDirection.z);
-            
-            rb.velocity += tempDirection * player.dashSpeed;
-            elapsedTime += Time.deltaTime;
-
-            yield return null;
         }
     }
 
@@ -176,8 +220,6 @@ public class PlayerController : MonoBehaviour
     {
         // Check if the player is touching the ground
         if (collision.gameObject.CompareTag("Floor"))
-        {
             isGrounded = true;
-        }
     }
 }
