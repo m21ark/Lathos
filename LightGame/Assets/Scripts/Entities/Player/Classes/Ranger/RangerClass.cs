@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class RangerClass : BaseClass
 {
+
+    public int A1_HunterMarkDamage = 8;
+    public int A1_HunterMarkTicks = 3;
+
     public override void Attack() 
     {
         ProtoAttack attack;
@@ -15,6 +19,6 @@ public class RangerClass : BaseClass
         ProtoAttack attack;
         Vector3 attackDirection;
         GenerateAttackAim(A1Prefab, out attack, out attackDirection);
-        attack.Fire(A1Damage, attackDirection);
+        attack.Fire(A1Damage, attackDirection, ("ticks", A1_HunterMarkTicks), ("damage", A1_HunterMarkDamage));
     }
 }

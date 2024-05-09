@@ -142,30 +142,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-
-
     IEnumerator Dash(){
         float duration = 0.5f; 
         float elapsedTime = 0f;
         player.lastDashTime = player.dashCooldown;
 
-        // Calculate movement direction based on player input
-        Vector3 moveDirection = Vector3.zero;
+        // Dash in the direction the player is facing
+        float moveHorizontal = Input.GetAxisRaw("Horizontal");
+        float moveVertical = Input.GetAxisRaw("Vertical");
+        Vector3 moveDirection = (cameraPivot.forward * moveVertical + cameraPivot.right * moveHorizontal).normalized;
 
-        // Apply dash direction according to the key presses
-        if (Input.GetKey(KeyCode.W)) 
-            moveDirection += cameraPivot.forward;
-        if (Input.GetKey(KeyCode.S)) 
-            moveDirection -= cameraPivot.forward;
-        if (Input.GetKey(KeyCode.D)) 
-            moveDirection += cameraPivot.right;
-        if (Input.GetKey(KeyCode.A))
-            moveDirection -= cameraPivot.right;
-        if (moveDirection == Vector3.zero)
-            moveDirection = cameraPivot.forward;
+        if(moveDirection == Vector3.zero)
+            moveDirection = transform.forward;
 
-        Rigidbody rb = GetComponent<Rigidbody>(); // Assuming this script is attached to the same GameObject as the Rigidbody
+        Rigidbody rb = GetComponent<Rigidbody>();
 
         while (elapsedTime < duration)
         {
@@ -175,10 +165,9 @@ public class PlayerController : MonoBehaviour
 
             Vector3 tempDirection = new Vector3(moveDirection.x, 0, moveDirection.z);
             
-            // Instead of modifying transform.position, modify the Rigidbody's velocity
             rb.velocity += tempDirection * player.dashSpeed;
-            
             elapsedTime += Time.deltaTime;
+
             yield return null;
         }
     }

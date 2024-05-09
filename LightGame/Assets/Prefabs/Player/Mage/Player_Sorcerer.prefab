@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7477971676903378574}
   - component: {fileID: 5687346560694194167}
-  - component: {fileID: 5326845184202017026}
+  - component: {fileID: 912268982574404896}
   m_Layer: 6
   m_Name: Point Light
   m_TagString: Untagged
@@ -95,7 +95,7 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &5326845184202017026
+--- !u!114 &912268982574404896
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 8593029557098329786}
   - component: {fileID: 7778701404013849043}
   - component: {fileID: 4511059417515342022}
-  - component: {fileID: 5661523776548102860}
+  - component: {fileID: 1869810136466136199}
   m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: MainCamera
@@ -211,7 +211,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 978852884161177263}
   m_Enabled: 1
---- !u!114 &5661523776548102860
+--- !u!114 &1869810136466136199
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -512,7 +512,7 @@ MonoBehaviour:
   lastDashTime: 0
   A1_2Prefab: {fileID: 4923962845166056162, guid: 911e7843495d3fd4daa050dbde56ba87, type: 3}
   A1TimeDelta: 0.8
-  VFXSpecialAbility: {fileID: 0}
+  VFXSpecialAbility: {fileID: 7436710278688980422, guid: 36153bfa4dec0964c90504d06a2f2684, type: 3}
 --- !u!1 &5940330435187617133
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,7 +532,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4819313722173484377
 Transform:
   m_ObjectHideFlags: 0

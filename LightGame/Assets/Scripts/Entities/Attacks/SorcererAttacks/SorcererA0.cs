@@ -20,9 +20,8 @@ public class SorcererA0 : ProtoAttack
 
             if (!collision.gameObject.GetComponent<SorcererTag>())
                 collision.gameObject.AddComponent<SorcererTag>();
-            else
-                collision.gameObject.GetComponent<SorcererTag>().addStack();    
+            else collision.gameObject.GetComponent<SorcererTag>().addStack();    
         }
-         Destroy(gameObject.transform.parent.gameObject);
+        Destroy(gameObject.transform.parent.gameObject);
      }
 }
