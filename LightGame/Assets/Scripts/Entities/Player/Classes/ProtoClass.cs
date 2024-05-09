@@ -1,4 +1,7 @@
 using UnityEngine;
+using System;
+using System.Collections;
+
 
 public class ProtoClass : MonoBehaviour
 {
@@ -117,7 +120,7 @@ public class ProtoClass : MonoBehaviour
 
         if(isPhysical){
             // Apply some randomization to attacks inclination
-            float randomZAngle = Random.Range(-50f, 50f); 
+            float randomZAngle = UnityEngine.Random.Range(-50f, 50f); 
             Quaternion attackRotation = Quaternion.Euler(0f, cameraPivot.transform.rotation.eulerAngles.y, randomZAngle);
             attackEntity = Instantiate(prefab, startPos, attackRotation);
 
@@ -137,4 +140,28 @@ public class ProtoClass : MonoBehaviour
     public void GenerateAttackPhysical(GameObject prefab, out ProtoAttack attack, out Vector3 attackDirection){
         GenerateAttack(true, prefab, out attack, out attackDirection);
     }
+
+    // ============================== VFX ==============================
+
+    private IEnumerator InstantiateVFX(GameObject vfx, int duration){
+        GameObject vfxInstance = Instantiate(vfx, transform.position, Quaternion.identity);
+        vfxInstance.SetActive(true);
+        yield return new WaitForSeconds(duration);
+        Destroy(vfxInstance);
+    }
+
+    public void GenerateVFX(GameObject vfx, int duration = 5){
+        StartCoroutine(InstantiateVFX(vfx, duration));
+    }
+
+    private IEnumerator generateVFXDelay(GameObject vfx, float delay, Action delayedAction, int duration = 5){
+        GenerateVFX(vfx, duration);
+        yield return new WaitForSeconds(delay);
+        delayedAction();
+    }
+
+    public void generateVFXDelayedAction(GameObject vfx, float delay, Action delayedAction, int duration = 5){
+        StartCoroutine(generateVFXDelay(vfx, delay, delayedAction, duration));
+    }
+
 }
