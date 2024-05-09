@@ -19,28 +19,33 @@ public class SorcererClass : MageClass
     
     public override void BaseAbility()
     {
-        StartCoroutine(RepeatedFire(A1Damage, attackDirection));
-    }
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Minion");
 
-
-    IEnumerator RepeatedFire(int baseDamage, Vector3 attackDirection)
-    {
-        for(int i = 0; i < 3; i++){
-            // Call Fire method initially
-            GenerateAttackAim(A1Prefab, out attack, out attackDirection);
-            attack.Fire(A1Damage, attackDirection, ("prefab", A1_2Prefab));
-
-            // Wait for 0.2 seconds
-            yield return new WaitForSeconds(A1TimeDelta);
+        // For each enemy, apply the damage based on the number of stacks and remove the tag
+        foreach (GameObject enemy in enemies)
+        {
+            if (enemy.GetComponent<SorcererTag>())
+            {
+                ProtoMob mob = enemy.GetComponent<ProtoMob>();
+                mob.TakeDamage(A1Damage * enemy.GetComponent<SorcererTag>().stackCounter);
+                Destroy(enemy.GetComponent<SorcererTag>());
+            }
         }
     }
 
+
     public override void SpecialAbility()
     {
-        ProtoAttack attack;
-        Vector3 attackDirection;
-        GenerateAttackAim(A2Prefab, out attack, out attackDirection);
-        attack.Fire(A2Damage, attackDirection);
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Minion");
+
+        // For each enemy, add X stacks
+        foreach (GameObject enemy in enemies)
+        {
+            if (!enemy.GetComponent<SorcererTag>())
+                enemy.AddComponent<SorcererTag>();
+            enemy.GetComponent<SorcererTag>().addStack(A2Damage);
+        }
+
     }
 
 }
