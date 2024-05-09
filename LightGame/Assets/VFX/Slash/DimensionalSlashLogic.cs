@@ -9,7 +9,7 @@ public class DimensionalSlashScreenLogic : MonoBehaviour
     [SerializeField] private float slashDuration;
     [SerializeField] private ScriptableRendererFeature fullScreenInverted;
 
-    void Start() {
+    private void OnEnable() {
         // Start the coroutine to change the view to inverted colors
         StartCoroutine(ChangeColors());
     }
