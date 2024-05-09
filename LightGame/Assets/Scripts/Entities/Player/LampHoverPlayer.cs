@@ -30,7 +30,7 @@ public class LampHoverPlayer : MonoBehaviour
     void Update()
     {
         GetPlayer();
-        UpdateLightSource();
+        //UpdateLightSource();
         MoveTowardsTarget();
     }
 
