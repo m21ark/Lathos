@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class XRayLogic : MonoBehaviour
 {
-    [SerializeField] private float xRayDuration;
+    public float xRayDuration;
     [SerializeField] private ScriptableRendererFeature fullScreenGray;
     [SerializeField] private Material _material; // _GrayIntensity proerty used in the shader
 
