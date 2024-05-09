@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class RangerMark : MonoBehaviour
 {
-    public int poisonTicksLeft = 3;
-    public int damagePerTick = 10;
+    private int poisonTicksLeft = 3;
+    private int damagePerTick = 10;
     private float tickTimer = 1f;
     
     void Update()
@@ -17,7 +17,6 @@ public class RangerMark : MonoBehaviour
                 mob.TakeDamage(damagePerTick);
                 poisonTicksLeft--;
             }
-            else Destroy(this.gameObject);
             
             tickTimer = 1f;
         }
@@ -26,5 +25,11 @@ public class RangerMark : MonoBehaviour
     public void refreshTicks()
     {
         poisonTicksLeft = 3;
+    }
+
+    public void setValues(int ticks, int damage)
+    {
+        poisonTicksLeft = ticks;
+        damagePerTick = damage;
     }
 }

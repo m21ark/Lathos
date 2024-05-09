@@ -9,9 +9,9 @@ public class MageA1_1 : ProtoAttack
     private int A1_2Damage = 10;
 
     public override void Fire(int damage, Vector3 direction, params (string key, object value)[] kwargs){
-            base.Fire(0, direction);
-            A1_2Prefab = (GameObject)GetKwarg("prefab", kwargs);
-            A1_2Damage = damage;
+        base.Fire(0, direction);
+        A1_2Prefab = (GameObject)GetKwarg("prefab", kwargs);
+        A1_2Damage = damage;
     }
 
     public override void OnTriggerEnter(Collider collision)

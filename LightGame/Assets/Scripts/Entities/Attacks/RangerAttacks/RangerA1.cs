@@ -19,8 +19,13 @@ public class RangerA1 : ProtoAttack
 
             mob.TakeDamage(projDamage); 
 
-            if (!collision.gameObject.GetComponent<RangerMark>())
+            if (!collision.gameObject.GetComponent<RangerMark>()){
+                int ticks = (int)GetKwarg("ticks", this.kwargs);
+                int damageTick = (int)GetKwarg("damage", this.kwargs);
+
                 collision.gameObject.AddComponent<RangerMark>();
+                collision.gameObject.GetComponent<RangerMark>().setValues(ticks, damageTick);
+            }
             else collision.gameObject.GetComponent<RangerMark>().refreshTicks();    
         }
         Destroy(gameObject.transform.parent.gameObject);

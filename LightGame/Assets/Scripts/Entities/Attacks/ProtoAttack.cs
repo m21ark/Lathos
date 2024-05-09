@@ -18,9 +18,13 @@ public class ProtoAttack : MonoBehaviour
     private Rigidbody attackRb;
     private float realGravity = 9.8f;
 
+    protected (string key, object value)[] kwargs;
+
     void Start(){}
 
     public virtual void Fire(int damage, Vector3 direction, params (string key, object value)[] kwargs){
+
+        this.kwargs = kwargs;
 
         attackRb = gameObject.GetComponent<Rigidbody>();
 
