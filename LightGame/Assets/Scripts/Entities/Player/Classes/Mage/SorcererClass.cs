@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using System.Collections;
 
 public class SorcererClass : MageClass
@@ -7,6 +8,7 @@ public class SorcererClass : MageClass
     private ProtoAttack attack;
     private Vector3 attackDirection;
     public float A1TimeDelta = 0.8f;
+    public GameObject VFXSpecialAbility;
 
     public override void Attack() 
     {
@@ -36,16 +38,21 @@ public class SorcererClass : MageClass
 
     public override void SpecialAbility()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Minion");
+        Action action = () => {
 
-        // For each enemy, add X stacks
-        foreach (GameObject enemy in enemies)
-        {
-            if (!enemy.GetComponent<SorcererTag>())
-                enemy.AddComponent<SorcererTag>();
-            enemy.GetComponent<SorcererTag>().addStack(A2Damage);
-        }
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Minion");
 
+            // For each enemy, add X stacks
+            foreach (GameObject enemy in enemies)
+            {
+                if (!enemy.GetComponent<SorcererTag>())
+                    enemy.AddComponent<SorcererTag>();
+                enemy.GetComponent<SorcererTag>().addStack(A2Damage);
+            }
+            
+        };
+
+        generateVFXDelayedAction(VFXSpecialAbility, 3f, action);
     }
 
 }
