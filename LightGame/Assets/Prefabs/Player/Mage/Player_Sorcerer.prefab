@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7477971676903378574}
   - component: {fileID: 5687346560694194167}
+  - component: {fileID: 912268982574404896}
   m_Layer: 6
   m_Name: Point Light
   m_TagString: Untagged
@@ -94,6 +95,29 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &912268982574404896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941312108425277779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &978852884161177263
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,6 +467,7 @@ MonoBehaviour:
   lastDashTime: 0
   A1_2Prefab: {fileID: 4923962845166056162, guid: 911e7843495d3fd4daa050dbde56ba87, type: 3}
   A1TimeDelta: 0.8
+  VFXSpecialAbility: {fileID: 7436710278688980422, guid: 36153bfa4dec0964c90504d06a2f2684, type: 3}
 --- !u!1 &5940330435187617133
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,7 +487,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4819313722173484377
 Transform:
   m_ObjectHideFlags: 0
