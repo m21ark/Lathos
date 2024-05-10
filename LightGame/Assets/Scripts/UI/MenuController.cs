@@ -83,6 +83,13 @@ public class MenuController : MonoBehaviour
     public void StartLoadGame()
     {
         Debug.Log("Loading stored game instance...");
+
+        // Get the data
+        SaveData data = SaveSystem.DataLoad();
+
+        // go to the scene
+        if(data.currentPlayerArea != SceneManager.GetActiveScene().buildIndex)
+            SceneManager.LoadScene(data.currentPlayerArea);
     } 
 
     public void ResumeGame(){

@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/StartMenu.unity
     guid: 6165e3d8ef9596d79a5628658b0e0367
   - enabled: 1
-    path: Assets/Scenes/BossArena.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
     path: Assets/Scenes/Rooms/Room1.unity
     guid: 1c623a43947b3e9adbdaaaa7bedf662d
   - enabled: 1
@@ -26,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Rooms/Room5.unity
     guid: ce64d899bfc91c8b69c0ee42bde2305c
+  - enabled: 1
+    path: Assets/Scenes/BossArena.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

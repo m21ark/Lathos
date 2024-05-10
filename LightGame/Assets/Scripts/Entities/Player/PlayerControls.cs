@@ -119,6 +119,12 @@ public class PlayerController : MonoBehaviour
 
         // Special Class Attack
         Attack2();
+
+        // if player is attacking, rotate in that direction in the end
+        if (player.isAttacking || player.isAttack1ing || player.isAttack2ing){
+            this.direction = cameraPivot.forward;
+            CharacterFaceDirection();
+        }
     }
 
     void RotateCamera()

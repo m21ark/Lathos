@@ -18,15 +18,12 @@ public class GameLogic : MonoBehaviour
     private ClassTreeLogic classTreeLogic;
     private bool isInBossBattle;
 
-    // Costs to rank up class
-    public int class1Cost = 5;
-    public int class2Cost = 10;
-
     // Game Logic Fields
     private float gameTime = 0.0f;
     private float lightDecreaseTimer = 0f;
     private bool isShowingFullScreenDialogue = false;
     [HideInInspector] public bool isPaused = false;
+    private bool[] endingsUnlocked = { false, false, false };
 
     // Dialogue Data
     public List<DialogueData> dialogueDataList;
@@ -103,9 +100,9 @@ public class GameLogic : MonoBehaviour
         // Update the HUD
         if(hud != null) updateHUD();
 
-        // For debugging purposes
+        // TODO: For debugging purposes
         if (Input.GetKeyDown(KeyCode.H))
-            player.Heal(20);
+            player.Heal(100);
 
         // If boss or player dead, end game
         if(isInBossBattle){
@@ -116,7 +113,7 @@ public class GameLogic : MonoBehaviour
         if(classTreeLogic == null)
             classTreeLogic = gameObject.GetComponent<ClassTreeLogic>();
 
-        if(!classTreeLogic.isSelecting)
+        if(!classTreeLogic.isSelecting && Input.GetKeyDown(KeyCode.C))
             checkClassSelectionTrigger();
 
         CheckDialogue();
@@ -164,17 +161,54 @@ public class GameLogic : MonoBehaviour
         }
     }
 
-    void DealWithDataSaving(){ // This is just for testing purposes... it will be removed later
+    void DealWithDataSaving(){
         // Save data
         if (Input.GetKeyDown(KeyCode.V)){
-            SaveSystem.DataSave(player.transform);
+            // Build the data to save
+            SaveData data = new SaveData();
+            data.currentPlayerArea = SceneManager.GetActiveScene().buildIndex;
+            data.playerClassName = player.getClassName();
+            data.collectedLight = player.collectedLight;
+            data.playerHP = player.health;
+            data.unlockedEndings = this.endingsUnlocked;
+
+            Debug.Log("saving currentPlayerArea: " + data.currentPlayerArea);
+
+            // Save the data
+            SaveSystem.DataSave(data);
             Debug.Log("Player data saved");
         }
 
         // Load data
         if (Input.GetKeyDown(KeyCode.B)){
+            // Get the data
             SaveData data = SaveSystem.DataLoad();
-            player.transform.position = new Vector3(data.position[0], data.position[1], data.position[2]);
+
+            // if there is no available data, use the default values
+            if(data == null){
+                Debug.Log("Falling back to default save data values of a new game instance");
+                data = new SaveData();
+            }
+
+            // go to the scene
+            if(data.currentPlayerArea != SceneManager.GetActiveScene().buildIndex){
+                Debug.Log("Loading scene: " + data.currentPlayerArea);
+                SceneManager.LoadScene(data.currentPlayerArea); // TODO: after loading new scene, it should check the lines below! 
+            }
+
+            // Put the data in the game
+            this.endingsUnlocked = data.unlockedEndings;
+
+            // Set the player's class
+            Debug.Log("Loaded Player class name: " + data.playerClassName);
+            classTreeLogic.ClassSelect(data.playerClassName, false);
+            RefreshPlayer();
+
+            // Set the player's light and health
+            player.collectedLight = data.collectedLight;
+            player.health = 0;
+            player.Heal(data.playerHP);
+
             Debug.Log("Player data loaded");
         }
 
@@ -188,20 +222,18 @@ public class GameLogic : MonoBehaviour
     void checkClassSelectionTrigger(){
 
         // First class 
-        if(player.collectedLight >= class1Cost && player.getClassName() == "Base"){ 
+        if(player.getClassName() == "Base"){ 
             Debug.Log("Trigger Class 1 Selection");
             classTreeLogic.InvokeMenuClassSelect(1);
-            class1Cost = int.MaxValue; // This line is necessary
         }
 
         // Second class 
         List<string> classes1Names = new List<string> { "Fighter", "Ranger", "Mage" };
 
         // Check if the player's class name is in the list
-        if (player.collectedLight >= class2Cost && classes1Names.Contains(player.getClassName())){
+        if (classes1Names.Contains(player.getClassName())){
             Debug.Log("Trigger Class 2 Selection");
             classTreeLogic.InvokeMenuClassSelect(2);
-            class2Cost = int.MaxValue; // This line is necessary
         }
 
         RefreshPlayer();

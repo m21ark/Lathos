@@ -13,6 +13,7 @@ public class ClassTreeLogic : MonoBehaviour
     private int activeMenu = 0;
 
     // Class Objects
+    public GameObject prefab_base;
     public GameObject prefab_fighter;
     public GameObject prefab_ranger;
     public GameObject prefab_mage;
@@ -29,23 +30,28 @@ public class ClassTreeLogic : MonoBehaviour
     void Start(){
         gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
     }
+
+    public void MenuClassSelect(string name){
+        ClassSelect(name);
+    }
     
-    public void ClassSelect(string name){
+    public void ClassSelect(string name, bool toggleMenu = true){
         switch(name){
-            case "Fighter": ReplacePlayer(prefab_fighter); break;
-            case "Ranger": ReplacePlayer(prefab_ranger); break;
-            case "Mage": ReplacePlayer(prefab_mage); break;
-            case "Knight": ReplacePlayer(prefab_knight); break;
-            case "Berserker": ReplacePlayer(prefab_berserker); break;
-            case "Sharpshooter": ReplacePlayer(prefab_sharpshooter); break;
-            case "Rogue": ReplacePlayer(prefab_rogue); break;
-            case "Sorcerer": ReplacePlayer(prefab_sorcerer); break;
-            case "Wizard": ReplacePlayer(prefab_wizard); break;
+            case "Base": ReplacePlayer(prefab_base, toggleMenu); break;
+            case "Fighter": ReplacePlayer(prefab_fighter, toggleMenu); break;
+            case "Ranger": ReplacePlayer(prefab_ranger, toggleMenu); break;
+            case "Mage": ReplacePlayer(prefab_mage, toggleMenu); break;
+            case "Knight": ReplacePlayer(prefab_knight, toggleMenu); break;
+            case "Berserker": ReplacePlayer(prefab_berserker, toggleMenu); break;
+            case "Sharpshooter": ReplacePlayer(prefab_sharpshooter, toggleMenu); break;
+            case "Rogue": ReplacePlayer(prefab_rogue, toggleMenu); break;
+            case "Sorcerer": ReplacePlayer(prefab_sorcerer, toggleMenu); break;
+            case "Wizard": ReplacePlayer(prefab_wizard, toggleMenu); break;
             default: Debug.LogError("Class Prefab ID out of range"); break;
         }
     }
 
-    private void ReplacePlayer(GameObject newPlayerPrefab)
+    private void ReplacePlayer(GameObject newPlayerPrefab, bool toggleMenu)
     {
         // Get old player info
         GameObject oldPlayer = GameObject.FindGameObjectWithTag("Player");
@@ -62,7 +68,8 @@ public class ClassTreeLogic : MonoBehaviour
         Destroy(oldPlayer.transform.parent.gameObject);
 
         // Remove menu after choice is made
-        ToggleClassSelectMenu(activeMenu == 1? class1SelectMenuObj : class2SelectMenuObj);
+        if(toggleMenu)
+            ToggleClassSelectMenu(activeMenu == 1? class1SelectMenuObj : class2SelectMenuObj);
     }
 
     public void ToggleClassSelectMenu(GameObject menu){

@@ -8,14 +8,10 @@ public class SaveData
     public bool[] unlockedEndings = { false, false, false }; // Endings unlocked by player
     public string playerClassName = "Base";
     public int collectedLight = 0;
+    public int playerHP = 100;
 
-    public float[] position; // Player position (TEMPORARY JUST FOR TESTING)
-
-    public SaveData(Transform trans)
+    public SaveData()
     {
-        position = new float[3];
-        position[0] = trans.position.x;
-        position[1] = trans.position.y;
-        position[2] = trans.position.z;
+
     }
 }

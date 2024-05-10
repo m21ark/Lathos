@@ -451,7 +451,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5826706621548093825}
         m_TargetAssemblyTypeName: ClassTreeLogic, Assembly-CSharp
-        m_MethodName: ClassSelect
+        m_MethodName: MenuClassSelect
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2628,7 +2628,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5826706621548093825}
         m_TargetAssemblyTypeName: ClassTreeLogic, Assembly-CSharp
-        m_MethodName: ClassSelect
+        m_MethodName: MenuClassSelect
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3494,8 +3494,6 @@ MonoBehaviour:
   endMenu: {fileID: 946654975150626795}
   dialogueController: {fileID: 6460085155037618045}
   fullScreenDialogueController: {fileID: 4872672166496052192}
-  class1Cost: 500
-  class2Cost: 500
   isPaused: 0
   dialogueDataList:
   - {fileID: 11400000, guid: ff4d09296e613201996b1b7b6facae44, type: 2}
@@ -3515,6 +3513,7 @@ MonoBehaviour:
   class1SelectMenuObj: {fileID: 8735401470687510587}
   class2SelectMenuObj: {fileID: 4043932941000190376}
   isSelecting: 0
+  prefab_base: {fileID: 1162234724972830604, guid: 792a1537b0f992083b045a526f9e2ff9, type: 3}
   prefab_fighter: {fileID: 1162234724972830604, guid: a52d7bc8de8b8e09587cfd61f3a322fc, type: 3}
   prefab_ranger: {fileID: 1162234724972830604, guid: 6e1ea72b67084a045b04dbaa8977a508, type: 3}
   prefab_mage: {fileID: 1162234724972830604, guid: d9c756ec5ce2edfc8bb1a74634da49a7, type: 3}
@@ -3781,7 +3780,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5826706621548093825}
         m_TargetAssemblyTypeName: ClassTreeLogic, Assembly-CSharp
-        m_MethodName: ClassSelect
+        m_MethodName: MenuClassSelect
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
