@@ -12,7 +12,6 @@ public class AudioManager : MonoBehaviour
         if (instance != null)
             Debug.LogError("More than one AudioManager in the scene");
         else instance = this;
-        
     }
 
     public void PlayOneShot(EventReference sound, Vector3 position)

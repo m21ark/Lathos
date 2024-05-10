@@ -18,10 +18,10 @@ public class GameLogic : MonoBehaviour
     public DialogueController fullScreenDialogueController;
 
     private ClassTreeLogic classTreeLogic;
-    private bool isInBossBattle;
+    [HideInInspector] public bool isInBossBattle;
 
     // Game Logic Fields
-    private float gameTime = 0.0f;
+    [HideInInspector] public float gameTime = 0.0f;
     private float lightDecreaseTimer = 0f;
     private bool isShowingFullScreenDialogue = false;
     [HideInInspector] public bool isPaused = false;
@@ -30,19 +30,11 @@ public class GameLogic : MonoBehaviour
     // Dialogue Data
     public List<DialogueData> dialogueDataList;
 
-    // HUD Text Elements
-    private GameObject hud;
-    private TextMeshProUGUI hud_timer;
-    private TextMeshProUGUI hud_player_health;
-    private TextMeshProUGUI hud_boss_health;
-    private TextMeshProUGUI hud_light;
-    private TextMeshProUGUI hud_playerClassName;
-    private TextMeshProUGUI hud_playerCooldowns;
 
     private void Awake()
     {
         if (instance != null)
-            Debug.LogError("More than one AudioManager in the scene");
+            Debug.LogError("More than one GameLogic in the scene");
         else instance = this;
         
     }
@@ -63,8 +55,7 @@ public class GameLogic : MonoBehaviour
             isInBossBattle = true;
             boss = bossObj.GetComponent<Boss>();
         }
-
-        HUDLoadElements();
+        
         RefreshPlayer();
         DataPersistentLoad();
 
@@ -87,19 +78,7 @@ public class GameLogic : MonoBehaviour
         player = GameObject.FindWithTag("Player").GetComponent<ProtoClass>();
     }
 
-    void HUDLoadElements()
-    {
-        hud = GameObject.FindWithTag("HUD");
-        if (hud)
-        {
-            hud_timer = hud.transform.Find("Timer").GetComponent<TextMeshProUGUI>();
-            hud_player_health = hud.transform.Find("PlayerHealth").GetComponent<TextMeshProUGUI>();
-            hud_boss_health = hud.transform.Find("BossHealth").GetComponent<TextMeshProUGUI>();
-            hud_light = hud.transform.Find("LightCounter").GetComponent<TextMeshProUGUI>();
-            hud_playerClassName = hud.transform.Find("CurrentPlayerClass").GetComponent<TextMeshProUGUI>();
-            hud_playerCooldowns = hud.transform.Find("PlayerCooldowns").GetComponent<TextMeshProUGUI>();
-        }
-    }
+
 
     // Update is called once per frame
     void Update()
@@ -110,9 +89,6 @@ public class GameLogic : MonoBehaviour
 
         // Update the game time
         gameTime += Time.deltaTime;
-
-        // Update the HUD
-        if (hud != null) updateHUD();
 
         // TODO: For debugging purposes
         if (Input.GetKeyDown(KeyCode.H))
@@ -256,38 +232,6 @@ public class GameLogic : MonoBehaviour
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
-    }
-
-    void updateHUD()
-    {
-
-        // Update timer in the format MM:SS
-        int minutes = Mathf.FloorToInt(gameTime / 60F);
-        int seconds = Mathf.FloorToInt(gameTime - minutes * 60);
-        hud_timer.text = string.Format("Time: {0:0}:{1:00}", minutes, seconds);
-
-        // Update boss and player's health 
-        hud_player_health.text = string.Format("Health: {0}", player.health > 0 ? player.health : 0);
-        if (isInBossBattle)
-            hud_boss_health.text = string.Format("Boss Health: {0}", boss.health > 0 ? boss.health : 0);
-        else hud_boss_health.text = "";
-
-        // Update light collected and current player class
-        hud_light.text = string.Format("Light: {0}", player.collectedLight);
-        hud_playerClassName.text = string.Format("Class: {0}", player.getClassName());
-
-        // Update player's cooldowns
-        string baseCool = CooldownFormat(player.lastAttackTime);
-        string classCool = CooldownFormat(player.lastAttack1Time);
-        string AbilityCool = CooldownFormat(player.lastAttack2Time);
-        string DashCool = CooldownFormat(player.lastDashTime);
-        hud_playerCooldowns.text = string.Format("Base: {0}\nClass: {1}\nAbility: {2}\nDash: {3}", baseCool, classCool, AbilityCool, DashCool);
-
-    }
-
-    private string CooldownFormat(float playerCooldownTimer)
-    {
-        return string.Format("{0}", playerCooldownTimer <= 0 ? "Ready" : (Mathf.Round(playerCooldownTimer * 100f) / 100f));
     }
 
     public void toggleCursor(bool show)
