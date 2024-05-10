@@ -7715,7 +7715,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6991486880979397773, guid: e339d7ee3fe62824e97009a9a2583cb8, type: 3}
       propertyPath: xRayDuration
-      value: 50
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6991486880979397773, guid: e339d7ee3fe62824e97009a9a2583cb8, type: 3}
+      propertyPath: fadeCurve.m_Curve.Array.data[1].time
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

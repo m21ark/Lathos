@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
   m_Name: XRayOpaque
   m_EditorClassIdentifier: 
-  m_Active: 0
+  m_Active: 1
   settings:
     passTag: XRayOpaque
     Event: 300
@@ -60,7 +60,7 @@ MonoBehaviour:
       RenderQueueType: 0
       LayerMask:
         serializedVersion: 2
-        m_Bits: 256
+        m_Bits: 512
       PassNames: []
     overrideMaterial: {fileID: 0}
     overrideMaterialPassIndex: 0
@@ -102,9 +102,9 @@ MonoBehaviour:
   - {fileID: -6332153843898474388}
   - {fileID: -8746055704807623958}
   - {fileID: 7708402005347459051}
-  - {fileID: -4053523383865426881}
   - {fileID: 6136693248791301300}
-  m_RendererFeatureMap: 86053dc01dde7e446ca04ecfa0ab1fa8eab229d1acc49f86ebdfa472c8bef96a3f3cf677f5fdbec7b44cbe05ffe92955
+  - {fileID: -4053523383865426881}
+  m_RendererFeatureMap: 86053dc01dde7e446ca04ecfa0ab1fa8eab229d1acc49f86ebdfa472c8bef96ab44cbe05ffe929553f3cf677f5fdbec7
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
