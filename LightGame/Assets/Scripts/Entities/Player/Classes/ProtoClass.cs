@@ -142,16 +142,17 @@ public class ProtoClass : MonoBehaviour
     }
 
     // ============================== VFX ==============================
-
-    private IEnumerator InstantiateVFX(GameObject vfx, int duration){
+    public void GenerateVFX(GameObject vfx, int duration = 5){
         GameObject vfxInstance = Instantiate(vfx, transform.position, Quaternion.identity);
         vfxInstance.SetActive(true);
-        yield return new WaitForSeconds(duration);
-        Destroy(vfxInstance);
+        Destroy(vfxInstance, duration);
     }
 
-    public void GenerateVFX(GameObject vfx, int duration = 5){
-        StartCoroutine(InstantiateVFX(vfx, duration));
+    public void GenerateVFXOnPlayer(GameObject vfx, Transform playerTransform, int duration = 5){
+        GameObject vfxInstance = Instantiate(vfx, playerTransform.position, Quaternion.identity);
+        vfxInstance.transform.parent = playerTransform.transform;
+        vfxInstance.SetActive(true);
+        Destroy(vfxInstance, duration);
     }
 
     private IEnumerator generateVFXDelay(GameObject vfx, float delay, Action delayedAction, int duration = 5){

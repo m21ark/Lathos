@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641222, b: 0.57481664, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3706,6 +3706,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Base
       objectReference: {fileID: 0}
+    - target: {fileID: 1162234724972830604, guid: 792a1537b0f992083b045a526f9e2ff9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547184242331172084, guid: 792a1537b0f992083b045a526f9e2ff9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5777605
@@ -4821,6 +4825,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1618538026616700013, guid: afe23f8e45035c24ca15c0efc5c236b3, type: 3}
   m_PrefabInstance: {fileID: 1707153093}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1737760089
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1162234724972830604, guid: b52ad757266999743a9dbc453d77101f, type: 3}
+      propertyPath: m_Name
+      value: Player_Sharpshooter
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547184242331172084, guid: b52ad757266999743a9dbc453d77101f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.5582626
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547184242331172084, guid: b52ad757266999743a9dbc453d77101f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547184242331172084, guid: b52ad757266999743a9dbc453d77101f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.044202
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547184242331172084, guid: b52ad757266999743a9dbc453d77101f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547184242331172084, guid: b52ad757266999743a9dbc453d77101f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547184242331172084, guid: b52ad757266999743a9dbc453d77101f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547184242331172084, guid: b52ad757266999743a9dbc453d77101f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547184242331172084, guid: b52ad757266999743a9dbc453d77101f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547184242331172084, guid: b52ad757266999743a9dbc453d77101f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547184242331172084, guid: b52ad757266999743a9dbc453d77101f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b52ad757266999743a9dbc453d77101f, type: 3}
 --- !u!1001 &1799574999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4894,6 +4955,10 @@ PrefabInstance:
     - target: {fileID: 1162234724972830604, guid: 76b06bcd8e1c7c546b2db2f1fc2e6a4e, type: 3}
       propertyPath: m_Name
       value: Player_Sorcerer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1162234724972830604, guid: 76b06bcd8e1c7c546b2db2f1fc2e6a4e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1547184242331172084, guid: 76b06bcd8e1c7c546b2db2f1fc2e6a4e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5549,3 +5614,4 @@ SceneRoots:
   - {fileID: 1816784131}
   - {fileID: 1473600672}
   - {fileID: 1445734456}
+  - {fileID: 1737760089}

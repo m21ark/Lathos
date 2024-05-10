@@ -14,10 +14,8 @@ public class SharpshooterClass : RangerClass
 
     public override void BaseAbility()
     {
-        GenerateVFX(VFXAbility, 10);
+       GenerateVFXOnPlayer(VFXAbility, transform, 15);
     }
-
-
 
     public override void SpecialAbility()
     {
