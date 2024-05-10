@@ -17,7 +17,6 @@ public class GameLogic : MonoBehaviour
     public DialogueController dialogueController;
     public DialogueController fullScreenDialogueController;
 
-    private ClassTreeLogic classTreeLogic;
     [HideInInspector] public bool isInBossBattle;
 
     // Game Logic Fields
@@ -44,7 +43,6 @@ public class GameLogic : MonoBehaviour
     {
 
         GameObject bossObj = GameObject.FindWithTag("Boss");
-        classTreeLogic = gameObject.GetComponent<ClassTreeLogic>();
 
         if (bossObj == null)
         {
@@ -100,9 +98,6 @@ public class GameLogic : MonoBehaviour
             if (boss.health <= 0) endGame(true);
         }
         if (!player.isAlive()) endGame(false);
-
-        if (classTreeLogic == null)
-            classTreeLogic = gameObject.GetComponent<ClassTreeLogic>();
 
         CheckDialogue();
     }
@@ -199,25 +194,8 @@ public class GameLogic : MonoBehaviour
             this.endingsUnlocked = data.unlockedEndings;
 
             if (data.playerClassName != player.getClassName())
-                classTreeLogic.ClassSelect(data.playerClassName, false);
+                ClassTreeLogic.instance.ClassSelect(data.playerClassName, false);
         }
-    }
-
-    public void OpenClassSelectionMenu()
-    {
-
-        // First class 
-        if (player.getClassName() == "Base")
-            classTreeLogic.InvokeMenuClassSelect(1);
-
-        // Second class 
-        List<string> classes1Names = new List<string> { "Fighter", "Ranger", "Mage" };
-
-        // Check if the player's class name is in the list
-        if (classes1Names.Contains(player.getClassName()))
-            classTreeLogic.InvokeMenuClassSelect(2);
-
-        RefreshPlayer();
     }
 
     void endGame(bool playerWon)

@@ -73,7 +73,7 @@ public class PlayerTeleporter : MonoBehaviour
         loadingScreen.SetActive(false);
 
         if(evokesClassChange){
-            GameLogic.instance.OpenClassSelectionMenu();
+            ClassTreeLogic.instance.OpenClassSelectionMenu();
             evokesClassChange = false;
         } else LoadNewArea();
             

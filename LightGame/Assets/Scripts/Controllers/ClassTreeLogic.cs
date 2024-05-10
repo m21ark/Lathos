@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using System.Collections.Generic;
 
 public class ClassTreeLogic : MonoBehaviour
 {
+
+    public static ClassTreeLogic instance { get; private set; }
+
     public GameObject class1SelectMenuObj;
     public GameObject class2SelectMenuObj;
 
@@ -25,9 +28,34 @@ public class ClassTreeLogic : MonoBehaviour
     public GameObject prefab_sorcerer;
     public GameObject prefab_wizard;
 
+    private void Awake()
+    {
+        if (instance != null)
+            Debug.LogError("More than one ClassTreeLogic in the scene");
+        else instance = this;
+    }
+
     public void MenuClassSelect(string name)
     {
         ClassSelect(name);
+    }
+
+    public void OpenClassSelectionMenu()
+    {
+        string currClass = GameLogic.instance.player.getClassName();
+        
+        // First class 
+        if (currClass == "Base")
+            instance.InvokeMenuClassSelect(1);
+
+        // Second class 
+        List<string> classes1Names = new List<string> { "Fighter", "Ranger", "Mage" };
+
+        // Check if the player's class name is in the list
+        if (classes1Names.Contains(currClass))
+            instance.InvokeMenuClassSelect(2);
+
+        GameLogic.instance.RefreshPlayer();
     }
 
     public void ClassSelect(string name, bool toggleMenu = true)
@@ -78,7 +106,6 @@ public class ClassTreeLogic : MonoBehaviour
             // Hide Class Selection Menu
             GameLogic.instance.toggleCursor(false);
             menu.SetActive(false);
-            Debug.Log("HERE 1");
             Time.timeScale = 1;
         }
         else
@@ -86,7 +113,6 @@ public class ClassTreeLogic : MonoBehaviour
             // Show Class Selection Menu
             GameLogic.instance.toggleCursor(true);
             menu.SetActive(true);
-            Debug.Log("HERE 2");
             Time.timeScale = 0;
         }
     }
