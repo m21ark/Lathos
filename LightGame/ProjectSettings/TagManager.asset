@@ -15,6 +15,7 @@ TagManager:
   - Lamp
   - Mob
   - Fireplace
+  - VFX
   layers:
   - Default
   - TransparentFX

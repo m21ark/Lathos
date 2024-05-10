@@ -20,14 +20,15 @@ public class SharpshooterClass : RangerClass
 
     public override void SpecialAbility()
     {
-        GenerateVFX(VFXSpecialAbility, 10);
+        Vector3 offset = new Vector3(0, 0, 3);
+        GenerateVFXOnPlayer(VFXSpecialAbility, transform, 15, offset);
         StartCoroutine(ActivateSpecialAbility());
         
     }
 
     private IEnumerator ActivateSpecialAbility()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(1.9f);
         ProtoAttack attack;
         Vector3 attackDirection;
         GenerateAttackAim(A2Prefab, out attack, out attackDirection);
