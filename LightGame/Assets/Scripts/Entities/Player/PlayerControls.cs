@@ -1,9 +1,12 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private EventReference jumpSound;
+
     private Rigidbody rb;
     private GameLogic gameLogic;
     private ProtoClass player;
@@ -104,6 +107,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z); // reset the Y velocity
             rb.AddForce(Vector3.up * player.jumpForce, ForceMode.Impulse);
             isGrounded = false;
+            AudioManager.instance.PlayOneShot(jumpSound, transform.position);
         }
 
         // Dash
@@ -121,7 +125,8 @@ public class PlayerController : MonoBehaviour
         Attack2();
 
         // if player is attacking, rotate in that direction in the end
-        if (player.isAttacking || player.isAttack1ing || player.isAttack2ing){
+        if (player.isAttacking || player.isAttack1ing || player.isAttack2ing)
+        {
             this.direction = cameraPivot.forward;
             CharacterFaceDirection();
         }

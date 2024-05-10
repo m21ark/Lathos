@@ -18,17 +18,17 @@ public class MinionBehavior2 : ProtoMob
     }
     void Update()
     {
-       Move();
-       if(gameLogic.player)
+        Move();
+        if (gameLogic.player)
             player = gameLogic.player.getGameObject();
 
         // Summon minion if 10s cooldown has passed
-        if (Time.time - lastSummonTime >= summonFrequency) SummonMinions();   
+        if (Time.time - lastSummonTime >= summonFrequency) SummonMinions();
     }
 
     public override void Move()
     {
-        
+
         if (player != null)
         {
             // Calculate direction vector towards the player
@@ -51,12 +51,13 @@ public class MinionBehavior2 : ProtoMob
             gameLogic.player.TakeDamage(damage);
     }
 
-    void SummonMinions(){
+    void SummonMinions()
+    {
 
         // Reset the cooldown timer
         lastSummonTime = Time.time;
 
-        float summonRadius = 8f; 
+        float summonRadius = 8f;
         float summonProbability = 0.3f;
 
         // If randomize hits, summon 2 minions

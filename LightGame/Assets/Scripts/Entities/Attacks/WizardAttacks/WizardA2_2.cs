@@ -15,18 +15,18 @@ public class WizardA2_2 : ProtoAttack
         if (Time.time - lastTick >= tickRate)
             lastTick = Time.time;
         else return;
-        
+
         if (collision.gameObject.CompareTag("Minion") || collision.gameObject.CompareTag("Boss"))
         {
             /// Get the Mob component
             ProtoMob mob = collision.gameObject.GetComponent<ProtoMob>();
 
-            mob.TakeDamage(projDamage); 
+            mob.TakeDamage(projDamage);
 
             return;
 
         }
-        
+
     }
 
     public override void OnTriggerEnter(Collider collision)

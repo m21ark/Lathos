@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BaseClass : ProtoClass
 {
-    public override void Attack() 
+    public override void Attack()
     {
         ProtoAttack attack;
         Vector3 attackDirection;

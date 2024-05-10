@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WizardA1 : ProtoAttack
-{   
+{
     public float damageInterval = 0.5f;
     private float timer = 0f;
 

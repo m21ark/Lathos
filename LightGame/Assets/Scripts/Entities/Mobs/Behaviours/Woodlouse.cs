@@ -42,12 +42,13 @@ public class Woodlouse : BasicAi
         Invoke(nameof(MoveBack), timeBetweenAttacks - 0.2f);
     }
 
-    public override void ResetAttack() {
+    public override void ResetAttack()
+    {
         alreadyAttacked = false;
     }
 
     private void MoveBack()
-    {   
+    {
         backToPos = true;
         // Set the destination back to the initial position
         agent.SetDestination(initialPosition);

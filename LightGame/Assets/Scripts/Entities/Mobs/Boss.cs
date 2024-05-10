@@ -26,11 +26,12 @@ public class Boss : ProtoMob
     {
         // Check if boss needs to switch to new phase
         currentBossPhase = 1;
-        if(health <= bossPhaseThreshold2) currentBossPhase = 2;
+        if (health <= bossPhaseThreshold2) currentBossPhase = 2;
         if (health <= bossPhaseThreshold3) currentBossPhase = 3;
 
         // Apply different boss behavior depending on current phase  
-        switch(currentBossPhase){
+        switch (currentBossPhase)
+        {
             case 1: Phase1Behavior(); break;
             case 2: Phase2Behavior(); break;
             case 3: Phase3Behavior(); break;
@@ -38,23 +39,26 @@ public class Boss : ProtoMob
         }
     }
 
-    private void Phase1Behavior(){
+    private void Phase1Behavior()
+    {
         // Do nothing
     }
 
-    private void Phase2Behavior(){
+    private void Phase2Behavior()
+    {
         ChangeColor(Color.blue);
         // Summoning phase and follow player
         Move2();
-        
-        if(gameLogic.player)
+
+        if (gameLogic.player)
             player = gameLogic.player.getGameObject();
 
         // Summon minion if 10s cooldown has passed
-        if (Time.time - lastSummonTime >= summonFrequency) SummonMinions();   
+        if (Time.time - lastSummonTime >= summonFrequency) SummonMinions();
     }
 
-    private void Phase3Behavior(){
+    private void Phase3Behavior()
+    {
         // Do nothing
         ChangeColor(Color.green);
     }
@@ -82,8 +86,9 @@ public class Boss : ProtoMob
             gameLogic.player.TakeDamage(30);
     }
 
-    void SummonMinions(){
-        float summonRadius = 12f; 
+    void SummonMinions()
+    {
+        float summonRadius = 12f;
         float summonProbability = 0.3f;
 
         // If randomize hits, summon 2 minions
@@ -102,7 +107,8 @@ public class Boss : ProtoMob
         }
     }
 
-    private void ChangeColor(Color newColor){
+    private void ChangeColor(Color newColor)
+    {
         Renderer renderer = gameObject.GetComponent<Renderer>();
         Material material = new Material(renderer.material);
         material.color = newColor;

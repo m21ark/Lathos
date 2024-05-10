@@ -5,7 +5,7 @@ public class RangerMark : MonoBehaviour
     private int poisonTicksLeft = 3;
     private int damagePerTick = 10;
     private float tickTimer = 1f;
-    
+
     void Update()
     {
         tickTimer -= Time.deltaTime;
@@ -17,7 +17,7 @@ public class RangerMark : MonoBehaviour
                 mob.TakeDamage(damagePerTick);
                 poisonTicksLeft--;
             }
-            
+
             tickTimer = 1f;
         }
     }

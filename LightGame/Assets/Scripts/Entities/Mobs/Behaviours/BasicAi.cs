@@ -42,9 +42,10 @@ public class BasicAi : MonoBehaviour
         if (playerInSightRange && playerInAttackRange) AttackPlayer();
     }
 
-    private void Patrolling() {
+    private void Patrolling()
+    {
         // console log
-    
+
         if (!walkPointSet) SearchWalkPoint();
 
         if (walkPointSet) agent.SetDestination(walkPoint);
@@ -55,7 +56,8 @@ public class BasicAi : MonoBehaviour
         if (distanceToWalkPoint.magnitude < 1f) walkPointSet = false;
     }
 
-    private void SearchWalkPoint() {
+    private void SearchWalkPoint()
+    {
         // Calculate random point in range
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
         float randomX = Random.Range(-walkPointRange, walkPointRange);
@@ -63,21 +65,24 @@ public class BasicAi : MonoBehaviour
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
         if (Physics.Raycast(walkPoint, -transform.up, 12f, whatIsGround)) walkPointSet = true;
-      
+
     }
 
-    private void ChasePlayer() {
+    private void ChasePlayer()
+    {
 
         agent.SetDestination(player.position);
     }
 
 
-    public virtual void AttackPlayer() {
+    public virtual void AttackPlayer()
+    {
         agent.SetDestination(player.position);
 
         //transform.LookAt(player);
 
-        if (!alreadyAttacked) {
+        if (!alreadyAttacked)
+        {
             // Attack code here
 
             this.attack();
@@ -87,11 +92,13 @@ public class BasicAi : MonoBehaviour
         }
     }
 
-    public virtual void attack() {
+    public virtual void attack()
+    {
         Debug.Log("Attacking");
     }
 
-    public virtual void ResetAttack() {
+    public virtual void ResetAttack()
+    {
         alreadyAttacked = false;
     }
 }

@@ -2,8 +2,8 @@ using UnityEngine;
 using System.Collections;
 
 public class BersekerClass : FighterClass
-{    
-    
+{
+
     private ProtoAttack attack;
     private Vector3 attackDirection;
 
@@ -28,7 +28,8 @@ public class BersekerClass : FighterClass
 
     IEnumerator RepeatedFire(int baseDamage, Vector3 attackDirection)
     {
-        for(int i = 0; i < 3; i++) {
+        for (int i = 0; i < 3; i++)
+        {
             // Call Fire method initially
             GenerateAttackPhysical(A1Prefab, out attack, out attackDirection);
             attack.Fire(baseDamage, cameraPivot.forward);

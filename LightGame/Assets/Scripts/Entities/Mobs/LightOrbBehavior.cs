@@ -24,7 +24,7 @@ public class LightOrbBehavior : MonoBehaviour
     private void Update()
     {
         lamp = GameObject.FindWithTag("Lamp");
-        
+
         // Check if the orb object is set
         if (lamp != null)
         {
@@ -39,7 +39,7 @@ public class LightOrbBehavior : MonoBehaviour
                 Vector3 direction = (lamp.transform.position - transform.position).normalized;
 
                 // Accelerate towards the orb
-                transform.position += direction * accelerationSpeed * Time.deltaTime * (1/distance + baseSpeed);
+                transform.position += direction * accelerationSpeed * Time.deltaTime * (1 / distance + baseSpeed);
             }
         }
     }
@@ -51,7 +51,7 @@ public class LightOrbBehavior : MonoBehaviour
         {
             // Despawn this object
             Destroy(gameObject);
-            
+
             gameLogic.player.collectedLight += 1; // Increase the player's light by 1
         }
     }

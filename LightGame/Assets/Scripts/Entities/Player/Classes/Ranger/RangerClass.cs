@@ -6,7 +6,7 @@ public class RangerClass : BaseClass
     public int A1_HunterMarkDamage = 8;
     public int A1_HunterMarkTicks = 3;
 
-    public override void Attack() 
+    public override void Attack()
     {
         ProtoAttack attack;
         Vector3 attackDirection;

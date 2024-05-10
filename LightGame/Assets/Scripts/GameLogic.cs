@@ -44,10 +44,13 @@ public class GameLogic : MonoBehaviour
 
         GameObject bossObj = GameObject.FindWithTag("Boss");
         classTreeLogic = gameObject.GetComponent<ClassTreeLogic>();
-        
-        if(bossObj == null){
+
+        if (bossObj == null)
+        {
             isInBossBattle = false;
-        }else{
+        }
+        else
+        {
             isInBossBattle = true;
             boss = bossObj.GetComponent<Boss>();
         }
@@ -55,27 +58,31 @@ public class GameLogic : MonoBehaviour
         HUDLoadElements();
         RefreshPlayer();
         DataPersistentLoad();
-        
-        if (player == null){
+
+        if (player == null)
+        {
             Debug.LogError("GameObject with tag 'Player' was not found");
             Time.timeScale = 0;
             return;
         }
-        
+
         // Set start time variables
         Time.timeScale = 1;
-        gameTime = 0.0f;  
+        gameTime = 0.0f;
 
         toggleCursor(false); // Hide cursor during gameplay
     }
 
-    public void RefreshPlayer(){
+    public void RefreshPlayer()
+    {
         player = GameObject.FindWithTag("Player").GetComponent<ProtoClass>();
     }
 
-    void HUDLoadElements(){
+    void HUDLoadElements()
+    {
         hud = GameObject.FindWithTag("HUD");
-        if(hud){
+        if (hud)
+        {
             hud_timer = hud.transform.Find("Timer").GetComponent<TextMeshProUGUI>();
             hud_player_health = hud.transform.Find("PlayerHealth").GetComponent<TextMeshProUGUI>();
             hud_boss_health = hud.transform.Find("BossHealth").GetComponent<TextMeshProUGUI>();
@@ -96,37 +103,42 @@ public class GameLogic : MonoBehaviour
         gameTime += Time.deltaTime;
 
         // Update the HUD
-        if(hud != null) updateHUD();
+        if (hud != null) updateHUD();
 
         // TODO: For debugging purposes
         if (Input.GetKeyDown(KeyCode.H))
             player.Heal(100);
 
         // If boss or player dead, end game
-        if(isInBossBattle){
-            if(boss.health <= 0) endGame(true);
+        if (isInBossBattle)
+        {
+            if (boss.health <= 0) endGame(true);
         }
-        if(!player.isAlive()) endGame(false);
+        if (!player.isAlive()) endGame(false);
 
-        if(classTreeLogic == null)
+        if (classTreeLogic == null)
             classTreeLogic = gameObject.GetComponent<ClassTreeLogic>();
 
         CheckDialogue();
     }
 
-    void handlePlayerLight() {
+    void handlePlayerLight()
+    {
 
         lightDecreaseTimer += Time.deltaTime;
         // If one second has passed, decrease the player's light
-        if (lightDecreaseTimer >= 1f) {
+        if (lightDecreaseTimer >= 1f)
+        {
             lightDecreaseTimer -= 1f;
-            if (player.collectedLight > 0) {
+            if (player.collectedLight > 0)
+            {
                 player.collectedLight -= 1;
                 if (player.collectedLight < 0) player.collectedLight = 0;
             }
 
             // If player's light is 0, give him damage
-            if (player.collectedLight == 0) {
+            if (player.collectedLight == 0)
+            {
                 player.TakeDamage(1);
             }
         }
@@ -134,30 +146,36 @@ public class GameLogic : MonoBehaviour
 
     public void StartDialogue(string key, bool isFullScreen = false)
     {
-        if(isFullScreen && isShowingFullScreenDialogue) return;
+        if (isFullScreen && isShowingFullScreenDialogue) return;
 
         DialogueData data = dialogueDataList.Find(data => data.dialogueName == key);
-        if (data != null){
-            if(isFullScreen){
-                    toggleCursor(true);
-                    fullScreenDialogueController.Display(data);
-                    isShowingFullScreenDialogue = true;
-            } else
+        if (data != null)
+        {
+            if (isFullScreen)
+            {
+                toggleCursor(true);
+                fullScreenDialogueController.Display(data);
+                isShowingFullScreenDialogue = true;
+            }
+            else
                 dialogueController.Display(data);
         }
         else Debug.LogError("Dialogue data with key '" + key + "' not found.");
     }
 
-    void CheckDialogue(){
+    void CheckDialogue()
+    {
         // Check if the full screen dialogue is done to unpause the game 
-        if(isShowingFullScreenDialogue && !fullScreenDialogueController.isActive){
+        if (isShowingFullScreenDialogue && !fullScreenDialogueController.isActive)
+        {
             isShowingFullScreenDialogue = false;
             toggleCursor(false);
         }
     }
 
-    public void DataPersistentSave(){
-        if(!persistentData) return;
+    public void DataPersistentSave()
+    {
+        if (!persistentData) return;
 
         Debug.Log("SAVING");
 
@@ -171,34 +189,40 @@ public class GameLogic : MonoBehaviour
         SaveSystem.DataSave(data);
     }
 
-    void DataPersistentLoad(){
-        if(!persistentData) return;
+    void DataPersistentLoad()
+    {
+        if (!persistentData) return;
 
         SaveData data = SaveSystem.DataLoad();
 
         // if there is no available data, use the default values
-        if(data == null){
+        if (data == null)
+        {
             Debug.Log("No player data found. Starting new game save.");
             data = new SaveData();
         }
 
         // go to the scene
-        if(data.currentPlayerArea != SceneManager.GetActiveScene().buildIndex){
+        if (data.currentPlayerArea != SceneManager.GetActiveScene().buildIndex)
+        {
             Debug.Log("Loading saved scene: " + data.currentPlayerArea);
             SceneManager.LoadScene(data.currentPlayerArea);
-        }else{
+        }
+        else
+        {
             // Put the data in the game
             this.endingsUnlocked = data.unlockedEndings;
-            
-            if(data.playerClassName != player.getClassName())
+
+            if (data.playerClassName != player.getClassName())
                 classTreeLogic.ClassSelect(data.playerClassName, false);
         }
     }
 
-    public void OpenClassSelectionMenu(){
+    public void OpenClassSelectionMenu()
+    {
 
         // First class 
-        if(player.getClassName() == "Base")
+        if (player.getClassName() == "Base")
             classTreeLogic.InvokeMenuClassSelect(1);
 
         // Second class 
@@ -206,14 +230,15 @@ public class GameLogic : MonoBehaviour
 
         // Check if the player's class name is in the list
         if (classes1Names.Contains(player.getClassName()))
-            classTreeLogic.InvokeMenuClassSelect(2);        
+            classTreeLogic.InvokeMenuClassSelect(2);
 
         RefreshPlayer();
     }
 
-    void endGame(bool playerWon){
+    void endGame(bool playerWon)
+    {
         TextMeshProUGUI end_msg = endMenu.transform.Find("EndGameSMS").GetComponent<TextMeshProUGUI>();
-        end_msg.text = string.Format("{0}", playerWon? "You won!" : "You died!" );
+        end_msg.text = string.Format("{0}", playerWon ? "You won!" : "You died!");
         endMenu.SetActive(true);
         toggleCursor(true);
     }
@@ -224,16 +249,17 @@ public class GameLogic : MonoBehaviour
         SceneManager.LoadScene(currentSceneIndex);
     }
 
-    void updateHUD(){
+    void updateHUD()
+    {
 
         // Update timer in the format MM:SS
-        int minutes = Mathf.FloorToInt(gameTime/ 60F);
+        int minutes = Mathf.FloorToInt(gameTime / 60F);
         int seconds = Mathf.FloorToInt(gameTime - minutes * 60);
         hud_timer.text = string.Format("Time: {0:0}:{1:00}", minutes, seconds);
 
         // Update boss and player's health 
         hud_player_health.text = string.Format("Health: {0}", player.health > 0 ? player.health : 0);
-        if(isInBossBattle)
+        if (isInBossBattle)
             hud_boss_health.text = string.Format("Boss Health: {0}", boss.health > 0 ? boss.health : 0);
         else hud_boss_health.text = "";
 
@@ -247,22 +273,27 @@ public class GameLogic : MonoBehaviour
         string AbilityCool = CooldownFormat(player.lastAttack2Time);
         string DashCool = CooldownFormat(player.lastDashTime);
         hud_playerCooldowns.text = string.Format("Base: {0}\nClass: {1}\nAbility: {2}\nDash: {3}", baseCool, classCool, AbilityCool, DashCool);
-        
+
     }
 
-    private string CooldownFormat(float playerCooldownTimer){
-        return string.Format("{0}",  playerCooldownTimer <= 0 ? "Ready" : (Mathf.Round(playerCooldownTimer * 100f) / 100f));
+    private string CooldownFormat(float playerCooldownTimer)
+    {
+        return string.Format("{0}", playerCooldownTimer <= 0 ? "Ready" : (Mathf.Round(playerCooldownTimer * 100f) / 100f));
     }
 
-    public void toggleCursor(bool show){
+    public void toggleCursor(bool show)
+    {
         // Lock mouse and make it invisible during gameplay
         // And show it again in menus for selection
-        if(show){
+        if (show)
+        {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
             isPaused = true;
             Time.timeScale = 0;
-        }else{
+        }
+        else
+        {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             isPaused = false;

@@ -14,14 +14,14 @@ public class MinionBehavior1 : ProtoMob
     }
     void Update()
     {
-       Move();
-       if(gameLogic.player)
+        Move();
+        if (gameLogic.player)
             player = gameLogic.player.getGameObject();
     }
 
     public override void Move()
     {
-        
+
         if (player != null)
         {
             // Calculate direction vector towards the player
@@ -40,18 +40,19 @@ public class MinionBehavior1 : ProtoMob
     {
 
         // Deal Damage
-        if (collision.gameObject.CompareTag("Player")){
+        if (collision.gameObject.CompareTag("Player"))
+        {
             gameLogic.player.TakeDamage(damage);
             JumpAwayFromPlayer();
         }
-      
+
     }
 
     void JumpAwayFromPlayer()
     {
         // Calculate direction away from the player
         Vector3 direction = transform.position - player.transform.position;
-        direction.y = 0f; 
+        direction.y = 0f;
         direction.Normalize();
 
         float jumpForce = 20.0f;

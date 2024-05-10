@@ -5,7 +5,7 @@ public class MageClass : BaseClass
 
     public GameObject A1_2Prefab;
 
-    public override void Attack() 
+    public override void Attack()
     {
         ProtoAttack attack;
         Vector3 attackDirection;

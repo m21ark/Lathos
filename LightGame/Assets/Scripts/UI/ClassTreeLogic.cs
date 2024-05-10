@@ -7,7 +7,7 @@ public class ClassTreeLogic : MonoBehaviour
 {
     public GameObject class1SelectMenuObj;
     public GameObject class2SelectMenuObj;
-    
+
     private GameLogic gameLogic;
     private int activeMenu = 0;
 
@@ -26,16 +26,20 @@ public class ClassTreeLogic : MonoBehaviour
     public GameObject prefab_sorcerer;
     public GameObject prefab_wizard;
 
-    void Start(){
+    void Start()
+    {
         gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
     }
 
-    public void MenuClassSelect(string name){
+    public void MenuClassSelect(string name)
+    {
         ClassSelect(name);
     }
-    
-    public void ClassSelect(string name, bool toggleMenu = true){
-        switch(name){
+
+    public void ClassSelect(string name, bool toggleMenu = true)
+    {
+        switch (name)
+        {
             case "Base": ReplacePlayer(prefab_base, toggleMenu); break;
             case "Fighter": ReplacePlayer(prefab_fighter, toggleMenu); break;
             case "Ranger": ReplacePlayer(prefab_ranger, toggleMenu); break;
@@ -58,7 +62,7 @@ public class ClassTreeLogic : MonoBehaviour
 
         Transform pivot = oldPlayer.transform.parent.transform.Find("CameraPivot").transform;
         Vector3 oldPlayerPosition = oldPlayer.transform.position;
- 
+
         // Set old player rotation to have x-axis and z-axis rotation as 0
         Quaternion oldPlayerRotation = Quaternion.Euler(0f, pivot.rotation.eulerAngles.y, 0f);
 
@@ -69,19 +73,22 @@ public class ClassTreeLogic : MonoBehaviour
         Destroy(oldPlayer.transform.parent.gameObject);
 
         // Remove menu after choice is made
-        if(toggleMenu)
-            ToggleClassSelectMenu(activeMenu == 1? class1SelectMenuObj : class2SelectMenuObj, false);
+        if (toggleMenu)
+            ToggleClassSelectMenu(activeMenu == 1 ? class1SelectMenuObj : class2SelectMenuObj, false);
     }
 
-    public void ToggleClassSelectMenu(GameObject menu, bool show){
-        if (!show){                    
+    public void ToggleClassSelectMenu(GameObject menu, bool show)
+    {
+        if (!show)
+        {
             // Hide Class Selection Menu
             gameLogic.toggleCursor(false);
             menu.SetActive(false);
             Debug.Log("HERE 1");
             Time.timeScale = 1;
         }
-        else{
+        else
+        {
             // Show Class Selection Menu
             gameLogic.toggleCursor(true);
             menu.SetActive(true);
@@ -90,17 +97,20 @@ public class ClassTreeLogic : MonoBehaviour
         }
     }
 
-    public void InvokeMenuClassSelect(int num){
+    public void InvokeMenuClassSelect(int num)
+    {
         activeMenu = num;
-        if(num == 1) ToggleClassSelectMenu(class1SelectMenuObj, true);
-        else if(num == 2){ 
+        if (num == 1) ToggleClassSelectMenu(class1SelectMenuObj, true);
+        else if (num == 2)
+        {
             SetMenu2Options();
             ToggleClassSelectMenu(class2SelectMenuObj, true);
         }
         else Debug.LogError("Invalid Class Menu Selection");
     }
 
-   private void SetMenu2Options(){
+    private void SetMenu2Options()
+    {
         if (gameLogic == null)
         {
             Debug.LogError("GameLogic is not assigned.");

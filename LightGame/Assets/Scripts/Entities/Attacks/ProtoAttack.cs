@@ -3,16 +3,16 @@ using System.Linq;
 
 public class ProtoAttack : MonoBehaviour
 {
-    
+
     // Attack attributes
     public float gravity = 1.0f;
     public float speed = 50.0f;
     public float despawnTime = 5.0f;
-    
+
     // Attack collision behavior
     public bool ignorePlayerCol = true;
     public bool despawnOnCol = true;
-    
+
     // Private values
     protected int projDamage = 10;
     private Rigidbody attackRb;
@@ -20,9 +20,10 @@ public class ProtoAttack : MonoBehaviour
 
     protected (string key, object value)[] kwargs;
 
-    void Start(){}
+    void Start() { }
 
-    public virtual void Fire(int damage, Vector3 direction, params (string key, object value)[] kwargs){
+    public virtual void Fire(int damage, Vector3 direction, params (string key, object value)[] kwargs)
+    {
 
         this.kwargs = kwargs;
 
@@ -35,7 +36,7 @@ public class ProtoAttack : MonoBehaviour
 
         // Despawn attack when despawn time is reached
         Destroy(gameObject.transform.parent.gameObject, despawnTime);
-    }   
+    }
 
 
     void FixedUpdate()
@@ -52,25 +53,26 @@ public class ProtoAttack : MonoBehaviour
     public virtual void OnTriggerEnter(Collider collision)
     {
 
-        if(ignorePlayerCol && (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Lamp")))
+        if (ignorePlayerCol && (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Lamp")))
             return;
-        
+
         // Check if the attack hit enemy and damage it
         if (collision.gameObject.CompareTag("Minion") || collision.gameObject.CompareTag("Boss"))
         {
-           /// Get the Mob component
+            /// Get the Mob component
             ProtoMob mob = collision.gameObject.GetComponent<ProtoMob>();
 
-            mob.TakeDamage(projDamage); 
+            mob.TakeDamage(projDamage);
 
         }
 
         // Destroy the attack
-        if(despawnOnCol)
+        if (despawnOnCol)
             Destroy(gameObject);
     }
 
-    public object GetKwarg(string keyName, params (string key, object value)[] kwargs){
-         return kwargs.FirstOrDefault(pair => pair.key == keyName).value;
+    public object GetKwarg(string keyName, params (string key, object value)[] kwargs)
+    {
+        return kwargs.FirstOrDefault(pair => pair.key == keyName).value;
     }
 }

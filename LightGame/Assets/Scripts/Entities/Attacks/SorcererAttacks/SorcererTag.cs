@@ -21,14 +21,16 @@ public class SorcererTag : MonoBehaviour
         textMesh.alignment = TextAlignment.Center;
     }
 
-    public void addStack(int stackCounter = 1){
+    public void addStack(int stackCounter = 1)
+    {
         this.stackCounter += stackCounter;
         this.stackCounter = Mathf.Clamp(this.stackCounter, 1, 5); // limit the stack counter to 5
 
-        if(this.transform.Find("StackText") != null){
-        TextMesh textMesh = this.transform.Find("StackText").GetComponent<TextMesh>();
-        if (textMesh != null)
-            textMesh.text = this.stackCounter.ToString();
+        if (this.transform.Find("StackText") != null)
+        {
+            TextMesh textMesh = this.transform.Find("StackText").GetComponent<TextMesh>();
+            if (textMesh != null)
+                textMesh.text = this.stackCounter.ToString();
         }
     }
 

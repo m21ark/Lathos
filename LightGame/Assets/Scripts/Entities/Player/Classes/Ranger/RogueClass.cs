@@ -4,15 +4,15 @@ using System.Collections;
 public class RogueClass : RangerClass
 {
 
-    
+
     public float A1TimeSpan = 3.0f;
     public float A1BuffMult = 0.5f;
-    public override void Attack() 
+    public override void Attack()
     {
         ProtoAttack attack;
         Vector3 attackDirection;
         GenerateAttackAim(A0Prefab, out attack, out attackDirection);
-        attack.Fire(A0Damage, attackDirection); 
+        attack.Fire(A0Damage, attackDirection);
     }
 
     public override void BaseAbility()
@@ -34,7 +34,7 @@ public class RogueClass : RangerClass
 
     public override void SpecialAbility()
     {
-        
+
         ProtoAttack attack;
         Vector3 attackDirection;
         GenerateAttackAim(A2Prefab, out attack, out attackDirection);

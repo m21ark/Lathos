@@ -13,17 +13,19 @@ public class LampHoverPlayer : MonoBehaviour
     private Transform player;
     private int playerLight = 0;
 
-    void GetPlayer(){
+    void GetPlayer()
+    {
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
 
-        if(playerObj == null){ 
+        if (playerObj == null)
+        {
             Debug.LogError("Player cannot be found");
             return;
         }
 
         player = playerObj.transform;
         ProtoClass playerClass = player.GetComponent<ProtoClass>();
-        if(playerClass)
+        if (playerClass)
             playerLight = playerClass.collectedLight;
     }
 
@@ -35,7 +37,8 @@ public class LampHoverPlayer : MonoBehaviour
     }
 
     // TODO: later adjust values in a more dynamic way
-    void UpdateLightSource(){
+    void UpdateLightSource()
+    {
         Light light = lightSource.GetComponent<Light>();
         light.intensity = playerLight;
     }

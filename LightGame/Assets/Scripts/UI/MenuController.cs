@@ -12,21 +12,24 @@ public class MenuController : MonoBehaviour
 
     private GameLogic gameLogic;
 
-    void Start(){
+    void Start()
+    {
         GameObject gameController = GameObject.FindWithTag("GameController");
-        if(gameController != null)
+        if (gameController != null)
             gameLogic = gameController.GetComponent<GameLogic>();
-        
+
         LoadPlayerSettings();
     }
 
-    void Update(){
-         // Check if ESC is pressed to pause Game
+    void Update()
+    {
+        // Check if ESC is pressed to pause Game
         if (Input.GetKeyDown(KeyCode.Escape))
             TogglePauseGame();
     }
 
-    public void SavePlayerSettings(){
+    public void SavePlayerSettings()
+    {
         Debug.Log("Saving new player settings...");
         GameObject settingsMenu = gameObject.transform.Find("SettingsMenu").gameObject;
 
@@ -40,8 +43,10 @@ public class MenuController : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public void LoadPlayerSettings(){
-        try{
+    public void LoadPlayerSettings()
+    {
+        try
+        {
             GameObject settingsMenu = gameObject.transform.Find("SettingsMenu").gameObject;
 
             // Get the 2 sliders
@@ -50,30 +55,37 @@ public class MenuController : MonoBehaviour
 
             sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 0.5f);
             musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.5f);
-        }catch{
+        }
+        catch
+        {
             // pass
         }
     }
 
-    public void GotoPlayMenu(){
+    public void GotoPlayMenu()
+    {
 
         GameObject playNewMenu = gameObject.transform.Find("PlayNewMenu").gameObject;
         GameObject loadGameMenu = gameObject.transform.Find("PlayLoadMenu").gameObject;
 
-        if(SaveSystem.SaveExists()){
+        if (SaveSystem.SaveExists())
+        {
             playNewMenu.SetActive(false);
             loadGameMenu.SetActive(true);
-        }else{
+        }
+        else
+        {
             playNewMenu.SetActive(true);
             loadGameMenu.SetActive(false);
         }
     }
 
-    public void DeleteGameInstance(){
+    public void DeleteGameInstance()
+    {
         Debug.Log("Deleting game instance...");
         SaveSystem.DeleteSave();
     }
-    
+
     public void StartNewGame()
     {
         Debug.Log("Starting new game...");
@@ -88,11 +100,12 @@ public class MenuController : MonoBehaviour
         SaveData data = SaveSystem.DataLoad();
 
         // go to the scene
-        if(data.currentPlayerArea != SceneManager.GetActiveScene().buildIndex)
+        if (data.currentPlayerArea != SceneManager.GetActiveScene().buildIndex)
             SceneManager.LoadScene(data.currentPlayerArea);
-    } 
+    }
 
-    public void ResumeGame(){
+    public void ResumeGame()
+    {
         TogglePauseGame();
     }
 
@@ -117,29 +130,31 @@ public class MenuController : MonoBehaviour
 
     public void TogglePauseGame()
     {
-        if(gameLogic == null) gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
+        if (gameLogic == null) gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
 
-        if (gameLogic.isPaused){
+        if (gameLogic.isPaused)
+        {
             // Resume Game
-                    
+
             // Disable mouse cursor again for gameplay
             gameLogic.toggleCursor(false);
 
             Time.timeScale = 1f;
             gameLogic.isPaused = false;
-            if(pauseMenuObj != null)
+            if (pauseMenuObj != null)
                 pauseMenuObj.SetActive(false);
         }
-        else{
-        
+        else
+        {
+
             // Pause Game
-            
+
             // Re enable mouse cursor for the pause menu
             gameLogic.toggleCursor(true);
-            
+
             Time.timeScale = 0f;
             gameLogic.isPaused = true;
-            if(pauseMenuObj != null)
+            if (pauseMenuObj != null)
                 pauseMenuObj.SetActive(true);
         }
     }

@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class WizardA0_2 : ProtoAttack
 {
-
+     // Nothing to see here
 }

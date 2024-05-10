@@ -11,7 +11,7 @@ public class SorcererClass : MageClass
     public GameObject VFXSpecialAbility;
     public int A2Range = 20;
 
-    public override void Attack() 
+    public override void Attack()
     {
         ProtoAttack attack;
         Vector3 attackDirection;
@@ -19,7 +19,7 @@ public class SorcererClass : MageClass
         attack.Fire(A0Damage, attackDirection);
     }
 
-    
+
     public override void BaseAbility()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Minion");
@@ -48,7 +48,8 @@ public class SorcererClass : MageClass
 
     public override void SpecialAbility()
     {
-        Action action = () => {
+        Action action = () =>
+        {
 
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Minion");
             GameObject boss = GameObject.FindGameObjectWithTag("Boss");
@@ -61,7 +62,7 @@ public class SorcererClass : MageClass
                         enemy.AddComponent<SorcererTag>();
                     enemy.GetComponent<SorcererTag>().addStack(A2Damage);
                 }
-            
+
 
             // Add X stacks to the boss if within A2Range
             if (Vector3.Distance(boss.transform.position, transform.position) < A2Range)
@@ -70,7 +71,7 @@ public class SorcererClass : MageClass
                     boss.AddComponent<SorcererTag>();
                 boss.GetComponent<SorcererTag>().addStack(A2Damage);
             }
-            
+
         };
 
         generateVFXDelayedAction(VFXSpecialAbility, 3f, action);

@@ -30,7 +30,8 @@ public class ProtoMob : MonoBehaviour
         int numOrbs = Random.Range(enemyLevel, enemyLevel * 2);
 
         // Spawn orbs
-        for (int i = 0; i < numOrbs; i++) {
+        for (int i = 0; i < numOrbs; i++)
+        {
             // Calculate random offset from the center
             float xOffset = Random.Range(-2f, 2f);
             float zOffset = Random.Range(-2f, 2f);

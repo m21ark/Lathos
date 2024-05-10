@@ -51,13 +51,15 @@ public class ProtoClass : MonoBehaviour
     [HideInInspector] public float lastDashTime = 0f;
 
 
-    void Start(){
+    void Start()
+    {
         cameraPivot = transform.parent.transform.Find("CameraPivot");
         health = maxHealth;
         collectedLight = 100;
     }
 
-    public bool isAlive(){
+    public bool isAlive()
+    {
         return health > 0;
     }
 
@@ -68,13 +70,15 @@ public class ProtoClass : MonoBehaviour
             Die();
     }
 
-    public GameObject getGameObject(){
+    public GameObject getGameObject()
+    {
         return gameObject;
     }
 
-    public void Heal(int heal){
+    public void Heal(int heal)
+    {
         health += heal;
-        if(health > maxHealth) health = maxHealth;
+        if (health > maxHealth) health = maxHealth;
     }
 
     public void Die()
@@ -85,7 +89,7 @@ public class ProtoClass : MonoBehaviour
     public virtual void Attack()
     {
         Debug.Log("Basic Attack is not implemented for this player class");
-    }   
+    }
 
     public virtual void BaseAbility()
     {
@@ -97,7 +101,8 @@ public class ProtoClass : MonoBehaviour
         Debug.Log("Special Attack is not implemented for this player class");
     }
 
-    public string getClassName(){
+    public string getClassName()
+    {
         System.Type scriptType = this.GetType();
         string className = scriptType.Name;
         if (className.EndsWith("Class"))
@@ -105,29 +110,34 @@ public class ProtoClass : MonoBehaviour
         return className;
     }
 
-    private void GenerateAttack(bool isPhysical, GameObject prefab, out ProtoAttack attack, out Vector3 attackDirection){
+    private void GenerateAttack(bool isPhysical, GameObject prefab, out ProtoAttack attack, out Vector3 attackDirection)
+    {
         GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
         Vector3 attackDirectionTemp;
         RaycastHit ray;
 
         bool hit = Physics.Raycast(camera.transform.position, camera.transform.forward, out ray, 50f, ~LayerMask.GetMask("LampLight"));
 
-        if(hit){
+        if (hit)
+        {
             attackDirectionTemp = ray.point - cameraPivot.position;
             attackDirectionTemp.Normalize();
-        } else attackDirectionTemp = camera.transform.forward;
+        }
+        else attackDirectionTemp = camera.transform.forward;
 
         GameObject attackEntity;
         Vector3 startPos = cameraPivot.transform.position + cameraPivot.transform.forward;
 
-        if(isPhysical){
+        if (isPhysical)
+        {
             // Apply some randomization to attacks inclination
-            float randomZAngle = UnityEngine.Random.Range(-50f, 50f); 
+            float randomZAngle = UnityEngine.Random.Range(-50f, 50f);
             Quaternion attackRotation = Quaternion.Euler(0f, cameraPivot.transform.rotation.eulerAngles.y, randomZAngle);
             attackEntity = Instantiate(prefab, startPos, attackRotation);
 
-        }else attackEntity = Instantiate(prefab, startPos, cameraPivot.rotation);
-        
+        }
+        else attackEntity = Instantiate(prefab, startPos, cameraPivot.rotation);
+
         ProtoAttack attackTemp = attackEntity.transform.GetChild(0).GetComponent<ProtoAttack>();
 
         // Return values
@@ -135,22 +145,26 @@ public class ProtoClass : MonoBehaviour
         attackDirection = attackDirectionTemp;
     }
 
-    public void GenerateAttackAim(GameObject prefab, out ProtoAttack attack, out Vector3 attackDirection){
+    public void GenerateAttackAim(GameObject prefab, out ProtoAttack attack, out Vector3 attackDirection)
+    {
         GenerateAttack(false, prefab, out attack, out attackDirection);
     }
-    
-    public void GenerateAttackPhysical(GameObject prefab, out ProtoAttack attack, out Vector3 attackDirection){
+
+    public void GenerateAttackPhysical(GameObject prefab, out ProtoAttack attack, out Vector3 attackDirection)
+    {
         GenerateAttack(true, prefab, out attack, out attackDirection);
     }
 
     // ============================== VFX ==============================
-    public void GenerateVFX(GameObject vfx, int duration = 5){
+    public void GenerateVFX(GameObject vfx, int duration = 5)
+    {
         GameObject vfxInstance = Instantiate(vfx, transform.position, Quaternion.identity);
         vfxInstance.SetActive(true);
         Destroy(vfxInstance, duration);
     }
 
-    public void GenerateVFXOnPlayer(GameObject vfx, Transform playerTransform, int duration = 5, Vector3 offsetPosition = new Vector3(), Quaternion rotation = new Quaternion()){
+    public void GenerateVFXOnPlayer(GameObject vfx, Transform playerTransform, int duration = 5, Vector3 offsetPosition = new Vector3(), Quaternion rotation = new Quaternion())
+    {
         GameObject vfxInstance = Instantiate(vfx, playerTransform.position, Quaternion.identity);
         vfxInstance.transform.parent = playerTransform.transform;
         vfxInstance.transform.localPosition = offsetPosition;
@@ -159,13 +173,15 @@ public class ProtoClass : MonoBehaviour
         Destroy(vfxInstance, duration);
     }
 
-    private IEnumerator generateVFXDelay(GameObject vfx, float delay, Action delayedAction, int duration = 5){
+    private IEnumerator generateVFXDelay(GameObject vfx, float delay, Action delayedAction, int duration = 5)
+    {
         GenerateVFX(vfx, duration);
         yield return new WaitForSeconds(delay);
         delayedAction();
     }
 
-    public void generateVFXDelayedAction(GameObject vfx, float delay, Action delayedAction, int duration = 5){
+    public void generateVFXDelayedAction(GameObject vfx, float delay, Action delayedAction, int duration = 5)
+    {
         StartCoroutine(generateVFXDelay(vfx, delay, delayedAction, duration));
     }
 

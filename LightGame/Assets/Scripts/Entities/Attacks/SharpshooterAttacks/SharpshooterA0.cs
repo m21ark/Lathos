@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class SharpshooterA0 : ProtoAttack
 {
-    
+     // Nothing to see here
 }
