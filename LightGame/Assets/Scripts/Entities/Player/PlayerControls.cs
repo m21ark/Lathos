@@ -94,8 +94,6 @@ public class PlayerController : MonoBehaviour
         player = gameLogic.player;
         CalculateVel();
 
-        Debug.Log("isGrounded: " + isGrounded);
-
         // Rotate the player based on camera rotation on the y-axis only if moving
         if (this.direction != Vector3.zero)
             CharacterFaceDirection();

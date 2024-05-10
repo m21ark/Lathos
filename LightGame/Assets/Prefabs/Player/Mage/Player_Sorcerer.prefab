@@ -513,6 +513,7 @@ MonoBehaviour:
   A1_2Prefab: {fileID: 4923962845166056162, guid: 911e7843495d3fd4daa050dbde56ba87, type: 3}
   A1TimeDelta: 0.8
   VFXSpecialAbility: {fileID: 7436710278688980422, guid: 36153bfa4dec0964c90504d06a2f2684, type: 3}
+  A2Range: 25
 --- !u!1 &5940330435187617133
 GameObject:
   m_ObjectHideFlags: 0
