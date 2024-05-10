@@ -1424,6 +1424,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 259703948879761937, guid: dd4ade5d01f8c9ec8ae0adf3e6063f29, type: 3}
+      propertyPath: moveSpeed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5547836219333771790, guid: dd4ade5d01f8c9ec8ae0adf3e6063f29, type: 3}
       propertyPath: m_Name
       value: Minion (2)
@@ -1493,6 +1497,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 259703948879761937, guid: dd4ade5d01f8c9ec8ae0adf3e6063f29, type: 3}
+      propertyPath: moveSpeed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5547836219333771790, guid: dd4ade5d01f8c9ec8ae0adf3e6063f29, type: 3}
       propertyPath: m_Name
       value: Minion (1)
@@ -1503,7 +1511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6247354812791069472, guid: dd4ade5d01f8c9ec8ae0adf3e6063f29, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.84
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6247354812791069472, guid: dd4ade5d01f8c9ec8ae0adf3e6063f29, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1511,7 +1519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6247354812791069472, guid: dd4ade5d01f8c9ec8ae0adf3e6063f29, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 25.7
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6247354812791069472, guid: dd4ade5d01f8c9ec8ae0adf3e6063f29, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3439,6 +3447,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 259703948879761937, guid: dd4ade5d01f8c9ec8ae0adf3e6063f29, type: 3}
+      propertyPath: moveSpeed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5547836219333771790, guid: dd4ade5d01f8c9ec8ae0adf3e6063f29, type: 3}
       propertyPath: m_Name
       value: Minion
@@ -4883,21 +4895,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Sorcerer
       objectReference: {fileID: 0}
-    - target: {fileID: 1162234724972830604, guid: 76b06bcd8e1c7c546b2db2f1fc2e6a4e, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 1547184242331172084, guid: 76b06bcd8e1c7c546b2db2f1fc2e6a4e, type: 3}
+      propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1547184242331172084, guid: 76b06bcd8e1c7c546b2db2f1fc2e6a4e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.5582626
-      objectReference: {fileID: 0}
-    - target: {fileID: 1547184242331172084, guid: 76b06bcd8e1c7c546b2db2f1fc2e6a4e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1547184242331172084, guid: 76b06bcd8e1c7c546b2db2f1fc2e6a4e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.044202
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1547184242331172084, guid: 76b06bcd8e1c7c546b2db2f1fc2e6a4e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5440,7 +5448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7349030119126674524, guid: e370565e19444620bab798c6a291bd02, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

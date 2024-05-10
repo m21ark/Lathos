@@ -23,6 +23,8 @@ public class SorcererTag : MonoBehaviour
 
     public void addStack(int stackCounter = 1){
         this.stackCounter += stackCounter;
+        this.stackCounter = Mathf.Clamp(this.stackCounter, 1, 5); // limit the stack counter to 5
+
         if(this.transform.Find("StackText") != null){
         TextMesh textMesh = this.transform.Find("StackText").GetComponent<TextMesh>();
         if (textMesh != null)
