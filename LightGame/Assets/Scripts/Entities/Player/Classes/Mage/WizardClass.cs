@@ -14,14 +14,6 @@ public class WizardClass : MageClass
         attack.Fire(A0Damage, attackDirection, ("prefab", A0_2Prefab));
     }
 
-    public override void BaseAbility()
-    {
-        ProtoAttack attack;
-        Vector3 attackDirection;
-        GenerateAttackAim(A1Prefab, out attack, out attackDirection);
-        attack.Fire(A1Damage, attackDirection, ("prefab", A1_2Prefab));
-    }
-
     public override void SpecialAbility()
     {
         ProtoAttack attack;

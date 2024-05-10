@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1350230492019842964}
   m_Layer: 0
-  m_Name: Wizard A1_1
+  m_Name: Wizard A1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 4491353757717205053}
   - component: {fileID: 2229055339634508132}
   m_Layer: 0
-  m_Name: Wizard A1_1
+  m_Name: Wizard A1
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,7 +95,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4491353757717205053
 Rigidbody:
@@ -136,11 +136,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c3aba04d5ea4304abc8cf18347f563a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 1
-  speed: 50
-  despawnTime: 5
+  gravity: 0
+  speed: 15
+  despawnTime: 3.5
   ignorePlayerCol: 1
-  despawnOnCol: 1
+  despawnOnCol: 0
+  damageInterval: 0.3
 --- !u!1001 &8946213436511126724
 PrefabInstance:
   m_ObjectHideFlags: 0
