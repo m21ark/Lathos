@@ -85,4 +85,9 @@ public class XRayLogic : MonoBehaviour
         }
     }
 
+    void OnDestroy()
+    {
+        ChangeEnemiesLayer("Default");
+        fullScreenGray.SetActive(false);
+    }
 }
