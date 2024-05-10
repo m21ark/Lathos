@@ -4,19 +4,13 @@ using UnityEngine;
 
 public class MinionBehavior1 : ProtoMob
 {
-
-    private GameLogic gameLogic;
     GameObject player;
 
-    void Start()
-    {
-        gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
-    }
     void Update()
     {
         Move();
-        if (gameLogic.player)
-            player = gameLogic.player.getGameObject();
+        if (GameLogic.instance.player)
+            player = GameLogic.instance.player.getGameObject();
     }
 
     public override void Move()
@@ -42,7 +36,7 @@ public class MinionBehavior1 : ProtoMob
         // Deal Damage
         if (collision.gameObject.CompareTag("Player"))
         {
-            gameLogic.player.TakeDamage(damage);
+            GameLogic.instance.player.TakeDamage(damage);
             JumpAwayFromPlayer();
         }
 

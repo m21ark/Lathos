@@ -12,13 +12,10 @@ public class LightOrbBehavior : MonoBehaviour
 
     public float baseSpeed = 0.5f; // Base speed at which the object moves
 
-    private GameLogic gameLogic; // Reference to the GameLogic script
-
     private void Start()
     {
         // Find the lamp object in the scene
         lamp = GameObject.FindWithTag("Lamp");
-        gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
     }
 
     private void Update()
@@ -52,7 +49,7 @@ public class LightOrbBehavior : MonoBehaviour
             // Despawn this object
             Destroy(gameObject);
 
-            gameLogic.player.collectedLight += 1; // Increase the player's light by 1
+            GameLogic.instance.player.collectedLight += 1; // Increase the player's light by 1
         }
     }
 }

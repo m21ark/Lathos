@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 public class PlayerTeleporter : MonoBehaviour
 {
     private GameObject loadingScreen;
-    private GameObject gameLogic;
     private CanvasGroup fadeCanvasGroup;
     private CanvasGroup hudCanvasGroup;
 
@@ -17,8 +16,7 @@ public class PlayerTeleporter : MonoBehaviour
 
     void Start()
     {
-        gameLogic = GameObject.FindWithTag("GameController");
-        GameObject ui = gameLogic.transform.parent.transform.Find("UI").gameObject;
+        GameObject ui = GameLogic.instance.gameObject.transform.parent.transform.Find("UI").gameObject;
         loadingScreen = ui.transform.Find("LoadMenu").gameObject;
         fadeCanvasGroup = ui.transform.Find("FadeCanvas").GetComponent<CanvasGroup>();
         hudCanvasGroup = ui.transform.Find("HUD").GetComponent<CanvasGroup>();
@@ -75,7 +73,7 @@ public class PlayerTeleporter : MonoBehaviour
         loadingScreen.SetActive(false);
 
         if(evokesClassChange){
-            gameLogic.GetComponent<GameLogic>().OpenClassSelectionMenu();
+            GameLogic.instance.OpenClassSelectionMenu();
             evokesClassChange = false;
         } else LoadNewArea();
             
@@ -86,7 +84,7 @@ public class PlayerTeleporter : MonoBehaviour
 
     void LoadNewArea()
     {
-        gameLogic.GetComponent<GameLogic>().DataPersistentSave();
+        GameLogic.instance.DataPersistentSave();
 
         // Load the new scene
         SceneManager.LoadScene(areaName);

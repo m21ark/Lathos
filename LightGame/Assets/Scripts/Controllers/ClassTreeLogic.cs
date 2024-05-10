@@ -8,7 +8,6 @@ public class ClassTreeLogic : MonoBehaviour
     public GameObject class1SelectMenuObj;
     public GameObject class2SelectMenuObj;
 
-    private GameLogic gameLogic;
     private int activeMenu = 0;
 
     // Class Objects
@@ -25,11 +24,6 @@ public class ClassTreeLogic : MonoBehaviour
     // Mage
     public GameObject prefab_sorcerer;
     public GameObject prefab_wizard;
-
-    void Start()
-    {
-        gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
-    }
 
     public void MenuClassSelect(string name)
     {
@@ -82,7 +76,7 @@ public class ClassTreeLogic : MonoBehaviour
         if (!show)
         {
             // Hide Class Selection Menu
-            gameLogic.toggleCursor(false);
+            GameLogic.instance.toggleCursor(false);
             menu.SetActive(false);
             Debug.Log("HERE 1");
             Time.timeScale = 1;
@@ -90,7 +84,7 @@ public class ClassTreeLogic : MonoBehaviour
         else
         {
             // Show Class Selection Menu
-            gameLogic.toggleCursor(true);
+            GameLogic.instance.toggleCursor(true);
             menu.SetActive(true);
             Debug.Log("HERE 2");
             Time.timeScale = 0;
@@ -111,13 +105,8 @@ public class ClassTreeLogic : MonoBehaviour
 
     private void SetMenu2Options()
     {
-        if (gameLogic == null)
-        {
-            Debug.LogError("GameLogic is not assigned.");
-            return;
-        }
 
-        string currClass = gameLogic.player.getClassName();
+        string currClass = GameLogic.instance.player.getClassName();
         Transform menuTransform = class2SelectMenuObj.transform;
 
         switch (currClass)

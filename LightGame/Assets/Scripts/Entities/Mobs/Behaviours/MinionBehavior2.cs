@@ -4,23 +4,17 @@ using UnityEngine;
 
 public class MinionBehavior2 : ProtoMob
 {
-
-    private GameLogic gameLogic;
     GameObject player;
 
     private float lastSummonTime;
     public float summonFrequency = 10.0f;
     public int maxMinions = 10;
 
-    void Start()
-    {
-        gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
-    }
     void Update()
     {
         Move();
-        if (gameLogic.player)
-            player = gameLogic.player.getGameObject();
+        if (GameLogic.instance.player)
+            player = GameLogic.instance.player.getGameObject();
 
         // Summon minion if 10s cooldown has passed
         if (Time.time - lastSummonTime >= summonFrequency) SummonMinions();
@@ -48,7 +42,7 @@ public class MinionBehavior2 : ProtoMob
 
         // Deal Damage
         if (collision.gameObject.CompareTag("Player"))
-            gameLogic.player.TakeDamage(damage);
+            GameLogic.instance.player.TakeDamage(damage);
     }
 
     void SummonMinions()

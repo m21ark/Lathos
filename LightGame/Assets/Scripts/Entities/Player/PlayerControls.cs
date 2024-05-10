@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private EventReference jumpSound;
 
     private Rigidbody rb;
-    private GameLogic gameLogic;
     private ProtoClass player;
     private Transform cameraPivot;
 
@@ -20,16 +19,13 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        // Get GameLogic and Player 
-        gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
-
         // Camera Rotation Pivot
         cameraPivot = transform.parent.transform.Find("CameraPivot");
     }
 
     void Update()
     {
-        if (!gameLogic.isPaused)
+        if (!GameLogic.instance.isPaused)
         {
             this.direction = GetFacedDirection();
             this.direction = SlopeDirection(this.direction);
@@ -68,7 +64,7 @@ public class PlayerController : MonoBehaviour
 
     private void CalculateVel()
     {
-        player = gameLogic.player;
+        player = GameLogic.instance.player;
 
         // limit the Y velocity to avoid the player flying
         float y = rb.velocity.y;
@@ -94,7 +90,7 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-        player = gameLogic.player;
+        player = GameLogic.instance.player;
         CalculateVel();
 
         // Rotate the player based on camera rotation on the y-axis only if moving
@@ -107,7 +103,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z); // reset the Y velocity
             rb.AddForce(Vector3.up * player.jumpForce, ForceMode.Impulse);
             isGrounded = false;
-            AudioManager.instance.PlayOneShot(jumpSound, transform.position);
+            // AudioManager.instance.PlayOneShot(jumpSound, transform.position);
         }
 
         // Dash

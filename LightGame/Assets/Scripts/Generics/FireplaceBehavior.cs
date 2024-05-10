@@ -10,12 +10,6 @@ public class FireplaceBehavior : MonoBehaviour
     public float lightLimit = 20;
     public string dialogueName = "";
     public GameObject FireLightObj;
-    private GameLogic gameLogic;
-
-    void Start()
-    {
-        gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
-    }
 
     private void RepelEnemies(Collider other)
     {
@@ -31,7 +25,7 @@ public class FireplaceBehavior : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            gameLogic.StartDialogue(dialogueName);
+            GameLogic.instance.StartDialogue(dialogueName);
 
             if(!isLit){
                 isLit = true;

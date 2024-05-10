@@ -10,14 +10,8 @@ public class MenuController : MonoBehaviour
     public GameObject pauseMenuObj;
     public GameObject instructionsMenuObj;
 
-    private GameLogic gameLogic;
-
     void Start()
     {
-        GameObject gameController = GameObject.FindWithTag("GameController");
-        if (gameController != null)
-            gameLogic = gameController.GetComponent<GameLogic>();
-
         LoadPlayerSettings();
     }
 
@@ -112,7 +106,7 @@ public class MenuController : MonoBehaviour
     public void RestartGame()
     {
         Debug.Log("Restarting game...");
-        gameLogic.ResetScene();
+        GameLogic.instance.ResetScene();
     }
 
     public void QuitGame()
@@ -130,17 +124,16 @@ public class MenuController : MonoBehaviour
 
     public void TogglePauseGame()
     {
-        if (gameLogic == null) gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
 
-        if (gameLogic.isPaused)
+        if (GameLogic.instance.isPaused)
         {
             // Resume Game
 
             // Disable mouse cursor again for gameplay
-            gameLogic.toggleCursor(false);
+            GameLogic.instance.toggleCursor(false);
 
             Time.timeScale = 1f;
-            gameLogic.isPaused = false;
+            GameLogic.instance.isPaused = false;
             if (pauseMenuObj != null)
                 pauseMenuObj.SetActive(false);
         }
@@ -150,10 +143,10 @@ public class MenuController : MonoBehaviour
             // Pause Game
 
             // Re enable mouse cursor for the pause menu
-            gameLogic.toggleCursor(true);
+            GameLogic.instance.toggleCursor(true);
 
             Time.timeScale = 0f;
-            gameLogic.isPaused = true;
+            GameLogic.instance.isPaused = true;
             if (pauseMenuObj != null)
                 pauseMenuObj.SetActive(true);
         }

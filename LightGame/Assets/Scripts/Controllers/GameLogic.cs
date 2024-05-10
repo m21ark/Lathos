@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameLogic : MonoBehaviour
 {
+    public static GameLogic instance { get; private set;}
 
     // Entities
     [HideInInspector] public ProtoClass player;
@@ -37,6 +38,14 @@ public class GameLogic : MonoBehaviour
     private TextMeshProUGUI hud_light;
     private TextMeshProUGUI hud_playerClassName;
     private TextMeshProUGUI hud_playerCooldowns;
+
+    private void Awake()
+    {
+        if (instance != null)
+            Debug.LogError("More than one AudioManager in the scene");
+        else instance = this;
+        
+    }
 
     // Start is called before the first frame update
     void Start()

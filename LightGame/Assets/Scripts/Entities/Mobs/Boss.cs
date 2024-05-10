@@ -5,7 +5,6 @@ using UnityEngine;
 public class Boss : ProtoMob
 {
     public GameObject minionPrefab;
-    private GameLogic gameLogic;
     GameObject player;
 
     private float lastSummonTime;
@@ -18,7 +17,6 @@ public class Boss : ProtoMob
 
     void Start()
     {
-        gameLogic = GameObject.FindWithTag("GameController").GetComponent<GameLogic>();
         lastSummonTime = Time.time;
     }
 
@@ -50,8 +48,8 @@ public class Boss : ProtoMob
         // Summoning phase and follow player
         Move2();
 
-        if (gameLogic.player)
-            player = gameLogic.player.getGameObject();
+        if (GameLogic.instance.player)
+            player = GameLogic.instance.player.getGameObject();
 
         // Summon minion if 10s cooldown has passed
         if (Time.time - lastSummonTime >= summonFrequency) SummonMinions();
@@ -83,7 +81,7 @@ public class Boss : ProtoMob
     {
         // Deal Damage
         if (collision.gameObject.CompareTag("Player"))
-            gameLogic.player.TakeDamage(30);
+            GameLogic.instance.player.TakeDamage(30);
     }
 
     void SummonMinions()

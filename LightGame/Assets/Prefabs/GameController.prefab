@@ -3458,7 +3458,7 @@ GameObject:
   - component: {fileID: 185772499031243180}
   m_Layer: 0
   m_Name: GameLogic
-  m_TagString: GameController
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
