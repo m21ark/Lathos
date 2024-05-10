@@ -14,21 +14,14 @@ public class GameLogic : MonoBehaviour
     public bool persistentData = false;
 
     public GameObject endMenu;
-    public DialogueController dialogueController;
-    public DialogueController fullScreenDialogueController;
 
     [HideInInspector] public bool isInBossBattle;
 
     // Game Logic Fields
     [HideInInspector] public float gameTime = 0.0f;
     private float lightDecreaseTimer = 0f;
-    private bool isShowingFullScreenDialogue = false;
     [HideInInspector] public bool isPaused = false;
     private bool[] endingsUnlocked = { false, false, false };
-
-    // Dialogue Data
-    public List<DialogueData> dialogueDataList;
-
 
     private void Awake()
     {
@@ -98,8 +91,6 @@ public class GameLogic : MonoBehaviour
             if (boss.health <= 0) endGame(true);
         }
         if (!player.isAlive()) endGame(false);
-
-        CheckDialogue();
     }
 
     void handlePlayerLight()
@@ -121,35 +112,6 @@ public class GameLogic : MonoBehaviour
             {
                 player.TakeDamage(1);
             }
-        }
-    }
-
-    public void StartDialogue(string key, bool isFullScreen = false)
-    {
-        if (isFullScreen && isShowingFullScreenDialogue) return;
-
-        DialogueData data = dialogueDataList.Find(data => data.dialogueName == key);
-        if (data != null)
-        {
-            if (isFullScreen)
-            {
-                toggleCursor(true);
-                fullScreenDialogueController.Display(data);
-                isShowingFullScreenDialogue = true;
-            }
-            else
-                dialogueController.Display(data);
-        }
-        else Debug.LogError("Dialogue data with key '" + key + "' not found.");
-    }
-
-    void CheckDialogue()
-    {
-        // Check if the full screen dialogue is done to unpause the game 
-        if (isShowingFullScreenDialogue && !fullScreenDialogueController.isActive)
-        {
-            isShowingFullScreenDialogue = false;
-            toggleCursor(false);
         }
     }
 

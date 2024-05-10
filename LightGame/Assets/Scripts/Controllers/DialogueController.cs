@@ -1,27 +1,41 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
 
 public class DialogueController : MonoBehaviour
 {
+    public static DialogueController instance { get; private set; }
     public TextMeshProUGUI text;
+    public GameObject dialogueBox;
     public bool autoSkip = true;
 
+    // Private variables
     private float textSpeedDelay = 0.01f;
     private float nextBoxDelay = 2f;
     private int index = 0;
     private bool isTyping = false;
     private DialogueData dialogueData;
-    [HideInInspector] public bool isActive = false;
+    private bool isActive = false;
+
+    // Dialogue Data
+    public List<DialogueData> dialogueDataList;
+
+    private void Awake()
+    {
+        if (instance != null)
+            Debug.LogError("More than one DialogueController in the scene");
+        else instance = this;
+    }
 
     public void Display(DialogueData data)
     {
         if (isActive || data == null) return;
         dialogueData = data;
-        gameObject.SetActive(true);
         text.text = "";
         index = 0;
         isActive = true;
+        dialogueBox.SetActive(true);
         StartCoroutine(TypeLine());
     }
 
@@ -53,8 +67,8 @@ public class DialogueController : MonoBehaviour
             text.text += c;
             yield return new WaitForSecondsRealtime(textSpeedDelay);
         }
-        isTyping = false;
 
+        isTyping = false;
         if (autoSkip)
         {
             yield return new WaitForSecondsRealtime(nextBoxDelay);
@@ -72,8 +86,15 @@ public class DialogueController : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
+            dialogueBox.SetActive(true);
             isActive = false;
         }
+    }
+
+    public void StartDialogue(string key)
+    {
+        DialogueData data = dialogueDataList.Find(data => data.dialogueName == key);
+        if (data != null) instance.Display(data);
+        else Debug.LogError("Dialogue data with key '" + key + "' not found.");
     }
 }

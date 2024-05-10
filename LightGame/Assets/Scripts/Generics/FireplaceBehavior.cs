@@ -25,7 +25,7 @@ public class FireplaceBehavior : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GameLogic.instance.StartDialogue(dialogueName);
+            DialogueController.instance.StartDialogue(dialogueName);
 
             if(!isLit){
                 isLit = true;
