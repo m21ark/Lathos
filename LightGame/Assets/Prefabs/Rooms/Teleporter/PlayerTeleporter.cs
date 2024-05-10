@@ -13,6 +13,8 @@ public class PlayerTeleporter : MonoBehaviour
     public float teleportDelay = 3f;
     public string areaName = "";
 
+    public bool evokesClassChange = false;
+
     void Start()
     {
         gameLogic = GameObject.FindWithTag("GameController");
@@ -39,9 +41,6 @@ public class PlayerTeleporter : MonoBehaviour
 
     IEnumerator GotoArea()
     {
-        // TODO: Uncomment this line to enable load functionality
-        // gameLogic.GetComponent<GameLogic>().DataPersistentSave();
-
         // Pause the game
         Time.timeScale = 0;
 
@@ -72,6 +71,22 @@ public class PlayerTeleporter : MonoBehaviour
         }
         fadeCanvasGroup.alpha = 1f;
         hudCanvasGroup.alpha = 1f;
+
+        loadingScreen.SetActive(false);
+
+        if(evokesClassChange){
+            gameLogic.GetComponent<GameLogic>().OpenClassSelectionMenu();
+            evokesClassChange = false;
+        } else LoadNewArea();
+            
+        yield return new WaitForSeconds(teleportDelay);
+
+        LoadNewArea();
+    }
+
+    void LoadNewArea()
+    {
+        gameLogic.GetComponent<GameLogic>().DataPersistentSave();
 
         // Load the new scene
         SceneManager.LoadScene(areaName);

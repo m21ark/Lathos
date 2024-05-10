@@ -10,6 +10,7 @@ public class GameLogic : MonoBehaviour
     // Entities
     [HideInInspector] public ProtoClass player;
     [HideInInspector] public Boss boss;
+    public bool persistentData = false;
 
     public GameObject endMenu;
     public DialogueController dialogueController;
@@ -53,7 +54,7 @@ public class GameLogic : MonoBehaviour
 
         HUDLoadElements();
         RefreshPlayer();
-        // DataPersistentLoad(); // TODO: Uncomment this line to enable load functionality
+        DataPersistentLoad();
         
         if (player == null){
             Debug.LogError("GameObject with tag 'Player' was not found");
@@ -110,9 +111,6 @@ public class GameLogic : MonoBehaviour
         if(classTreeLogic == null)
             classTreeLogic = gameObject.GetComponent<ClassTreeLogic>();
 
-        if(!classTreeLogic.isSelecting && Input.GetKeyDown(KeyCode.C))
-            checkClassSelectionTrigger();
-
         CheckDialogue();
     }
 
@@ -159,6 +157,10 @@ public class GameLogic : MonoBehaviour
     }
 
     public void DataPersistentSave(){
+        if(!persistentData) return;
+
+        Debug.Log("SAVING");
+
         // Build the data to save
         SaveData data = new SaveData();
         data.currentPlayerArea = ((int)SceneManager.GetActiveScene().buildIndex + 1);
@@ -170,6 +172,8 @@ public class GameLogic : MonoBehaviour
     }
 
     void DataPersistentLoad(){
+        if(!persistentData) return;
+
         SaveData data = SaveSystem.DataLoad();
 
         // if there is no available data, use the default values
@@ -191,22 +195,18 @@ public class GameLogic : MonoBehaviour
         }
     }
 
-    void checkClassSelectionTrigger(){
+    public void OpenClassSelectionMenu(){
 
         // First class 
-        if(player.getClassName() == "Base"){ 
-            Debug.Log("Trigger Class 1 Selection");
+        if(player.getClassName() == "Base")
             classTreeLogic.InvokeMenuClassSelect(1);
-        }
 
         // Second class 
         List<string> classes1Names = new List<string> { "Fighter", "Ranger", "Mage" };
 
         // Check if the player's class name is in the list
-        if (classes1Names.Contains(player.getClassName())){
-            Debug.Log("Trigger Class 2 Selection");
-            classTreeLogic.InvokeMenuClassSelect(2);
-        }
+        if (classes1Names.Contains(player.getClassName()))
+            classTreeLogic.InvokeMenuClassSelect(2);        
 
         RefreshPlayer();
     }
