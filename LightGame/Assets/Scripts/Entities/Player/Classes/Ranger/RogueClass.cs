@@ -34,6 +34,7 @@ public class RogueClass : RangerClass
 
     public override void SpecialAbility()
     {
+        
         ProtoAttack attack;
         Vector3 attackDirection;
         GenerateAttackAim(A2Prefab, out attack, out attackDirection);

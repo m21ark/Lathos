@@ -500,7 +500,7 @@ MonoBehaviour:
   A1ChargeRate: 0
   A2Prefab: {fileID: 7115518648037137970, guid: 7aa137e70efb75f4991348932a165de2, type: 3}
   A2Damage: 30
-  A2ReloadTime: 2
+  A2ReloadTime: 8
   A2ChargeRate: 0
   collectedLight: 0
   lastAttackTime: 0
@@ -510,6 +510,8 @@ MonoBehaviour:
   isAttack1ing: 0
   isAttack2ing: 0
   lastDashTime: 0
+  A1_HunterMarkDamage: 8
+  A1_HunterMarkTicks: 3
   A1TimeSpan: 3
   A1BuffMult: 0.5
 --- !u!1 &5940330435187617133
