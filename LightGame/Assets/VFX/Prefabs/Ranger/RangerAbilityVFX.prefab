@@ -57,6 +57,9 @@ VisualEffect:
       - m_Value: 0.04
         m_Name: TrailSize
         m_Overridden: 1
+      - m_Value: 1
+        m_Name: TrailLifetime
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
