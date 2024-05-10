@@ -19,6 +19,7 @@ public class XRayLogic : MonoBehaviour
         FadingOut
     };
     private XRayState _state = XRayState.Inactive;
+    private Transform _playerTransform;
 
     // Get all the enemies with the tag Boss or Minion in the scene, and change their layer to RenderAbove
     void Start()
@@ -28,11 +29,13 @@ public class XRayLogic : MonoBehaviour
         _material.SetFloat("_GrayIntensity", 0.0f);
         // Now that the enemies are x-rayed, we need to change the view to grayscale
         fullScreenGray.SetActive(true);
+        _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
+        transform.position = _playerTransform.position;
         if (_state == XRayState.Inactive)
             return;
         
@@ -44,10 +47,12 @@ public class XRayLogic : MonoBehaviour
         if (_state == XRayState.FadingIn && greyIntensity >= 1.0f) {
             _state = XRayState.XRay;
             ChangeEnemiesLayer("RenderAbove");
+            ChangePlayerAndLampLayer("RenderAbove2");
 
         } else if (_state == XRayState.XRay && greyIntensity < 1.0f) {
             _state = XRayState.FadingOut;
             ChangeEnemiesLayer("Default");
+            ChangePlayerAndLampLayer("Default");
 
         } else if (_state == XRayState.FadingOut && greyIntensity <= 0.0f) {
             _state = XRayState.Inactive;
@@ -55,8 +60,6 @@ public class XRayLogic : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
 
     private void ChangeEnemiesLayer(string layerName)
     {
@@ -75,11 +78,26 @@ public class XRayLogic : MonoBehaviour
         }
     }
 
+    private void ChangePlayerAndLampLayer(string layerName)
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.layer = LayerMask.NameToLayer(layerName);
+        ChangeLayerAllChildren(player.transform, layerName);
+
+        GameObject lamp = GameObject.FindGameObjectWithTag("Lamp");
+        lamp.layer = LayerMask.NameToLayer(layerName);
+        ChangeLayerAllChildren(lamp.transform, layerName);
+    }
+
     // Make sure to change the children of the enemies to RenderAbove as well
-    public void ChangeLayerAllChildren(Transform parent, string layerName)
+    private void ChangeLayerAllChildren(Transform parent, string layerName)
     {
         foreach (Transform child in parent)
         {
+            string childTag = child.tag;
+            if (childTag == "VFX") {
+                continue;
+            }
             child.gameObject.layer = LayerMask.NameToLayer(layerName);
             ChangeLayerAllChildren(child, layerName);
         }
@@ -88,6 +106,7 @@ public class XRayLogic : MonoBehaviour
     void OnDestroy()
     {
         ChangeEnemiesLayer("Default");
+        ChangePlayerAndLampLayer("Default");
         fullScreenGray.SetActive(false);
     }
 }

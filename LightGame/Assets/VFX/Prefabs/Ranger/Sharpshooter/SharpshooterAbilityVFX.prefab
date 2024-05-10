@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6577040450384521296}
   m_Layer: 0
   m_Name: SharpshooterAbilityVFX
-  m_TagString: Untagged
+  m_TagString: VFX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,12 +55,12 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 10.924001
-      outSlope: 10.924001
+      inSlope: 20.394636
+      outSlope: 20.394636
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.074606225
+      outWeight: 0.052424666
     - serializedVersion: 3
       time: 0.1
       value: 1
@@ -112,7 +112,7 @@ VisualEffect:
       - m_Value: 10
         m_Name: EffectDuration
         m_Overridden: 1
-      - m_Value: 2
+      - m_Value: 3
         m_Name: GroundEffectDuration
         m_Overridden: 1
     m_Vector2f:

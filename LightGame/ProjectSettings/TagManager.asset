@@ -15,6 +15,7 @@ TagManager:
   - Lamp
   - Mob
   - Fireplace
+  - VFX
   layers:
   - Default
   - TransparentFX
@@ -25,7 +26,7 @@ TagManager:
   - LampLight
   - WhatIsPlayer
   - RenderAbove
-  - 
+  - RenderAbove2
   - 
   - 
   - 

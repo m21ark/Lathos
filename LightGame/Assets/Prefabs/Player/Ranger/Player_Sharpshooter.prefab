@@ -496,7 +496,7 @@ MonoBehaviour:
   A0ChargeRate: 0
   A1Prefab: {fileID: 4923962845166056162, guid: fe094fba59af82f41875d0ff78f5290b, type: 3}
   A1Damage: 20
-  A1ReloadTime: 1
+  A1ReloadTime: 20
   A1ChargeRate: 0
   A2Prefab: {fileID: 4923962845166056162, guid: 933712b994aba9647b6c0e006c76415d, type: 3}
   A2Damage: 30
@@ -513,6 +513,7 @@ MonoBehaviour:
   A1_HunterMarkDamage: 8
   A1_HunterMarkTicks: 3
   VFXAbility: {fileID: 1215257364357450720, guid: e339d7ee3fe62824e97009a9a2583cb8, type: 3}
+  VFXSpecialAbility: {fileID: 7721714622523946678, guid: 7ec3803564f581944ad4f9b4774573f8, type: 3}
 --- !u!1 &5940330435187617133
 GameObject:
   m_ObjectHideFlags: 0

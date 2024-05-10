@@ -150,9 +150,11 @@ public class ProtoClass : MonoBehaviour
         Destroy(vfxInstance, duration);
     }
 
-    public void GenerateVFXOnPlayer(GameObject vfx, Transform playerTransform, int duration = 5){
+    public void GenerateVFXOnPlayer(GameObject vfx, Transform playerTransform, int duration = 5, Vector3 offsetPosition = new Vector3(), Quaternion rotation = new Quaternion()){
         GameObject vfxInstance = Instantiate(vfx, playerTransform.position, Quaternion.identity);
         vfxInstance.transform.parent = playerTransform.transform;
+        vfxInstance.transform.localPosition = offsetPosition;
+        vfxInstance.transform.localRotation = rotation;
         vfxInstance.SetActive(true);
         Destroy(vfxInstance, duration);
     }
