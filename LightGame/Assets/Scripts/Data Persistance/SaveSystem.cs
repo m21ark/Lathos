@@ -4,14 +4,11 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public static class SaveSystem
 {
-    public static void DataSave(Transform dataToSave)
+    public static void DataSave(SaveData data)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/data.sav";
         FileStream stream = new FileStream(path, FileMode.Create);
-
-        SaveData data = new SaveData(dataToSave);
-
         formatter.Serialize(stream, data);
         stream.Close();
     }
@@ -31,7 +28,7 @@ public static class SaveSystem
         }
         else
         {
-            Debug.LogError("Save file not found in " + path);
+            Debug.Log("WARN: Save file not found in " + path);
             return null;
         }
     }
