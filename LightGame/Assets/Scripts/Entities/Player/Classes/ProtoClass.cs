@@ -53,6 +53,8 @@ public class ProtoClass : MonoBehaviour
 
     void Start(){
         cameraPivot = transform.parent.transform.Find("CameraPivot");
+        health = maxHealth;
+        collectedLight = 100;
     }
 
     public bool isAlive(){

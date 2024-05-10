@@ -613,7 +613,7 @@ MonoBehaviour:
   hoverHeight: 1
   hoverSpeed: 1
   returnSpeed: 30
-  lightSource: {fileID: 0}
+  lightSource: {fileID: 941312108425277779}
 --- !u!135 &2233090269682523613
 SphereCollider:
   m_ObjectHideFlags: 0
