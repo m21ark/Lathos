@@ -112,7 +112,7 @@ VisualEffect:
       - m_Value: 10
         m_Name: EffectDuration
         m_Overridden: 1
-      - m_Value: 2
+      - m_Value: 3
         m_Name: GroundEffectDuration
         m_Overridden: 1
     m_Vector2f:

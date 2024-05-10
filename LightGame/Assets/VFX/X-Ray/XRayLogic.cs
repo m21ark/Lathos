@@ -44,10 +44,12 @@ public class XRayLogic : MonoBehaviour
         if (_state == XRayState.FadingIn && greyIntensity >= 1.0f) {
             _state = XRayState.XRay;
             ChangeEnemiesLayer("RenderAbove");
+            ChangePlayerLayer("RenderAbove2");
 
         } else if (_state == XRayState.XRay && greyIntensity < 1.0f) {
             _state = XRayState.FadingOut;
             ChangeEnemiesLayer("Default");
+            ChangePlayerLayer("Default");
 
         } else if (_state == XRayState.FadingOut && greyIntensity <= 0.0f) {
             _state = XRayState.Inactive;
@@ -55,8 +57,6 @@ public class XRayLogic : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
 
     private void ChangeEnemiesLayer(string layerName)
     {
@@ -75,8 +75,15 @@ public class XRayLogic : MonoBehaviour
         }
     }
 
+    private void ChangePlayerLayer(string layerName)
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.layer = LayerMask.NameToLayer(layerName);
+        ChangeLayerAllChildren(player.transform, layerName);
+    }
+
     // Make sure to change the children of the enemies to RenderAbove as well
-    public void ChangeLayerAllChildren(Transform parent, string layerName)
+    private void ChangeLayerAllChildren(Transform parent, string layerName)
     {
         foreach (Transform child in parent)
         {
@@ -88,6 +95,7 @@ public class XRayLogic : MonoBehaviour
     void OnDestroy()
     {
         ChangeEnemiesLayer("Default");
+        ChangePlayerLayer("Default");
         fullScreenGray.SetActive(false);
     }
 }
