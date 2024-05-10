@@ -60,7 +60,7 @@ VisualEffect:
       - m_Value: 1
         m_Name: SpinVelocity
         m_Overridden: 1
-      - m_Value: 4
+      - m_Value: 2.5
         m_Name: TrailLifetime
         m_Overridden: 1
     m_Vector2f:
@@ -69,7 +69,13 @@ VisualEffect:
         m_Name: SmokeSize
         m_Overridden: 1
     m_Vector3f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: -0.9, y: 0.5, z: -0.9}
+        m_Name: ParticlesVelocityInterval1
+        m_Overridden: 1
+      - m_Value: {x: 0.9, y: 1, z: 0.9}
+        m_Name: ParticlesVelocityInterval2
+        m_Overridden: 1
     m_Vector4f:
       m_Array:
       - m_Value: {x: 3.25449, y: 5.992157, z: 0.8389018, w: 1}
