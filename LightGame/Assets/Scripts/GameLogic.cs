@@ -40,11 +40,9 @@ public class GameLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        HUDLoadElements();
-
-        RefreshPlayer();
 
         GameObject bossObj = GameObject.FindWithTag("Boss");
+        classTreeLogic = gameObject.GetComponent<ClassTreeLogic>();
         
         if(bossObj == null){
             isInBossBattle = false;
@@ -53,8 +51,9 @@ public class GameLogic : MonoBehaviour
             boss = bossObj.GetComponent<Boss>();
         }
 
-        classTreeLogic = gameObject.GetComponent<ClassTreeLogic>();
-
+        HUDLoadElements();
+        RefreshPlayer();
+        // DataPersistentLoad(); // TODO: Uncomment this line to enable load functionality
         
         if (player == null){
             Debug.LogError("GameObject with tag 'Player' was not found");
@@ -69,7 +68,7 @@ public class GameLogic : MonoBehaviour
         toggleCursor(false); // Hide cursor during gameplay
     }
 
-    private void RefreshPlayer(){
+    public void RefreshPlayer(){
         player = GameObject.FindWithTag("Player").GetComponent<ProtoClass>();
     }
 
@@ -89,8 +88,6 @@ public class GameLogic : MonoBehaviour
     void Update()
     {
         RefreshPlayer();
-
-        DealWithDataSaving();
 
         handlePlayerLight();
 
@@ -161,61 +158,36 @@ public class GameLogic : MonoBehaviour
         }
     }
 
-    void DealWithDataSaving(){
-        // Save data
-        if (Input.GetKeyDown(KeyCode.V)){
-            // Build the data to save
-            SaveData data = new SaveData();
-            data.currentPlayerArea = SceneManager.GetActiveScene().buildIndex;
-            data.playerClassName = player.getClassName();
-            data.collectedLight = player.collectedLight;
-            data.playerHP = player.health;
-            data.unlockedEndings = this.endingsUnlocked;
+    public void DataPersistentSave(){
+        // Build the data to save
+        SaveData data = new SaveData();
+        data.currentPlayerArea = ((int)SceneManager.GetActiveScene().buildIndex + 1);
+        data.playerClassName = player.getClassName();
+        data.unlockedEndings = this.endingsUnlocked;
 
-            Debug.Log("saving currentPlayerArea: " + data.currentPlayerArea);
+        // Save the data
+        SaveSystem.DataSave(data);
+    }
 
-            // Save the data
-            SaveSystem.DataSave(data);
-            Debug.Log("Player data saved");
+    void DataPersistentLoad(){
+        SaveData data = SaveSystem.DataLoad();
+
+        // if there is no available data, use the default values
+        if(data == null){
+            Debug.Log("No player data found. Starting new game save.");
+            data = new SaveData();
         }
 
-        // Load data
-        if (Input.GetKeyDown(KeyCode.B)){
-            // Get the data
-            SaveData data = SaveSystem.DataLoad();
-
-            // if there is no available data, use the default values
-            if(data == null){
-                Debug.Log("Falling back to default save data values of a new game instance");
-                data = new SaveData();
-            }
-
-            // go to the scene
-            if(data.currentPlayerArea != SceneManager.GetActiveScene().buildIndex){
-                Debug.Log("Loading scene: " + data.currentPlayerArea);
-                SceneManager.LoadScene(data.currentPlayerArea); // TODO: after loading new scene, it should check the lines below! 
-            }
-
+        // go to the scene
+        if(data.currentPlayerArea != SceneManager.GetActiveScene().buildIndex){
+            Debug.Log("Loading saved scene: " + data.currentPlayerArea);
+            SceneManager.LoadScene(data.currentPlayerArea);
+        }else{
             // Put the data in the game
             this.endingsUnlocked = data.unlockedEndings;
-
-            // Set the player's class
-            Debug.Log("Loaded Player class name: " + data.playerClassName);
-            classTreeLogic.ClassSelect(data.playerClassName, false);
-            RefreshPlayer();
-
-            // Set the player's light and health
-            player.collectedLight = data.collectedLight;
-            player.health = 0;
-            player.Heal(data.playerHP);
-
-            Debug.Log("Player data loaded");
-        }
-
-        // Delete save
-        if (Input.GetKeyDown(KeyCode.N)){
-            SaveSystem.DeleteSave();
-            Debug.Log("Save deleted");
+            
+            if(data.playerClassName != player.getClassName())
+                classTreeLogic.ClassSelect(data.playerClassName, false);
         }
     }
 

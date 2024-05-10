@@ -30,7 +30,7 @@ public class LampHoverPlayer : MonoBehaviour
     void Update()
     {
         GetPlayer();
-        //UpdateLightSource();
+        UpdateLightSource();
         MoveTowardsTarget();
     }
 
@@ -38,7 +38,6 @@ public class LampHoverPlayer : MonoBehaviour
     void UpdateLightSource(){
         Light light = lightSource.GetComponent<Light>();
         light.intensity = playerLight;
-        // light.range = 10f;
     }
 
     void MoveTowardsTarget()

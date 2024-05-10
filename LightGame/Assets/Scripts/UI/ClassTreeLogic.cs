@@ -53,8 +53,11 @@ public class ClassTreeLogic : MonoBehaviour
 
     private void ReplacePlayer(GameObject newPlayerPrefab, bool toggleMenu)
     {
+
         // Get old player info
         GameObject oldPlayer = GameObject.FindGameObjectWithTag("Player");
+        oldPlayer.SetActive(false);
+
         Transform pivot = oldPlayer.transform.parent.transform.Find("CameraPivot").transform;
         Vector3 oldPlayerPosition = oldPlayer.transform.position;
  

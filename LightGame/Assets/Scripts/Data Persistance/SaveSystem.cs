@@ -26,11 +26,7 @@ public static class SaveSystem
 
             return data;
         }
-        else
-        {
-            Debug.Log("WARN: Save file not found in " + path);
-            return null;
-        }
+        return null;
     }
 
     public static void DeleteSave()

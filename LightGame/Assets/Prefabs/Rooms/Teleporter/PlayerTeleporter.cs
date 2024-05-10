@@ -39,6 +39,9 @@ public class PlayerTeleporter : MonoBehaviour
 
     IEnumerator GotoArea()
     {
+        // TODO: Uncomment this line to enable load functionality
+        // gameLogic.GetComponent<GameLogic>().DataPersistentSave();
+
         // Pause the game
         Time.timeScale = 0;
 
