@@ -11,7 +11,7 @@ public class SharpshooterA2 : ProtoAttack
         if (ignorePlayerCol && (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Lamp")))
             return;
 
-        if (collision.gameObject.CompareTag("Minion") || collision.gameObject.CompareTag("Boss"))
+        if (collision.gameObject.CompareTag("Mob") || collision.gameObject.CompareTag("Boss"))
         {
             /// Get the Mob component
             ProtoMob mob = collision.gameObject.GetComponent<ProtoMob>();

@@ -22,7 +22,7 @@ public class SorcererClass : MageClass
 
     public override void BaseAbility()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Minion");
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Mob");
         GameObject boss = GameObject.FindGameObjectWithTag("Boss");
 
         // For each enemy, apply the damage based on the number of stacks and remove the tag
@@ -51,7 +51,7 @@ public class SorcererClass : MageClass
         Action action = () =>
         {
 
-            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Minion");
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Mob");
             GameObject boss = GameObject.FindGameObjectWithTag("Boss");
 
             // For each enemy within A2Range, add X stacks
