@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -14,11 +15,11 @@ public class PlayerController : MonoBehaviour
     private float rotationSpeed = 10f;
     private Vector3 direction;
 
-    public KeyCode attackKey = KeyCode.K;
-    public KeyCode attack1Key = KeyCode.E;
-    public KeyCode attack2Key = KeyCode.Q;
-    public KeyCode dashKey = KeyCode.LeftShift;
-    public KeyCode jumpKey = KeyCode.Space;
+    private KeyCode attackKey = KeyCode.K;
+    private KeyCode attack1Key = KeyCode.E;
+    private KeyCode attack2Key = KeyCode.Q;
+    private KeyCode dashKey = KeyCode.LeftShift;
+    private KeyCode jumpKey = KeyCode.Space;
 
     void Start()
     {
@@ -173,56 +174,36 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void Attack0()
+    void HandleAttack(KeyCode attackKey, ref bool isAttacking, ref float lastAttackTime, float reloadTime, Action attackAction, bool useMouseButton = false, int mouseButton = 0)
     {
-        if (Input.GetKeyDown(attackKey) || Input.GetMouseButtonDown(0))
-            player.isAttacking = true;
+        if (Input.GetKeyDown(attackKey) || (useMouseButton && Input.GetMouseButtonDown(mouseButton)))
+            isAttacking = true;
+          
+        if (Input.GetKeyUp(attackKey) || (useMouseButton && Input.GetMouseButtonUp(mouseButton)))
+            isAttacking = false;
 
-        if (Input.GetKeyUp(attackKey) || Input.GetMouseButtonUp(0))
-            player.isAttacking = false;
+        lastAttackTime -= Time.deltaTime;
 
-        player.lastAttackTime -= Time.deltaTime;
-        if (player.isAttacking)
+        if (isAttacking && lastAttackTime <= 0)
         {
-            if (player.lastAttackTime <= 0)
-            {
-                player.Attack();
-                player.lastAttackTime = player.A0ReloadTime * player.attackSpeed;
-            }
+            attackAction();
+            lastAttackTime = reloadTime;
         }
     }
 
+    void Attack0()
+    {
+        HandleAttack(attackKey, ref player.isAttacking, ref player.lastAttackTime, player.A0ReloadTime * player.attackSpeed, player.Attack, true, 0);
+    }
 
     void Attack1()
     {
-        if (Input.GetKeyDown(attack1Key) || Input.GetMouseButtonDown(1)) player.isAttack1ing = true;
-        if (Input.GetKeyUp(attack1Key) || Input.GetMouseButtonUp(1)) player.isAttack1ing = false;
-
-        player.lastAttack1Time -= Time.deltaTime;
-        if (player.isAttack1ing)
-        {
-            if (player.lastAttack1Time <= 0)
-            {
-                player.BaseAbility();
-                player.lastAttack1Time = player.A1ReloadTime;
-            }
-        }
+        HandleAttack(attack1Key, ref player.isAttack1ing, ref player.lastAttack1Time, player.A1ReloadTime, player.BaseAbility, true, 1);
     }
 
     void Attack2()
     {
-        if (Input.GetKeyDown(attack2Key)) player.isAttack2ing = true;
-        if (Input.GetKeyUp(attack2Key)) player.isAttack2ing = false;
-
-        player.lastAttack2Time -= Time.deltaTime;
-        if (player.isAttack2ing)
-        {
-            if (player.lastAttack2Time <= 0)
-            {
-                player.SpecialAbility();
-                player.lastAttack2Time = player.A2ReloadTime;
-            }
-        }
+        HandleAttack(attack2Key, ref player.isAttack2ing, ref player.lastAttack2Time, player.A2ReloadTime, player.SpecialAbility);
     }
 
     void OnCollisionEnter(Collision collision)

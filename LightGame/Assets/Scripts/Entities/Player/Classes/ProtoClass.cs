@@ -50,7 +50,6 @@ public class ProtoClass : MonoBehaviour
     [HideInInspector] public bool isAttack2ing = false;
     [HideInInspector] public float lastDashTime = 0f;
 
-
     void Start()
     {
         cameraPivot = transform.parent.transform.Find("CameraPivot");
