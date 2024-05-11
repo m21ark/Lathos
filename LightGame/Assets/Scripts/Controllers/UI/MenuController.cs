@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class MenuController : MonoBehaviour
 {
     public GameObject pauseMenuObj;
-    public GameObject instructionsMenuObj;
 
     void Start()
     {
@@ -24,16 +23,19 @@ public class MenuController : MonoBehaviour
 
     public void SavePlayerSettings()
     {
-        Debug.Log("Saving new player settings...");
-        GameObject settingsMenu = gameObject.transform.Find("SettingsMenu").gameObject;
+        Transform settingsMenu = gameObject.transform.Find("SettingsMenu").gameObject.transform;
 
-        // Get the 2 sliders
-        Slider sfxVolumeSlider = settingsMenu.transform.Find("SoundSlider").GetComponent<Slider>();
-        Slider musicVolumeSlider = settingsMenu.transform.Find("MusicSlider").GetComponent<Slider>();
+        // Get the 4 sliders
+        Slider master = settingsMenu.Find("SliderMaster").GetComponent<Slider>();
+        Slider sfx = settingsMenu.Find("SliderSFX").GetComponent<Slider>();
+        Slider music = settingsMenu.Find("SliderMusic").GetComponent<Slider>();
+        Slider ambience = settingsMenu.Find("SliderAmbience").GetComponent<Slider>();
 
         // Save player preferences for the sliders
-        PlayerPrefs.SetFloat("SFXVolume", sfxVolumeSlider.value);
-        PlayerPrefs.SetFloat("MusicVolume", musicVolumeSlider.value);
+        PlayerPrefs.SetFloat("MasterVolume", master.value);
+        PlayerPrefs.SetFloat("SFXVolume", sfx.value);
+        PlayerPrefs.SetFloat("MusicVolume", music.value);
+        PlayerPrefs.SetFloat("AmbienceVolume", ambience.value);
         PlayerPrefs.Save();
     }
 
@@ -41,14 +43,19 @@ public class MenuController : MonoBehaviour
     {
         try
         {
-            GameObject settingsMenu = gameObject.transform.Find("SettingsMenu").gameObject;
+            Transform settingsMenu = gameObject.transform.Find("SettingsMenu").gameObject.transform;
 
-            // Get the 2 sliders
-            Slider sfxVolumeSlider = settingsMenu.transform.Find("SoundSlider").GetComponent<Slider>();
-            Slider musicVolumeSlider = settingsMenu.transform.Find("MusicSlider").GetComponent<Slider>();
+            // Get the 4 sliders
+            Slider master = settingsMenu.Find("SliderMaster").GetComponent<Slider>();
+            Slider sfx = settingsMenu.Find("SliderSFX").GetComponent<Slider>();
+            Slider music = settingsMenu.Find("SliderMusic").GetComponent<Slider>();
+            Slider ambience = settingsMenu.Find("SliderAmbience").GetComponent<Slider>();
 
-            sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 0.5f);
-            musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.5f);
+            // Load player preferences for the sliders
+            master.value = PlayerPrefs.GetFloat("MasterVolume", 1f);
+            sfx.value = PlayerPrefs.GetFloat("SFXVolume", 1f);
+            music.value = PlayerPrefs.GetFloat("MusicVolume", 1f);
+            ambience.value = PlayerPrefs.GetFloat("AmbienceVolume", 1f);
         }
         catch
         {
@@ -120,7 +127,6 @@ public class MenuController : MonoBehaviour
         Debug.Log("Going to start menu...");
         SceneManager.LoadScene("StartMenu");
     }
-
 
     public void TogglePauseGame()
     {

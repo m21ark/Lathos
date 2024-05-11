@@ -1,5 +1,122 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &315640562101500464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2745104952805211681}
+  - component: {fileID: 34881525913273493}
+  - component: {fileID: 4837306969342923004}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2745104952805211681
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315640562101500464}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -23.784485, y: -70.18898, z: 2.3775113}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 21242317576515101}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &34881525913273493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315640562101500464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 088ea88109b4df12f9a28ac2c33a3612, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterVolume: 1
+  sfxVolume: 1
+  musicVolume: 1
+  ambienceVolume: 1
+--- !u!114 &4837306969342923004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315640562101500464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9d48d3459efc96da9dfe1330a063e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ambience>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <music>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <playerFootsteps>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <playerJump>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <playerDash>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <playerSwordSwing>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <antAttack>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <bossAttack>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &462676415760698331
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,6 +262,7 @@ GameObject:
   - component: {fileID: 5117954504737691529}
   - component: {fileID: 7440144888818965696}
   - component: {fileID: 6052338515654641500}
+  - component: {fileID: 8789557329964199689}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -187,7 +305,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuObj: {fileID: 2706307160626023265}
-  instructionsMenuObj: {fileID: 0}
 --- !u!114 &6052338515654641500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +323,25 @@ MonoBehaviour:
   dialogueDataList:
   - {fileID: 11400000, guid: 94b175c3a6673ee688e2cb125e843cca, type: 2}
   - {fileID: 11400000, guid: ff4d09296e613201996b1b7b6facae44, type: 2}
+--- !u!114 &8789557329964199689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647704372512842457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cbe2cb8e58ddacb38d82681583fa270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hud: {fileID: 8215967080730104417}
+  hud_timer: {fileID: 8244356339596192356}
+  hud_player_health: {fileID: 1018068130253886081}
+  hud_boss_health: {fileID: 8749233886388179792}
+  hud_light: {fileID: 6540240975318551603}
+  hud_playerClassName: {fileID: 7041823129257509886}
+  hud_playerCooldowns: {fileID: 8892094222621305526}
 --- !u!1 &897142684572857103
 GameObject:
   m_ObjectHideFlags: 0
@@ -2826,6 +2962,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6850115626629204071}
+  - {fileID: 2745104952805211681}
+  - {fileID: 2607305191555087815}
   - {fileID: 5117954504737691529}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2962,6 +3100,74 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &4543548308643433526
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2607305191555087815}
+  - component: {fileID: 2565155863030845075}
+  - component: {fileID: 8437472969949164950}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2607305191555087815
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4543548308643433526}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -593.5, y: -321.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 21242317576515101}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2565155863030845075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4543548308643433526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!114 &8437472969949164950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4543548308643433526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
 --- !u!1 &4561019689656667058
 GameObject:
   m_ObjectHideFlags: 0
@@ -3241,9 +3447,8 @@ GameObject:
   - component: {fileID: 6850115626629204071}
   - component: {fileID: 9136884579124047377}
   - component: {fileID: 5826706621548093825}
-  - component: {fileID: 185772499031243180}
   m_Layer: 0
-  m_Name: GameLogic
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3307,18 +3512,6 @@ MonoBehaviour:
   prefab_rogue: {fileID: 1162234724972830604, guid: dd39f731bee5b09489d544388253433b, type: 3}
   prefab_sorcerer: {fileID: 1162234724972830604, guid: 76b06bcd8e1c7c546b2db2f1fc2e6a4e, type: 3}
   prefab_wizard: {fileID: 1162234724972830604, guid: 9f429d062caece54da3eacaf67d08874, type: 3}
---- !u!114 &185772499031243180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5438314137459281368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 088ea88109b4df12f9a28ac2c33a3612, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5506855188412385266
 GameObject:
   m_ObjectHideFlags: 0
@@ -4962,7 +5155,6 @@ GameObject:
   - component: {fileID: 2332572189149899144}
   - component: {fileID: 6772624979085573230}
   - component: {fileID: 2237024897410095236}
-  - component: {fileID: 1307147419346926866}
   m_Layer: 5
   m_Name: HUD
   m_TagString: HUD
@@ -5072,25 +5264,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &1307147419346926866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8215967080730104417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cbe2cb8e58ddacb38d82681583fa270, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hud: {fileID: 8215967080730104417}
-  hud_timer: {fileID: 8244356339596192356}
-  hud_player_health: {fileID: 1018068130253886081}
-  hud_boss_health: {fileID: 8749233886388179792}
-  hud_light: {fileID: 6540240975318551603}
-  hud_playerClassName: {fileID: 7041823129257509886}
-  hud_playerCooldowns: {fileID: 8892094222621305526}
 --- !u!1 &8226351742691964343
 GameObject:
   m_ObjectHideFlags: 0

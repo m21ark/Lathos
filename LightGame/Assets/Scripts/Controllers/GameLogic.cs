@@ -119,8 +119,6 @@ public class GameLogic : MonoBehaviour
     {
         if (!persistentData) return;
 
-        Debug.Log("SAVING");
-
         // Build the data to save
         SaveData data = new SaveData();
         data.currentPlayerArea = ((int)SceneManager.GetActiveScene().buildIndex + 1);

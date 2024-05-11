@@ -5,7 +5,7 @@ using FMODUnity;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private EventReference jumpSound;
+
 
     private Rigidbody rb;
     private ProtoClass player;
@@ -103,7 +103,6 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z); // reset the Y velocity
             rb.AddForce(Vector3.up * player.jumpForce, ForceMode.Impulse);
             isGrounded = false;
-            // AudioManager.instance.PlayOneShot(jumpSound, transform.position);
         }
 
         // Dash
