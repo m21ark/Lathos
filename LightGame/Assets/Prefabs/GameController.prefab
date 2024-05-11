@@ -321,8 +321,10 @@ MonoBehaviour:
   dialogueBox: {fileID: 8795590511885103652}
   autoSkip: 1
   dialogueDataList:
-  - {fileID: 11400000, guid: 94b175c3a6673ee688e2cb125e843cca, type: 2}
   - {fileID: 11400000, guid: ff4d09296e613201996b1b7b6facae44, type: 2}
+  - {fileID: 11400000, guid: 94b175c3a6673ee688e2cb125e843cca, type: 2}
+  - {fileID: 11400000, guid: bf34e7e69df1ba1e99d02c2062ef4145, type: 2}
+  - {fileID: 11400000, guid: 2681c460e89f1d58fba8c7ac6a4de07d, type: 2}
 --- !u!114 &8789557329964199689
 MonoBehaviour:
   m_ObjectHideFlags: 0

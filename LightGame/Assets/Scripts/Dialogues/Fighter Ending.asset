@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueName: Fighter Ending
   dialoguePhrases:
-  - Fighter ending ig
-  - Not much to say but punches and swords and stuff
+  - The brilliance of the light was blinding, leaving many of our kin no refuge to
+    hide but the darkest of caves, with many perishing along the way.
+  - For centuries, we waited for night's embrace, but it never came. Cast into exile
+    upon the very land we once called home.
+  - We bid our time, gathering strength in the depths of our despair, awaiting an
+    opportunity...

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85bd909c7ca28cf82995821cf812d493, type: 3}
+  m_Name: Ranger Ending
+  m_EditorClassIdentifier: 
+  dialogueName: Ranger Ending
+  dialoguePhrases:
+  - Memories linger of the days when sun and moon danced in harmony, weaving a delicate
+    balance that bound our island in unity for generations.
+  - Oh, how I yearn for the simplicity of those forgotten times when imperfections
+    were embraced as part of life.
+  - If only the ambition of greatness in the name of the divine hadn't forsaken that
+    equilibrium...
