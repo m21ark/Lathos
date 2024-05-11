@@ -14,7 +14,7 @@ public class MinionBehavior2 : ProtoMob
     {
         Move();
         if (GameLogic.instance.player)
-            player = GameLogic.instance.player.getGameObject();
+            player = GameLogic.instance.player.gameObject;
 
         // Summon minion if 10s cooldown has passed
         if (Time.time - lastSummonTime >= summonFrequency) SummonMinions();

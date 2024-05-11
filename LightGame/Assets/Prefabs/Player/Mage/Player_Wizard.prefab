@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 7778701404013849043}
   - component: {fileID: 1117550230313705188}
   - component: {fileID: 8710804209465806687}
+  - component: {fileID: 6380479479554128263}
   m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: MainCamera
@@ -248,6 +249,19 @@ MonoBehaviour:
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
 --- !u!114 &8710804209465806687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978852884161177263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+--- !u!114 &6380479479554128263
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -620,7 +634,7 @@ MonoBehaviour:
   hoverHeight: 1
   hoverSpeed: 1
   returnSpeed: 30
-  lightSource: {fileID: 0}
+  lightSource: {fileID: 941312108425277779}
 --- !u!135 &2233090269682523613
 SphereCollider:
   m_ObjectHideFlags: 0

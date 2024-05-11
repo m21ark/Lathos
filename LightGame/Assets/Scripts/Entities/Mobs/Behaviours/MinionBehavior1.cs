@@ -10,7 +10,7 @@ public class MinionBehavior1 : ProtoMob
     {
         Move();
         if (GameLogic.instance.player)
-            player = GameLogic.instance.player.getGameObject();
+            player = GameLogic.instance.player.gameObject;
     }
 
     public override void Move()

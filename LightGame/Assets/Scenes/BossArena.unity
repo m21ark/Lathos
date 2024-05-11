@@ -303,10 +303,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Wizard
       objectReference: {fileID: 0}
-    - target: {fileID: 1162234724972830604, guid: 9f429d062caece54da3eacaf67d08874, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1547184242331172084, guid: 9f429d062caece54da3eacaf67d08874, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.5582626
@@ -347,33 +343,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4511059417515342022, guid: 9f429d062caece54da3eacaf67d08874, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 978852884161177263, guid: 9f429d062caece54da3eacaf67d08874, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 81109667}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f429d062caece54da3eacaf67d08874, type: 3}
---- !u!1 &81109666 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 978852884161177263, guid: 9f429d062caece54da3eacaf67d08874, type: 3}
-  m_PrefabInstance: {fileID: 81109665}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &81109667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 81109666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attenuationObject: {fileID: 0}
 --- !u!1001 &85932709
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3121,7 +3095,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1162234724972830604, guid: b52ad757266999743a9dbc453d77101f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1547184242331172084, guid: b52ad757266999743a9dbc453d77101f, type: 3}
       propertyPath: m_LocalPosition.x

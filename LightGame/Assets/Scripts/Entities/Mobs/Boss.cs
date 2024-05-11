@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class Boss : ProtoMob
 {
-    public GameObject minionPrefab;
-    GameObject player;
+    // Phase Logic
+    private int currentBossPhase = 1;
+    public float bossPhaseThreshold2Percentage = 0.5f; // 50% of max health
+    public float bossPhaseThreshold3Percentage = 0.2f; // 20% of max health
 
+    // Summoning Logic
     private float lastSummonTime;
     public float summonFrequency = 10.0f;
-
-    // Phase Logic
-    public int currentBossPhase = 1;
-    public int bossPhaseThreshold2 = 200;
-    public int bossPhaseThreshold3 = 100;
+    public GameObject minionPrefab;
 
     void Start()
     {
@@ -24,8 +23,10 @@ public class Boss : ProtoMob
     {
         // Check if boss needs to switch to new phase
         currentBossPhase = 1;
-        if (health <= bossPhaseThreshold2) currentBossPhase = 2;
-        if (health <= bossPhaseThreshold3) currentBossPhase = 3;
+        float healthPercentage = (float)health / maxHealth;
+
+        if (healthPercentage <= bossPhaseThreshold2Percentage) currentBossPhase = 2;
+        if (healthPercentage <= bossPhaseThreshold3Percentage) currentBossPhase = 3;
 
         // Apply different boss behavior depending on current phase  
         switch (currentBossPhase)
@@ -33,7 +34,6 @@ public class Boss : ProtoMob
             case 1: Phase1Behavior(); break;
             case 2: Phase2Behavior(); break;
             case 3: Phase3Behavior(); break;
-            default: Debug.LogError("Boss Phase ID not found"); break;
         }
     }
 
@@ -45,11 +45,9 @@ public class Boss : ProtoMob
     private void Phase2Behavior()
     {
         ChangeColor(Color.blue);
+
         // Summoning phase and follow player
         Move2();
-
-        if (GameLogic.instance.player)
-            player = GameLogic.instance.player.getGameObject();
 
         // Summon minion if 10s cooldown has passed
         if (Time.time - lastSummonTime >= summonFrequency) SummonMinions();
@@ -63,25 +61,22 @@ public class Boss : ProtoMob
 
     public void Move2()
     {
-        if (player != null)
-        {
-            // Calculate direction vector towards the player
-            Vector3 direction = player.transform.position - transform.position;
-            direction.y = 0f; // Ensure the minion doesn't move up or down
+        // Calculate direction vector towards the player
+        Vector3 direction = GameLogic.instance.player.gameObject.transform.position - transform.position;
+        direction.y = 0f; // Ensure the minion doesn't move up or down
 
-            // Normalize the direction vector
-            direction.Normalize();
+        // Normalize the direction vector
+        direction.Normalize();
 
-            // Move the minion towards the player
-            transform.Translate(direction * moveSpeed * Time.deltaTime);
-        }
+        // Move the minion towards the player
+        transform.Translate(direction * moveSpeed * Time.deltaTime);   
     }
 
     void OnCollisionEnter(Collision collision)
     {
         // Deal Damage
         if (collision.gameObject.CompareTag("Player"))
-            GameLogic.instance.player.TakeDamage(30);
+            GameLogic.instance.player.TakeDamage(damage);
     }
 
     void SummonMinions()

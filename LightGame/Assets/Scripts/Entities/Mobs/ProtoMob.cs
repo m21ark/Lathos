@@ -6,7 +6,7 @@ public class ProtoMob : MonoBehaviour
 {
     public int health = 20;
     public int maxHealth = 20;
-    public int enemyLevel = 5;
+    public int enemyLevel = 5; // affects orb drop rate
     public float moveSpeed = 5f;
     public int damage = 10;
 
@@ -24,8 +24,6 @@ public class ProtoMob : MonoBehaviour
 
     public void Die()
     {
-        // GameObject xpOrbPreFab = Resources.Load<GameObject>("OrbXP");
-
         // Randomly determine the number of orbs to spawn based on enemy level
         int numOrbs = Random.Range(enemyLevel, enemyLevel * 2);
 
@@ -43,16 +41,13 @@ public class ProtoMob : MonoBehaviour
             Destroy(orb, 10f); // Despawn orbs if not collected in 10s
         }
 
-        // Destroy the enemy GameObject
+        // Destroy the enemy self GameObject
         Destroy(gameObject);
     }
 
     public virtual void TakeDamage(int damage)
     {
         health -= damage;
-        if (health <= 0)
-        {
-            Die();
-        }
+        if (health <= 0) Die();
     }
 }

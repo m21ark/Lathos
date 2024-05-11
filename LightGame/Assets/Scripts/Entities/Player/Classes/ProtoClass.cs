@@ -69,11 +69,6 @@ public class ProtoClass : MonoBehaviour
             Die();
     }
 
-    public GameObject getGameObject()
-    {
-        return gameObject;
-    }
-
     public void Heal(int heal)
     {
         health += heal;
