@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using FMODUnity;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,6 +13,12 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded = false;
     private float rotationSpeed = 10f;
     private Vector3 direction;
+
+    public KeyCode attackKey = KeyCode.K;
+    public KeyCode attack1Key = KeyCode.E;
+    public KeyCode attack2Key = KeyCode.Q;
+    public KeyCode dashKey = KeyCode.LeftShift;
+    public KeyCode jumpKey = KeyCode.Space;
 
     void Start()
     {
@@ -98,7 +103,7 @@ public class PlayerController : MonoBehaviour
             CharacterFaceDirection();
 
         // Jumping
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(jumpKey) && isGrounded)
         {
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z); // reset the Y velocity
             rb.AddForce(Vector3.up * player.jumpForce, ForceMode.Impulse);
@@ -106,7 +111,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Dash
-        if (Input.GetKeyDown(KeyCode.LeftShift) && player.lastDashTime <= 0)
+        if (Input.GetKeyDown(dashKey) && player.lastDashTime <= 0)
             StartCoroutine(Dash());
         else player.lastDashTime -= Time.deltaTime;
 
@@ -170,10 +175,10 @@ public class PlayerController : MonoBehaviour
 
     void Attack0()
     {
-        if (Input.GetKeyDown(KeyCode.K) || Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(attackKey) || Input.GetMouseButtonDown(0))
             player.isAttacking = true;
 
-        if (Input.GetKeyUp(KeyCode.K) || Input.GetMouseButtonUp(0))
+        if (Input.GetKeyUp(attackKey) || Input.GetMouseButtonUp(0))
             player.isAttacking = false;
 
         player.lastAttackTime -= Time.deltaTime;
@@ -190,8 +195,8 @@ public class PlayerController : MonoBehaviour
 
     void Attack1()
     {
-        if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(1)) player.isAttack1ing = true;
-        if (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(1)) player.isAttack1ing = false;
+        if (Input.GetKeyDown(attack1Key) || Input.GetMouseButtonDown(1)) player.isAttack1ing = true;
+        if (Input.GetKeyUp(attack1Key) || Input.GetMouseButtonUp(1)) player.isAttack1ing = false;
 
         player.lastAttack1Time -= Time.deltaTime;
         if (player.isAttack1ing)
@@ -206,8 +211,8 @@ public class PlayerController : MonoBehaviour
 
     void Attack2()
     {
-        if (Input.GetKeyDown(KeyCode.Q)) player.isAttack2ing = true;
-        if (Input.GetKeyUp(KeyCode.Q)) player.isAttack2ing = false;
+        if (Input.GetKeyDown(attack2Key)) player.isAttack2ing = true;
+        if (Input.GetKeyUp(attack2Key)) player.isAttack2ing = false;
 
         player.lastAttack2Time -= Time.deltaTime;
         if (player.isAttack2ing)
