@@ -21,6 +21,9 @@ public class AntBehavior : ProtoMob
             if(moveSpeed <= 0)
                 return;
 
+                        // Get the child object that contains the mesh
+                        GameObject mesh = transform.GetChild(0).gameObject;
+
                         // Calculate direction vector towards the player
                         Vector3 direction = player.transform.position - transform.position;
                         direction.y = 0f; // Ensure the minion doesn't move up or down
@@ -28,14 +31,12 @@ public class AntBehavior : ProtoMob
 
                         // Cast a ray downwards to detect the ground and have the minion follow the terrain slope
                         RaycastHit hit;
-                        if (Physics.Raycast(transform.position, Vector3.down, out hit, Mathf.Infinity))
+                        // Debug.DrawRay(mesh.transform.position + mesh.transform.forward * -2.5f, Vector3.down * 100, Color.red, 0.1f);
+                        if (Physics.Raycast(mesh.transform.position + mesh.transform.forward * -2.5f, Vector3.down, out hit, 10f))
                         {
 
                             // Move the minion towards the player
                             transform.Translate(direction * moveSpeed * Time.deltaTime);
-
-                            // Get the child object that contains the mesh
-                            GameObject mesh = transform.GetChild(0).gameObject;
 
                             // Rotate the minion to face the player
                             Quaternion targetRotation = Quaternion.LookRotation(-direction);
@@ -43,8 +44,10 @@ public class AntBehavior : ProtoMob
                             // Apply rotation smoothly
                             mesh.transform.rotation = Quaternion.Slerp(mesh.transform.rotation, targetRotation, 0.1f);
 
-                            // Adjust the Y rotation to conform to the terrain slope using the hit normal
-                            mesh.transform.rotation = Quaternion.FromToRotation(mesh.transform.up, hit.normal) * mesh.transform.rotation;
+                            // Adjust the Y rotation to conform to the terrain slope using the hit normal if its different from the current rotation
+                            targetRotation = Quaternion.FromToRotation(mesh.transform.up, hit.normal) * mesh.transform.rotation;
+                            if (Quaternion.Angle(mesh.transform.rotation, targetRotation) > 0.1f)
+                                mesh.transform.rotation = Quaternion.Lerp(mesh.transform.rotation, targetRotation, 0.5f);
                             
                             // Calculate torque axis based on movement direction
                             Vector3 torqueAxis = Vector3.Cross(mesh.transform.forward, direction);
