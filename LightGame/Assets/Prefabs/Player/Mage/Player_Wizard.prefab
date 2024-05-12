@@ -532,6 +532,7 @@ MonoBehaviour:
   A1_2Prefab: {fileID: 4923962845166056162, guid: a2124a40c0b66ee488a281732250312b, type: 3}
   A0_2Prefab: {fileID: 4923962845166056162, guid: e0a2233f62b2a80459c8e1780651b6f7, type: 3}
   A2_2Prefab: {fileID: 4923962845166056162, guid: f637350a2acb54c4e961e8d1f5c77d5d, type: 3}
+  A2_2VFX: {fileID: 6636002843261425028, guid: d5cde2cb39e3def4a9718a7b3d40ea8a, type: 3}
 --- !u!1 &5940330435187617133
 GameObject:
   m_ObjectHideFlags: 0
