@@ -23,6 +23,8 @@ public class AntProcedural : MonoBehaviour
     public float positiveOffset = 0.5f;
     private float phaseOffset = Mathf.PI; // legs move in opposite directions
 
+    private ProtoMob mob = null;
+
     private void Start()
     {
         startZ_leftBackLegTarget = leftBackLegTarget.localPosition.z;
@@ -31,23 +33,30 @@ public class AntProcedural : MonoBehaviour
         startZ_rightFrontLegTarget = rightFrontLegTarget.localPosition.z;
         startZ_rightMidLegTarget = rightMidLegTarget.localPosition.z;
         startZ_leftMidLegTarget = leftMidLegTarget.localPosition.z;
+
+         mob = GetComponent<ProtoMob>();
     }
 
     private void Update()
     {
+        if(mob.moveSpeed > 0)
+            LegMovement();
+    }
+
+    private void LegMovement(){
         MoveLeg(startZ_leftBackLegTarget, leftBackLegTarget, 0);
         MoveLeg(startZ_rightMidLegTarget, rightMidLegTarget, 0);
         MoveLeg(startZ_leftFrontLegTarget, leftFrontLegTarget, 0);
 
         MoveLeg(startZ_rightBackLegTarget, rightBackLegTarget, 1);
         MoveLeg(startZ_leftMidLegTarget, leftMidLegTarget, 1);
-        MoveLeg(startZ_rightFrontLegTarget, rightFrontLegTarget, 1);
+        MoveLeg(startZ_rightFrontLegTarget, rightFrontLegTarget, 1); 
     }
 
     private void MoveLeg(float startZ, Transform leg, int legIndex)
     {
         // take the current position of the leg and add the move distance to it in cycles
-        float delta = moveDistance * Mathf.Sin(Time.time * legSpeed + phaseOffset * legIndex);
+        float delta = moveDistance * Mathf.Sin(Time.time * legSpeed * (1 + mob.moveSpeed) + phaseOffset * legIndex);
         leg.localPosition = new Vector3(leg.localPosition.x, leg.localPosition.y, startZ + delta + positiveOffset);
     }
 }

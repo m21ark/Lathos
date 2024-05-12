@@ -411,7 +411,7 @@ MonoBehaviour:
   rightFrontLegTarget: {fileID: 401433047372805779}
   rightMidLegTarget: {fileID: 5790826634244255856}
   leftMidLegTarget: {fileID: 7110361684778060982}
-  legSpeed: 25
+  legSpeed: 5
   moveDistance: 0.5
   positiveOffset: -1
 --- !u!114 &1590575825521067992
@@ -429,9 +429,10 @@ MonoBehaviour:
   health: 50
   maxHealth: 50
   enemyLevel: 5
-  moveSpeed: 8
+  moveSpeed: 0
   damage: 10
   xpOrbPreFab: {fileID: 4996593011877861837, guid: cad7373686d79a81e963d2881c27666a, type: 3}
+  hitRate: 1
 --- !u!1 &2769828232886666512
 GameObject:
   m_ObjectHideFlags: 0
