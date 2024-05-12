@@ -11,54 +11,91 @@ public class AntProcedural : MonoBehaviour
     [SerializeField] private Transform rightMidLegTarget;
     [SerializeField] private Transform leftMidLegTarget;
 
-    private float startZ_leftBackLegTarget;
-    private float startZ_rightBackLegTarget;
-    private float startZ_leftFrontLegTarget;
-    private float startZ_rightFrontLegTarget;
-    private float startZ_rightMidLegTarget;
-    private float startZ_leftMidLegTarget;
+    public float footDistanceToBody = 1.5f;
+    public float stepDistance = 2f;
+    public float startOffset = 0.5f;
 
-    public float legSpeed = 5f;
-    public float moveDistance = 0.07f;
-    public float positiveOffset = 0.5f;
-    private float phaseOffset = Mathf.PI; // legs move in opposite directions
+    public int walkDemoSpeed = 0;
 
-    private ProtoMob mob = null;
+    private float raycastRange = 3f;
+
+    private Vector3[] newLegPositions = new Vector3[6];
+    private Vector3[] currentLegPositions = new Vector3[6];
+    private Vector3[] legStartPositions = new Vector3[6];
 
     private void Start()
     {
-        startZ_leftBackLegTarget = leftBackLegTarget.localPosition.z;
-        startZ_rightBackLegTarget = rightBackLegTarget.localPosition.z;
-        startZ_leftFrontLegTarget = leftFrontLegTarget.localPosition.z;
-        startZ_rightFrontLegTarget = rightFrontLegTarget.localPosition.z;
-        startZ_rightMidLegTarget = rightMidLegTarget.localPosition.z;
-        startZ_leftMidLegTarget = leftMidLegTarget.localPosition.z;
+        newLegPositions[0] = leftBackLegTarget.position;
+        newLegPositions[1] = rightBackLegTarget.position;
+        newLegPositions[2] = leftFrontLegTarget.position;
+        newLegPositions[3] = rightFrontLegTarget.position;
+        newLegPositions[4] = rightMidLegTarget.position;
+        newLegPositions[5] = leftMidLegTarget.position;
 
-         mob = GetComponent<ProtoMob>();
+        currentLegPositions[0] = leftBackLegTarget.position;
+        currentLegPositions[1] = rightBackLegTarget.position;
+        currentLegPositions[2] = leftFrontLegTarget.position;
+        currentLegPositions[3] = rightFrontLegTarget.position;
+        currentLegPositions[4] = rightMidLegTarget.position;
+        currentLegPositions[5] = leftMidLegTarget.position;
+
+        legStartPositions[0] = leftBackLegTarget.position - (startOffset + 0.7f) * Vector3.forward;
+        legStartPositions[1] = rightBackLegTarget.position - (startOffset + 0.5f) * Vector3.forward;
+        legStartPositions[2] = leftFrontLegTarget.position - (startOffset - 1f) * Vector3.forward;
+        legStartPositions[3] = rightFrontLegTarget.position - (startOffset + 0.8f) * Vector3.forward;
+        legStartPositions[4] = rightMidLegTarget.position - (startOffset - 0.3f) * Vector3.forward;
+        legStartPositions[5] = leftMidLegTarget.position - (startOffset + 0.4f) * Vector3.forward;
     }
 
-    private void Update()
+    void Update()
     {
-        if(mob.moveSpeed > 0)
-            LegMovement();
+        CheckLeg(leftBackLegTarget, 0);
+        CheckLeg(rightMidLegTarget, 4);
+        CheckLeg(leftFrontLegTarget, 2);
+
+        CheckLeg(rightBackLegTarget, 1);
+        CheckLeg(rightFrontLegTarget, 3);
+        CheckLeg(leftMidLegTarget, 5);
+
+        if(walkDemoSpeed > 0)
+            transform.position -= transform.forward * Time.deltaTime * walkDemoSpeed;
     }
 
-    private void LegMovement(){
-        MoveLeg(startZ_leftBackLegTarget, leftBackLegTarget, 0);
-        MoveLeg(startZ_rightMidLegTarget, rightMidLegTarget, 0);
-        MoveLeg(startZ_leftFrontLegTarget, leftFrontLegTarget, 0);
-
-        MoveLeg(startZ_rightBackLegTarget, rightBackLegTarget, 1);
-        MoveLeg(startZ_leftMidLegTarget, leftMidLegTarget, 1);
-        MoveLeg(startZ_rightFrontLegTarget, rightFrontLegTarget, 1); 
-    }
-
-    private void MoveLeg(float startZ, Transform leg, int legIndex)
+    void CheckLeg(Transform leg, int index)
     {
-        // take the current position of the leg and add the move distance to it in cycles
-        float delta = moveDistance * Mathf.Sin(Time.time * legSpeed * (1 + mob.moveSpeed) + phaseOffset * legIndex);
-        leg.localPosition = new Vector3(leg.localPosition.x, leg.localPosition.y, startZ + delta + positiveOffset);
+        leg.position = currentLegPositions[index];
+        Vector3 origin = legStartPositions[index] + transform.position;
+        Ray ray = new Ray(origin, Vector3.down);
+
+        // Debug.DrawRay(ray.origin, ray.direction * raycastRange, Color.blue, 0.5f);
+
+        if (Physics.Raycast(ray, out RaycastHit hit, raycastRange))
+            if (Vector3.Distance(hit.point, currentLegPositions[index]) > stepDistance)
+                newLegPositions[index] = hit.point;
+   
+        currentLegPositions[index] = Vector3.Lerp(currentLegPositions[index], newLegPositions[index], 0.1f);
+    }
+
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(leftBackLegTarget.position, 0.2f);
+        Gizmos.DrawWireSphere(rightBackLegTarget.position, 0.2f);
+        Gizmos.DrawWireSphere(leftFrontLegTarget.position, 0.2f);
+        Gizmos.DrawWireSphere(rightFrontLegTarget.position, 0.2f);
+        Gizmos.DrawWireSphere(rightMidLegTarget.position, 0.2f);
+        Gizmos.DrawWireSphere(leftMidLegTarget.position, 0.2f);
+
+        Gizmos.color = Color.red;
+        if(legStartPositions.Length > 0)
+        {
+            Gizmos.DrawWireSphere(legStartPositions[0] + transform.position, 0.2f);
+            Gizmos.DrawWireSphere(legStartPositions[1] + transform.position, 0.2f);
+            Gizmos.DrawWireSphere(legStartPositions[2] + transform.position, 0.2f);
+            Gizmos.DrawWireSphere(legStartPositions[3] + transform.position, 0.2f);
+            Gizmos.DrawWireSphere(legStartPositions[4] + transform.position, 0.2f);
+            Gizmos.DrawWireSphere(legStartPositions[5] + transform.position, 0.2f);
+        }
     }
 }
-
-// https://www.google.com/url?sa=i&url=https%3A%2F%2Fgenent.cals.ncsu.edu%2Fbug-bytes%2Fthorax%2Flocomotion%2F&psig=AOvVaw1y7tbJf8mUqpFI7hk1Kr5U&ust=1715547306540000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMD8gPO9hoYDFQAAAAAdAAAAABAE
