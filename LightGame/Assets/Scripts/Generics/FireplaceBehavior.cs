@@ -13,7 +13,7 @@ public class FireplaceBehavior : MonoBehaviour
 
     private void RepelEnemies(Collider other)
     {
-        if (other.CompareTag("Minion"))
+        if (other.CompareTag("Mob"))
         {
             Vector3 directionToCenter = transform.position - other.transform.position;
             directionToCenter.Normalize();

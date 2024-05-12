@@ -8,7 +8,6 @@ TagManager:
   - HUD
   - Boss
   - Projectile
-  - Minion
   - OrbXP
   - EndMenu
   - PauseMenu

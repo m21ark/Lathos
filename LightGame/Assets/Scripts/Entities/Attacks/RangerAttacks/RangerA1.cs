@@ -12,7 +12,7 @@ public class RangerA1 : ProtoAttack
             return;
 
         // Check if the attack hit enemy and damage it
-        if (collision.gameObject.CompareTag("Minion") || collision.gameObject.CompareTag("Boss"))
+        if (collision.gameObject.CompareTag("Mob") || collision.gameObject.CompareTag("Boss"))
         {
             /// Get the Mob component
             ProtoMob mob = collision.gameObject.GetComponent<ProtoMob>();

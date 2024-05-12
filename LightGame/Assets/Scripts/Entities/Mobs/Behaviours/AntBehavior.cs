@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MinionBehavior1 : ProtoMob
+public class AntBehavior : ProtoMob
 {
     GameObject player;
 
@@ -27,6 +27,13 @@ public class MinionBehavior1 : ProtoMob
 
             // Move the minion towards the player
             transform.Translate(direction * moveSpeed * Time.deltaTime);
+
+            // Get the child object that contains the mesh
+            GameObject mesh = transform.GetChild(0).gameObject;
+            mesh.transform.rotation = Quaternion.Slerp(mesh.transform.rotation, Quaternion.LookRotation(-direction), 0.1f);
+
+            // TODO: make head turn correctly and make the ant like a car axis with a head that turns
+            
         }
     }
 
