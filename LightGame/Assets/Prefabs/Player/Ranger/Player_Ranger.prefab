@@ -505,7 +505,7 @@ MonoBehaviour:
   A1ChargeRate: 0
   A2Prefab: {fileID: 0}
   A2Damage: 30
-  A2ReloadTime: 2
+  A2ReloadTime: 0
   A2ChargeRate: 0
   collectedLight: 0
   lastAttackTime: 0

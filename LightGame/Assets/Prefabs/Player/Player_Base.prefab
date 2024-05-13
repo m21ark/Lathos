@@ -316,11 +316,11 @@ MonoBehaviour:
   A0ChargeRate: 0
   A1Prefab: {fileID: 0}
   A1Damage: 20
-  A1ReloadTime: 1
+  A1ReloadTime: 0
   A1ChargeRate: 0
   A2Prefab: {fileID: 0}
   A2Damage: 30
-  A2ReloadTime: 2
+  A2ReloadTime: 0
   A2ChargeRate: 0
   collectedLight: 0
   lastAttackTime: 0

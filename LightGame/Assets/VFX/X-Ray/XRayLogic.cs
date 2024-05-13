@@ -21,7 +21,7 @@ public class XRayLogic : MonoBehaviour
     private XRayState _state = XRayState.Inactive;
     private Transform _playerTransform;
 
-    // Get all the enemies with the tag Boss or Minion in the scene, and change their layer to RenderAbove
+    // Get all the enemies with the tag Boss or Mob in the scene, and change their layer to RenderAbove
     void Start()
     {   
         _timer = 0.0f;
@@ -70,7 +70,7 @@ public class XRayLogic : MonoBehaviour
             ChangeLayerAllChildren(enemy.transform, layerName);
         }
 
-        enemies = GameObject.FindGameObjectsWithTag("Minion");
+        enemies = GameObject.FindGameObjectsWithTag("Mob");
         foreach (GameObject enemy in enemies)
         {
             enemy.layer = LayerMask.NameToLayer(layerName);
