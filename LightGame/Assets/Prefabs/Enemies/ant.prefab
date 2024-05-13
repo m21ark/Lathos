@@ -624,7 +624,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4b6ac60ce948691308b7708c81db27c6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -59.67
+      value: -31.94
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4b6ac60ce948691308b7708c81db27c6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -661,6 +661,10 @@ PrefabInstance:
     - target: {fileID: -8132071472868225245, guid: 4b6ac60ce948691308b7708c81db27c6, type: 3}
       propertyPath: m_Name
       value: LeftBack
+      objectReference: {fileID: 0}
+    - target: {fileID: -7582616360786716050, guid: 4b6ac60ce948691308b7708c81db27c6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -25.83
       objectReference: {fileID: 0}
     - target: {fileID: -6804224529849698862, guid: 4b6ac60ce948691308b7708c81db27c6, type: 3}
       propertyPath: m_Name
@@ -844,16 +848,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0fbf08c34968c47ead3313e2ce50670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftBackLegTarget: {fileID: 8901219535287451007}
-  rightBackLegTarget: {fileID: 5808292672951122900}
-  leftFrontLegTarget: {fileID: 8539946833374782742}
-  rightFrontLegTarget: {fileID: 6213754073647957845}
-  rightMidLegTarget: {fileID: 146036647346797172}
-  leftMidLegTarget: {fileID: 1198113433018506571}
+  legTargetTransforms:
+  - {fileID: 8901219535287451007}
+  - {fileID: 8539946833374782742}
+  - {fileID: 1198113433018506571}
+  - {fileID: 5808292672951122900}
+  - {fileID: 6213754073647957845}
+  - {fileID: 146036647346797172}
   stepDistance: 0.7
   raycastRange: 4
   rayCastHeight: 2
   rayOffset: 0.7
+  bodyHeight: 0.7
   startPosVariation: 0.7
   walkDemoSpeed: 1
 --- !u!65 &6251387708105263664
