@@ -184,6 +184,8 @@ MonoBehaviour:
   despawnTime: 5
   ignorePlayerCol: 1
   despawnOnCol: 1
+  VFXStacks: {fileID: 372350023872253644, guid: 951fd6c9d2ac36b49b6e4e529df63ec4, type: 3}
+  VFXExplosion: {fileID: 8603482802891428089, guid: 07be3b073d52b8f4190f76f829dc973e, type: 3}
 --- !u!1001 &2386838726772292641
 PrefabInstance:
   m_ObjectHideFlags: 0

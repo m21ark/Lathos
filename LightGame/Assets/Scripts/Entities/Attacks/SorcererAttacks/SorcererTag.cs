@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class SorcererTag : MonoBehaviour
-{
+{   
+    public VisualEffect VFXStacks;
+    public VisualEffect VFXExplosion;
     public int stackCounter = 1;
 
     // on init, create a text game object on top of the target with the stack counter
@@ -19,6 +22,16 @@ public class SorcererTag : MonoBehaviour
         textMesh.characterSize = 0.1f;
         textMesh.anchor = TextAnchor.MiddleCenter;
         textMesh.alignment = TextAlignment.Center;
+
+        // Create a new Visual Effect Component
+        VFXStacks = Instantiate(VFXStacks, this.transform.position, Quaternion.identity);
+
+        // Send an event to the VFX to start the stack animation
+        VFXStacks.SendEvent("OnStack");
+    }
+
+    private void FixedUpdate() {
+        VFXStacks.transform.position = this.transform.position;
     }
 
     public void addStack(int stackCounter = 1)
@@ -30,6 +43,7 @@ public class SorcererTag : MonoBehaviour
         {
             TextMesh textMesh = this.transform.Find("StackText").GetComponent<TextMesh>();
             if (textMesh != null)
+                VFXStacks.SendEvent("OnStack");
                 textMesh.text = this.stackCounter.ToString();
         }
     }
@@ -37,6 +51,10 @@ public class SorcererTag : MonoBehaviour
     // on destroy, remove the stack counter text
     void OnDestroy()
     {
+        VFXExplosion = Instantiate(VFXExplosion, this.transform.position, Quaternion.identity);
+        VFXExplosion.transform.localScale = new Vector3(2.0f, 2.0f, 2.0f);
+        Destroy(VFXExplosion.gameObject, 2.0f);
+        Destroy(VFXStacks.gameObject);
         Destroy(this.transform.Find("StackText").gameObject);
     }
 }

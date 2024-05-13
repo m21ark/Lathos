@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class SorcererA0 : ProtoAttack
 {
+    public VisualEffect VFXStacks;
+    public VisualEffect VFXExplosion;
     // on collision, attach a new script to the object
     public override void OnTriggerEnter(Collider collision)
     {
@@ -18,9 +21,13 @@ public class SorcererA0 : ProtoAttack
 
             mob.TakeDamage(projDamage);
 
-            if (!collision.gameObject.GetComponent<SorcererTag>())
+            if (!collision.gameObject.GetComponent<SorcererTag>()) {
                 collision.gameObject.AddComponent<SorcererTag>();
-            else collision.gameObject.GetComponent<SorcererTag>().addStack();
+                collision.gameObject.GetComponent<SorcererTag>().VFXStacks = VFXStacks;
+                collision.gameObject.GetComponent<SorcererTag>().VFXExplosion = VFXExplosion;
+            } else {
+                collision.gameObject.GetComponent<SorcererTag>().addStack();
+            }
         }
         Destroy(gameObject.transform.parent.gameObject);
     }

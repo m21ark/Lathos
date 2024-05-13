@@ -28,7 +28,7 @@ public class SorcererClass : MageClass
         // For each enemy, apply the damage based on the number of stacks and remove the tag
         foreach (GameObject enemy in enemies)
         {
-            if (enemy.GetComponent<SorcererTag>())
+            if (enemy != null && enemy.GetComponent<SorcererTag>())
             {
                 ProtoMob mob = enemy.GetComponent<ProtoMob>();
                 mob.TakeDamage(A1Damage * enemy.GetComponent<SorcererTag>().stackCounter);
@@ -37,7 +37,7 @@ public class SorcererClass : MageClass
         }
 
         // Apply the damage to the boss
-        if (boss.GetComponent<SorcererTag>())
+        if (boss != null && boss.GetComponent<SorcererTag>())
         {
             ProtoMob mob = boss.GetComponent<ProtoMob>();
             mob.TakeDamage(A1Damage * boss.GetComponent<SorcererTag>().stackCounter);
