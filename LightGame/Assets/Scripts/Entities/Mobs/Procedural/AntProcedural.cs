@@ -17,6 +17,7 @@ public class AntProcedural : MonoBehaviour
     private Vector3[] currentLegPositions;
     private Vector3[] rayCasterPositions;
     private Vector3[] startLegPositions;
+    private Vector3[] raycastHitNormals;
     private bool[] isLegMoving;
     private int numLegs;
 
@@ -27,6 +28,8 @@ public class AntProcedural : MonoBehaviour
         currentLegPositions = new Vector3[numLegs];
         rayCasterPositions = new Vector3[numLegs];
         startLegPositions = new Vector3[numLegs];
+        raycastHitNormals = new Vector3[numLegs];
+
         isLegMoving = new bool[numLegs];
 
         for (int i = 0; i < numLegs; i++)
@@ -61,7 +64,7 @@ public class AntProcedural : MonoBehaviour
         // Rotate the body to align with the ground
         InclineBody();
 
-        SetRayCastPositions(); // this is needed to update the raycast positions upon rotation of the ant
+        SetRayCastPositions();
 
         if(walkDemoSpeed > 0)
             transform.position += transform.forward * Time.deltaTime * walkDemoSpeed;
@@ -69,24 +72,24 @@ public class AntProcedural : MonoBehaviour
 
     private void InclineBody()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, -transform.up, out hit, raycastRange))
+        Vector3 averageNormal = Vector3.zero;
+        float averageDistanceToGround = 0f;
+
+        for (int i = 0; i < numLegs; i++)
         {
-            Vector3 groundNormal = hit.normal;
-            float distanceToGround = hit.distance;
-
-            // Calculate the target position where the ant should be
-            Vector3 targetPosition = transform.position + transform.up * (bodyHeight - distanceToGround);
-
-            // Move the ant to the target position
-            transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * 5f);
-
-            // Calculate the rotation needed for the ant to align with the ground
-            Quaternion targetRotation = Quaternion.FromToRotation(transform.up, groundNormal) * transform.rotation;
-            
-            // Smoothly interpolate the ant's current rotation to the target rotation
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 1f);
+            averageNormal += raycastHitNormals[i];
+            averageDistanceToGround += Mathf.Abs(currentLegPositions[i].y - transform.position.y);
         }
+
+        averageNormal /= numLegs;
+        averageDistanceToGround /= numLegs;
+        averageNormal.Normalize();
+
+        Vector3 targetPosition = transform.position + transform.up * (bodyHeight - averageDistanceToGround);
+        transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * 2f);
+
+        Quaternion targetRotation = Quaternion.FromToRotation(transform.up, averageNormal) * transform.rotation;
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 2f);
     }
 
     private void CheckLeg(Transform leg, int index)
@@ -99,6 +102,7 @@ public class AntProcedural : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, raycastRange)){
             if (Vector3.Distance(hit.point, currentLegPositions[index]) > stepDistance && !CheckIfAnyLegMoving()){
                 currentLegPositions[index] = hit.point;
+                raycastHitNormals[index] = hit.normal;
                 isLegMoving[index] = true;
             }
         } else currentLegPositions[index] = startLegPositions[index] + transform.position; 
