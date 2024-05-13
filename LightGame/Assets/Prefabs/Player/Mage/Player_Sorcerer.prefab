@@ -519,6 +519,8 @@ MonoBehaviour:
   A1TimeDelta: 0.8
   VFXSpecialAbility: {fileID: 7436710278688980422, guid: 36153bfa4dec0964c90504d06a2f2684, type: 3}
   A2Range: 25
+  VFXStacks: {fileID: 372350023872253644, guid: 951fd6c9d2ac36b49b6e4e529df63ec4, type: 3}
+  VFXExplosion: {fileID: 8603482802891428089, guid: 07be3b073d52b8f4190f76f829dc973e, type: 3}
 --- !u!1 &5940330435187617133
 GameObject:
   m_ObjectHideFlags: 0

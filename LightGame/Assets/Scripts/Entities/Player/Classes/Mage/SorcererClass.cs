@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Collections;
+using UnityEngine.VFX;
 
 public class SorcererClass : MageClass
 {
@@ -10,6 +11,8 @@ public class SorcererClass : MageClass
     public float A1TimeDelta = 0.8f;
     public GameObject VFXSpecialAbility;
     public int A2Range = 20;
+    public VisualEffect VFXStacks;
+    public VisualEffect VFXExplosion;
 
     public override void Attack()
     {
@@ -54,21 +57,27 @@ public class SorcererClass : MageClass
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Mob");
             GameObject boss = GameObject.FindGameObjectWithTag("Boss");
 
-            // For each enemy within A2Range, add X stacks
-            foreach (GameObject enemy in enemies)
-                if (Vector3.Distance(enemy.transform.position, transform.position) < A2Range)
-                {
-                    if (!enemy.GetComponent<SorcererTag>())
-                        enemy.AddComponent<SorcererTag>();
-                    enemy.GetComponent<SorcererTag>().addStack(A2Damage);
-                }
-
-
+            if (enemies.Length > 0) {
+                // For each enemy within A2Range, add X stacks
+                foreach (GameObject enemy in enemies) {
+                    if (Vector3.Distance(enemy.transform.position, transform.position) < A2Range)
+                    {
+                        if (!enemy.GetComponent<SorcererTag>())
+                            enemy.AddComponent<SorcererTag>();
+                            enemy.GetComponent<SorcererTag>().VFXStacks = VFXStacks;
+                            enemy.GetComponent<SorcererTag>().VFXExplosion = VFXExplosion;
+                        enemy.GetComponent<SorcererTag>().addStack(A2Damage);
+                    }
+                }  
+            }
+            
             // Add X stacks to the boss if within A2Range
-            if (Vector3.Distance(boss.transform.position, transform.position) < A2Range)
+            if (boss != null && Vector3.Distance(boss.transform.position, transform.position) < A2Range)
             {
                 if (!boss.GetComponent<SorcererTag>())
                     boss.AddComponent<SorcererTag>();
+                    boss.GetComponent<SorcererTag>().VFXStacks = VFXStacks;
+                    boss.GetComponent<SorcererTag>().VFXExplosion = VFXExplosion;
                 boss.GetComponent<SorcererTag>().addStack(A2Damage);
             }
 
