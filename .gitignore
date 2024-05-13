@@ -85,6 +85,7 @@ LightGame/[Aa]ssets/[Ss]treamingAssets/aa/*
 /[Aa]ssets/StreamingAssets/**/*.bank
 /[Aa]ssets/StreamingAssets/**/*.bank.meta
 **/FMODStudioCache.asset
+LightGame/Assets/Settings/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
 
 # If the source bank files are kept outside of the StreamingAssets folder then these can be ignored.
 # Log files can be ignored.
