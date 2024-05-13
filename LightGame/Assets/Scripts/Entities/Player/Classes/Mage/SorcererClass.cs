@@ -62,22 +62,24 @@ public class SorcererClass : MageClass
                 foreach (GameObject enemy in enemies) {
                     if (Vector3.Distance(enemy.transform.position, transform.position) < A2Range)
                     {
-                        if (!enemy.GetComponent<SorcererTag>())
+                        if (!enemy.GetComponent<SorcererTag>()) {
                             enemy.AddComponent<SorcererTag>();
                             enemy.GetComponent<SorcererTag>().VFXStacks = VFXStacks;
                             enemy.GetComponent<SorcererTag>().VFXExplosion = VFXExplosion;
+                        }
                         enemy.GetComponent<SorcererTag>().addStack(A2Damage);
                     }
                 }  
             }
-            
+
             // Add X stacks to the boss if within A2Range
             if (boss != null && Vector3.Distance(boss.transform.position, transform.position) < A2Range)
             {
-                if (!boss.GetComponent<SorcererTag>())
+                if (!boss.GetComponent<SorcererTag>()) {
                     boss.AddComponent<SorcererTag>();
                     boss.GetComponent<SorcererTag>().VFXStacks = VFXStacks;
                     boss.GetComponent<SorcererTag>().VFXExplosion = VFXExplosion;
+                }
                 boss.GetComponent<SorcererTag>().addStack(A2Damage);
             }
 
