@@ -387,7 +387,7 @@ MonoBehaviour:
   A1ChargeRate: 0
   A2Prefab: {fileID: 3606385658551136691, guid: 91a72390f34447e4a8c7cb8faac1b885, type: 3}
   A2Damage: 30
-  A2ReloadTime: 2
+  A2ReloadTime: 0
   A2ChargeRate: 0
   collectedLight: 0
   lastAttackTime: 0
