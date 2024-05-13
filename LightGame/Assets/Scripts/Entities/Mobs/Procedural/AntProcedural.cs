@@ -11,40 +11,57 @@ public class AntProcedural : MonoBehaviour
     [SerializeField] private Transform rightMidLegTarget;
     [SerializeField] private Transform leftMidLegTarget;
 
-    public float footDistanceToBody = 1.5f;
     public float stepDistance = 2f;
-    public float startOffset = 0.5f;
+    
+    public float raycastRange = 4f;
+    public float rayCastHeight = 2f;
+
+    public float rayOffset = 0.5f;
+
+    public float startPosVariation = 0.5f;
 
     public int walkDemoSpeed = 0;
 
-    private float raycastRange = 3f;
-
-    private Vector3[] newLegPositions = new Vector3[6];
     private Vector3[] currentLegPositions = new Vector3[6];
-    private Vector3[] legStartPositions = new Vector3[6];
+    private Vector3[] rayCasterPositions = new Vector3[6];
+    private Vector3[] startLegPositions = new Vector3[6];
+    private bool[] isLegMoving = new bool[6];
 
     private void Start()
     {
-        newLegPositions[0] = leftBackLegTarget.position;
-        newLegPositions[1] = rightBackLegTarget.position;
-        newLegPositions[2] = leftFrontLegTarget.position;
-        newLegPositions[3] = rightFrontLegTarget.position;
-        newLegPositions[4] = rightMidLegTarget.position;
-        newLegPositions[5] = leftMidLegTarget.position;
+        for(int i = 0; i < 6; i++)
+            isLegMoving[i] = false;
 
-        currentLegPositions[0] = leftBackLegTarget.position;
-        currentLegPositions[1] = rightBackLegTarget.position;
-        currentLegPositions[2] = leftFrontLegTarget.position;
-        currentLegPositions[3] = rightFrontLegTarget.position;
-        currentLegPositions[4] = rightMidLegTarget.position;
-        currentLegPositions[5] = leftMidLegTarget.position;
+        startLegPositions = new Vector3[]
+        {
+            leftBackLegTarget.localPosition,
+            rightBackLegTarget.localPosition,
+            leftFrontLegTarget.localPosition,
+            rightFrontLegTarget.localPosition,
+            rightMidLegTarget.localPosition,
+            leftMidLegTarget.localPosition
+        };
 
-        legStartPositions[0] = leftBackLegTarget.position - (startOffset + 0.7f) * Vector3.forward;
-        legStartPositions[1] = rightBackLegTarget.position - (startOffset + 0.5f) * Vector3.forward;
-        legStartPositions[2] = leftFrontLegTarget.position - (startOffset - 1f) * Vector3.forward;
-        legStartPositions[3] = rightFrontLegTarget.position - (startOffset + 0.8f) * Vector3.forward;
-        legStartPositions[4] = rightMidLegTarget.position - (startOffset - 0.3f) * Vector3.forward;
-        legStartPositions[5] = leftMidLegTarget.position - (startOffset + 0.4f) * Vector3.forward;
+        for(int i = 0; i < 6; i++) 
+            rayCasterPositions[i] = startLegPositions[i] + rayOffset * Vector3.forward + rayCastHeight * Vector3.up; 
+
+        // give some initial offset to the legs random
+        leftBackLegTarget.position += Random.Range(-startPosVariation, startPosVariation) * Vector3.forward;
+        rightBackLegTarget.position += Random.Range(-startPosVariation, startPosVariation) * Vector3.forward;
+        leftFrontLegTarget.position += Random.Range(-startPosVariation, startPosVariation) * Vector3.forward;
+        rightFrontLegTarget.position += Random.Range(-startPosVariation, startPosVariation) * Vector3.forward;
+        rightMidLegTarget.position += Random.Range(-startPosVariation, startPosVariation) * Vector3.forward;
+        leftMidLegTarget.position += Random.Range(-startPosVariation, startPosVariation) * Vector3.forward;
+
+        currentLegPositions = new Vector3[]
+        {
+            leftBackLegTarget.position,
+            rightBackLegTarget.position,
+            leftFrontLegTarget.position,
+            rightFrontLegTarget.position,
+            rightMidLegTarget.position,
+            leftMidLegTarget.position
+        };
     }
 
     void Update()
@@ -63,17 +80,32 @@ public class AntProcedural : MonoBehaviour
 
     void CheckLeg(Transform leg, int index)
     {
-        leg.position = currentLegPositions[index];
-        Vector3 origin = legStartPositions[index] + transform.position;
+        Vector3 origin = rayCasterPositions[index] + transform.position;
         Ray ray = new Ray(origin, Vector3.down);
 
-        // Debug.DrawRay(ray.origin, ray.direction * raycastRange, Color.blue, 0.5f);
+        Debug.DrawRay(ray.origin, ray.direction * raycastRange, Color.blue, 0.02f);
 
-        if (Physics.Raycast(ray, out RaycastHit hit, raycastRange))
-            if (Vector3.Distance(hit.point, currentLegPositions[index]) > stepDistance)
-                newLegPositions[index] = hit.point;
-   
-        currentLegPositions[index] = Vector3.Lerp(currentLegPositions[index], newLegPositions[index], 0.1f);
+        if (Physics.Raycast(ray, out RaycastHit hit, raycastRange)){
+            if (Vector3.Distance(hit.point, currentLegPositions[index]) > stepDistance && !CheckIfAnyLegMoving()){
+                currentLegPositions[index] = hit.point;
+                isLegMoving[index] = true;
+            }
+        } else currentLegPositions[index] = startLegPositions[index] + transform.position; 
+            
+        StartCoroutine(MoveLegCoroutine(leg, index));
+    }
+
+    IEnumerator MoveLegCoroutine(Transform leg, int index)
+    {
+        leg.position = Vector3.Lerp(leg.position, currentLegPositions[index], Time.deltaTime * 10f * walkDemoSpeed);
+        if(Vector3.Distance(leg.position, currentLegPositions[index]) < 0.1f) isLegMoving[index] = false;
+        yield return null;
+    }
+
+    bool CheckIfAnyLegMoving(){
+        for(int i = 0; i < 6; i++)
+            if(isLegMoving[i]) return true;
+        return false;
     }
 
 
@@ -88,14 +120,14 @@ public class AntProcedural : MonoBehaviour
         Gizmos.DrawWireSphere(leftMidLegTarget.position, 0.2f);
 
         Gizmos.color = Color.red;
-        if(legStartPositions.Length > 0)
+        if(rayCasterPositions.Length > 0)
         {
-            Gizmos.DrawWireSphere(legStartPositions[0] + transform.position, 0.2f);
-            Gizmos.DrawWireSphere(legStartPositions[1] + transform.position, 0.2f);
-            Gizmos.DrawWireSphere(legStartPositions[2] + transform.position, 0.2f);
-            Gizmos.DrawWireSphere(legStartPositions[3] + transform.position, 0.2f);
-            Gizmos.DrawWireSphere(legStartPositions[4] + transform.position, 0.2f);
-            Gizmos.DrawWireSphere(legStartPositions[5] + transform.position, 0.2f);
+            Gizmos.DrawWireSphere(rayCasterPositions[0] + transform.position, 0.2f);
+            Gizmos.DrawWireSphere(rayCasterPositions[1] + transform.position, 0.2f);
+            Gizmos.DrawWireSphere(rayCasterPositions[2] + transform.position, 0.2f);
+            Gizmos.DrawWireSphere(rayCasterPositions[3] + transform.position, 0.2f);
+            Gizmos.DrawWireSphere(rayCasterPositions[4] + transform.position, 0.2f);
+            Gizmos.DrawWireSphere(rayCasterPositions[5] + transform.position, 0.2f);
         }
     }
 }
