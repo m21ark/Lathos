@@ -12,7 +12,7 @@ public class AntProcedural : MonoBehaviour
     public float rayOffset = 0.5f;
     public float bodyHeight = 1.0f;
     public float startPosVariation = 0.5f;
-    public int walkDemoSpeed = 0;
+    public float walkDemoSpeed = 0;
 
     private Vector3[] currentLegPositions;
     private Vector3[] rayCasterPositions;
@@ -65,9 +65,6 @@ public class AntProcedural : MonoBehaviour
 
         if(walkDemoSpeed > 0)
             transform.position += transform.forward * Time.deltaTime * walkDemoSpeed;
-
-        // draw a ray for the transform.forward
-        Debug.DrawRay(transform.position, transform.forward * 2, Color.red, 0.1f);
     }
 
     private void InclineBody()
@@ -88,14 +85,14 @@ public class AntProcedural : MonoBehaviour
             Quaternion targetRotation = Quaternion.FromToRotation(transform.up, groundNormal) * transform.rotation;
             
             // Smoothly interpolate the ant's current rotation to the target rotation
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 1f);
         }
     }
 
     private void CheckLeg(Transform leg, int index)
     {
         Vector3 origin = rayCasterPositions[index] + transform.position;
-        Ray ray = new Ray(origin, Vector3.down);
+        Ray ray = new Ray(origin, -transform.up);
 
         Debug.DrawRay(ray.origin, ray.direction * raycastRange, Color.blue, 0.02f);
 
@@ -111,7 +108,7 @@ public class AntProcedural : MonoBehaviour
 
     private IEnumerator MoveLegCoroutine(Transform leg, int index)
     {
-        leg.position = Vector3.Lerp(leg.position, currentLegPositions[index], Time.deltaTime * 10f * (walkDemoSpeed > 0 ? walkDemoSpeed : 1));
+        leg.position = Vector3.Lerp(leg.position, currentLegPositions[index], Time.deltaTime * 25f * (walkDemoSpeed > 0 ? walkDemoSpeed : 1));
         if(Vector3.Distance(leg.position, currentLegPositions[index]) < 0.1f) isLegMoving[index] = false;
         yield return null;
     }
