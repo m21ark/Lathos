@@ -29,24 +29,30 @@ public class AntProcedural : MonoBehaviour
         startLegPositions = new Vector3[numLegs];
         isLegMoving = new bool[numLegs];
 
-        for(int i = 0; i < numLegs; i++)
+        for (int i = 0; i < numLegs; i++)
             isLegMoving[i] = false;
 
-        for(int i = 0; i< numLegs; i++)
+        for (int i = 0; i < numLegs; i++)
             startLegPositions[i] = legTargetTransforms[i].localPosition;
 
-        for(int i = 0; i < numLegs; i++) 
-            rayCasterPositions[i] = startLegPositions[i] + rayOffset * transform.forward + rayCastHeight * transform.up; 
-
+        SetRayCastPositions();
+            
         // give some initial offset to the legs random
-        for(int i = 0; i < numLegs; i++)
+        for (int i = 0; i < numLegs; i++)
             legTargetTransforms[i].position += Random.Range(-startPosVariation, startPosVariation) * transform.forward;
 
-        for(int i = 0; i < numLegs; i++) 
+        for (int i = 0; i < numLegs; i++)
             currentLegPositions[i] = legTargetTransforms[i].position;
     }
 
-    void Update()
+    private void SetRayCastPositions(){
+        for (int i = 0; i < numLegs; i++){
+            Vector3 relativeTransformPosition = transform.TransformPoint(startLegPositions[i]) - transform.position;
+            rayCasterPositions[i] = relativeTransformPosition + rayOffset * transform.forward + rayCastHeight * transform.up;
+        }
+    }
+
+    private void Update()
     {
         // Check all legs
         for(int i = 0; i < 6; i++)
@@ -55,11 +61,16 @@ public class AntProcedural : MonoBehaviour
         // Rotate the body to align with the ground
         InclineBody();
 
+        SetRayCastPositions(); // this is needed to update the raycast positions upon rotation of the ant
+
         if(walkDemoSpeed > 0)
             transform.position += transform.forward * Time.deltaTime * walkDemoSpeed;
+
+        // draw a ray for the transform.forward
+        Debug.DrawRay(transform.position, transform.forward * 2, Color.red, 0.1f);
     }
 
-    void InclineBody()
+    private void InclineBody()
     {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, -transform.up, out hit, raycastRange))
@@ -81,7 +92,7 @@ public class AntProcedural : MonoBehaviour
         }
     }
 
-    void CheckLeg(Transform leg, int index)
+    private void CheckLeg(Transform leg, int index)
     {
         Vector3 origin = rayCasterPositions[index] + transform.position;
         Ray ray = new Ray(origin, Vector3.down);
@@ -98,14 +109,14 @@ public class AntProcedural : MonoBehaviour
         StartCoroutine(MoveLegCoroutine(leg, index));
     }
 
-    IEnumerator MoveLegCoroutine(Transform leg, int index)
+    private IEnumerator MoveLegCoroutine(Transform leg, int index)
     {
         leg.position = Vector3.Lerp(leg.position, currentLegPositions[index], Time.deltaTime * 10f * (walkDemoSpeed > 0 ? walkDemoSpeed : 1));
         if(Vector3.Distance(leg.position, currentLegPositions[index]) < 0.1f) isLegMoving[index] = false;
         yield return null;
     }
 
-    bool CheckIfAnyLegMoving(){
+    private bool CheckIfAnyLegMoving(){
         for(int i = 0; i < 6; i++)
             if(isLegMoving[i]) return true;
         return false;
