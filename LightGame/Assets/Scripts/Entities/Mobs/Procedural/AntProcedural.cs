@@ -4,98 +4,117 @@ using UnityEngine;
 
 public class AntProcedural : MonoBehaviour
 {
-    [SerializeField] private Transform leftBackLegTarget;
-    [SerializeField] private Transform rightBackLegTarget;
-    [SerializeField] private Transform leftFrontLegTarget;
-    [SerializeField] private Transform rightFrontLegTarget;
-    [SerializeField] private Transform rightMidLegTarget;
-    [SerializeField] private Transform leftMidLegTarget;
+    [SerializeField] private Transform[] legTargetTransforms;
 
-    public float footDistanceToBody = 1.5f;
     public float stepDistance = 2f;
-    public float startOffset = 0.5f;
-
+    public float raycastRange = 4f;
+    public float rayCastHeight = 2f;
+    public float rayOffset = 0.5f;
+    public float bodyHeight = 1.0f;
+    public float startPosVariation = 0.5f;
     public int walkDemoSpeed = 0;
 
-    private float raycastRange = 3f;
-
-    private Vector3[] newLegPositions = new Vector3[6];
-    private Vector3[] currentLegPositions = new Vector3[6];
-    private Vector3[] legStartPositions = new Vector3[6];
+    private Vector3[] currentLegPositions;
+    private Vector3[] rayCasterPositions;
+    private Vector3[] startLegPositions;
+    private bool[] isLegMoving;
+    private int numLegs;
 
     private void Start()
     {
-        newLegPositions[0] = leftBackLegTarget.position;
-        newLegPositions[1] = rightBackLegTarget.position;
-        newLegPositions[2] = leftFrontLegTarget.position;
-        newLegPositions[3] = rightFrontLegTarget.position;
-        newLegPositions[4] = rightMidLegTarget.position;
-        newLegPositions[5] = leftMidLegTarget.position;
+        numLegs = legTargetTransforms.Length;
 
-        currentLegPositions[0] = leftBackLegTarget.position;
-        currentLegPositions[1] = rightBackLegTarget.position;
-        currentLegPositions[2] = leftFrontLegTarget.position;
-        currentLegPositions[3] = rightFrontLegTarget.position;
-        currentLegPositions[4] = rightMidLegTarget.position;
-        currentLegPositions[5] = leftMidLegTarget.position;
+        currentLegPositions = new Vector3[numLegs];
+        rayCasterPositions = new Vector3[numLegs];
+        startLegPositions = new Vector3[numLegs];
+        isLegMoving = new bool[numLegs];
 
-        legStartPositions[0] = leftBackLegTarget.position - (startOffset + 0.7f) * Vector3.forward;
-        legStartPositions[1] = rightBackLegTarget.position - (startOffset + 0.5f) * Vector3.forward;
-        legStartPositions[2] = leftFrontLegTarget.position - (startOffset - 1f) * Vector3.forward;
-        legStartPositions[3] = rightFrontLegTarget.position - (startOffset + 0.8f) * Vector3.forward;
-        legStartPositions[4] = rightMidLegTarget.position - (startOffset - 0.3f) * Vector3.forward;
-        legStartPositions[5] = leftMidLegTarget.position - (startOffset + 0.4f) * Vector3.forward;
+        for(int i = 0; i < numLegs; i++)
+            isLegMoving[i] = false;
+
+        for(int i = 0; i< numLegs; i++)
+            startLegPositions[i] = legTargetTransforms[i].localPosition;
+
+        for(int i = 0; i < numLegs; i++) 
+            rayCasterPositions[i] = startLegPositions[i] + rayOffset * transform.forward + rayCastHeight * transform.up; 
+
+        // give some initial offset to the legs random
+        for(int i = 0; i < numLegs; i++)
+            legTargetTransforms[i].position += Random.Range(-startPosVariation, startPosVariation) * transform.forward;
+
+        for(int i = 0; i < numLegs; i++) 
+            currentLegPositions[i] = legTargetTransforms[i].position;
     }
 
     void Update()
     {
-        CheckLeg(leftBackLegTarget, 0);
-        CheckLeg(rightMidLegTarget, 4);
-        CheckLeg(leftFrontLegTarget, 2);
+        // Check all legs
+        for(int i = 0; i < 6; i++)
+            CheckLeg(legTargetTransforms[i], i);
 
-        CheckLeg(rightBackLegTarget, 1);
-        CheckLeg(rightFrontLegTarget, 3);
-        CheckLeg(leftMidLegTarget, 5);
+        // Rotate the body to align with the ground
+        InclineBody();
 
         if(walkDemoSpeed > 0)
-            transform.position -= transform.forward * Time.deltaTime * walkDemoSpeed;
+            transform.position += transform.forward * Time.deltaTime * walkDemoSpeed;
+    }
+
+    void InclineBody()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, -transform.up, out hit, raycastRange))
+        {
+            Vector3 groundNormal = hit.normal;
+            float distanceToGround = hit.distance;
+
+            // Calculate the target position where the ant should be
+            Vector3 targetPosition = transform.position + transform.up * (bodyHeight - distanceToGround);
+
+            // Move the ant to the target position
+            transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * 5f);
+
+            // Calculate the rotation needed for the ant to align with the ground
+            Quaternion targetRotation = Quaternion.FromToRotation(transform.up, groundNormal) * transform.rotation;
+            
+            // Smoothly interpolate the ant's current rotation to the target rotation
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
+        }
     }
 
     void CheckLeg(Transform leg, int index)
     {
-        leg.position = currentLegPositions[index];
-        Vector3 origin = legStartPositions[index] + transform.position;
+        Vector3 origin = rayCasterPositions[index] + transform.position;
         Ray ray = new Ray(origin, Vector3.down);
 
-        // Debug.DrawRay(ray.origin, ray.direction * raycastRange, Color.blue, 0.5f);
+        Debug.DrawRay(ray.origin, ray.direction * raycastRange, Color.blue, 0.02f);
 
-        if (Physics.Raycast(ray, out RaycastHit hit, raycastRange))
-            if (Vector3.Distance(hit.point, currentLegPositions[index]) > stepDistance)
-                newLegPositions[index] = hit.point;
-   
-        currentLegPositions[index] = Vector3.Lerp(currentLegPositions[index], newLegPositions[index], 0.1f);
+        if (Physics.Raycast(ray, out RaycastHit hit, raycastRange)){
+            if (Vector3.Distance(hit.point, currentLegPositions[index]) > stepDistance && !CheckIfAnyLegMoving()){
+                currentLegPositions[index] = hit.point;
+                isLegMoving[index] = true;
+            }
+        } else currentLegPositions[index] = startLegPositions[index] + transform.position; 
+            
+        StartCoroutine(MoveLegCoroutine(leg, index));
     }
 
+    IEnumerator MoveLegCoroutine(Transform leg, int index)
+    {
+        leg.position = Vector3.Lerp(leg.position, currentLegPositions[index], Time.deltaTime * 10f * (walkDemoSpeed > 0 ? walkDemoSpeed : 1));
+        if(Vector3.Distance(leg.position, currentLegPositions[index]) < 0.1f) isLegMoving[index] = false;
+        yield return null;
+    }
+
+    bool CheckIfAnyLegMoving(){
+        for(int i = 0; i < 6; i++)
+            if(isLegMoving[i]) return true;
+        return false;
+    }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(leftBackLegTarget.position, 0.2f);
-        Gizmos.DrawWireSphere(rightBackLegTarget.position, 0.2f);
-        Gizmos.DrawWireSphere(leftFrontLegTarget.position, 0.2f);
-        Gizmos.DrawWireSphere(rightFrontLegTarget.position, 0.2f);
-        Gizmos.DrawWireSphere(rightMidLegTarget.position, 0.2f);
-        Gizmos.DrawWireSphere(leftMidLegTarget.position, 0.2f);
-
-        Gizmos.color = Color.red;
-        if(legStartPositions.Length > 0)
-        {
-            Gizmos.DrawWireSphere(legStartPositions[0] + transform.position, 0.2f);
-            Gizmos.DrawWireSphere(legStartPositions[1] + transform.position, 0.2f);
-            Gizmos.DrawWireSphere(legStartPositions[2] + transform.position, 0.2f);
-            Gizmos.DrawWireSphere(legStartPositions[3] + transform.position, 0.2f);
-            Gizmos.DrawWireSphere(legStartPositions[4] + transform.position, 0.2f);
-            Gizmos.DrawWireSphere(legStartPositions[5] + transform.position, 0.2f);
-        }
+        for(int i = 0; i < numLegs; i++)
+            Gizmos.DrawWireSphere(legTargetTransforms[i].position, 0.2f);
     }
 }
