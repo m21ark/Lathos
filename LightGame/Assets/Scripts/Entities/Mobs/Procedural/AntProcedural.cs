@@ -43,15 +43,15 @@ public class AntProcedural : MonoBehaviour
         };
 
         for(int i = 0; i < 6; i++) 
-            rayCasterPositions[i] = startLegPositions[i] + rayOffset * Vector3.forward + rayCastHeight * Vector3.up; 
+            rayCasterPositions[i] = startLegPositions[i] + rayOffset * (-transform.forward) + rayCastHeight * transform.up; 
 
         // give some initial offset to the legs random
-        leftBackLegTarget.position += Random.Range(-startPosVariation, startPosVariation) * Vector3.forward;
-        rightBackLegTarget.position += Random.Range(-startPosVariation, startPosVariation) * Vector3.forward;
-        leftFrontLegTarget.position += Random.Range(-startPosVariation, startPosVariation) * Vector3.forward;
-        rightFrontLegTarget.position += Random.Range(-startPosVariation, startPosVariation) * Vector3.forward;
-        rightMidLegTarget.position += Random.Range(-startPosVariation, startPosVariation) * Vector3.forward;
-        leftMidLegTarget.position += Random.Range(-startPosVariation, startPosVariation) * Vector3.forward;
+        leftBackLegTarget.position += Random.Range(-startPosVariation, startPosVariation) * (-transform.forward);
+        rightBackLegTarget.position += Random.Range(-startPosVariation, startPosVariation) * (-transform.forward);
+        leftFrontLegTarget.position += Random.Range(-startPosVariation, startPosVariation) * (-transform.forward);
+        rightFrontLegTarget.position += Random.Range(-startPosVariation, startPosVariation) * (-transform.forward);
+        rightMidLegTarget.position += Random.Range(-startPosVariation, startPosVariation) * (-transform.forward);
+        leftMidLegTarget.position += Random.Range(-startPosVariation, startPosVariation) * (-transform.forward);
 
         currentLegPositions = new Vector3[]
         {
@@ -66,6 +66,27 @@ public class AntProcedural : MonoBehaviour
 
     void Update()
     {
+        CheckLegs();
+        InclineBody();
+
+        if(walkDemoSpeed > 0)
+            transform.position -= transform.forward * Time.deltaTime * walkDemoSpeed;
+    }
+
+    void InclineBody()
+    {
+        RaycastHit hit;
+        // draw raycast
+        Debug.DrawRay(transform.position + transform.up * rayCastHeight, -transform.up * raycastRange, Color.red, 0.02f);
+        if (Physics.Raycast(transform.position + transform.up * rayCastHeight, -transform.up, out hit, raycastRange))
+        {
+            Vector3 groundNormal = hit.normal;
+            Quaternion targetRotation = Quaternion.FromToRotation(transform.up, groundNormal) * transform.rotation;
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
+        }
+    }
+
+    void CheckLegs(){
         CheckLeg(leftBackLegTarget, 0);
         CheckLeg(rightMidLegTarget, 4);
         CheckLeg(leftFrontLegTarget, 2);
@@ -73,9 +94,6 @@ public class AntProcedural : MonoBehaviour
         CheckLeg(rightBackLegTarget, 1);
         CheckLeg(rightFrontLegTarget, 3);
         CheckLeg(leftMidLegTarget, 5);
-
-        if(walkDemoSpeed > 0)
-            transform.position -= transform.forward * Time.deltaTime * walkDemoSpeed;
     }
 
     void CheckLeg(Transform leg, int index)
@@ -97,7 +115,7 @@ public class AntProcedural : MonoBehaviour
 
     IEnumerator MoveLegCoroutine(Transform leg, int index)
     {
-        leg.position = Vector3.Lerp(leg.position, currentLegPositions[index], Time.deltaTime * 10f * walkDemoSpeed);
+        leg.position = Vector3.Lerp(leg.position, currentLegPositions[index], Time.deltaTime * 10f * (walkDemoSpeed > 0 ? walkDemoSpeed : 1));
         if(Vector3.Distance(leg.position, currentLegPositions[index]) < 0.1f) isLegMoving[index] = false;
         yield return null;
     }
