@@ -23,7 +23,7 @@ public class WizardA2_1 : ProtoAttack
         if (ignorePlayerCol && (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Lamp")))
             return;
 
-        if (!collision.gameObject.CompareTag("Floor") || !collision.gameObject.CompareTag("Boss") || !collision.gameObject.CompareTag("Mob"))
+        if (!collision.gameObject.CompareTag("Floor") && !collision.gameObject.CompareTag("Boss") && !collision.gameObject.CompareTag("Mob"))
         {
             return;
         }
