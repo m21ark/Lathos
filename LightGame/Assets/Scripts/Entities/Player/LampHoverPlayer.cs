@@ -40,7 +40,8 @@ public class LampHoverPlayer : MonoBehaviour
     void UpdateLightSource()
     {
         Light light = lightSource.GetComponent<Light>();
-        light.intensity = playerLight;
+        light.intensity = playerLight * 0.04f;
+        // light.range = playerLight;
     }
 
     void MoveTowardsTarget()
