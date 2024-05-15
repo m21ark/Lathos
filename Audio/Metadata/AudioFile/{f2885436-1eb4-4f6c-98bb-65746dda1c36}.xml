@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{f2885436-1eb4-4f6c-98bb-65746dda1c36}">
+		<property name="assetPath">
+			<value>running away_hearbeat.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>8.5</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{871b3a03-cb7a-4788-a04a-65a723855324}</destination>
+		</relationship>
+	</object>
+</objects>

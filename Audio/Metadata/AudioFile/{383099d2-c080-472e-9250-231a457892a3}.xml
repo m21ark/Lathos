@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{383099d2-c080-472e-9250-231a457892a3}">
+		<property name="assetPath">
+			<value>walking through bushes.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.4015873015873015</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{871b3a03-cb7a-4788-a04a-65a723855324}</destination>
+		</relationship>
+	</object>
+</objects>
