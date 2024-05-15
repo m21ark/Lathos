@@ -15,7 +15,128 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638514001224556019
+  lastModified: 638514084842941565
+  FileSizes:
+  - Name: Desktop
+    Value: 1388
+  Exists: 1
+--- !u!114 &-6168625917356190380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX abilities/Wizard ability
+  m_EditorClassIdentifier: 
+  Path: event:/SFX abilities/Wizard ability
+  Guid:
+    Data1: 1777179059
+    Data2: 1179459782
+    Data3: 196928694
+    Data4: -1868967731
+  Banks:
+  - {fileID: -2587570861499691353}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6167549015657919686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Ambience stable
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Ambience stable
+  Guid:
+    Data1: 31862224
+    Data2: 1170150344
+    Data3: -1605489747
+    Data4: 1710030324
+  Banks:
+  - {fileID: 3419332620765416718}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-5131723413223201352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Abilities.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio/Build/Desktop/Abilities.bank
+  Name: Abilities
+  StudioPath: bank:/Abilities
+  lastModified: 638514084842866451
+  FileSizes:
+  - Name: Desktop
+    Value: 364672
+  Exists: 1
+--- !u!114 &-4369592218774171058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Main character movement/Action events
+  m_EditorClassIdentifier: 
+  Path: event:/Main character movement/Action events
+  Guid:
+    Data1: 1197957088
+    Data2: 1149885137
+    Data3: -1132888164
+    Data4: -1992153272
+  Banks:
+  - {fileID: 1410741829041854718}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4226137929381867347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638514084842941565
   FileSizes:
   - Name: Desktop
     Value: 1388
@@ -47,6 +168,53 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-3182976882673636305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX abilities/Sharpshooter
+  m_EditorClassIdentifier: 
+  Path: event:/SFX abilities/Sharpshooter
+  Guid:
+    Data1: -2095309614
+    Data2: 1268863760
+    Data3: 211133598
+    Data4: -798860428
+  Banks:
+  - {fileID: -2587570861499691353}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2587570861499691353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Abilities.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio/Build/Desktop/Abilities.bank
+  Name: Abilities
+  StudioPath: bank:/Abilities
+  lastModified: 638514084842866451
+  FileSizes:
+  - Name: Desktop
+    Value: 364672
+  Exists: 1
 --- !u!114 &-2305876707376458427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,6 +235,87 @@ MonoBehaviour:
     Data4: -798860428
   Banks:
   - {fileID: 294170834671118855}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2248283412353513648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX abilities/Sorcerer ability
+  m_EditorClassIdentifier: 
+  Path: event:/SFX abilities/Sorcerer ability
+  Guid:
+    Data1: 368178690
+    Data2: 1093117865
+    Data3: 152284850
+    Data4: 1010730972
+  Banks:
+  - {fileID: -5131723413223201352}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2152649109298519009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sword variations/Sword sounds random
+  m_EditorClassIdentifier: 
+  Path: event:/Sword variations/Sword sounds random
+  Guid:
+    Data1: 1024282196
+    Data2: 1227611184
+    Data3: -566128000
+    Data4: 1998924180
+  Banks:
+  - {fileID: 3702533273841866055}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1487941778553780727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX abilities/Sharpshooter
+  m_EditorClassIdentifier: 
+  Path: event:/SFX abilities/Sharpshooter
+  Guid:
+    Data1: -2095309614
+    Data2: 1268863760
+    Data3: 211133598
+    Data4: -798860428
+  Banks:
+  - {fileID: -5131723413223201352}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -127,28 +376,48 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -6350795798555074766}
-  - {fileID: 4324759733273901564}
-  - {fileID: 294170834671118855}
-  - {fileID: -773135254051920106}
-  - {fileID: 8233839462240851577}
-  - {fileID: -733140203288766676}
+  - {fileID: -4226137929381867347}
+  - {fileID: -5131723413223201352}
+  - {fileID: 2844171154485210760}
+  - {fileID: 9087095521652176878}
+  - {fileID: 5652942996200681}
+  - {fileID: 3702533273841866055}
   EditorEvents:
-  - {fileID: 1517395465052882745}
-  - {fileID: 7018501698123773997}
-  - {fileID: 3179160927412233545}
-  - {fileID: -2305876707376458427}
-  - {fileID: 7003227338457382320}
-  - {fileID: -3337142912049874255}
-  - {fileID: 8419775395020738904}
-  - {fileID: 7267981442410414473}
+  - {fileID: -2248283412353513648}
+  - {fileID: 2653353714577825206}
+  - {fileID: 3074719835582523467}
+  - {fileID: -1487941778553780727}
+  - {fileID: 2653106234083983284}
+  - {fileID: 9196810136755855875}
+  - {fileID: 1362430357555829969}
+  - {fileID: -2152649109298519009}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 4324759733273901564}
+  - {fileID: 5652942996200681}
   StringsBanks:
-  - {fileID: -6350795798555074766}
-  cacheTime: 638514001224566198
+  - {fileID: -4226137929381867347}
+  cacheTime: 638514084842961563
   cacheVersion: 131617
+--- !u!114 &5652942996200681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638514084842941565
+  FileSizes:
+  - Name: Desktop
+    Value: 1036
+  Exists: 1
 --- !u!114 &294170834671118855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +437,53 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 364672
+  Exists: 1
+--- !u!114 &1362430357555829969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Main character movement/Action events
+  m_EditorClassIdentifier: 
+  Path: event:/Main character movement/Action events
+  Guid:
+    Data1: 1197957088
+    Data2: 1149885137
+    Data3: -1132888164
+    Data4: -1992153272
+  Banks:
+  - {fileID: 9087095521652176878}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1410741829041854718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Characer movements.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio/Build/Desktop/Characer movements.bank
+  Name: Characer movements
+  StudioPath: bank:/Characer movements
+  lastModified: 638514084842931570
+  FileSizes:
+  - Name: Desktop
+    Value: 277856
   Exists: 1
 --- !u!114 &1517395465052882745
 MonoBehaviour:
@@ -190,6 +506,134 @@ MonoBehaviour:
   Banks:
   - {fileID: 294170834671118855}
   IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2653106234083983284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Ambience stable
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Ambience stable
+  Guid:
+    Data1: 31862224
+    Data2: 1170150344
+    Data3: -1605489747
+    Data4: 1710030324
+  Banks:
+  - {fileID: 2844171154485210760}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2653353714577825206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX abilities/MajicProjectiles
+  m_EditorClassIdentifier: 
+  Path: event:/SFX abilities/MajicProjectiles
+  Guid:
+    Data1: -406302136
+    Data2: 1249865289
+    Data3: -1927178590
+    Data4: -1108409678
+  Banks:
+  - {fileID: -5131723413223201352}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2784754355652821987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX abilities/Sorcerer ability
+  m_EditorClassIdentifier: 
+  Path: event:/SFX abilities/Sorcerer ability
+  Guid:
+    Data1: 368178690
+    Data2: 1093117865
+    Data3: 152284850
+    Data4: 1010730972
+  Banks:
+  - {fileID: -2587570861499691353}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2844171154485210760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Ambience.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio/Build/Desktop/Ambience.bank
+  Name: Ambience
+  StudioPath: bank:/Ambience
+  lastModified: 638514084842911531
+  FileSizes:
+  - Name: Desktop
+    Value: 958368
+  Exists: 1
+--- !u!114 &3074719835582523467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX abilities/Wizard ability
+  m_EditorClassIdentifier: 
+  Path: event:/SFX abilities/Wizard ability
+  Guid:
+    Data1: 1777179059
+    Data2: 1179459782
+    Data3: 196928694
+    Data4: -1868967731
+  Banks:
+  - {fileID: -5131723413223201352}
+  IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters: []
@@ -223,6 +667,73 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &3419332620765416718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Ambience.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio/Build/Desktop/Ambience.bank
+  Name: Ambience
+  StudioPath: bank:/Ambience
+  lastModified: 638514084842911531
+  FileSizes:
+  - Name: Desktop
+    Value: 958368
+  Exists: 1
+--- !u!114 &3622537381354613986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sword variations/Sword sounds random
+  m_EditorClassIdentifier: 
+  Path: event:/Sword variations/Sword sounds random
+  Guid:
+    Data1: 1024282196
+    Data2: 1227611184
+    Data3: -566128000
+    Data4: 1998924180
+  Banks:
+  - {fileID: 9134210516154420011}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3702533273841866055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Sword.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio/Build/Desktop/Sword.bank
+  Name: Sword
+  StudioPath: bank:/Sword
+  lastModified: 638514084842961563
+  FileSizes:
+  - Name: Desktop
+    Value: 179328
+  Exists: 1
 --- !u!114 &4324759733273901564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +749,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638514001224556019
+  lastModified: 638514084842941565
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -365,6 +876,127 @@ MonoBehaviour:
   Banks:
   - {fileID: 8233839462240851577}
   IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8426485825528198236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Ambience dramatic
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Ambience dramatic
+  Guid:
+    Data1: 873538271
+    Data2: 1312890282
+    Data3: -1252951119
+    Data4: -65117466
+  Banks:
+  - {fileID: 3419332620765416718}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8592647172432751164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX abilities/MajicProjectiles
+  m_EditorClassIdentifier: 
+  Path: event:/SFX abilities/MajicProjectiles
+  Guid:
+    Data1: -406302136
+    Data2: 1249865289
+    Data3: -1927178590
+    Data4: -1108409678
+  Banks:
+  - {fileID: -2587570861499691353}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &9087095521652176878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Characer movements.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio/Build/Desktop/Characer movements.bank
+  Name: Characer movements
+  StudioPath: bank:/Characer movements
+  lastModified: 638514084842931570
+  FileSizes:
+  - Name: Desktop
+    Value: 277856
+  Exists: 1
+--- !u!114 &9134210516154420011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Sword.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio/Build/Desktop/Sword.bank
+  Name: Sword
+  StudioPath: bank:/Sword
+  lastModified: 638514084842961563
+  FileSizes:
+  - Name: Desktop
+    Value: 179328
+  Exists: 1
+--- !u!114 &9196810136755855875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Ambience dramatic
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Ambience dramatic
+  Guid:
+    Data1: 873538271
+    Data2: 1312890282
+    Data3: -1252951119
+    Data4: -65117466
+  Banks:
+  - {fileID: 2844171154485210760}
+  IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters: []
