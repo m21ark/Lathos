@@ -84,7 +84,6 @@ public class HUDController : MonoBehaviour
         Vector3 newScale = bar.localScale;
         newScale.x = initialScaleX * (1 - ratio);
         bar.localScale = newScale;
-        Debug.Log(newScale.x + " " + initialScaleX + " " + ratio);
     }
 
     private void SetCircularFill(float value, float maxValue, Image bar){

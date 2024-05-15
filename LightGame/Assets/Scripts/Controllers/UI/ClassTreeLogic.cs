@@ -8,12 +8,15 @@ public class ClassTreeLogic : MonoBehaviour
 
     public static ClassTreeLogic instance { get; private set; }
 
+    // Class Selection Menus
+    [Header("Class Selection Menus")]
     public GameObject class1SelectMenuObj;
     public GameObject class2SelectMenuObj;
 
     private int activeMenu = 0;
 
     // Class Objects
+    [Header("Class Prefabs")]
     public GameObject prefab_base;
     public GameObject prefab_fighter;
     public GameObject prefab_ranger;
@@ -27,6 +30,12 @@ public class ClassTreeLogic : MonoBehaviour
     // Mage
     public GameObject prefab_sorcerer;
     public GameObject prefab_wizard;
+
+    // Completeness indicator
+    [Header("Completeness Indicators")]
+    public GameObject completenessA;
+    public GameObject completenessB;
+    public GameObject completenessC;
 
     private void Awake()
     {
@@ -45,8 +54,16 @@ public class ClassTreeLogic : MonoBehaviour
         string currClass = GameLogic.instance.player.getClassName();
         
         // First class 
-        if (currClass == "Base")
+        if (currClass == "Base"){
+
+            // Check if any endings are unlocked and set completeness indicators
+            bool[] ends = GameLogic.instance.endingsUnlocked;
+            instance.completenessA.SetActive(ends[0]);
+            instance.completenessB.SetActive(ends[1]);
+            instance.completenessC.SetActive(ends[2]);
+
             instance.InvokeMenuClassSelect(1);
+        }
 
         // Second class 
         List<string> classes1Names = new List<string> { "Fighter", "Ranger", "Mage" };
@@ -72,7 +89,7 @@ public class ClassTreeLogic : MonoBehaviour
             case "Rogue": ReplacePlayer(prefab_rogue, toggleMenu); break;
             case "Sorcerer": ReplacePlayer(prefab_sorcerer, toggleMenu); break;
             case "Wizard": ReplacePlayer(prefab_wizard, toggleMenu); break;
-            default: Debug.LogError("Class Prefab ID out of range"); break;
+            default: Debug.LogError("Class Prefab ID out of range: " + name); break;
         }
     }
 
@@ -161,6 +178,9 @@ public class ClassTreeLogic : MonoBehaviour
         TMP_Text buttonText = menuTransform.Find(btnName).GetComponentInChildren<TMP_Text>();
         buttonText.text = className;
 
+        TMP_Text description = menuTransform.Find(btnName + "Description").GetComponent<TMP_Text>();
+        description.text = GetClassDescription(className);
+
         BindButtonAction(menuTransform.Find(btnName), buttonText.text, () => MenuClassSelect(className));
     }
 
@@ -170,4 +190,17 @@ public class ClassTreeLogic : MonoBehaviour
         buttonTransform.GetComponent<Button>().onClick.AddListener(action);
     }
 
+    private string GetClassDescription(string className){
+        switch (className)
+        {
+            case "Berserker": return "Enraged battle-axe warrior with swift slashes. Lightning-fast dash assaults close the distance to their foes in an instant. When frenzy reaches its peak, strength is greatly amplified, unleashing unparalleled devastation";
+            case "Knight": return "Longsword masters with powerful blows and signature moves, including a sweeping 360-degree rotating slash that strikes down all nearby foes and an ultimate Dimensional Slash technique that cuts through space itself to obliterate foes";
+            case "Sharpshooter": return "Specialists in long-range warfare, possessing a keen sense of their surroundings, able to detect enemy presence with their Sound of Nature ability. Their special arrow technique pierces through enemies with devastating force";
+            case "Rogue": return "Employ agile battle tactics by unleashing a barrage of thrown leaves, striking foes with surprising speed. Activating overdrive, they surge with increased attack speed, while their special move unleashes a devastating shotgun-like burst of leaves in a wide cone";
+            case "Sorcerer": return "A cunning sorcery manipulator, casting magic that marks enemies for their impending doom, as accumulated marks can be triggered to originate light explosions. At the technique's zenith, waves of light can be evoked to mark all surrounding foes";
+            case "Wizard": return "A master of light's essence that casts spells with imbued splash damage and can harness ancient knowledge to conjure massive energy balls. As an ultimate technique, divine beams can be summoned from the skies to incinerate any who dare cross their path";
+        
+        }
+        return "Invalid class name";
+    }
 }

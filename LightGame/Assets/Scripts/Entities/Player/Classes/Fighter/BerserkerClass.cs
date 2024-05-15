@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class BersekerClass : FighterClass
+public class BerserkerClass : FighterClass
 {
 
     private ProtoAttack attack;

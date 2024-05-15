@@ -10,7 +10,7 @@ public class GameLogic : MonoBehaviour
 
     // Entities
     [HideInInspector] public ProtoClass player;
-    [HideInInspector] public Boss boss;
+    [HideInInspector] public Boss boss = null;
     public bool persistentData = false;
 
     public GameObject endMenu;
@@ -21,7 +21,7 @@ public class GameLogic : MonoBehaviour
     [HideInInspector] public float gameTime = 0.0f;
     private float lightDecreaseTimer = 0f;
     [HideInInspector] public bool isPaused = false;
-    private bool[] endingsUnlocked = { false, false, false };
+    [HideInInspector] public bool[] endingsUnlocked = { false, false, false };
 
     private void Awake()
     {
@@ -34,19 +34,7 @@ public class GameLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        GameObject bossObj = GameObject.FindWithTag("Boss");
-
-        if (bossObj == null)
-        {
-            isInBossBattle = false;
-        }
-        else
-        {
-            isInBossBattle = true;
-            boss = bossObj.GetComponent<Boss>();
-        }
-        
+        CheckIfInBossFight();
         RefreshPlayer();
         DataPersistentLoad();
 
@@ -62,6 +50,18 @@ public class GameLogic : MonoBehaviour
         gameTime = 0.0f;
 
         toggleCursor(false); // Hide cursor during gameplay
+    }
+
+    public void CheckIfInBossFight(){
+        GameObject bossObj = GameObject.FindWithTag("Boss");
+
+        if (bossObj == null)
+            isInBossBattle = false;
+        else
+        {
+            isInBossBattle = true;
+            boss = bossObj.GetComponent<Boss>();
+        }
     }
 
     public void RefreshPlayer()
@@ -129,6 +129,17 @@ public class GameLogic : MonoBehaviour
         SaveSystem.DataSave(data);
     }
 
+    void DataPersistSaveNewEnding(){
+        if (!persistentData) return;
+
+        SaveData data = new SaveData();
+        data.currentPlayerArea = 1;
+        data.playerClassName = "Base";
+        data.unlockedEndings = this.endingsUnlocked;
+
+        SaveSystem.DataSave(data);
+    }
+
     void DataPersistentLoad()
     {
         if (!persistentData) return;
@@ -162,8 +173,42 @@ public class GameLogic : MonoBehaviour
     {
         TextMeshProUGUI end_msg = endMenu.transform.Find("EndGameSMS").GetComponent<TextMeshProUGUI>();
         end_msg.text = string.Format("{0}", playerWon ? "You won!" : "You died!");
+
+        GameObject PlayAgainBtn = endMenu.transform.Find("PlayAgainBtn").gameObject;
+        PlayAgainBtn.SetActive(!playerWon);
+        
+        if(playerWon)
+            PersistWonFlag();
+        
         endMenu.SetActive(true);
         toggleCursor(true);
+    }
+
+    void PersistWonFlag()
+    {
+        if (!persistentData) return;
+
+        string playerClass = player.getClassName();
+
+        switch (playerClass){
+            case "Berserker":
+            case "Knight":
+                endingsUnlocked[0] = true;
+                break;
+            case "Sharpshooter":
+            case "Rogue":
+                endingsUnlocked[1] = true;
+                break;
+            case "Sorcerer":
+            case "Wizard":
+                endingsUnlocked[2] = true;
+                break;
+            default:
+                Debug.LogError("Tried to save player class that isn't a valid subclass: " + playerClass);
+                break;
+        }
+
+        DataPersistSaveNewEnding();
     }
 
     public void ResetScene()

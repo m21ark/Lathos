@@ -7,39 +7,44 @@ public class ProtoClass : MonoBehaviour
 {
 
     // Camera / Movement Related
+    [Header("Movement")]
     public float moveSpeed = 8f;
     public float jumpForce = 10f;
     public float dashCooldown = 1f;
     public float dashSpeed = 25f;
     protected Transform cameraPivot;
 
+    // Light / Energy
+    [Header("Light")]
+    public int collectedLight = 0;
+
     // In-game Attributes
+    [Header("Attributes")]
     public int maxHealth = 100;
     public int health = 100;
     public float armor = 1;
-
     public float attackSpeed = 1f;
 
     // A0 - Basic Attack
+    [Header("Attack A0")]
     public GameObject A0Prefab;
     public int A0Damage = 10;
     public float A0ReloadTime = 0.3f;
     public float A0ChargeRate = 0f;
 
     // A1 - Ability 1
+    [Header("Ability A1")]
     public GameObject A1Prefab;
     public int A1Damage = 20;
     public float A1ReloadTime = 1f;
     public float A1ChargeRate = 0f;
 
     // A2 - Ability 2
+    [Header("Ability A2")]
     public GameObject A2Prefab;
     public int A2Damage = 30;
     public float A2ReloadTime = 2f;
     public float A2ChargeRate = 0f;
-
-    // Light / Energy
-    public int collectedLight = 0;
 
     // Fire rate / reload controls
     [HideInInspector] public float lastAttackTime = 0f;

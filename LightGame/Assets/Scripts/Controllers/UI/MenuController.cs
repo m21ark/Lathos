@@ -4,10 +4,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class MenuController : MonoBehaviour
 {
     public GameObject pauseMenuObj;
+    private SaveData data = null;
+
+    public TMP_Text gameStateText;
+
+    // Completeness indicator
+    [Header("Completeness Indicators")]
+    public GameObject completenessA;
+    public GameObject completenessB;
+    public GameObject completenessC;
 
     void Start()
     {
@@ -19,6 +29,14 @@ public class MenuController : MonoBehaviour
         // Check if ESC is pressed to pause Game
         if (Input.GetKeyDown(KeyCode.Escape))
             TogglePauseGame();
+    }
+
+    void SetUnlockedEndingsIndicators()
+    {
+        // Check if any endings are unlocked and set completeness indicators
+        completenessA.SetActive(data.unlockedEndings[0]);
+        completenessB.SetActive(data.unlockedEndings[1]);
+        completenessC.SetActive(data.unlockedEndings[2]);
     }
 
     public void SavePlayerSettings()
@@ -56,6 +74,12 @@ public class MenuController : MonoBehaviour
             sfx.value = PlayerPrefs.GetFloat("SFXVolume", 1f);
             music.value = PlayerPrefs.GetFloat("MusicVolume", 1f);
             ambience.value = PlayerPrefs.GetFloat("AmbienceVolume", 1f);
+
+            // Load game state if exists
+            if(SaveSystem.SaveExists()){
+                data = SaveSystem.DataLoad();
+                SetUnlockedEndingsIndicators();
+            }   
         }
         catch
         {
@@ -73,6 +97,25 @@ public class MenuController : MonoBehaviour
         {
             playNewMenu.SetActive(false);
             loadGameMenu.SetActive(true);
+
+            // Set gameStateText
+            string txt;
+            if(data.currentPlayerArea != 1){
+                txt = "You have an instance of the game: \n";
+
+                if(data.currentPlayerArea == 6) txt += "Area: Boss Fight\n";
+                else  txt += "Area: " + data.currentPlayerArea + "\n";
+               
+                txt += "Class: " + data.playerClassName + "\n";  
+
+            }else  txt = "Restart your journey with other of the 3 starter classes to unlock secret endings!";
+
+            if(data.unlockedEndings[0] && data.unlockedEndings[1] && data.unlockedEndings[2])
+                txt = "Congratulations for unlocking all endings!\n Thanks for playing!";
+            
+
+            gameStateText.text = txt;
+            
         }
         else
         {
@@ -85,6 +128,10 @@ public class MenuController : MonoBehaviour
     {
         Debug.Log("Deleting game instance...");
         SaveSystem.DeleteSave();
+        data = null;
+        completenessA.SetActive(false);
+        completenessB.SetActive(false);
+        completenessC.SetActive(false);
     }
 
     public void StartNewGame()
@@ -96,9 +143,6 @@ public class MenuController : MonoBehaviour
     public void StartLoadGame()
     {
         Debug.Log("Loading stored game instance...");
-
-        // Get the data
-        SaveData data = SaveSystem.DataLoad();
 
         // go to the scene
         if (data.currentPlayerArea != SceneManager.GetActiveScene().buildIndex)
