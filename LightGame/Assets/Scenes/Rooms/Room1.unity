@@ -246,7 +246,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 665803605}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d06d118c48449849855dea3b8765fef, type: 3}
+  m_Script: {fileID: 11500000, guid: 93b7e222a5e363e4f82e0a276cdf7240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 40
@@ -257,8 +257,10 @@ MonoBehaviour:
   agent: {fileID: 665803607}
   player: {fileID: 1099152926}
   whatIsGround:
+    serializedVersion: 2
     m_Bits: 8
   whatIsPlayer:
+    serializedVersion: 2
     m_Bits: 128
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
@@ -569,7 +571,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 758103796}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d06d118c48449849855dea3b8765fef, type: 3}
+  m_Script: {fileID: 11500000, guid: 93b7e222a5e363e4f82e0a276cdf7240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 40
@@ -580,8 +582,10 @@ MonoBehaviour:
   agent: {fileID: 758103799}
   player: {fileID: 1099152926}
   whatIsGround:
+    serializedVersion: 2
     m_Bits: 8
   whatIsPlayer:
+    serializedVersion: 2
     m_Bits: 128
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
@@ -1579,7 +1583,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1636112509}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d06d118c48449849855dea3b8765fef, type: 3}
+  m_Script: {fileID: 11500000, guid: 93b7e222a5e363e4f82e0a276cdf7240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 40
@@ -1590,8 +1594,10 @@ MonoBehaviour:
   agent: {fileID: 1636112512}
   player: {fileID: 1099152926}
   whatIsGround:
+    serializedVersion: 2
     m_Bits: 8
   whatIsPlayer:
+    serializedVersion: 2
     m_Bits: 128
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
