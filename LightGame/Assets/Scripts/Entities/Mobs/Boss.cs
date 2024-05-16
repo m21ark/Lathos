@@ -69,7 +69,7 @@ public class Boss : ProtoMob
         direction.Normalize();
 
         // Move the minion towards the player
-        transform.Translate(direction * moveSpeed * Time.deltaTime);   
+        transform.Translate(direction * 3 * Time.deltaTime);    // NOTE: THIS IS GOING TO Disappear
     }
 
     void OnCollisionEnter(Collision collision)

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Woodlouse : BasicAi
+public class Woodlouse : ProtoMob
 {
     private Vector3 initialPosition;
     private bool backToPos;

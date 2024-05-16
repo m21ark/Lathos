@@ -89,7 +89,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Abilities.bank
   Name: Abilities
   StudioPath: bank:/Abilities
-  lastModified: 638514084842866451
+  lastModified: 638514631648586822
   FileSizes:
   - Name: Desktop
     Value: 364672
@@ -136,7 +136,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638514084842941565
+  lastModified: 638514631648899325
   FileSizes:
   - Name: Desktop
     Value: 1388
@@ -396,7 +396,7 @@ MonoBehaviour:
   - {fileID: 5652942996200681}
   StringsBanks:
   - {fileID: -4226137929381867347}
-  cacheTime: 638514084842961563
+  cacheTime: 638514631649055533
   cacheVersion: 131617
 --- !u!114 &5652942996200681
 MonoBehaviour:
@@ -413,7 +413,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638514084842941565
+  lastModified: 638514631648899325
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -608,7 +608,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638514084842911531
+  lastModified: 638514631648743490
   FileSizes:
   - Name: Desktop
     Value: 958368
@@ -729,7 +729,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Sword.bank
   Name: Sword
   StudioPath: bank:/Sword
-  lastModified: 638514084842961563
+  lastModified: 638514631649055533
   FileSizes:
   - Name: Desktop
     Value: 179328
@@ -951,7 +951,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Characer movements.bank
   Name: Characer movements
   StudioPath: bank:/Characer movements
-  lastModified: 638514084842931570
+  lastModified: 638514631648743490
   FileSizes:
   - Name: Desktop
     Value: 277856
