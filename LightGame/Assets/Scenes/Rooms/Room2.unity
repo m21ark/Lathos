@@ -1102,6 +1102,7 @@ MonoBehaviour:
   playerInSightRange: 0
   playerInAttackRange: 0
   leader: {fileID: 1004412100}
+  angularView: 5
 --- !u!1 &531168021 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5547836219333771790, guid: dd4ade5d01f8c9ec8ae0adf3e6063f29, type: 3}
@@ -1794,7 +1795,7 @@ NavMeshAgent:
   m_Speed: 12
   m_Acceleration: 4
   avoidancePriority: 50
-  m_AngularSpeed: 20
+  m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -1838,6 +1839,7 @@ MonoBehaviour:
   playerInSightRange: 0
   playerInAttackRange: 0
   leader: {fileID: 0}
+  angularView: 5
 --- !u!65 &1004412104
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1986,7 +1988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1648924645812433232, guid: f6fb72af4e7cfc013bcf6654f2e896f0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16.53
+      value: -15.79
       objectReference: {fileID: 0}
     - target: {fileID: 1648924645812433232, guid: f6fb72af4e7cfc013bcf6654f2e896f0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2207,6 +2209,7 @@ MonoBehaviour:
   playerInSightRange: 0
   playerInAttackRange: 0
   leader: {fileID: 1004412100}
+  angularView: 5
 --- !u!1 &1344150838 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5547836219333771790, guid: dd4ade5d01f8c9ec8ae0adf3e6063f29, type: 3}

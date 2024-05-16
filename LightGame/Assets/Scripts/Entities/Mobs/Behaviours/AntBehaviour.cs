@@ -38,8 +38,17 @@ public class AntBehaviour : ProtoMob
 
     private void FollowLeader()
     {
-       
-        Patrolling();
+        if (leader != null)
+        {
+            Vector3 randomPosition = leader.position + Random.insideUnitSphere * 10;
+            Vector3 directionToLeader = randomPosition - leader.position;
+            Vector3 finalPosition = leader.position - directionToLeader.normalized * 3;
+            agent.SetDestination(finalPosition);
+        }
+        else
+        {
+            Patrolling();
+        }
         
     }
    protected override void SearchWalkPoint()
@@ -64,6 +73,7 @@ public class AntBehaviour : ProtoMob
                 {
                     walkPoint = hit.point; // Set the walk point to the hit point on the ground
                     walkPointSet = true;   // Mark that a valid walk point has been set
+                    angularView = 5.0f;
                 }
                 else
                 {
@@ -72,6 +82,7 @@ public class AntBehaviour : ProtoMob
             }
             else
             {
+                angularView += 5.0f;
                 walkPointSet = false; // Target position is too far, so no walk point set
             }
         }
