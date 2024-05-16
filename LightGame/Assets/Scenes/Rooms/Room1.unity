@@ -237,7 +237,34 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5547836219333771790, guid: dd4ade5d01f8c9ec8ae0adf3e6063f29, type: 3}
   m_PrefabInstance: {fileID: 1642139732}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &665803606
+--- !u!195 &665803607
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665803605}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 11
+  m_Acceleration: 12
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.99999994
+  m_BaseOffset: 0.49999997
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!4 &665803613 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6247354812791069472, guid: dd4ade5d01f8c9ec8ae0adf3e6063f29, type: 3}
+  m_PrefabInstance: {fileID: 1642139732}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &665803614
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -271,33 +298,6 @@ MonoBehaviour:
   attackRange: 12
   playerInSightRange: 0
   playerInAttackRange: 0
---- !u!195 &665803607
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665803605}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 11
-  m_Acceleration: 12
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 0.99999994
-  m_BaseOffset: 0.49999997
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!4 &665803613 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6247354812791069472, guid: dd4ade5d01f8c9ec8ae0adf3e6063f29, type: 3}
-  m_PrefabInstance: {fileID: 1642139732}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &700691178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1696,7 +1696,7 @@ PrefabInstance:
       addedObject: {fileID: 665803607}
     - targetCorrespondingSourceObject: {fileID: 5547836219333771790, guid: dd4ade5d01f8c9ec8ae0adf3e6063f29, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 665803606}
+      addedObject: {fileID: 665803614}
   m_SourcePrefab: {fileID: 100100000, guid: dd4ade5d01f8c9ec8ae0adf3e6063f29, type: 3}
 --- !u!1 &1664516431
 GameObject:

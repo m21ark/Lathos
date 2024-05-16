@@ -24,13 +24,15 @@ public class ProtoMob : MonoBehaviour
     // Patrolling
     [Header("Patrolling")]
     public Vector3 walkPoint;
-    bool walkPointSet;
+    protected bool walkPointSet;
     public float walkPointRange;
 
     // Attacking
     [Header("Attacking")]
     public float timeBetweenAttacks;
     public bool alreadyAttacked;
+    
+    protected bool attackedByPlayer;
     public GameObject projectile;
 
     // States
@@ -38,10 +40,15 @@ public class ProtoMob : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
 
+
+    
+    protected Vector3 initialPosition;
+
     private void Awake()
     {
         //player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        initialPosition = transform.position;
     }
 
     private void Update()
@@ -50,29 +57,9 @@ public class ProtoMob : MonoBehaviour
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if (!playerInSightRange && !playerInAttackRange) Patrolling();
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
+        if (!playerInSightRange && !playerInAttackRange && !attackedByPlayer) Patrolling();
+        if ((playerInSightRange && !playerInAttackRange) || attackedByPlayer) ChasePlayer();
         if (playerInSightRange && playerInAttackRange) AttackPlayer();
-
-        // Make the meshes stick to the ground
-
-        //if does not have a first child then return immediately
-        // if (transform.childCount == 0) return;
-
-        // // Perform raycast from the object's position downwards
-        // RaycastHit hit;
-        // if (Physics.Raycast(transform.GetChild(0).position, Vector3.down, out hit, 10f))
-        // {
-        //     // Get the normal of the hit point
-        //     Vector3 normal = hit.normal;
-
-        //     // Calculate the rotation needed to be parallel to the ground
-        //     Quaternion rotation = Quaternion.FromToRotation(transform.GetChild(0).up, normal) * transform.GetChild(0).rotation;
-
-        //     // Apply the rotation
-        //     transform.GetChild(0).rotation = Quaternion.Lerp(transform.GetChild(0).rotation, rotation, 0.1f);
-        // }
-
     }
 
     protected virtual void Patrolling()
@@ -162,6 +149,7 @@ public class ProtoMob : MonoBehaviour
     {
         health -= damage;
         if (health <= 0) Die();
+        attackedByPlayer = true;
     }
 
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Woodlouse : ProtoMob
 {
-    private Vector3 initialPosition;
     private bool backToPos;
 
     private void Start()
