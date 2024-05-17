@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     private ProtoClass player;
     private Transform cameraPivot;
 
-    private bool isGrounded = false;
+    public bool isGrounded = false;
     private float rotationSpeed = 10f;
     private Vector3 direction;
 

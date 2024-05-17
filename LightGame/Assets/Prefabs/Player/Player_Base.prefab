@@ -279,6 +279,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3828798096592346724, guid: 179c2b999f195394989801ac4c0951a4, type: 3}
       insertIndex: 4
       addedObject: {fileID: 5132316814921023470}
+    - targetCorrespondingSourceObject: {fileID: 3828798096592346724, guid: 179c2b999f195394989801ac4c0951a4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7558628205897421930}
   m_SourcePrefab: {fileID: 100100000, guid: 179c2b999f195394989801ac4c0951a4, type: 3}
 --- !u!4 &216820486853216497 stripped
 Transform:
@@ -306,6 +309,7 @@ MonoBehaviour:
   jumpForce: 10
   dashCooldown: 1
   dashSpeed: 25
+  collectedLight: 0
   maxHealth: 100
   health: 100
   armor: 1
@@ -322,7 +326,6 @@ MonoBehaviour:
   A2Damage: 30
   A2ReloadTime: 0
   A2ChargeRate: 0
-  collectedLight: 0
   lastAttackTime: 0
   lastAttack1Time: 0
   lastAttack2Time: 0
@@ -330,6 +333,18 @@ MonoBehaviour:
   isAttack1ing: 0
   isAttack2ing: 0
   lastDashTime: 0
+--- !u!114 &7558628205897421930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597181843906335307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ad11621f6744eb4eab2d5f3e8bb6c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7431497500951317251
 PrefabInstance:
   m_ObjectHideFlags: 0
