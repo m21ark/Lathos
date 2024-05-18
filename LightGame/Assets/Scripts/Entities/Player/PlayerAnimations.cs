@@ -11,29 +11,22 @@ public class PlayerAnimations : MonoBehaviour
     private Animator animator;
     private ProtoClass playerClass;
     private PlayerController playerController;
-    private Rigidbody rb;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         playerClass = GetComponent<ProtoClass>();
         playerController = GetComponent<PlayerController>();
-        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-
-        CheckBooleanAnimation();
+        isJumping = playerController.isJumping;
+        isRunning = playerController.isMoving;
+        isDashing = playerClass.lastDashTime > 0.5f;
 
         animator.SetBool("isJumping", isJumping);
         animator.SetBool("isRunning", isRunning);
         animator.SetBool("isDashing", isDashing);
-    }
-
-    void CheckBooleanAnimation(){
-        isJumping = !playerController.isGrounded;
-        isRunning = rb.velocity.x > 0.1f || rb.velocity.z > 0.1f;
-        isDashing = playerClass.lastDashTime > 0;
     }
 }

@@ -11,7 +11,10 @@ public class PlayerController : MonoBehaviour
     private ProtoClass player;
     private Transform cameraPivot;
 
-    public bool isGrounded = false;
+    [HideInInspector] public bool isGrounded = false;
+    [HideInInspector] public bool isJumping = false;
+    [HideInInspector] public bool isMoving = false;
+
     private float rotationSpeed = 10f;
     private Vector3 direction;
 
@@ -37,6 +40,9 @@ public class PlayerController : MonoBehaviour
             this.direction = SlopeDirection(this.direction);
             Move();
             RotateCamera();
+
+            if(isGrounded)
+                isJumping = false;
         }
     }
 
@@ -53,6 +59,9 @@ public class PlayerController : MonoBehaviour
     {
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         float moveVertical = Input.GetAxisRaw("Vertical");
+
+        isMoving = moveHorizontal != 0 || moveVertical != 0;
+
         Vector3 direction = (cameraPivot.forward * moveVertical + cameraPivot.right * moveHorizontal);
         return direction.normalized;
     }
@@ -109,6 +118,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z); // reset the Y velocity
             rb.AddForce(Vector3.up * player.jumpForce, ForceMode.Impulse);
             isGrounded = false;
+            isJumping = true;
         }
 
         // Dash
@@ -162,9 +172,7 @@ public class PlayerController : MonoBehaviour
         // If the player is not moving in any direction, dash in character's forward
         if (dashDirection == Vector3.zero)
             dashDirection = new Vector3(transform.forward.x, 0, transform.forward.z).normalized;
-
-        // Debug.DrawLine(transform.position, transform.position + (dashDirection) * 10f, Color.blue, 1f);
-
+            
         while (elapsedTime < duration)
         {
             float t = elapsedTime / duration;
