@@ -1656,7 +1656,7 @@ MonoBehaviour:
   alreadyAttacked: 0
   projectile: {fileID: 0}
   sightRange: 40
-  attackRange: 12
+  attackRange: 2.3
   playerInSightRange: 0
   playerInAttackRange: 0
   leader: {fileID: 1004412100}
@@ -2014,7 +2014,7 @@ MonoBehaviour:
   alreadyAttacked: 0
   projectile: {fileID: 0}
   sightRange: 40
-  attackRange: 12
+  attackRange: 2.3
   playerInSightRange: 0
   playerInAttackRange: 0
   leader: {fileID: 0}
@@ -2998,7 +2998,7 @@ MonoBehaviour:
   alreadyAttacked: 0
   projectile: {fileID: 0}
   sightRange: 40
-  attackRange: 12
+  attackRange: 2.3
   playerInSightRange: 0
   playerInAttackRange: 0
   leader: {fileID: 1004412100}

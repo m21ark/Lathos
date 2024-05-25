@@ -6,6 +6,12 @@ public class AntBehaviour : ProtoMob
 
     public float angularView = 5.0f; 
 
+    public override void attack() {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        ProtoClass playerHealth = player.GetComponent<ProtoClass>();
+        playerHealth.TakeDamage(damage);
+    }
+
     private void Update()
     {
         // Check for sight and attack range
