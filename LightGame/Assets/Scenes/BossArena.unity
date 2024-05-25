@@ -264,7 +264,6 @@ MonoBehaviour:
   flapFrequency: 20
   flapAmplitude: 35
   phase3TargetRotation: {x: 0, y: 180, z: 0}
-  phase3TargetPosition: {x: -3.4, y: -6.59, z: 0.4072876}
 --- !u!54 &275723937
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1640,7 +1639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5860464671086182249, guid: 4485e46bc0f3c6bbda5187ffe089340a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 110
+      value: 99.4
       objectReference: {fileID: 0}
     - target: {fileID: 5860464671086182249, guid: 4485e46bc0f3c6bbda5187ffe089340a, type: 3}
       propertyPath: m_LocalScale.y
@@ -1648,7 +1647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5860464671086182249, guid: 4485e46bc0f3c6bbda5187ffe089340a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 110
+      value: 104.8
       objectReference: {fileID: 0}
     - target: {fileID: 5860464671086182249, guid: 4485e46bc0f3c6bbda5187ffe089340a, type: 3}
       propertyPath: m_LocalPosition.x
