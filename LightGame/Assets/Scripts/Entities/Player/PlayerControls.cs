@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
             CharacterFaceDirection();
 
         // Jumping
-        if (Input.GetKeyDown(jumpKey) && isGrounded)
+        if (Input.GetKeyDown(jumpKey) && isGrounded )
         {
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z); // reset the Y velocity
             rb.AddForce(Vector3.up * player.jumpForce, ForceMode.Impulse);
@@ -122,7 +122,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Dash
-        if (Input.GetKeyDown(dashKey) && player.lastDashTime <= 0)
+        if (Input.GetKeyDown(dashKey) && player.lastDashTime <= 0 ) 
             StartCoroutine(Dash());
         else player.lastDashTime -= Time.deltaTime;
 
