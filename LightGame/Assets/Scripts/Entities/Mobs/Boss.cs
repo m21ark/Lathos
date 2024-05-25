@@ -31,7 +31,6 @@ public class Boss : ProtoMob
     private float flapTime;
 
     public Vector3 phase3TargetRotation = new Vector3(63.121f, 48.889f, -104.672f); // Target rotation in Euler angles
-    public Vector3 phase3TargetPosition= new Vector3(0, 0, 0); // Target rotation in Euler angles
 
 
     void Start()
@@ -99,10 +98,9 @@ public class Boss : ProtoMob
 
         // set agent offset to 10
         agent.baseOffset = Mathf.Lerp(agent.baseOffset, 15f, Time.deltaTime * upspeed);
-       // if (Time.time - lastSummonTime >= summonFrequency) SummonMinions();
+        if (Time.time - lastSummonTime >= summonFrequency) SummonMinions();
 
-
-        agent.SetDestination(phase3TargetPosition);
+        agent.SetDestination(player.position);
 
         FlapWings();
 
