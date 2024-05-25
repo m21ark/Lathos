@@ -51,7 +51,7 @@ public class ProtoMob : MonoBehaviour
         initialPosition = transform.position;
     }
 
-    private void Update()
+    protected void Update()
     {
         // Check for sight and attack range
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
