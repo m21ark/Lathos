@@ -12,11 +12,38 @@ public class Boss : ProtoMob
     // Summoning Logic
     private float lastSummonTime;
     public float summonFrequency = 10.0f;
-    public GameObject minionPrefab;
+    [SerializeField] public GameObject[] minionPrefab;
+
+    // Child visibility (accessed via hierarchy)
+    private GameObject firstChild;
+    private GameObject secondChild;
+
+    public Transform leftWing;
+    public Transform rightWing;
+
+
+    private float rotationSpeed = 4.0f; // Speed of rotation
+    private float upspeed = 0.5f;
+
+    public float flapFrequency = 2f;
+    public float flapAmplitude = 30f;
+
+    private float flapTime;
+
+    public Vector3 phase3TargetRotation = new Vector3(63.121f, 48.889f, -104.672f); // Target rotation in Euler angles
+    public Vector3 phase3TargetPosition= new Vector3(0, 0, 0); // Target rotation in Euler angles
+
 
     void Start()
     {
         lastSummonTime = Time.time;
+
+        firstChild = transform.GetChild(0).gameObject;
+        secondChild = transform.GetChild(1).gameObject;
+
+        // Ensure initial visibility state
+        firstChild.SetActive(true);
+        secondChild.SetActive(false);
     }
 
     void Update()
@@ -27,6 +54,7 @@ public class Boss : ProtoMob
 
         if (healthPercentage <= bossPhaseThreshold2Percentage) currentBossPhase = 2;
         if (healthPercentage <= bossPhaseThreshold3Percentage) currentBossPhase = 3;
+
 
         // Apply different boss behavior depending on current phase  
         switch (currentBossPhase)
@@ -39,12 +67,13 @@ public class Boss : ProtoMob
 
     private void Phase1Behavior()
     {
-        // Do nothing
+        // Move2();
+        if (Time.time - lastSummonTime >= summonFrequency * 2) SummonMinions();
     }
 
     private void Phase2Behavior()
     {
-        ChangeColor(Color.blue);
+
 
         // Summoning phase and follow player
         Move2();
@@ -55,26 +84,48 @@ public class Boss : ProtoMob
 
     private void Phase3Behavior()
     {
-        // Do nothing
-        ChangeColor(Color.green);
+        // You should make visible the second child and make invisible the first child
+        if (firstChild != null && secondChild != null)
+        {
+            firstChild.SetActive(false);
+            secondChild.SetActive(true);
+        }
+
+        Quaternion targetRotation = Quaternion.Euler(phase3TargetRotation);
+        secondChild.transform.rotation = Quaternion.RotateTowards(secondChild.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+
+
+
+
+        // set agent offset to 10
+        agent.baseOffset = Mathf.Lerp(agent.baseOffset, 15f, Time.deltaTime * upspeed);
+       // if (Time.time - lastSummonTime >= summonFrequency) SummonMinions();
+
+
+        agent.SetDestination(phase3TargetPosition);
+
+        FlapWings();
+
     }
+
+    private void FlapWings()
+    {
+        flapTime += Time.deltaTime * flapFrequency;
+        float flapAngle = Mathf.Sin(flapTime) * flapAmplitude;
+
+        leftWing.localRotation = Quaternion.Euler(-150.798f, flapAngle + 12.446f, 48.228f);
+        rightWing.localRotation = Quaternion.Euler(29.202f, -flapAngle - 12.446f, 48.228f);
+    }
+
 
     public void Move2()
     {
-        // Calculate direction vector towards the player
-        Vector3 direction = GameLogic.instance.player.gameObject.transform.position - transform.position;
-        direction.y = 0f; // Ensure the minion doesn't move up or down
-
-        // Normalize the direction vector
-        direction.Normalize();
-
-        // Move the minion towards the player
-        transform.Translate(direction * 3 * Time.deltaTime);    // NOTE: THIS IS GOING TO Disappear
+        agent.SetDestination(player.position);
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        // Deal Damage
+        // Deal Damage ... TODO: maybe change this to put like ant
         if (collision.gameObject.CompareTag("Player"))
             GameLogic.instance.player.TakeDamage(damage);
     }
@@ -92,7 +143,13 @@ public class Boss : ProtoMob
                 Vector3 randomOffset = Random.insideUnitSphere * summonRadius;
                 randomOffset.y = 0f;
                 Vector3 summonPosition = transform.position + randomOffset;
-                GameObject newMinion = Instantiate(minionPrefab, summonPosition, Quaternion.identity);
+
+                // random minion prefab
+                int randomIndex = Random.Range(0, minionPrefab.Length);
+                GameObject pref = minionPrefab[randomIndex];
+                pref.GetComponent<ProtoMob>().player = player;
+                GameObject newMinion = Instantiate(pref, summonPosition, Quaternion.identity);
+
             }
 
             // Reset the cooldown timer
@@ -100,11 +157,4 @@ public class Boss : ProtoMob
         }
     }
 
-    private void ChangeColor(Color newColor)
-    {
-        Renderer renderer = gameObject.GetComponent<Renderer>();
-        Material material = new Material(renderer.material);
-        material.color = newColor;
-        renderer.material = material;
-    }
 }
