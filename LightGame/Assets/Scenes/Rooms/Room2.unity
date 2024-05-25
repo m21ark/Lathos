@@ -852,6 +852,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Minion (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 5547836219333771790, guid: dd4ade5d01f8c9ec8ae0adf3e6063f29, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6247354812791069472, guid: dd4ade5d01f8c9ec8ae0adf3e6063f29, type: 3}
       propertyPath: m_LocalPosition.x
       value: -122.3
@@ -1560,6 +1564,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Minion (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5547836219333771790, guid: dd4ade5d01f8c9ec8ae0adf3e6063f29, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6247354812791069472, guid: dd4ade5d01f8c9ec8ae0adf3e6063f29, type: 3}
       propertyPath: m_LocalPosition.x
       value: -142.5
@@ -1792,7 +1800,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 2
-  m_Speed: 12
+  m_Speed: 8
   m_Acceleration: 4
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1859,8 +1867,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.94, y: 1.6, z: 3.65}
-  m_Center: {x: -0.02, y: -2.62, z: -0.63}
+  m_Size: {x: 0.94, y: 0.89, z: 3.65}
+  m_Center: {x: -0.02, y: -2.1, z: -0.63}
 --- !u!1 &1010226082
 GameObject:
   m_ObjectHideFlags: 0
@@ -2030,6 +2038,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Mob
       objectReference: {fileID: 0}
+    - target: {fileID: 6251387708105263664, guid: f6fb72af4e7cfc013bcf6654f2e896f0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6525588172206767139, guid: f6fb72af4e7cfc013bcf6654f2e896f0, type: 3}
       propertyPath: walkDemoSpeed
       value: 0
@@ -2046,7 +2058,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6251387708105263664, guid: f6fb72af4e7cfc013bcf6654f2e896f0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1648924645812433232, guid: f6fb72af4e7cfc013bcf6654f2e896f0, type: 3}
