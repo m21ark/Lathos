@@ -16,18 +16,21 @@ public class ClassTreeLogic : MonoBehaviour
     private int activeMenu = 0;
 
     // Class Objects
-    [Header("Class Prefabs")]
+    [Header("Class Basic Prefabs")]
     public GameObject prefab_base;
     public GameObject prefab_fighter;
     public GameObject prefab_ranger;
     public GameObject prefab_mage;
-    // Fighter
+
+    [Header("Class Fighter Prefabs")]
     public GameObject prefab_knight;
     public GameObject prefab_berserker;
-    // Ranger
+
+    [Header("Class Ranger Prefabs")]
     public GameObject prefab_sharpshooter;
     public GameObject prefab_rogue;
-    // Mage
+    
+    [Header("Class Mage Prefabs")]
     public GameObject prefab_sorcerer;
     public GameObject prefab_wizard;
 

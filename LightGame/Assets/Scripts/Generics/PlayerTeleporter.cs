@@ -13,6 +13,7 @@ public class PlayerTeleporter : MonoBehaviour
     public string areaName = "";
 
     public bool evokesClassChange = false;
+    public bool evokeNewArea = true;
 
     void Start()
     {
@@ -84,6 +85,13 @@ public class PlayerTeleporter : MonoBehaviour
 
     void LoadNewArea()
     {
+        if(!evokeNewArea){
+            // disable fade canvas
+            fadeCanvasGroup.alpha = 0f;
+            Time.timeScale = 1;
+            return;
+        }
+
         GameLogic.instance.DataPersistentSave();
 
         // Load the new scene

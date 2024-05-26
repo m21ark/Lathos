@@ -3964,15 +3964,15 @@ MonoBehaviour:
   class1SelectMenuObj: {fileID: 8735401470687510587}
   class2SelectMenuObj: {fileID: 4043932941000190376}
   prefab_base: {fileID: 1162234724972830604, guid: 792a1537b0f992083b045a526f9e2ff9, type: 3}
-  prefab_fighter: {fileID: 1162234724972830604, guid: a52d7bc8de8b8e09587cfd61f3a322fc, type: 3}
-  prefab_ranger: {fileID: 1162234724972830604, guid: 6e1ea72b67084a045b04dbaa8977a508, type: 3}
-  prefab_mage: {fileID: 1162234724972830604, guid: d9c756ec5ce2edfc8bb1a74634da49a7, type: 3}
-  prefab_knight: {fileID: 1162234724972830604, guid: e41f615346b916cea859ccce13c46444, type: 3}
-  prefab_berserker: {fileID: 1162234724972830604, guid: abbee569ec4dba711965b37d79f8bab9, type: 3}
-  prefab_sharpshooter: {fileID: 1162234724972830604, guid: b52ad757266999743a9dbc453d77101f, type: 3}
-  prefab_rogue: {fileID: 1162234724972830604, guid: dd39f731bee5b09489d544388253433b, type: 3}
-  prefab_sorcerer: {fileID: 1162234724972830604, guid: 76b06bcd8e1c7c546b2db2f1fc2e6a4e, type: 3}
-  prefab_wizard: {fileID: 1162234724972830604, guid: 9f429d062caece54da3eacaf67d08874, type: 3}
+  prefab_fighter: {fileID: 1162234724972830604, guid: f6f5a02c6ef86d5a1821f7992d4dd6a2, type: 3}
+  prefab_ranger: {fileID: 1162234724972830604, guid: a18b52640d5b6fb73945a0b91986231b, type: 3}
+  prefab_mage: {fileID: 1162234724972830604, guid: cd427aec706d2feafa7aa59cca67992d, type: 3}
+  prefab_knight: {fileID: 1162234724972830604, guid: 18f547ee6c9d2aaabb60af843343abf7, type: 3}
+  prefab_berserker: {fileID: 1162234724972830604, guid: 0092e60dc7fbabb6484191b66a143fef, type: 3}
+  prefab_sharpshooter: {fileID: 1162234724972830604, guid: 5429b7b38f4588b87a6003f7a6680e39, type: 3}
+  prefab_rogue: {fileID: 1162234724972830604, guid: a7ee139dce797d3b8b08ec2ef9877885, type: 3}
+  prefab_sorcerer: {fileID: 1162234724972830604, guid: 121d46886514a87319607f0cf4db2d6a, type: 3}
+  prefab_wizard: {fileID: 1162234724972830604, guid: 41d92b121f4f76e15927fb9edc3fe944, type: 3}
   completenessA: {fileID: 6039946183987813985}
   completenessB: {fileID: 6293158714699459206}
   completenessC: {fileID: 6985022165154716619}
