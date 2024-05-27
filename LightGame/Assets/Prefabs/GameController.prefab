@@ -186,6 +186,20 @@ MonoBehaviour:
       Data3: 196928694
       Data4: -1868967731
     Path: event:/SFX abilities/Wizard ability
+  <playerSharpshooterA1>k__BackingField:
+    Guid:
+      Data1: -2095309614
+      Data2: 1268863760
+      Data3: 211133598
+      Data4: -798860428
+    Path: event:/SFX abilities/Sharpshooter
+  <playerSorcererA2>k__BackingField:
+    Guid:
+      Data1: 368178690
+      Data2: 1093117865
+      Data3: 152284850
+      Data4: 1010730972
+    Path: event:/SFX abilities/Sorcerer ability
   <antAttack>k__BackingField:
     Guid:
       Data1: 0

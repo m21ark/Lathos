@@ -48,9 +48,10 @@ public class SorcererClass : MageClass
         }
     }
 
-
     public override void SpecialAbility()
     {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerSorcererA2, transform.position);
+
         Action action = () =>
         {
 

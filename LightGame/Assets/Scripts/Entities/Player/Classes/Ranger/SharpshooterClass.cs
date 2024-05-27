@@ -20,10 +20,11 @@ public class SharpshooterClass : RangerClass
 
     public override void SpecialAbility()
     {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerSharpshooterA1, transform.position);
+
         Vector3 offset = new Vector3(0, 0, 3);
         GenerateVFXOnPlayer(VFXSpecialAbility, transform, 15, offset);
         StartCoroutine(ActivateSpecialAbility());
-
     }
 
     private IEnumerator ActivateSpecialAbility()
