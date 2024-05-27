@@ -2898,7 +2898,7 @@ PrefabInstance:
       addedObject: {fileID: 6165047879914100805}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e547d3a940acf9944bc7f0f2d9198d68, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5866576011023838161}
+      addedObject: {fileID: 3621418617737457971}
   m_SourcePrefab: {fileID: 100100000, guid: e547d3a940acf9944bc7f0f2d9198d68, type: 3}
 --- !u!1 &3828798096592346724 stripped
 GameObject:
@@ -2982,7 +2982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ad11621f6744eb4eab2d5f3e8bb6c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &5866576011023838161
+--- !u!95 &3621418617737457971
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -2992,7 +2992,7 @@ Animator:
   m_GameObject: {fileID: 3828798096592346724}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: e547d3a940acf9944bc7f0f2d9198d68, type: 3}
-  m_Controller: {fileID: 9100000, guid: b91f6cfd476bf6948a4ec9ea2b048e42, type: 2}
+  m_Controller: {fileID: 9100000, guid: b0a7525ace0400a43a45f11392334f46, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
