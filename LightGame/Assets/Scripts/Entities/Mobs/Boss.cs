@@ -98,6 +98,7 @@ public class Boss : ProtoMob
 
         // set agent offset to 10
         agent.baseOffset = Mathf.Lerp(agent.baseOffset, 15f, Time.deltaTime * upspeed);
+        agent.radius = 1.0f;
         if (Time.time - lastSummonTime >= summonFrequency) SummonMinions();
 
         agent.SetDestination(player.position);
@@ -140,19 +141,28 @@ public class Boss : ProtoMob
             {
                 Vector3 randomOffset = Random.insideUnitSphere * summonRadius;
                 randomOffset.y = 0f;
-                Vector3 summonPosition = transform.position + randomOffset;
+                Vector3 potentialPosition = transform.position + randomOffset;
 
-                // random minion prefab
-                int randomIndex = Random.Range(0, minionPrefab.Length);
-                GameObject pref = minionPrefab[randomIndex];
-                pref.GetComponent<ProtoMob>().player = player;
-                GameObject newMinion = Instantiate(pref, summonPosition, Quaternion.identity);
+                RaycastHit hit;
+                int layerMask = LayerMask.GetMask("WhatIsGround");
 
+                // Perform a raycast downwards from a high point above the potential position
+                if (Physics.Raycast(potentialPosition + Vector3.up * 50, Vector3.down, out hit, Mathf.Infinity, layerMask))
+                {
+                    Vector3 summonPosition = hit.point;
+
+                    // Random minion prefab
+                    int randomIndex = Random.Range(0, minionPrefab.Length);
+                    GameObject pref = minionPrefab[randomIndex];
+                    pref.GetComponent<ProtoMob>().player = player;
+                    GameObject newMinion = Instantiate(pref, summonPosition, Quaternion.identity);
+                }
             }
 
             // Reset the cooldown timer
             lastSummonTime = Time.time;
         }
     }
+
 
 }
