@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     private float rotationSpeed = 10f;
     private Vector3 direction;
 
+    private bool attackingStandingStill = false;
+
     private KeyCode attackKey = KeyCode.K;
     private KeyCode attack1Key = KeyCode.E;
     private KeyCode attack2Key = KeyCode.Q;
@@ -79,6 +81,9 @@ public class PlayerController : MonoBehaviour
 
     private void CalculateVel()
     {
+        // if the player is performing an attack that requires standing still, don't move
+        if(attackingStandingStill) return; 
+
         player = GameLogic.instance.player;
 
         // limit the Y velocity to avoid the player flying
@@ -101,6 +106,11 @@ public class PlayerController : MonoBehaviour
             // to avoid the player jumping on a slope because Y velocity is not 0
             if (isGrounded) rb.velocity = new Vector3(0, 0, 0);
         }
+    }
+
+    public void UnlockMovementAfterAttack()
+    {
+        attackingStandingStill = false;
     }
 
     void Move()
@@ -182,7 +192,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void HandleAttack(KeyCode attackKey, ref bool isAttacking, ref float lastAttackTime, float reloadTime, Action attackAction, bool useMouseButton = false, int mouseButton = 0)
+    void HandleAttack(KeyCode attackKey, ref bool isAttacking, ref float lastAttackTime, float reloadTime, bool attackStandingStill, Action attackAction, bool useMouseButton = false, int mouseButton = 0)
     {
         if (Input.GetKeyDown(attackKey) || (useMouseButton && Input.GetMouseButtonDown(mouseButton)))
             isAttacking = true;
@@ -197,21 +207,27 @@ public class PlayerController : MonoBehaviour
             attackAction();
             lastAttackTime = reloadTime;
         }
+
+        // if the player is attacking and standing still, stop the player's movement in x and z
+        if (attackStandingStill && isAttacking){
+            rb.velocity = new Vector3(0, rb.velocity.y, 0);
+            attackingStandingStill = true;
+        }
     }
 
     void Attack0()
     {
-        HandleAttack(attackKey, ref player.isAttacking, ref player.lastAttackTime, player.A0ReloadTime * player.attackSpeed, player.Attack, true, 0);
+        HandleAttack(attackKey, ref player.isAttacking, ref player.lastAttackTime, player.A0ReloadTime * player.attackSpeed, player.stopsMovementA0, player.Attack, true, 0);
     }
 
     void Attack1()
     {
-        HandleAttack(attack1Key, ref player.isAttack1ing, ref player.lastAttack1Time, player.A1ReloadTime, player.BaseAbility, true, 1);
+        HandleAttack(attack1Key, ref player.isAttack1ing, ref player.lastAttack1Time, player.A1ReloadTime, player.stopsMovementA1, player.BaseAbility, true, 1);
     }
 
     void Attack2()
     {
-        HandleAttack(attack2Key, ref player.isAttack2ing, ref player.lastAttack2Time, player.A2ReloadTime, player.SpecialAbility);
+        HandleAttack(attack2Key, ref player.isAttack2ing, ref player.lastAttack2Time, player.A2ReloadTime, player.stopsMovementA2, player.SpecialAbility);
     }
 
     void OnCollisionEnter(Collision collision)

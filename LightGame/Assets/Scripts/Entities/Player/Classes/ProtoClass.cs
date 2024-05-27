@@ -31,6 +31,7 @@ public class ProtoClass : MonoBehaviour
     public int A0Damage = 10;
     public float A0ReloadTime = 0.3f;
     public float A0ChargeRate = 0f;
+    public bool stopsMovementA0 = false;
 
     // A1 - Ability 1
     [Header("Ability A1")]
@@ -38,6 +39,7 @@ public class ProtoClass : MonoBehaviour
     public int A1Damage = 20;
     public float A1ReloadTime = 1f;
     public float A1ChargeRate = 0f;
+    public bool stopsMovementA1 = false;
 
     // A2 - Ability 2
     [Header("Ability A2")]
@@ -45,6 +47,7 @@ public class ProtoClass : MonoBehaviour
     public int A2Damage = 30;
     public float A2ReloadTime = 2f;
     public float A2ChargeRate = 0f;
+    public bool stopsMovementA2 = false;
 
     // Fire rate / reload controls
     [HideInInspector] public float lastAttackTime = 0f;

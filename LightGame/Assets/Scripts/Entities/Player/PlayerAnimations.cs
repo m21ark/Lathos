@@ -12,11 +12,20 @@ public class PlayerAnimations : MonoBehaviour
     private ProtoClass playerClass;
     private PlayerController playerController;
 
+    private string[] classIDs = { "Base", "Mage", "Sorcerer", "Wizard", "Ranger", "Sharpshooter", "Rogue", "Berserker", "Knight", "Fighter" }; 
+    private int classID = 0;
+
     void Start()
     {
         animator = GetComponent<Animator>();
         playerClass = GetComponent<ProtoClass>();
         playerController = GetComponent<PlayerController>();
+
+        for(int i = 0; i < classIDs.Length; i++)
+            if(playerClass.getClassName() == classIDs[i]) {
+                classID = i;
+                break;
+            }
     }
 
     void Update()
@@ -43,6 +52,6 @@ public class PlayerAnimations : MonoBehaviour
         animator.SetBool("isAttacking1", playerClass.isAttack1ing);
         animator.SetBool("isAttacking2", playerClass.isAttack2ing);
 
-        Debug.Log(playerClass.isAttacking + " " + playerClass.isAttack1ing + " " + playerClass.isAttack2ing);
+        animator.SetInteger("classID", classID);
     }
 }
