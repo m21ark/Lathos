@@ -4,9 +4,10 @@ public class AntBehaviour : ProtoMob
 {
     public Transform leader;
 
-    public float angularView = 5.0f; 
+    public float angularView = 5.0f;
 
-    public override void attack() {
+    public override void attack()
+    {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         ProtoClass playerHealth = player.GetComponent<ProtoClass>();
         playerHealth.TakeDamage(damage);
@@ -14,6 +15,7 @@ public class AntBehaviour : ProtoMob
 
     private void Update()
     {
+
         // Check for sight and attack range
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
@@ -55,9 +57,9 @@ public class AntBehaviour : ProtoMob
         {
             Patrolling();
         }
-        
+
     }
-   protected override void SearchWalkPoint()
+    protected override void SearchWalkPoint()
     {
         if (leader != null)
         {
