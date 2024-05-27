@@ -26,8 +26,6 @@ public class PlayerAnimations : MonoBehaviour
                 classID = i;
                 break;
             }
-
-        Debug.Log("Class ID: " + classID);
     }
 
     void Update()
@@ -53,9 +51,6 @@ public class PlayerAnimations : MonoBehaviour
         animator.SetBool("isAttacking0", playerClass.isAttacking);
         animator.SetBool("isAttacking1", playerClass.isAttack1ing);
         animator.SetBool("isAttacking2", playerClass.isAttack2ing);
-
-        if(playerClass.isAttacking) Debug.Log("Attacking0");
-        if(playerClass.isAttack1ing) Debug.Log("Attacking1");
 
         animator.SetInteger("classID", classID);
     }

@@ -48,17 +48,48 @@ public class AudioManager : MonoBehaviour
     }
 
     // can be used to play a sound that doesn't need to be stopped manually like a gunshot
-    public void PlayOneShot(EventReference sound, Vector3 position)
+    public void PlayOneShot(EventReference sound, Vector3 position, float delay = 0.0f)
     {
+        StartCoroutine(PlayOneShotCoroutine(sound, position, delay));
+    }
+
+    // Coroutine to handle the delay
+    private IEnumerator PlayOneShotCoroutine(EventReference sound, Vector3 position, float delay)
+    {
+        if (delay > 0.0f) yield return new WaitForSeconds(delay);
         RuntimeManager.PlayOneShot(sound, position);
     }
 
     // can be used to play a sound that needs to be stopped manually like footsteps
     public EventInstance CreateInstance(EventReference sound)
     {
-        EventInstance instance = RuntimeManager.CreateInstance(sound);
-        eventInstances.Add(instance);
-        return instance;
+        EventInstance sound_instance = RuntimeManager.CreateInstance(sound);
+        eventInstances.Add(sound_instance);
+        return sound_instance;
+    }
+
+    public int CreateInstanceIDOnPlayer(EventReference sound)
+    {
+        EventInstance sound_instance = RuntimeManager.CreateInstance(sound);
+        instance.eventInstances.Add(sound_instance);
+        return instance.eventInstances.Count - 1;
+    }
+
+    public void PlayInstanceIfNotPlayingOnPlayer(int sound_instance_id){
+        EventInstance sound_instance = eventInstances[sound_instance_id];
+        sound_instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(GameLogic.instance.player.transform.position));
+        PLAYBACK_STATE state;
+        sound_instance.getPlaybackState(out state);
+        if (state == PLAYBACK_STATE.STOPPED)
+            sound_instance.start();
+    }
+
+    public void StopInstancePlayingOnPlayer(int sound_instance_id){
+        EventInstance sound_instance = eventInstances[sound_instance_id];
+        PLAYBACK_STATE state;
+        sound_instance.getPlaybackState(out state);
+        if (state == PLAYBACK_STATE.PLAYING)
+            sound_instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 
     public void PlayInstanceIfNotPlaying(EventInstance sound)

@@ -153,11 +153,11 @@ MonoBehaviour:
     Path: 
   <playerFootsteps>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1483887324
+      Data2: 1245694992
+      Data3: 404977079
+      Data4: 530718489
+    Path: event:/Main character movement/running no hearbeat
   <playerJump>k__BackingField:
     Guid:
       Data1: 0
@@ -174,11 +174,11 @@ MonoBehaviour:
     Path: 
   <playerSwordSwing>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -39726303
+      Data2: 1112944182
+      Data3: 1638709904
+      Data4: -1709180065
+    Path: event:/Main character movement/sword 2
   <antAttack>k__BackingField:
     Guid:
       Data1: 0

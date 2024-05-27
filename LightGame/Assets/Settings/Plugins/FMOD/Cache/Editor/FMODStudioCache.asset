@@ -323,6 +323,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 364672
   Exists: 1
+--- !u!114 &-2423370302901495447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Main character movement/sword 2
+  m_EditorClassIdentifier: 
+  Path: event:/Main character movement/sword 2
+  Guid:
+    Data1: -39726303
+    Data2: 1112944182
+    Data3: 1638709904
+    Data4: -1709180065
+  Banks:
+  - {fileID: 9063726596643881184}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 560
 --- !u!114 &-2411626906417223040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,7 +365,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638519280654055061
+  lastModified: 638524374065501217
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -358,10 +385,10 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Characer movements.bank
   Name: Characer movements
   StudioPath: bank:/Characer movements
-  lastModified: 638519280654055061
+  lastModified: 638524353539023421
   FileSizes:
   - Name: Desktop
-    Value: 277856
+    Value: 303200
   Exists: 1
 --- !u!114 &-2305876707376458427
 MonoBehaviour:
@@ -553,7 +580,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638519280654035069
+  lastModified: 638524353536623386
   FileSizes:
   - Name: Desktop
     Value: 958368
@@ -586,12 +613,14 @@ MonoBehaviour:
   - {fileID: -5606324105654660840}
   - {fileID: -8504346839564471673}
   - {fileID: 4566486764112080616}
+  - {fileID: 2450366115662639873}
+  - {fileID: -2423370302901495447}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2411626906417223040}
   StringsBanks:
   - {fileID: 2450608712365836312}
-  cacheTime: 638519280654075071
+  cacheTime: 638524379555782866
   cacheVersion: 131617
 --- !u!114 &5652942996200681
 MonoBehaviour:
@@ -734,6 +763,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &2450366115662639873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Main character movement/running no hearbeat
+  m_EditorClassIdentifier: 
+  Path: event:/Main character movement/running no hearbeat
+  Guid:
+    Data1: -1483887324
+    Data2: 1245694992
+    Data3: 404977079
+    Data4: 530718489
+  Banks:
+  - {fileID: -2339479710055509579}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1300
 --- !u!114 &2450608712365836312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -749,10 +805,10 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638519280654065085
+  lastModified: 638524374065501217
   FileSizes:
   - Name: Desktop
-    Value: 1388
+    Value: 1488
   Exists: 1
 --- !u!114 &2459042495137615457
 MonoBehaviour:
@@ -769,10 +825,10 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Abilities.bank
   Name: Abilities
   StudioPath: bank:/Abilities
-  lastModified: 638519280653985075
+  lastModified: 638524353527103244
   FileSizes:
   - Name: Desktop
-    Value: 364672
+    Value: 364704
   Exists: 1
 --- !u!114 &2653106234083983284
 MonoBehaviour:
@@ -1267,10 +1323,10 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Sword.bank
   Name: Sword
   StudioPath: bank:/Sword
-  lastModified: 638519280654075071
+  lastModified: 638524379555782866
   FileSizes:
   - Name: Desktop
-    Value: 179328
+    Value: 180512
   Exists: 1
 --- !u!114 &9087095521652176878
 MonoBehaviour:

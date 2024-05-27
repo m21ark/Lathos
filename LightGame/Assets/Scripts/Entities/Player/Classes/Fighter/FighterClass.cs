@@ -8,6 +8,8 @@ public class FighterClass : BaseClass
         Vector3 attackDirection;
         GenerateAttackPhysical(A0Prefab, out attack, out attackDirection);
         attack.Fire(A0Damage, attackDirection);
+
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerSwordSwing, transform.position, 0.15f);
     }
 
     public override void BaseAbility()
@@ -16,5 +18,7 @@ public class FighterClass : BaseClass
         Vector3 attackDirection;
         GenerateAttackPhysical(A1Prefab, out attack, out attackDirection);
         attack.Fire(A1Damage, attackDirection);
+
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerSwordSwing, transform.position, 0.15f);
     }
 }

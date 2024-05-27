@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 
 public class PlayerController : MonoBehaviour
 {
@@ -26,12 +27,18 @@ public class PlayerController : MonoBehaviour
     private KeyCode dashKey = KeyCode.LeftShift;
     private KeyCode jumpKey = KeyCode.Space;
 
+    // FMOD Events
+    private int footstepsInstanceID;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
 
         // Camera Rotation Pivot
         cameraPivot = transform.parent.transform.Find("CameraPivot");
+
+        // FMOD Events
+        footstepsInstanceID = AudioManager.instance.CreateInstanceIDOnPlayer(FMODEvents.instance.playerFootsteps);
     }
 
     void Update()
@@ -94,9 +101,15 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = this.direction * player.moveSpeed;
             rb.velocity = new Vector3(rb.velocity.x, y, rb.velocity.z);
+
+            // if the player is moving, play the footsteps sound
+            if (isGrounded && !player.isAttacking && !player.isAttack1ing && !player.isAttack2ing)
+                AudioManager.instance.PlayInstanceIfNotPlayingOnPlayer(footstepsInstanceID);
         }
         else
         {
+            AudioManager.instance.StopInstancePlayingOnPlayer(footstepsInstanceID); // stop the footsteps sound
+
             rb.velocity = new Vector3(0, rb.velocity.y, 0);
 
             // check if the player is grounded after the dash (special case for slopes)
@@ -194,15 +207,20 @@ public class PlayerController : MonoBehaviour
 
     void HandleAttack(KeyCode attackKey, ref bool isAttacking, ref float lastAttackTime, float reloadTime, bool attackStandingStill, Action attackAction, bool useMouseButton = false, int mouseButton = 0)
     {
+        lastAttackTime -= Time.deltaTime;
+
+        if(lastAttackTime > 0){
+            isAttacking = false;
+            return;
+        }
+
         if (Input.GetKeyDown(attackKey) || (useMouseButton && Input.GetMouseButtonDown(mouseButton)))
             isAttacking = true;
           
         if (Input.GetKeyUp(attackKey) || (useMouseButton && Input.GetMouseButtonUp(mouseButton)))
             isAttacking = false;
 
-        lastAttackTime -= Time.deltaTime;
-
-        if (isAttacking && lastAttackTime <= 0)
+        if (isAttacking)
         {
             attackAction();
             lastAttackTime = reloadTime;
