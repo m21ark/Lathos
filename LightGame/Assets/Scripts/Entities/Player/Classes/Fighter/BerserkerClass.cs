@@ -23,6 +23,7 @@ public class BerserkerClass : FighterClass
     public override void BaseAbility()
     {
         StartCoroutine(RepeatedFire(A1Damage, attackDirection));
+        StartCoroutine(gameObject.GetComponent<PlayerController>().Dash());
     }
 
 

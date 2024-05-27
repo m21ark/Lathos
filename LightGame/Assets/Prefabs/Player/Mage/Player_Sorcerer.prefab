@@ -738,14 +738,17 @@ MonoBehaviour:
   A0Damage: 10
   A0ReloadTime: 0.3
   A0ChargeRate: 0
+  stopsMovementA0: 0
   A1Prefab: {fileID: 4923962845166056162, guid: a4959590fd6f5ac47b3f73168e943ddf, type: 3}
   A1Damage: 20
   A1ReloadTime: 1
   A1ChargeRate: 0
+  stopsMovementA1: 0
   A2Prefab: {fileID: 7115518648037137970, guid: 7467e263a6cc8fa4289527f810b2ff8d, type: 3}
   A2Damage: 4
   A2ReloadTime: 2
   A2ChargeRate: 0
+  stopsMovementA2: 1
   lastAttackTime: 0
   lastAttack1Time: 0
   lastAttack2Time: 0
