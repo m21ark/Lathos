@@ -58,6 +58,34 @@ public class ProtoClass : MonoBehaviour
     [HideInInspector] public bool isAttack2ing = false;
     [HideInInspector] public float lastDashTime = 0f;
 
+    // Attack animation flags
+    [HideInInspector] public bool pendingA0Animate = false;
+    [HideInInspector] public bool pendingA1Animate = false;
+    [HideInInspector] public bool pendingA2Animate = false;
+
+    public bool hasPendingAnimation(int num)
+    {
+        bool aux = false;
+        switch (num)
+        {
+            case 0:
+                aux = pendingA0Animate;
+                pendingA0Animate = false;
+                break;
+            case 1:
+                aux =  pendingA1Animate;
+                pendingA1Animate = false;
+                break;
+            case 2:
+                aux = pendingA2Animate;
+                pendingA2Animate = false;
+                break;
+            default:
+                return false;
+        }
+        return aux;
+    }
+
     void Start()
     {
         cameraPivot = transform.parent.transform.Find("CameraPivot");
@@ -158,6 +186,7 @@ public class ProtoClass : MonoBehaviour
     }
 
     // ============================== VFX ==============================
+
     public void GenerateVFX(GameObject vfx, int duration = 5)
     {
         GameObject vfxInstance = Instantiate(vfx, transform.position, Quaternion.identity);

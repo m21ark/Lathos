@@ -18,6 +18,7 @@ public class FMODEvents : MonoBehaviour
 
     [field: Header("Player Attacks SFX")]
     [field: SerializeField] public EventReference playerSwordSwing { get; private set; }
+    [field: SerializeField] public EventReference playerWizardA2 { get; private set; }
 
     [field: Header("Enemy SFX")]
     [field: SerializeField] public EventReference antAttack { get; private set; }

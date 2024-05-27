@@ -179,6 +179,13 @@ MonoBehaviour:
       Data3: 1638709904
       Data4: -1709180065
     Path: event:/Main character movement/sword 2
+  <playerWizardA2>k__BackingField:
+    Guid:
+      Data1: 1777179059
+      Data2: 1179459782
+      Data3: 196928694
+      Data4: -1868967731
+    Path: event:/SFX abilities/Wizard ability
   <antAttack>k__BackingField:
     Guid:
       Data1: 0

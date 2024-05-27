@@ -2,12 +2,9 @@ using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using FMOD.Studio;
 
 public class PlayerController : MonoBehaviour
 {
-
-
     private Rigidbody rb;
     private ProtoClass player;
     private Transform cameraPivot;
@@ -205,24 +202,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void HandleAttack(KeyCode attackKey, ref bool isAttacking, ref float lastAttackTime, float reloadTime, bool attackStandingStill, Action attackAction, bool useMouseButton = false, int mouseButton = 0)
-    {
-        lastAttackTime -= Time.deltaTime;
-
-        if(lastAttackTime > 0){
-            isAttacking = false;
-            return;
-        }
-
+    void HandleAttack(KeyCode attackKey, ref bool isAttacking, ref float lastAttackTime, ref bool pendingAnimation, float reloadTime, bool attackStandingStill, Action attackAction, bool useMouseButton = false, int mouseButton = 0)
+    {        
         if (Input.GetKeyDown(attackKey) || (useMouseButton && Input.GetMouseButtonDown(mouseButton)))
             isAttacking = true;
           
         if (Input.GetKeyUp(attackKey) || (useMouseButton && Input.GetMouseButtonUp(mouseButton)))
             isAttacking = false;
 
+        // Check if the player can attack again
+        lastAttackTime -= Time.deltaTime;
+        if(lastAttackTime > 0) return;
+
         if (isAttacking)
         {
             attackAction();
+            pendingAnimation = true;
             lastAttackTime = reloadTime;
         }
 
@@ -235,17 +230,17 @@ public class PlayerController : MonoBehaviour
 
     void Attack0()
     {
-        HandleAttack(attackKey, ref player.isAttacking, ref player.lastAttackTime, player.A0ReloadTime * player.attackSpeed, player.stopsMovementA0, player.Attack, true, 0);
+        HandleAttack(attackKey, ref player.isAttacking, ref player.lastAttackTime, ref player.pendingA0Animate, player.A0ReloadTime * player.attackSpeed, player.stopsMovementA0, player.Attack, true, 0);
     }
 
     void Attack1()
     {
-        HandleAttack(attack1Key, ref player.isAttack1ing, ref player.lastAttack1Time, player.A1ReloadTime, player.stopsMovementA1, player.BaseAbility, true, 1);
+        HandleAttack(attack1Key, ref player.isAttack1ing, ref player.lastAttack1Time, ref player.pendingA1Animate, player.A1ReloadTime, player.stopsMovementA1, player.BaseAbility, true, 1);
     }
 
     void Attack2()
     {
-        HandleAttack(attack2Key, ref player.isAttack2ing, ref player.lastAttack2Time, player.A2ReloadTime, player.stopsMovementA2, player.SpecialAbility);
+        HandleAttack(attack2Key, ref player.isAttack2ing, ref player.lastAttack2Time, ref player.pendingA2Animate, player.A2ReloadTime, player.stopsMovementA2, player.SpecialAbility);
     }
 
     void OnCollisionEnter(Collision collision)

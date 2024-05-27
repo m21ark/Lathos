@@ -31,6 +31,8 @@ public class WizardA2_1 : ProtoAttack
         GameObject vfxInstance = Instantiate(A2_2VFX, transform.position, Quaternion.identity);
         vfxInstance.SetActive(true);
         Destroy(vfxInstance, 15.0f);
+     
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerWizardA2, transform.position, 1f);
         
         StartCoroutine(GenerateA2_2(currentPos));
     }

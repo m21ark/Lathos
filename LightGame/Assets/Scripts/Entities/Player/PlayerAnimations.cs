@@ -34,10 +34,8 @@ public class PlayerAnimations : MonoBehaviour
         isRunning = playerController.isMoving;
         isDashing = playerClass.lastDashTime > 0.5f;
 
-        if (isDashing || isJumping) 
-        {
-            isRunning = false;
-        }
+        if (isDashing || isJumping) isRunning = false;
+        
         if (isDashing)
         {
             isJumping = false;
@@ -47,10 +45,14 @@ public class PlayerAnimations : MonoBehaviour
         animator.SetBool("isJumping", isJumping);
         animator.SetBool("isRunning", isRunning);
         animator.SetBool("isDashing", isDashing);
-        
-        animator.SetBool("isAttacking0", playerClass.isAttacking);
-        animator.SetBool("isAttacking1", playerClass.isAttack1ing);
-        animator.SetBool("isAttacking2", playerClass.isAttack2ing);
+
+        //trigger attack animations
+        if(playerClass.hasPendingAnimation(0))
+            animator.SetTrigger("A0");
+        if(playerClass.hasPendingAnimation(1))
+            animator.SetTrigger("A1");
+        if(playerClass.hasPendingAnimation(2))
+            animator.SetTrigger("A2");
 
         animator.SetInteger("classID", classID);
     }
