@@ -15,12 +15,13 @@ public class SharpshooterClass : RangerClass
 
     public override void BaseAbility()
     {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerSharpshooterA1, transform.position);
         GenerateVFX(VFXAbility, 15);
     }
 
     public override void SpecialAbility()
     {
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerSharpshooterA1, transform.position);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerSharpshooterA2, transform.position);
 
         Vector3 offset = new Vector3(0, 0, 3);
         GenerateVFXOnPlayer(VFXSpecialAbility, transform, 15, offset);
