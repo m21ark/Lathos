@@ -171,7 +171,7 @@ public class PlayerController : MonoBehaviour
         cameraPivot.position = transform.position;
     }
 
-    IEnumerator Dash()
+    public IEnumerator Dash()
     {
         float duration = 0.5f;
         float elapsedTime = 0f;
