@@ -493,6 +493,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6048826862267232053, guid: 792a1537b0f992083b045a526f9e2ff9, type: 3}
+      propertyPath: m_Name
+      value: Armature.004
+      objectReference: {fileID: 0}
     - target: {fileID: 6188616319644209803, guid: 792a1537b0f992083b045a526f9e2ff9, type: 3}
       propertyPath: m_Avatar
       value: 
@@ -502,9 +506,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7494713000946595923, guid: 792a1537b0f992083b045a526f9e2ff9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7494713000946595923, guid: 792a1537b0f992083b045a526f9e2ff9, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: b91f6cfd476bf6948a4ec9ea2b048e42, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 7494713000946595923, guid: 792a1537b0f992083b045a526f9e2ff9, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
@@ -512,8 +520,37 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 597181843906335307, guid: 792a1537b0f992083b045a526f9e2ff9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1207140829}
   m_SourcePrefab: {fileID: 100100000, guid: 792a1537b0f992083b045a526f9e2ff9, type: 3}
+--- !u!1 &1207140828 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 597181843906335307, guid: 792a1537b0f992083b045a526f9e2ff9, type: 3}
+  m_PrefabInstance: {fileID: 1207140827}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1207140829
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207140828}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: e547d3a940acf9944bc7f0f2d9198d68, type: 3}
+  m_Controller: {fileID: 9100000, guid: b91f6cfd476bf6948a4ec9ea2b048e42, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1577273738
 PrefabInstance:
   m_ObjectHideFlags: 0
