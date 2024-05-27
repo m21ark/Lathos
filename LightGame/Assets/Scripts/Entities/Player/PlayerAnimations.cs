@@ -38,5 +38,11 @@ public class PlayerAnimations : MonoBehaviour
         animator.SetBool("isJumping", isJumping);
         animator.SetBool("isRunning", isRunning);
         animator.SetBool("isDashing", isDashing);
+        
+        animator.SetBool("isAttacking0", playerClass.isAttacking);
+        animator.SetBool("isAttacking1", playerClass.isAttack1ing);
+        animator.SetBool("isAttacking2", playerClass.isAttack2ing);
+
+        Debug.Log(playerClass.isAttacking + " " + playerClass.isAttack1ing + " " + playerClass.isAttack2ing);
     }
 }
