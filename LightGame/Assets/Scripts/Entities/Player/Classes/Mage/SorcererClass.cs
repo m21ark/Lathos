@@ -18,7 +18,7 @@ public class SorcererClass : MageClass
     {
         ProtoAttack attack;
         Vector3 attackDirection;
-        GenerateAttackAim(A0Prefab, out attack, out attackDirection);
+        GenerateAttack(A0Prefab, out attack, out attackDirection);
         attack.Fire(A0Damage, attackDirection);
     }
 

@@ -2,34 +2,25 @@ using UnityEngine;
 
 public class KnightClass : FighterClass
 {
+    public float A0StartOffset1 = 0.3f;
+    public float A1StartOffset1 = 0.3f;
+    public float A2StartOffset1 = 0.3f;
 
     public override void Attack()
     {
-        ProtoAttack attack;
-        Vector3 attackDirection;
-        GenerateAttackPhysical(A0Prefab, out attack, out attackDirection);
-        attack.Fire(A0Damage, attackDirection);
-
+        DelayAttackPhysical(A0Prefab, A0Damage, A0StartOffset1);
         AudioManager.instance.PlayOneShot(FMODEvents.instance.playerSwordSwing, transform.position, 0.15f);
     }
 
     public override void BaseAbility()
     {
-        ProtoAttack attack;
-        Vector3 attackDirection;
-        GenerateAttackPhysical(A1Prefab, out attack, out attackDirection);
-        attack.Fire(A1Damage, attackDirection);
-
+        DelayAttackPhysical(A1Prefab, A1Damage, A1StartOffset1);
         AudioManager.instance.PlayOneShot(FMODEvents.instance.playerSwordSwing, transform.position, 0.2f);
     }
 
     public override void SpecialAbility()
-    {
-        ProtoAttack attack;
-        Vector3 attackDirection;
-        GenerateAttackPhysical(A2Prefab, out attack, out attackDirection);
-        attack.Fire(A2Damage, attackDirection);
-
+    {   
+        DelayAttackPhysical(A2Prefab, A2Damage, A2StartOffset1);
         AudioManager.instance.PlayOneShot(FMODEvents.instance.playerSwordSwing, transform.position, 0.5f);
     }
 }
