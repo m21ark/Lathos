@@ -9,7 +9,7 @@ public class SharpshooterClass : RangerClass
     {
         ProtoAttack attack;
         Vector3 attackDirection;
-        GenerateAttackAim(A0Prefab, out attack, out attackDirection);
+        GenerateAttack(A0Prefab, out attack, out attackDirection);
         attack.Fire(A0Damage, attackDirection);
     }
 
@@ -33,7 +33,7 @@ public class SharpshooterClass : RangerClass
         yield return new WaitForSeconds(1.9f);
         ProtoAttack attack;
         Vector3 attackDirection;
-        GenerateAttackAim(A2Prefab, out attack, out attackDirection);
+        GenerateAttack(A2Prefab, out attack, out attackDirection);
         attack.Fire(A2Damage, attackDirection);
     }
 }

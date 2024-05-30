@@ -9,7 +9,7 @@ public class MageClass : BaseClass
     {
         ProtoAttack attack;
         Vector3 attackDirection;
-        GenerateAttackAim(A0Prefab, out attack, out attackDirection);
+        GenerateAttack(A0Prefab, out attack, out attackDirection);
         attack.Fire(A0Damage, attackDirection);
     }
 
@@ -17,7 +17,7 @@ public class MageClass : BaseClass
     {
         ProtoAttack attack;
         Vector3 attackDirection;
-        GenerateAttackAim(A1Prefab, out attack, out attackDirection);
+        GenerateAttack(A1Prefab, out attack, out attackDirection);
         attack.Fire(A1Damage, attackDirection, ("prefab", A1_2Prefab));
     }
 }

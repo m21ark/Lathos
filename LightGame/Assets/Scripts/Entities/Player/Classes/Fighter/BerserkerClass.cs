@@ -3,7 +3,6 @@ using System.Collections;
 
 public class BerserkerClass : FighterClass
 {
-
     private ProtoAttack attack;
     private Vector3 attackDirection;
 
@@ -12,12 +11,11 @@ public class BerserkerClass : FighterClass
     public float A2BuffMult = 1.5f;
     public float A2DebuffMult = 0.5f;
 
+    public float A0StartOffset1 = 0.8f;
+
     public override void Attack()
     {
-        ProtoAttack attack;
-        Vector3 attackDirection;
-        GenerateAttackPhysical(A0Prefab, out attack, out attackDirection);
-        attack.Fire(A0Damage, cameraPivot.transform.forward);
+        DelayAttackPhysical(A0Prefab, A0Damage, A0StartOffset1);
     }
 
     public override void BaseAbility()
@@ -26,13 +24,12 @@ public class BerserkerClass : FighterClass
         StartCoroutine(gameObject.GetComponent<PlayerController>().Dash());
     }
 
-
     IEnumerator RepeatedFire(int baseDamage, Vector3 attackDirection)
     {
         for (int i = 0; i < 3; i++)
         {
             // Call Fire method initially
-            GenerateAttackPhysical(A1Prefab, out attack, out attackDirection);
+            GenerateAttack(A1Prefab, out attack, out attackDirection);
             attack.Fire(baseDamage, cameraPivot.forward);
 
             // Wait for 0.2 seconds

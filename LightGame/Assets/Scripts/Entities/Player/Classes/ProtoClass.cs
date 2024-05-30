@@ -140,7 +140,7 @@ public class ProtoClass : MonoBehaviour
         return className;
     }
 
-    private void GenerateAttack(bool isPhysical, GameObject prefab, out ProtoAttack attack, out Vector3 attackDirection)
+    public void GenerateAttack(GameObject prefab, out ProtoAttack attack, out Vector3 attackDirection)
     {
         GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
         Vector3 attackDirectionTemp;
@@ -158,15 +158,7 @@ public class ProtoClass : MonoBehaviour
         GameObject attackEntity;
         Vector3 startPos = cameraPivot.transform.position + cameraPivot.transform.forward;
 
-        if (isPhysical)
-        {
-            // Apply some randomization to attacks inclination
-            float randomZAngle = UnityEngine.Random.Range(-50f, 50f);
-            Quaternion attackRotation = Quaternion.Euler(0f, cameraPivot.transform.rotation.eulerAngles.y, randomZAngle);
-            attackEntity = Instantiate(prefab, startPos, attackRotation);
-
-        }
-        else attackEntity = Instantiate(prefab, startPos, cameraPivot.rotation);
+        attackEntity = Instantiate(prefab, startPos, cameraPivot.rotation);
 
         ProtoAttack attackTemp = attackEntity.transform.GetChild(0).GetComponent<ProtoAttack>();
 
@@ -175,14 +167,16 @@ public class ProtoClass : MonoBehaviour
         attackDirection = attackDirectionTemp;
     }
 
-    public void GenerateAttackAim(GameObject prefab, out ProtoAttack attack, out Vector3 attackDirection)
-    {
-        GenerateAttack(false, prefab, out attack, out attackDirection);
+    public void DelayAttackPhysical(GameObject prefab, int damage, float delay){
+        StartCoroutine(DelayAttackLaunchEnum(prefab, damage, delay));
     }
 
-    public void GenerateAttackPhysical(GameObject prefab, out ProtoAttack attack, out Vector3 attackDirection)
-    {
-        GenerateAttack(true, prefab, out attack, out attackDirection);
+    private IEnumerator DelayAttackLaunchEnum(GameObject prefab, int damage, float delay){
+        ProtoAttack attack;
+        Vector3 attackDirection;
+        yield return new WaitForSeconds(delay);
+        GenerateAttack(prefab, out attack, out attackDirection);
+        attack.Fire(damage, attackDirection);
     }
 
     // ============================== VFX ==============================

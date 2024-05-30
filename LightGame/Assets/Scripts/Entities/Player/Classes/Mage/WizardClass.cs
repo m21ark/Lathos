@@ -11,7 +11,7 @@ public class WizardClass : MageClass
     {
         ProtoAttack attack;
         Vector3 attackDirection;
-        GenerateAttackAim(A0Prefab, out attack, out attackDirection);
+        GenerateAttack(A0Prefab, out attack, out attackDirection);
         attack.Fire(A0Damage, attackDirection, ("prefab", A0_2Prefab));
     }
 
@@ -19,7 +19,7 @@ public class WizardClass : MageClass
     {
         ProtoAttack attack;
         Vector3 attackDirection;
-        GenerateAttackAim(A2Prefab, out attack, out attackDirection);
+        GenerateAttack(A2Prefab, out attack, out attackDirection);
         attack.Fire(A2Damage, attackDirection, ("prefab", A2_2Prefab), ("vfx", A2_2VFX));
     }
 }
