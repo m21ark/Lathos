@@ -188,11 +188,6 @@ public class ProtoClass : MonoBehaviour
         Vector3 attackDirection;
         yield return new WaitForSeconds(delay);
         GenerateAttack(prefab, out attack, out attackDirection);
-        Debug.Log("Attack direction: " + attackDirection);
-        //attackDirection.y = 0;
-        //attackDirection.Normalize();
-        Debug.Log("Attack direction normalized: " + attackDirection);
-
         attack.transform.parent.transform.rotation = Quaternion.Euler(0, cameraPivot.transform.rotation.eulerAngles.y, 0);
         attack.Fire(damage, attackDirection);
     }

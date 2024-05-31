@@ -186,13 +186,6 @@ MonoBehaviour:
       Data3: 196928694
       Data4: -1868967731
     Path: event:/SFX abilities/Wizard ability
-  <playerSharpshooterA2>k__BackingField:
-    Guid:
-      Data1: -2095309614
-      Data2: 1268863760
-      Data3: 211133598
-      Data4: -798860428
-    Path: event:/SFX abilities/Sharpshooter
   <playerSorcererA2>k__BackingField:
     Guid:
       Data1: 368178690
@@ -207,6 +200,13 @@ MonoBehaviour:
       Data3: -1927178590
       Data4: -1108409678
     Path: event:/SFX abilities/MajicProjectiles
+  <playerSharpshooterA2>k__BackingField:
+    Guid:
+      Data1: -2095309614
+      Data2: 1268863760
+      Data3: 211133598
+      Data4: -798860428
+    Path: event:/SFX abilities/Sharpshooter
   <antAttack>k__BackingField:
     Guid:
       Data1: 0
@@ -3974,7 +3974,6 @@ MonoBehaviour:
   persistentData: 0
   endMenu: {fileID: 946654975150626795}
   isInBossBattle: 0
-  gameTime: 0
   isPaused: 0
   endingsUnlocked: 000000
 --- !u!114 &5826706621548093825
@@ -6511,7 +6510,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 10, y: 20}
-  m_SizeDelta: {x: 1250, y: 110}
+  m_SizeDelta: {x: 1100, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3973771787590172677
 CanvasRenderer:
@@ -6541,7 +6540,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Placeholder Text
+  m_text: BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7213,8 +7212,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -400}
-  m_SizeDelta: {x: -600, y: -900}
+  m_AnchoredPosition: {x: 0, y: -341}
+  m_SizeDelta: {x: -740.3097, y: -900}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9100501182517100644
 CanvasRenderer:

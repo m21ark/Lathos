@@ -18,7 +18,6 @@ public class GameLogic : MonoBehaviour
     [HideInInspector] public bool isInBossBattle;
 
     // Game Logic Fields
-    [HideInInspector] public float gameTime = 0.0f;
     private float lightDecreaseTimer = 0f;
     private int healTickTime = 5;
     [HideInInspector] public bool isPaused = false;
@@ -48,7 +47,6 @@ public class GameLogic : MonoBehaviour
 
         // Set start time variables
         Time.timeScale = 1;
-        gameTime = 0.0f;
 
         toggleCursor(false); // Hide cursor during gameplay
     }
@@ -79,20 +77,19 @@ public class GameLogic : MonoBehaviour
 
         handlePlayerLight();
 
-        // Update the game time
-        gameTime += Time.deltaTime;
-
         // TODO: For debugging purposes
         if (Input.GetKeyDown(KeyCode.H)){
             player.Heal(100);
             player.IncrementLight(100);
+        }else if (Input.GetKeyDown(KeyCode.J)){
+            player.TakeDamage(5);
+        }else if(Input.GetKeyDown(KeyCode.P)){
+            DialogueController.instance.StartDialogue("Fighter Ending");
         }
             
-        // If boss or player dead, end game
+        // Check end game conditions
         if (isInBossBattle)
-        {
             if (boss.health <= 0) endGame(true);
-        }
         if (!player.isAlive()) endGame(false);
     }
 

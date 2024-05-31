@@ -8,15 +8,13 @@ public class DialogueController : MonoBehaviour
     public static DialogueController instance { get; private set; }
     public TextMeshProUGUI text;
     public GameObject dialogueBox;
-    public bool autoSkip = true;
 
     // Private variables
-    private float textSpeedDelay = 0.01f;
-    private float nextBoxDelay = 2f;
+    private float textSpeedDelay = 0.035f;
+    private float nextBoxDelay = 4f;
     private int index = 0;
-    private bool isTyping = false;
-    private DialogueData dialogueData;
     private bool isActive = false;
+    private DialogueData dialogueData;
 
     // Dialogue Data
     public List<DialogueData> dialogueDataList;
@@ -28,7 +26,7 @@ public class DialogueController : MonoBehaviour
         else instance = this;
     }
 
-    public void Display(DialogueData data)
+    private void Display(DialogueData data)
     {
         if (isActive || data == null) return;
         dialogueData = data;
@@ -39,44 +37,19 @@ public class DialogueController : MonoBehaviour
         StartCoroutine(TypeLine());
     }
 
-    void Update()
+    private IEnumerator TypeLine()
     {
-        if (autoSkip) return;
-
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            if (!isTyping) NextLine(); // Show next line
-            else if (text.text != dialogueData.dialoguePhrases[index])
-            {
-                // Skip text typing and show full line
-                StopCoroutine(TypeLine());
-                text.text = "";
-                isTyping = false;
-                text.text += dialogueData.dialoguePhrases[index];
-            }
-        }
-    }
-
-    IEnumerator TypeLine()
-    {
-        isTyping = true;
-
         foreach (char c in dialogueData.dialoguePhrases[index].ToCharArray())
         {
-            if (!isTyping) break;
             text.text += c;
             yield return new WaitForSecondsRealtime(textSpeedDelay);
         }
 
-        isTyping = false;
-        if (autoSkip)
-        {
-            yield return new WaitForSecondsRealtime(nextBoxDelay);
-            NextLine();
-        }
+        yield return new WaitForSecondsRealtime(nextBoxDelay);
+        NextLine();
     }
 
-    void NextLine()
+    private void NextLine()
     {
         if (index < dialogueData.dialoguePhrases.Count - 1)
         {
@@ -86,7 +59,7 @@ public class DialogueController : MonoBehaviour
         }
         else
         {
-            dialogueBox.SetActive(true);
+            dialogueBox.SetActive(false);
             isActive = false;
         }
     }
