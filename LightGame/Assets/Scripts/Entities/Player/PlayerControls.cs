@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
 
             // check if the player is grounded after the dash (special case for slopes)
             RaycastHit hit;
-            isGrounded = Physics.Raycast(transform.position, Vector3.down, out hit, 1.75f, ~LayerMask.GetMask("LampLight"));
+            isGrounded = Physics.Raycast(transform.position, Vector3.down, out hit, 1.65f, ~LayerMask.GetMask("LampLight"));
 
             // to avoid the player jumping on a slope because Y velocity is not 0
             if (isGrounded) rb.velocity = new Vector3(0, 0, 0);
