@@ -50,6 +50,7 @@ public class AudioManager : MonoBehaviour
     // can be used to play a sound that doesn't need to be stopped manually like a gunshot
     public void PlayOneShot(EventReference sound, Vector3 position, float delay = 0.0f)
     {
+        if(sound.IsNull) return;
         StartCoroutine(PlayOneShotCoroutine(sound, position, delay));
     }
 

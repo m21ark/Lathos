@@ -7,6 +7,7 @@ public class BaseClass : ProtoClass
         ProtoAttack attack;
         Vector3 attackDirection;
         GenerateAttack(A0Prefab, out attack, out attackDirection);
-        attack.Fire(A0Damage, attackDirection); // hardcoded damage of 10 for now
+        attack.Fire(A0Damage, attackDirection);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerBaseA0, transform.position);
     }
 }

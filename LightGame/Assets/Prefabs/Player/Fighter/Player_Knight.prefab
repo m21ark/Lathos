@@ -739,8 +739,8 @@ MonoBehaviour:
   attackSpeed: 1
   A0Prefab: {fileID: 7115518648037137970, guid: f5d805b6db8c4594f8e00724bda93c7c, type: 3}
   A0Damage: 10
-  A0ReloadTime: 0.6
-  A0ChargeRate: 0
+  A0ReloadTime: 1
+  A0ChargeRate: 0.2
   stopsMovementA0: 0
   A1Prefab: {fileID: 7115518648037137970, guid: 28443221b7111c14f88bf9ba02c49943, type: 3}
   A1Damage: 20
@@ -759,6 +759,14 @@ MonoBehaviour:
   isAttack1ing: 0
   isAttack2ing: 0
   lastDashTime: 0
+  pendingA0Animate: 0
+  pendingA1Animate: 0
+  pendingA2Animate: 0
+  A0StartOffset: 0.3
+  A1StartOffset: 0.3
+  A0StartOffset1: 0.3
+  A1StartOffset1: 0.3
+  A2StartOffset1: 0.7
 --- !u!4 &646587067788642612 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3860184868053501211, guid: 179c2b999f195394989801ac4c0951a4, type: 3}

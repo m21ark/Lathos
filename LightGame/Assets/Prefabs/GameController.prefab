@@ -172,27 +172,104 @@ MonoBehaviour:
       Data3: 0
       Data4: 0
     Path: 
-  <playerSwordSwing>k__BackingField:
+  <playerHurt>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <playerDie>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <playerBaseA0>k__BackingField:
+    Guid:
+      Data1: 2001664695
+      Data2: 1102073962
+      Data3: 1133333415
+      Data4: 648846674
+    Path: event:/Main character movement/Hitting once
+  <playerFighterA0>k__BackingField:
     Guid:
       Data1: -39726303
       Data2: 1112944182
       Data3: 1638709904
       Data4: -1709180065
     Path: event:/Main character movement/sword 2
-  <playerWizardA2>k__BackingField:
+  <playerFighterA1>k__BackingField:
     Guid:
-      Data1: 1777179059
-      Data2: 1179459782
-      Data3: 196928694
-      Data4: -1868967731
-    Path: event:/SFX abilities/Wizard ability
-  <playerSorcererA2>k__BackingField:
+      Data1: -39726303
+      Data2: 1112944182
+      Data3: 1638709904
+      Data4: -1709180065
+    Path: event:/Main character movement/sword 2
+  <playerKnightA0>k__BackingField:
     Guid:
-      Data1: 368178690
-      Data2: 1093117865
-      Data3: 152284850
-      Data4: 1010730972
-    Path: event:/SFX abilities/Sorcerer ability
+      Data1: -39726303
+      Data2: 1112944182
+      Data3: 1638709904
+      Data4: -1709180065
+    Path: event:/Main character movement/sword 2
+  <playerKnightA1>k__BackingField:
+    Guid:
+      Data1: 300601767
+      Data2: 1237183439
+      Data3: -1305033849
+      Data4: -2037598901
+    Path: event:/Sword variations/RotatingSlash
+  <playerKnightA2>k__BackingField:
+    Guid:
+      Data1: -219984526
+      Data2: 1155521062
+      Data3: 1418902157
+      Data4: 1225278161
+    Path: event:/Sword variations/MegaSlash
+  <playerBerserkerA0>k__BackingField:
+    Guid:
+      Data1: -39726303
+      Data2: 1112944182
+      Data3: 1638709904
+      Data4: -1709180065
+    Path: event:/Main character movement/sword 2
+  <playerBerserkerA1>k__BackingField:
+    Guid:
+      Data1: -39726303
+      Data2: 1112944182
+      Data3: 1638709904
+      Data4: -1709180065
+    Path: event:/Main character movement/sword 2
+  <playerBerserkerA2>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <playerRangerA0>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <playerRangerA1>k__BackingField:
+    Guid:
+      Data1: -406302136
+      Data2: 1249865289
+      Data3: -1927178590
+      Data4: -1108409678
+    Path: event:/SFX abilities/MajicProjectiles
+  <playerSharpshooterA0>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   <playerSharpshooterA1>k__BackingField:
     Guid:
       Data1: -406302136
@@ -207,20 +284,83 @@ MonoBehaviour:
       Data3: 211133598
       Data4: -798860428
     Path: event:/SFX abilities/Sharpshooter
-  <antAttack>k__BackingField:
+  <playerRogueA0>k__BackingField:
     Guid:
       Data1: 0
       Data2: 0
       Data3: 0
       Data4: 0
     Path: 
-  <bossAttack>k__BackingField:
+  <playerRogueA1>k__BackingField:
     Guid:
       Data1: 0
       Data2: 0
       Data3: 0
       Data4: 0
     Path: 
+  <playerRogueA2>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <playerMageA0>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <playerMageA1>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <playerWizardA0>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <playerWizardA1>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <playerWizardA2>k__BackingField:
+    Guid:
+      Data1: 1777179059
+      Data2: 1179459782
+      Data3: 196928694
+      Data4: -1868967731
+    Path: event:/SFX abilities/Wizard ability
+  <playerSorcererA0>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <playerSorcererA1>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <playerSorcererA2>k__BackingField:
+    Guid:
+      Data1: 368178690
+      Data2: 1093117865
+      Data3: 152284850
+      Data4: 1010730972
+    Path: event:/SFX abilities/Sorcerer ability
   <opening0>k__BackingField:
     Guid:
       Data1: -19114480
@@ -270,6 +410,90 @@ MonoBehaviour:
       Data3: 120854704
       Data4: 1577797187
     Path: event:/VoiceLines/mage_ending
+  <antAttack>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <antWalk>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <antHurt>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <antDie>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <waspAttack>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <waspWalk>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <waspHurt>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <waspDie>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <bossAttack>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <bossWalk>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <bossHurt>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <bossDie>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &647704372512842457
 GameObject:
   m_ObjectHideFlags: 0

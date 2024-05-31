@@ -17,32 +17,20 @@ public class BerserkerClass : FighterClass
     public override void Attack()
     {
         DelayAttackPhysical(A0Prefab, A0Damage, A0StartOffset1);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerBerserkerA0, transform.position, 0.15f);
     }
 
     public override void BaseAbility()
     {
         StartCoroutine(gameObject.GetComponent<PlayerController>().Dash());
         DelayAttackPhysical(A1Prefab, A1Damage, A1StartOffset1);
-        //StartCoroutine(RepeatedFire(A1Damage, attackDirection));
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerBerserkerA1, transform.position, 0.3f);
     }
-
-    IEnumerator RepeatedFire(int baseDamage, Vector3 attackDirection)
-    {
-        for (int i = 0; i < 3; i++)
-        {
-            // Call Fire method initially
-            GenerateAttack(A1Prefab, out attack, out attackDirection);
-            attack.Fire(baseDamage, cameraPivot.forward);
-
-            // Wait for 0.2 seconds
-            yield return new WaitForSeconds(A1TimeDelta);
-        }
-    }
-
 
     public override void SpecialAbility()
     {
         StartCoroutine(ActivateSpecialAbility());
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerBerserkerA2, transform.position, 0.15f);
     }
 
     private IEnumerator ActivateSpecialAbility()

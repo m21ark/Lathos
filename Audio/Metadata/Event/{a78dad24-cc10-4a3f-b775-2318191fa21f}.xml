@@ -5,7 +5,7 @@
 			<value>running no hearbeat</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{2cf23003-60e4-4c6a-a36e-2e73d75186c8}</destination>
@@ -116,7 +116,6 @@
 	<object class="MixerBusEffectChain" id="{27c6077d-a48d-4457-90e7-335dcd9860e4}">
 		<relationship name="effects">
 			<destination>{04976f7e-c12c-4f86-908f-72dcbc22def2}</destination>
-			<destination>{66823ed2-5414-4a45-baef-de92d6704c91}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{15fae4af-5573-44b1-b5ca-47caef6db87f}" />
@@ -128,6 +127,5 @@
 	</object>
 	<object class="MixerBusPanner" id="{2a126986-3e2f-470a-92ba-f94153ab1bb4}" />
 	<object class="MixerBusFader" id="{04976f7e-c12c-4f86-908f-72dcbc22def2}" />
-	<object class="SpatialiserEffect" id="{66823ed2-5414-4a45-baef-de92d6704c91}" />
 	<object class="MixerBusFader" id="{dc1a0da7-4237-4e93-8d15-e0968200cc91}" />
 </objects>

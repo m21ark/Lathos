@@ -229,6 +229,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-5255175139410349203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Main character movement/Hitting once
+  m_EditorClassIdentifier: 
+  Path: event:/Main character movement/Hitting once
+  Guid:
+    Data1: 2001664695
+    Data2: 1102073962
+    Data3: 1133333415
+    Data4: 648846674
+  Banks:
+  - {fileID: 2459042495137615457}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-5131723413223201352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -466,7 +493,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638527841124640057
+  lastModified: 638527883017638039
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -486,10 +513,10 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Characer movements.bank
   Name: Characer movements
   StudioPath: bank:/Characer movements
-  lastModified: 638527844498849635
+  lastModified: 638527867754963924
   FileSizes:
   - Name: Desktop
-    Value: 303200
+    Value: 302912
   Exists: 1
 --- !u!114 &-2305876707376458427
 MonoBehaviour:
@@ -681,7 +708,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638526749232741777
+  lastModified: 638524353536623386
   FileSizes:
   - Name: Desktop
     Value: 958368
@@ -725,12 +752,15 @@ MonoBehaviour:
   - {fileID: -3888032577658131118}
   - {fileID: 6514131332659450946}
   - {fileID: 6506766291844778887}
+  - {fileID: 5315172414698682652}
+  - {fileID: 6530709570178568181}
+  - {fileID: -5255175139410349203}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2411626906417223040}
   StringsBanks:
   - {fileID: 2450608712365836312}
-  cacheTime: 638527848404523429
+  cacheTime: 638527883017638039
   cacheVersion: 131617
 --- !u!114 &5652942996200681
 MonoBehaviour:
@@ -894,7 +924,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -2339479710055509579}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -915,10 +945,10 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638527841124680058
+  lastModified: 638527883017638039
   FileSizes:
   - Name: Desktop
-    Value: 1860
+    Value: 2000
   Exists: 1
 --- !u!114 &2459042495137615457
 MonoBehaviour:
@@ -935,10 +965,10 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Abilities.bank
   Name: Abilities
   StudioPath: bank:/Abilities
-  lastModified: 638526749232716759
+  lastModified: 638527883017598038
   FileSizes:
   - Name: Desktop
-    Value: 371008
+    Value: 377600
   Exists: 1
 --- !u!114 &2653106234083983284
 MonoBehaviour:
@@ -1263,6 +1293,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 24215
+--- !u!114 &5315172414698682652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sword variations/MegaSlash
+  m_EditorClassIdentifier: 
+  Path: event:/Sword variations/MegaSlash
+  Guid:
+    Data1: -219984526
+    Data2: 1155521062
+    Data3: 1418902157
+    Data4: 1225278161
+  Banks:
+  - {fileID: 9063726596643881184}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &5674064285160735432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1338,6 +1395,33 @@ MonoBehaviour:
   Banks:
   - {fileID: -9046514930084256065}
   IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6530709570178568181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sword variations/RotatingSlash
+  m_EditorClassIdentifier: 
+  Path: event:/Sword variations/RotatingSlash
+  Guid:
+    Data1: 300601767
+    Data2: 1237183439
+    Data3: -1305033849
+    Data4: -2037598901
+  Banks:
+  - {fileID: 9063726596643881184}
+  IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
@@ -1568,10 +1652,10 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Sword.bank
   Name: Sword
   StudioPath: bank:/Sword
-  lastModified: 638526749232761844
+  lastModified: 638527878025702615
   FileSizes:
   - Name: Desktop
-    Value: 180512
+    Value: 135968
   Exists: 1
 --- !u!114 &9087095521652176878
 MonoBehaviour:

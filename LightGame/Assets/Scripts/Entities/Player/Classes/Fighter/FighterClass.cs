@@ -8,12 +8,12 @@ public class FighterClass : BaseClass
     public override void Attack()
     {
         DelayAttackPhysical(A0Prefab, A0Damage, A0StartOffset);
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerSwordSwing, transform.position, 0.15f);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerFighterA0, transform.position, 0.15f);
     }
 
     public override void BaseAbility()
     {
         DelayAttackPhysical(A1Prefab, A1Damage, A1StartOffset);
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerSwordSwing, transform.position, 0.15f);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerFighterA1, transform.position, 0.15f);
     }
 }
