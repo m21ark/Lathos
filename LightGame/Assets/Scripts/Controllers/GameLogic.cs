@@ -79,12 +79,6 @@ public class GameLogic : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.H)){
             player.Heal(100);
             player.IncrementLight(100);
-        }else if (Input.GetKeyDown(KeyCode.J)){
-            player.TakeDamage(5);
-        }else if(Input.GetKeyDown(KeyCode.P)){
-            StartCoroutine(endGame(true));
-        }else if(Input.GetKeyDown(KeyCode.O)){
-            StartCoroutine(endGame(false));
         }
             
         // Check end game conditions
@@ -182,6 +176,9 @@ public class GameLogic : MonoBehaviour
             endMenu.SetActive(true);
             toggleCursor(true);
         }else{
+
+            player.Heal(100);
+            player.IncrementLight(100);
         
             string playerClass = player.getClassName();
 

@@ -6,10 +6,15 @@ public class FireplaceBehavior : MonoBehaviour{
     private bool isLit = false;
     public GameObject FireLightObj;
 
+    public string dialogueOnEnterID;
+
     private void OnTriggerEnter(Collider other){
         if (other.CompareTag("Player") && !isLit){
             isLit = true;
             FireLightObj.SetActive(true);
+
+            if(dialogueOnEnterID != null)
+                DialogueController.instance.StartDialogue(dialogueOnEnterID);
         }           
         RepelEnemies(other);
     }
