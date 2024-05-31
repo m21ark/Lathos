@@ -68,8 +68,6 @@ public class GameLogic : MonoBehaviour
         player = GameObject.FindWithTag("Player").GetComponent<ProtoClass>();
     }
 
-
-
     // Update is called once per frame
     void Update()
     {

@@ -176,4 +176,8 @@ public class AudioManager : MonoBehaviour
                 break;
         }
     }
+
+    public void PlayOpening(){
+        RuntimeManager.PlayOneShot(FMODEvents.instance.opening);
+    }
 }
