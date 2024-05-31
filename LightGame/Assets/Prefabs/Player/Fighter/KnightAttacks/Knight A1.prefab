@@ -149,9 +149,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravity: 0
   speed: 0
-  despawnTime: 0.1
+  despawnTime: 0.2
   ignorePlayerCol: 1
-  despawnOnCol: 1
+  despawnOnCol: 0
 --- !u!1 &7115518648037137970
 GameObject:
   m_ObjectHideFlags: 0

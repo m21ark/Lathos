@@ -32,6 +32,7 @@ public class ProtoAttack : MonoBehaviour
         if (attackRb != null)
             attackRb.velocity = direction * speed;
 
+        Debug.Log("Attack launched with direction: " + direction);
         projDamage = damage;
 
         // Despawn attack when despawn time is reached
