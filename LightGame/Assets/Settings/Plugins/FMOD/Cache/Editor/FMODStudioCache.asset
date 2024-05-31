@@ -493,7 +493,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638527883017638039
+  lastModified: 638527913029688391
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -513,10 +513,10 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Characer movements.bank
   Name: Characer movements
   StudioPath: bank:/Characer movements
-  lastModified: 638527867754963924
+  lastModified: 638527910043640951
   FileSizes:
   - Name: Desktop
-    Value: 302912
+    Value: 294368
   Exists: 1
 --- !u!114 &-2305876707376458427
 MonoBehaviour:
@@ -755,12 +755,14 @@ MonoBehaviour:
   - {fileID: 5315172414698682652}
   - {fileID: 6530709570178568181}
   - {fileID: -5255175139410349203}
+  - {fileID: 1601165121914444871}
+  - {fileID: 5819088054040366867}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2411626906417223040}
   StringsBanks:
   - {fileID: 2450608712365836312}
-  cacheTime: 638527883017638039
+  cacheTime: 638527913029728392
   cacheVersion: 131617
 --- !u!114 &5652942996200681
 MonoBehaviour:
@@ -876,6 +878,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &1601165121914444871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX abilities/Throwing amber ball
+  m_EditorClassIdentifier: 
+  Path: event:/SFX abilities/Throwing amber ball
+  Guid:
+    Data1: 2051122134
+    Data2: 1259039619
+    Data3: -885221987
+    Data4: 1656012649
+  Banks:
+  - {fileID: 2459042495137615457}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &1618553184652506767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -945,10 +974,10 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638527883017638039
+  lastModified: 638527913029728392
   FileSizes:
   - Name: Desktop
-    Value: 2000
+    Value: 2094
   Exists: 1
 --- !u!114 &2459042495137615457
 MonoBehaviour:
@@ -965,10 +994,10 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Abilities.bank
   Name: Abilities
   StudioPath: bank:/Abilities
-  lastModified: 638527883017598038
+  lastModified: 638527913029648391
   FileSizes:
   - Name: Desktop
-    Value: 377600
+    Value: 398784
   Exists: 1
 --- !u!114 &2653106234083983284
 MonoBehaviour:
@@ -1341,6 +1370,33 @@ MonoBehaviour:
   Banks:
   - {fileID: 2459042495137615457}
   IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5819088054040366867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Main character movement/jumping ground
+  m_EditorClassIdentifier: 
+  Path: event:/Main character movement/jumping ground
+  Guid:
+    Data1: -1523328244
+    Data2: 1105357449
+    Data3: -2088535678
+    Data4: -108437555
+  Banks:
+  - {fileID: 2459042495137615457}
+  IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []

@@ -135,6 +135,7 @@ public class PlayerController : MonoBehaviour
         // Jumping
         if (Input.GetKeyDown(jumpKey) && isGrounded )
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.playerJump, transform.position);
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z); // reset the Y velocity
             rb.AddForce(Vector3.up * player.jumpForce, ForceMode.Impulse);
             isGrounded = false;

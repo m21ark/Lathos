@@ -160,11 +160,11 @@ MonoBehaviour:
     Path: event:/Main character movement/running no hearbeat
   <playerJump>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1523328244
+      Data2: 1105357449
+      Data3: -2088535678
+      Data4: -108437555
+    Path: event:/Main character movement/jumping ground
   <playerDash>k__BackingField:
     Guid:
       Data1: 0
@@ -244,11 +244,11 @@ MonoBehaviour:
     Path: event:/Main character movement/sword 2
   <playerBerserkerA2>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 2051122134
+      Data2: 1259039619
+      Data3: -885221987
+      Data4: 1656012649
+    Path: event:/SFX abilities/Throwing amber ball
   <playerRangerA0>k__BackingField:
     Guid:
       Data1: 0
@@ -286,25 +286,25 @@ MonoBehaviour:
     Path: event:/SFX abilities/Sharpshooter
   <playerRogueA0>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 2001664695
+      Data2: 1102073962
+      Data3: 1133333415
+      Data4: 648846674
+    Path: event:/Main character movement/Hitting once
   <playerRogueA1>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 2051122134
+      Data2: 1259039619
+      Data3: -885221987
+      Data4: 1656012649
+    Path: event:/SFX abilities/Throwing amber ball
   <playerRogueA2>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 300601767
+      Data2: 1237183439
+      Data3: -1305033849
+      Data4: -2037598901
+    Path: event:/Sword variations/RotatingSlash
   <playerMageA0>k__BackingField:
     Guid:
       Data1: 0
