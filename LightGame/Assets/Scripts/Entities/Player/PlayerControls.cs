@@ -47,8 +47,9 @@ public class PlayerController : MonoBehaviour
             Move();
             RotateCamera();
 
-            if(isGrounded)
+            if(isGrounded){
                 isJumping = false;
+            }
         }
     }
 
@@ -102,6 +103,11 @@ public class PlayerController : MonoBehaviour
             // if the player is moving, play the footsteps sound
             if (isGrounded && !player.isAttacking && !player.isAttack1ing && !player.isAttack2ing)
                 AudioManager.instance.PlayInstanceIfNotPlayingOnPlayer(footstepsInstanceID);
+
+            
+            // check if the player is grounded after the dash (special case for slopes)
+            RaycastHit hit;
+            isGrounded = Physics.Raycast(transform.position, Vector3.down, out hit, 1.65f, ~LayerMask.GetMask("LampLight"));
         }
         else
         {
@@ -111,7 +117,7 @@ public class PlayerController : MonoBehaviour
 
             // check if the player is grounded after the dash (special case for slopes)
             RaycastHit hit;
-            isGrounded = Physics.Raycast(transform.position, Vector3.down, out hit, 1.65f);
+            isGrounded = Physics.Raycast(transform.position, Vector3.down, out hit, 1.75f, ~LayerMask.GetMask("LampLight"));
 
             // to avoid the player jumping on a slope because Y velocity is not 0
             if (isGrounded) rb.velocity = new Vector3(0, 0, 0);
@@ -138,8 +144,8 @@ public class PlayerController : MonoBehaviour
             AudioManager.instance.PlayOneShot(FMODEvents.instance.playerJump, transform.position);
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z); // reset the Y velocity
             rb.AddForce(Vector3.up * player.jumpForce, ForceMode.Impulse);
-            isGrounded = false;
             isJumping = true;
+            isGrounded = false;
         }
 
         // Dash
