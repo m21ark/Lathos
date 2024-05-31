@@ -12,6 +12,7 @@ public class BerserkerClass : FighterClass
     public float A2DebuffMult = 0.5f;
 
     public float A0StartOffset1 = 0.8f;
+    public float A1StartOffset1 = 0.8f;
 
     public override void Attack()
     {
@@ -20,8 +21,9 @@ public class BerserkerClass : FighterClass
 
     public override void BaseAbility()
     {
-        StartCoroutine(RepeatedFire(A1Damage, attackDirection));
         StartCoroutine(gameObject.GetComponent<PlayerController>().Dash());
+        DelayAttackPhysical(A1Prefab, A1Damage, A1StartOffset1);
+        //StartCoroutine(RepeatedFire(A1Damage, attackDirection));
     }
 
     IEnumerator RepeatedFire(int baseDamage, Vector3 attackDirection)

@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/VoiceLines.bank
   Name: VoiceLines
   StudioPath: bank:/VoiceLines
-  lastModified: 638527586164437965
+  lastModified: 638527661762137625
   FileSizes:
   - Name: Desktop
     Value: 1266496
@@ -412,7 +412,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638527586153397463
+  lastModified: 638519280654055061
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -432,7 +432,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Characer movements.bank
   Name: Characer movements
   StudioPath: bank:/Characer movements
-  lastModified: 638524353539023421
+  lastModified: 638526749232751801
   FileSizes:
   - Name: Desktop
     Value: 303200
@@ -627,7 +627,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638524353536623386
+  lastModified: 638526749232741777
   FileSizes:
   - Name: Desktop
     Value: 958368
@@ -672,7 +672,7 @@ MonoBehaviour:
   - {fileID: -2411626906417223040}
   StringsBanks:
   - {fileID: 2450608712365836312}
-  cacheTime: 638527586164437965
+  cacheTime: 638527661762137625
   cacheVersion: 131617
 --- !u!114 &5652942996200681
 MonoBehaviour:
@@ -857,7 +857,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638527586153437465
+  lastModified: 638527661762107582
   FileSizes:
   - Name: Desktop
     Value: 1722
@@ -877,7 +877,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Abilities.bank
   Name: Abilities
   StudioPath: bank:/Abilities
-  lastModified: 638524441668305583
+  lastModified: 638526749232716759
   FileSizes:
   - Name: Desktop
     Value: 371008
@@ -1456,7 +1456,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Sword.bank
   Name: Sword
   StudioPath: bank:/Sword
-  lastModified: 638524379555782866
+  lastModified: 638526749232761844
   FileSizes:
   - Name: Desktop
     Value: 180512

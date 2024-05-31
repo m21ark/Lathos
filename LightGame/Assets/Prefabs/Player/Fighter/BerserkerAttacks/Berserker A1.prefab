@@ -149,9 +149,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravity: 0
   speed: 0
-  despawnTime: 0.1
+  despawnTime: 0.2
   ignorePlayerCol: 1
-  despawnOnCol: 1
+  despawnOnCol: 0
 --- !u!1 &7115518648037137970
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,8 +177,8 @@ Transform:
   m_GameObject: {fileID: 7115518648037137970}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.1039534, y: 0.20000005, z: -0.18165874}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.00000075786, z: -0.26992}
+  m_LocalScale: {x: 4.7424, y: 4.7424, z: 7.94352}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1770863497625224265}
