@@ -28,11 +28,8 @@ public class ProtoAttack : MonoBehaviour
         this.kwargs = kwargs;
 
         attackRb = gameObject.GetComponent<Rigidbody>();
+        if (attackRb != null) attackRb.velocity = direction * speed;
 
-        if (attackRb != null)
-            attackRb.velocity = direction * speed;
-
-        Debug.Log("Attack launched with direction: " + direction);
         projDamage = damage;
 
         // Despawn attack when despawn time is reached
@@ -64,7 +61,6 @@ public class ProtoAttack : MonoBehaviour
             ProtoMob mob = collision.gameObject.GetComponent<ProtoMob>();
 
             mob.TakeDamage(projDamage);
-
         }
 
         // Destroy the attack

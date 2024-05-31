@@ -5,33 +5,28 @@ using UnityEngine;
 
 public class LightOrbBehavior : MonoBehaviour
 {
-    public GameObject lamp; // Reference to the orb GameObject
-    public float accelerationSpeed = 40f; // Speed at which the object accelerates towards the orb
-
-    public float maxDistance = 40f; // Distance at which the object starts to accelerate towards the orb
-
-    public float baseSpeed = 0.5f; // Base speed at which the object moves
+    public GameObject lamp;
+    public float accelerationSpeed = 40f; // Speed at which the object accelerates towards the lamp
+    public float maxDistance = 40f; // Distance at which the object starts to accelerate towards the lamp
+    public float baseSpeed = 0.5f;
+    public int lightValue = 1;
 
     private void Start()
     {
-        // Find the lamp object in the scene
         lamp = GameObject.FindWithTag("Lamp");
     }
 
     private void Update()
     {
-        lamp = GameObject.FindWithTag("Lamp");
-
-        // Check if the orb object is set
-        if (lamp != null)
-        {
+        if(lamp == null)         
+            lamp = GameObject.FindWithTag("Lamp");
+        else {
             // Calculate the distance between this object and the orb
             float distance = Vector3.Distance(transform.position, lamp.transform.position);
 
             // Check if the distance is within 10 meters
             if (distance <= maxDistance)
             {
-
                 // Calculate direction towards the orb
                 Vector3 direction = (lamp.transform.position - transform.position).normalized;
 
@@ -43,13 +38,10 @@ public class LightOrbBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Check if the object collides with the orb
         if (other.gameObject == lamp)
         {
-            // Despawn this object
             Destroy(gameObject);
-
-            GameLogic.instance.player.collectedLight += 1; // Increase the player's light by 1
+            GameLogic.instance.player.IncrementLight(lightValue);
         }
     }
 }

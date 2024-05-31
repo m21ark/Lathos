@@ -16,7 +16,7 @@ public class ProtoClass : MonoBehaviour
 
     // Light / Energy
     [Header("Light")]
-    public int collectedLight = 0;
+    public int collectedLight = 100;
 
     // In-game Attributes
     [Header("Attributes")]
@@ -109,6 +109,18 @@ public class ProtoClass : MonoBehaviour
     {
         health += heal;
         if (health > maxHealth) health = maxHealth;
+    }
+
+    public bool IsAtMaxHealth()
+    {
+        return health == maxHealth;
+    }
+
+    public void IncrementLight(int lightInc)
+    {
+        collectedLight += lightInc;
+        if (collectedLight > 100) collectedLight = 100;
+        else if(collectedLight < 0) collectedLight = 0;
     }
 
     public void Die()

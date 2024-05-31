@@ -45,8 +45,7 @@ public class DialogueController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            if (!isTyping)
-                NextLine(); // Show next line
+            if (!isTyping) NextLine(); // Show next line
             else if (text.text != dialogueData.dialoguePhrases[index])
             {
                 // Skip text typing and show full line
@@ -61,6 +60,7 @@ public class DialogueController : MonoBehaviour
     IEnumerator TypeLine()
     {
         isTyping = true;
+
         foreach (char c in dialogueData.dialoguePhrases[index].ToCharArray())
         {
             if (!isTyping) break;
