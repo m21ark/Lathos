@@ -84,13 +84,15 @@ public class GameLogic : MonoBehaviour
         }else if (Input.GetKeyDown(KeyCode.J)){
             player.TakeDamage(5);
         }else if(Input.GetKeyDown(KeyCode.P)){
-            DialogueController.instance.StartDialogue("Fighter Ending");
+            StartCoroutine(endGame(true));
+        }else if(Input.GetKeyDown(KeyCode.O)){
+            StartCoroutine(endGame(false));
         }
             
         // Check end game conditions
         if (isInBossBattle)
-            if (boss.health <= 0) endGame(true);
-        if (!player.isAlive()) endGame(false);
+            if (boss.health <= 0) StartCoroutine(endGame(true));
+        if (!player.isAlive()) StartCoroutine(endGame(false));
     }
 
     void handlePlayerLight()
@@ -172,46 +174,60 @@ public class GameLogic : MonoBehaviour
         }
     }
 
-    void endGame(bool playerWon)
+    IEnumerator endGame(bool playerWon)
     {
-        TextMeshProUGUI end_msg = endMenu.transform.Find("EndGameSMS").GetComponent<TextMeshProUGUI>();
-        end_msg.text = string.Format("{0}", playerWon ? "You won!" : "You died!");
-
-        GameObject PlayAgainBtn = endMenu.transform.Find("PlayAgainBtn").gameObject;
-        PlayAgainBtn.SetActive(!playerWon);
+        if(!playerWon){
+            TextMeshProUGUI end_msg = endMenu.transform.Find("EndGameSMS").GetComponent<TextMeshProUGUI>();
+            end_msg.text = "You died!";
+            GameObject PlayAgainBtn = endMenu.transform.Find("PlayAgainBtn").gameObject;
+            PlayAgainBtn.SetActive(true);
+            endMenu.SetActive(true);
+            toggleCursor(true);
+        }else{
         
-        if(playerWon)
-            PersistWonFlag();
-        
-        endMenu.SetActive(true);
-        toggleCursor(true);
-    }
+            string playerClass = player.getClassName();
 
-    void PersistWonFlag()
-    {
-        if (!persistentData) return;
+            switch (playerClass){
+                case "Berserker":
+                case "Knight":
+                    endingsUnlocked[0] = true;
+                    AudioManager.instance.PlayEnding(0);
+                    DialogueController.instance.StartDialogue("Fighter Ending");
+                    break;
+                case "Sharpshooter":
+                case "Rogue":
+                    endingsUnlocked[1] = true;
+                    AudioManager.instance.PlayEnding(1);
+                    DialogueController.instance.StartDialogue("Ranger Ending");
+                    break;
+                case "Sorcerer":
+                case "Wizard":
+                    endingsUnlocked[2] = true;
+                    AudioManager.instance.PlayEnding(2);
+                    DialogueController.instance.StartDialogue("Mage Ending");
+                    break;
+                default:
+                    Debug.LogError("Tried to save player class that isn't a valid subclass: " + playerClass);
+                    break;
+            }
 
-        string playerClass = player.getClassName();
+            DataPersistSaveNewEnding();
 
-        switch (playerClass){
-            case "Berserker":
-            case "Knight":
-                endingsUnlocked[0] = true;
-                break;
-            case "Sharpshooter":
-            case "Rogue":
-                endingsUnlocked[1] = true;
-                break;
-            case "Sorcerer":
-            case "Wizard":
-                endingsUnlocked[2] = true;
-                break;
-            default:
-                Debug.LogError("Tried to save player class that isn't a valid subclass: " + playerClass);
-                break;
+            while(!DialogueController.instance.isDialogueOver)
+                yield return new WaitForSecondsRealtime(1); 
+
+            int endingsCount = 0;
+            foreach (bool ending in endingsUnlocked)
+                if (ending) endingsCount++;
+            
+            TextMeshProUGUI end_msg = endMenu.transform.Find("EndGameSMS").GetComponent<TextMeshProUGUI>();
+            end_msg.text = string.Format("You won!\n\n({0}/3 endings unlocked)", endingsCount);
+            GameObject PlayAgainBtn = endMenu.transform.Find("PlayAgainBtn").gameObject;
+
+            PlayAgainBtn.SetActive(false);
+            endMenu.SetActive(true);
+            toggleCursor(true);
         }
-
-        DataPersistSaveNewEnding();
     }
 
     public void ResetScene()

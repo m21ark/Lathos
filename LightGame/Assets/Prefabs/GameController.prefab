@@ -221,6 +221,34 @@ MonoBehaviour:
       Data3: 0
       Data4: 0
     Path: 
+  <opening>k__BackingField:
+    Guid:
+      Data1: -1213878492
+      Data2: 1244128633
+      Data3: 319819709
+      Data4: 1386035081
+    Path: event:/VoiceLines/opening
+  <endingFighter>k__BackingField:
+    Guid:
+      Data1: 2126031210
+      Data2: 1148534951
+      Data3: 284143236
+      Data4: 474911614
+    Path: event:/VoiceLines/fighter_ending
+  <endingRanger>k__BackingField:
+    Guid:
+      Data1: -1010484801
+      Data2: 1232224573
+      Data3: 219798424
+      Data4: 825777410
+    Path: event:/VoiceLines/ranger_ending
+  <endingMage>k__BackingField:
+    Guid:
+      Data1: 1198712550
+      Data2: 1235992119
+      Data3: 120854704
+      Data4: 1577797187
+    Path: event:/VoiceLines/mage_ending
 --- !u!1 &647704372512842457
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,7 +321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 3630581502776520027}
   dialogueBox: {fileID: 8795590511885103652}
-  autoSkip: 1
+  isDialogueOver: 0
   dialogueDataList:
   - {fileID: 11400000, guid: ff4d09296e613201996b1b7b6facae44, type: 2}
   - {fileID: 11400000, guid: 94b175c3a6673ee688e2cb125e843cca, type: 2}
@@ -1274,8 +1302,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 28.000021}
-  m_SizeDelta: {x: -1442.4856, y: -922.7683}
+  m_AnchoredPosition: {x: 0, y: 40}
+  m_SizeDelta: {x: -984.6179, y: -922.7683}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2890207973301094305
 CanvasRenderer:

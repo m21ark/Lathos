@@ -29,6 +29,12 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Boss SFX")]
     [field: SerializeField] public EventReference bossAttack { get; private set; }
 
+    [field: Header("Voice Lines")]
+    [field: SerializeField] public EventReference opening { get; private set; }
+    [field: SerializeField] public EventReference endingFighter { get; private set; }
+    [field: SerializeField] public EventReference endingRanger { get; private set; }
+    [field: SerializeField] public EventReference endingMage { get; private set; }
+
     public static FMODEvents instance { get; private set;}
 
     private void Awake()

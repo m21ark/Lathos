@@ -565,6 +565,7 @@ MonoBehaviour:
   - Ambience
   - Characer movements
   - Sword
+  - VoiceLines
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0

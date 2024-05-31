@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{2aa018ec-9280-472f-bc4e-9c72b0697693}">
+	<object class="AudioFile" id="{bb8feab1-8db3-4efe-b6c3-69095526fe91}">
 		<property name="assetPath">
-			<value>SFX majicProjectilesLOOP.wav</value>
+			<value>fighter_ending.mp3</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>
@@ -11,10 +11,10 @@
 			<value>44.0999985</value>
 		</property>
 		<property name="channelCount">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<property name="length">
-			<value>10.573560090702948</value>
+			<value>27.271836734693878</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{871b3a03-cb7a-4788-a04a-65a723855324}</destination>

@@ -8,6 +8,7 @@ public class DialogueController : MonoBehaviour
     public static DialogueController instance { get; private set; }
     public TextMeshProUGUI text;
     public GameObject dialogueBox;
+    public bool isDialogueOver = false;
 
     // Private variables
     private float textSpeedDelay = 0.035f;
@@ -61,11 +62,13 @@ public class DialogueController : MonoBehaviour
         {
             dialogueBox.SetActive(false);
             isActive = false;
+            isDialogueOver = true;
         }
     }
 
     public void StartDialogue(string key)
     {
+        isDialogueOver = false;
         DialogueData data = dialogueDataList.Find(data => data.dialogueName == key);
         if (data != null) instance.Display(data);
         else Debug.LogError("Dialogue data with key '" + key + "' not found.");

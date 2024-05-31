@@ -1,5 +1,25 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9046514930084256065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/VoiceLines.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio/Build/Desktop/VoiceLines.bank
+  Name: VoiceLines
+  StudioPath: bank:/VoiceLines
+  lastModified: 638527586164437965
+  FileSizes:
+  - Name: Desktop
+    Value: 1266496
+  Exists: 1
 --- !u!114 &-8504346839564471673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27,6 +47,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-7806273975191960044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/opening
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/opening
+  Guid:
+    Data1: -1213878492
+    Data2: 1244128633
+    Data3: 319819709
+    Data4: 1386035081
+  Banks:
+  - {fileID: -9046514930084256065}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 72333
 --- !u!114 &-7491530112171542002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,7 +412,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638524374065501217
+  lastModified: 638527586153397463
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -604,6 +651,7 @@ MonoBehaviour:
   - {fileID: -2339479710055509579}
   - {fileID: -2411626906417223040}
   - {fileID: 9063726596643881184}
+  - {fileID: -9046514930084256065}
   EditorEvents:
   - {fileID: 1618553184652506767}
   - {fileID: 5674064285160735432}
@@ -615,12 +663,16 @@ MonoBehaviour:
   - {fileID: 4566486764112080616}
   - {fileID: 2450366115662639873}
   - {fileID: -2423370302901495447}
+  - {fileID: -7806273975191960044}
+  - {fileID: 4973994937702872557}
+  - {fileID: 3533310584010835267}
+  - {fileID: 8413517418891207946}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2411626906417223040}
   StringsBanks:
   - {fileID: 2450608712365836312}
-  cacheTime: 638524441668305583
+  cacheTime: 638527586164437965
   cacheVersion: 131617
 --- !u!114 &5652942996200681
 MonoBehaviour:
@@ -805,10 +857,10 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638524374065501217
+  lastModified: 638527586153437465
   FileSizes:
   - Name: Desktop
-    Value: 1488
+    Value: 1722
   Exists: 1
 --- !u!114 &2459042495137615457
 MonoBehaviour:
@@ -1005,6 +1057,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 958368
   Exists: 1
+--- !u!114 &3533310584010835267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/ranger_ending
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/ranger_ending
+  Guid:
+    Data1: -1010484801
+    Data2: 1232224573
+    Data3: 219798424
+    Data4: 825777410
+  Banks:
+  - {fileID: -9046514930084256065}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 24894
 --- !u!114 &3622537381354613986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1099,6 +1178,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &4973994937702872557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/fighter_ending
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/fighter_ending
+  Guid:
+    Data1: 2126031210
+    Data2: 1148534951
+    Data3: 284143236
+    Data4: 474911614
+  Banks:
+  - {fileID: -9046514930084256065}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 27271
 --- !u!114 &5674064285160735432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1227,6 +1333,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 277856
   Exists: 1
+--- !u!114 &8413517418891207946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/mage_ending
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/mage_ending
+  Guid:
+    Data1: 1198712550
+    Data2: 1235992119
+    Data3: 120854704
+    Data4: 1577797187
+  Banks:
+  - {fileID: -9046514930084256065}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 26305
 --- !u!114 &8419775395020738904
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -162,4 +162,18 @@ public class AudioManager : MonoBehaviour
         foreach (StudioEventEmitter emitter in emitters)
             emitter.Stop();
     }
+
+    public void PlayEnding(int num){
+        switch(num){
+            case 0:
+                RuntimeManager.PlayOneShot(FMODEvents.instance.endingFighter);
+                break;
+            case 1:
+                RuntimeManager.PlayOneShot(FMODEvents.instance.endingRanger);
+                break;
+            case 2:
+                RuntimeManager.PlayOneShot(FMODEvents.instance.endingMage);
+                break;
+        }
+    }
 }
