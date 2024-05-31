@@ -30,7 +30,10 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference bossAttack { get; private set; }
 
     [field: Header("Voice Lines")]
-    [field: SerializeField] public EventReference opening { get; private set; }
+    [field: SerializeField] public EventReference opening0 { get; private set; }
+    [field: SerializeField] public EventReference opening1 { get; private set; }
+    [field: SerializeField] public EventReference opening2 { get; private set; }
+    [field: SerializeField] public EventReference opening3 { get; private set; }
     [field: SerializeField] public EventReference endingFighter { get; private set; }
     [field: SerializeField] public EventReference endingRanger { get; private set; }
     [field: SerializeField] public EventReference endingMage { get; private set; }

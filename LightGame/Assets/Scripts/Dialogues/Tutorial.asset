@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85bd909c7ca28cf82995821cf812d493, type: 3}
+  m_Name: Tutorial
+  m_EditorClassIdentifier: 
+  dialogueName: Tutorial
+  dialoguePhrases:
+  - "Press ADWS to move the character. \nUse SPACE to jump and SHIFT to dash.\nAttack
+    using the Left Mouse Button."
+  - 'The green bottom bar is your health.
+
+    The yellow bar is the light amount
+    on your lamp.'
+  - 'The shadows consume your lamp''s light.
+
+    If it runs out, the darkness will
+    damage you.'
+  - Your magical lamp's light is a precious resource that can also slowly regenerarte
+    your lost health. Kill enemies and collect their dropped light to fill the lamp
+    back up.
+  - You can also find fireplaces scattered in the forest where you can rest safe
+    from harm and absorve the fire's light into the lamp.
+  - Now go and conquer the darkness with the light within you!

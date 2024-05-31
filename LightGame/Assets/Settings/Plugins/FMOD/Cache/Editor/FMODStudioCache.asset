@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/VoiceLines.bank
   Name: VoiceLines
   StudioPath: bank:/VoiceLines
-  lastModified: 638527786555993454
+  lastModified: 638527848404523429
   FileSizes:
   - Name: Desktop
-    Value: 1189632
+    Value: 1717984
   Exists: 1
 --- !u!114 &-8504346839564471673
 MonoBehaviour:
@@ -296,6 +296,60 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1388
   Exists: 1
+--- !u!114 &-4106447136886336308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/opening3
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/opening3
+  Guid:
+    Data1: -2088008448
+    Data2: 1214566562
+    Data3: -343585367
+    Data4: 217399928
+  Banks:
+  - {fileID: -9046514930084256065}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3888032577658131118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/opening0
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/opening0
+  Guid:
+    Data1: -19114480
+    Data2: 1310836940
+    Data3: -2071035741
+    Data4: 1087966466
+  Banks:
+  - {fileID: -9046514930084256065}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-3337142912049874255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,7 +466,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638527586153397463
+  lastModified: 638527841124640057
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -432,7 +486,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Characer movements.bank
   Name: Characer movements
   StudioPath: bank:/Characer movements
-  lastModified: 638524353539023421
+  lastModified: 638527844498849635
   FileSizes:
   - Name: Desktop
     Value: 303200
@@ -667,12 +721,16 @@ MonoBehaviour:
   - {fileID: 4973994937702872557}
   - {fileID: 3533310584010835267}
   - {fileID: 8413517418891207946}
+  - {fileID: -4106447136886336308}
+  - {fileID: -3888032577658131118}
+  - {fileID: 6514131332659450946}
+  - {fileID: 6506766291844778887}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2411626906417223040}
   StringsBanks:
   - {fileID: 2450608712365836312}
-  cacheTime: 638527786555993454
+  cacheTime: 638527848404523429
   cacheVersion: 131617
 --- !u!114 &5652942996200681
 MonoBehaviour:
@@ -857,10 +915,10 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638527586153437465
+  lastModified: 638527841124680058
   FileSizes:
   - Name: Desktop
-    Value: 1722
+    Value: 1860
   Exists: 1
 --- !u!114 &2459042495137615457
 MonoBehaviour:
@@ -1225,6 +1283,60 @@ MonoBehaviour:
     Data4: -1108409678
   Banks:
   - {fileID: 2459042495137615457}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6506766291844778887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/opening1
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/opening1
+  Guid:
+    Data1: -1092987499
+    Data2: 1268300136
+    Data3: -881879393
+    Data4: -965765216
+  Banks:
+  - {fileID: -9046514930084256065}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6514131332659450946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/opening2
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/opening2
+  Guid:
+    Data1: 2132692602
+    Data2: 1330469879
+    Data3: 1035405244
+    Data4: -770961106
+  Banks:
+  - {fileID: -9046514930084256065}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1

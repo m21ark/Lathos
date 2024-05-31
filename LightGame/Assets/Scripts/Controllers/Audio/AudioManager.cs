@@ -177,7 +177,20 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayOpening(){
-        RuntimeManager.PlayOneShot(FMODEvents.instance.opening);
+    public void PlayOpening(int num){
+        switch(num){
+            case 0:
+                RuntimeManager.PlayOneShot(FMODEvents.instance.opening0);
+                break;
+            case 1:
+                RuntimeManager.PlayOneShot(FMODEvents.instance.opening1);
+                break;
+            case 2:
+                RuntimeManager.PlayOneShot(FMODEvents.instance.opening2);
+                break;
+            case 3:
+                RuntimeManager.PlayOneShot(FMODEvents.instance.opening3);
+                break;
+        }
     }
 }

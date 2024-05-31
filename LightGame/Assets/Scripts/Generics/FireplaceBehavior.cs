@@ -13,8 +13,8 @@ public class FireplaceBehavior : MonoBehaviour{
             isLit = true;
             FireLightObj.SetActive(true);
 
-            if(dialogueOnEnterID != null)
-                DialogueController.instance.StartDialogue(dialogueOnEnterID);
+            if(dialogueOnEnterID != null && dialogueOnEnterID.Trim() != "" )
+                DialogueController.instance.StartOpeningWithSound(dialogueOnEnterID);
         }           
         RepelEnemies(other);
     }
@@ -25,8 +25,7 @@ public class FireplaceBehavior : MonoBehaviour{
 
             // Restore health and increase light of player
             player.Heal(1);
-            if(player.collectedLight < 50)
-                player.IncrementLight(1);        
+            player.IncrementLight(1);        
         }
         RepelEnemies(other);
     }

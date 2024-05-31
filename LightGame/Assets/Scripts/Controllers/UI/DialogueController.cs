@@ -73,4 +73,9 @@ public class DialogueController : MonoBehaviour
         if (data != null) instance.Display(data);
         else Debug.LogError("Dialogue data with key '" + key + "' not found.");
     }
+
+    public void StartOpeningWithSound(string key){
+        AudioManager.instance.PlayOpening(int.Parse(key[key.Length - 1].ToString()));
+        StartDialogue(key);
+    }
 }

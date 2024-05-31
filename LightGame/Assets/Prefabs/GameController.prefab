@@ -221,13 +221,34 @@ MonoBehaviour:
       Data3: 0
       Data4: 0
     Path: 
-  <opening>k__BackingField:
+  <opening0>k__BackingField:
     Guid:
-      Data1: -1213878492
-      Data2: 1244128633
-      Data3: 319819709
-      Data4: 1386035081
-    Path: event:/VoiceLines/opening
+      Data1: -19114480
+      Data2: 1310836940
+      Data3: -2071035741
+      Data4: 1087966466
+    Path: event:/VoiceLines/opening0
+  <opening1>k__BackingField:
+    Guid:
+      Data1: -1092987499
+      Data2: 1268300136
+      Data3: -881879393
+      Data4: -965765216
+    Path: event:/VoiceLines/opening1
+  <opening2>k__BackingField:
+    Guid:
+      Data1: 2132692602
+      Data2: 1330469879
+      Data3: 1035405244
+      Data4: -770961106
+    Path: event:/VoiceLines/opening2
+  <opening3>k__BackingField:
+    Guid:
+      Data1: -2088008448
+      Data2: 1214566562
+      Data3: -343585367
+      Data4: 217399928
+    Path: event:/VoiceLines/opening3
   <endingFighter>k__BackingField:
     Guid:
       Data1: 2126031210
@@ -323,10 +344,14 @@ MonoBehaviour:
   dialogueBox: {fileID: 8795590511885103652}
   isDialogueOver: 0
   dialogueDataList:
-  - {fileID: 11400000, guid: ff4d09296e613201996b1b7b6facae44, type: 2}
+  - {fileID: 11400000, guid: b7923a5ade30348cf90d971a466234dc, type: 2}
   - {fileID: 11400000, guid: 94b175c3a6673ee688e2cb125e843cca, type: 2}
   - {fileID: 11400000, guid: bf34e7e69df1ba1e99d02c2062ef4145, type: 2}
   - {fileID: 11400000, guid: 2681c460e89f1d58fba8c7ac6a4de07d, type: 2}
+  - {fileID: 11400000, guid: ff4d09296e613201996b1b7b6facae44, type: 2}
+  - {fileID: 11400000, guid: eda78af681f665201a16a04f54e1e835, type: 2}
+  - {fileID: 11400000, guid: 72ebcfbf63862b2cfbe4a15e9d43585f, type: 2}
+  - {fileID: 11400000, guid: 64bba4246c4d5e1fe8ce8336b13fceae, type: 2}
 --- !u!114 &8789557329964199689
 MonoBehaviour:
   m_ObjectHideFlags: 0
