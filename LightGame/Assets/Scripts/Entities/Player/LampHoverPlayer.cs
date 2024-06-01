@@ -6,7 +6,7 @@ public class LampHoverPlayer : MonoBehaviour
     // Movement variables
     private float hoverRadius = 0.8f; 
     private float hoverHeight = 2f;
-    private float hoverSpeed = 2f;
+    private float hoverForce = 1f;
     private float followForce = 45f; 
     private float catchUpForce = 180f;
     private float maxDistance = 10f;
@@ -51,26 +51,22 @@ public class LampHoverPlayer : MonoBehaviour
 
     void MoveTowardsTarget()
     {
+        // Calculate the direction to the left of the camera pivot
         float cameraPivotY = cameraPivot.rotation.eulerAngles.y;
-
-        Vector3 leftOfPlayer = player.position - player.right;
-        targetPosition = leftOfPlayer + new Vector3(0, hoverHeight, 0);
+        Vector3 leftDirection = Quaternion.Euler(0, cameraPivotY - 90, 0) * Vector3.forward;
+        targetPosition = player.position + leftDirection + new Vector3(0, hoverHeight, 0);
         float distance = Vector3.Distance(transform.position, targetPosition);
 
-        if (distance < hoverRadius)
-        {
-            // Lamp is near player, so it hovers slightly
-            Hover();
-        }
-        else if (distance < maxDistance)
-        {
+        if (distance < hoverRadius) Hover(); // Lamp is near player, so it hovers slightly
+        else if (distance < maxDistance){
             // Player is within a reasonable distance, lamp follows at normal speed
             ApplyForceTowardsTarget(followForce, targetPosition);
-        }
-        else
-        {
+            hasReachedHoverTarget = true; // Reset hover target
+        } 
+        else{
             // Player is far, lamp catches up quickly
             ApplyForceTowardsTarget(catchUpForce, targetPosition);
+            hasReachedHoverTarget = true; // Reset hover target
         }
 
         // Apply damping to reduce oscillation
@@ -86,15 +82,14 @@ public class LampHoverPlayer : MonoBehaviour
             hasReachedHoverTarget = false;
         }
 
-        ApplyForceTowardsTarget(hoverSpeed, hoverTargetPosition);
+        ApplyForceTowardsTarget(hoverForce, hoverTargetPosition);
 
-        // Check if the lamp has reached the hover target
         if (Vector3.Distance(transform.position, hoverTargetPosition) < 0.1f)
             hasReachedHoverTarget = true;
     }
 
     void ApplyForceTowardsTarget(float force, Vector3 target)
-    {
+    { 
         Vector3 direction = (target - transform.position).normalized;
         rb.AddForce(direction * force);
     }
