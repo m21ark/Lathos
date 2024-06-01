@@ -15,7 +15,7 @@ public class ProtoAttack : MonoBehaviour
 
     // Private values
     protected int projDamage = 10;
-    private Rigidbody attackRb;
+    protected Rigidbody attackRb;
     private float realGravity = 9.8f;
 
     protected (string key, object value)[] kwargs;

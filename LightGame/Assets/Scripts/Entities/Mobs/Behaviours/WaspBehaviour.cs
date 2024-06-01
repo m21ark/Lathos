@@ -21,6 +21,7 @@ public class WaspBehaviour : ProtoMob
         FlapWings();
     }
 
+
     private void FlapWings()
     {
         flapTime += Time.deltaTime * flapFrequency;
@@ -51,14 +52,21 @@ public class WaspBehaviour : ProtoMob
     {
         if (projectile != null && player != null && projectileSpawnPoint != null)
         {
+            Vector3 playerPos = player.position;
+            playerPos.y += 1.0f;
+            Vector3 direction = (playerPos - projectileSpawnPoint.position).normalized;
+
+            // Quaternion rotation = Quaternion.LookRotation(direction);
             GameObject spawnedProjectile = Instantiate(projectile, projectileSpawnPoint.position, Quaternion.identity);
             Rigidbody rb = spawnedProjectile.GetComponent<Rigidbody>();
 
             if (rb != null)
             {
-                Vector3 direction = (player.position - projectileSpawnPoint.position).normalized;
-                rb.AddForce(direction * 40f, ForceMode.Impulse); // Adjust the force as needed
+
+                spawnedProjectile.GetComponent<Projectile>().Fire(10, direction);
+
             }
         }
     }
+
 }
