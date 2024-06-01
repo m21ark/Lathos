@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 3963737446191760161}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.56, z: 0}
+  m_LocalPosition: {x: 0, y: -0.221, z: 0.256}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -166,11 +166,11 @@ MonoBehaviour:
     m_Bits: 128
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
-  timeBetweenAttacks: 0.5
+  timeBetweenAttacks: 1
   alreadyAttacked: 0
-  projectile: {fileID: 2011569315948435795, guid: 6543725446abe7543a41c3720055b092, type: 3}
+  projectile: {fileID: 3822794074442804030, guid: 25c84bfa7a4980545bb176e4ee378e10, type: 3}
   sightRange: 40
-  attackRange: 7
+  attackRange: 12
   playerInSightRange: 0
   playerInAttackRange: 0
   projectileSpawnPoint: {fileID: 5725138097685424116}
