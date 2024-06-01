@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.2758989, g: 0.31799045, b: 0.3773585, a: 1}
+  m_FogColor: {r: 0.2538715, g: 0.28856114, b: 0.3301887, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SubtractiveShadowColor: {r: 0.43320578, g: 0.4681297, b: 0.5566038, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 56c9ed5ee739a324e8d8bdb9613f4890, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -241,7 +241,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   maxHealth: 40
-  enemyLevel: 5
   damage: 20
   xpOrbPreFab: {fileID: 4996593011877861837, guid: cad7373686d79a81e963d2881c27666a, type: 3}
   agent: {fileID: 112736852}
@@ -512,8 +511,8 @@ Transform:
   m_GameObject: {fileID: 326458459}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7830409, z: -0, w: 0.62197024}
-  m_LocalPosition: {x: 365, y: -305.7, z: 201}
-  m_LocalScale: {x: 881.74646, y: 122.47614, z: 8.197673}
+  m_LocalPosition: {x: 347.2, y: -305.7, z: 103.3}
+  m_LocalScale: {x: 830.5282, y: 122.47614, z: 8.197673}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1165027682}
@@ -756,7 +755,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   maxHealth: 40
-  enemyLevel: 5
   damage: 20
   xpOrbPreFab: {fileID: 4996593011877861837, guid: cad7373686d79a81e963d2881c27666a, type: 3}
   agent: {fileID: 351688526}
@@ -803,13 +801,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352172203}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.9847653, z: -0, w: 0.17388898}
-  m_LocalPosition: {x: 685, y: -305.7, z: 710}
-  m_LocalScale: {x: 638.59845, y: 122.47614, z: 8.197673}
+  m_LocalRotation: {x: -0, y: 0.9999955, z: -0, w: -0.002993314}
+  m_LocalPosition: {x: 684.4, y: -305.7, z: 615.4}
+  m_LocalScale: {x: 360.51437, y: 122.47614, z: 8.197673}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1165027682}
-  m_LocalEulerAnglesHint: {x: 0, y: 159.972, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180.343, z: 0}
 --- !u!65 &352172205
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1104,7 +1102,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   maxHealth: 40
-  enemyLevel: 5
   damage: 20
   xpOrbPreFab: {fileID: 4996593011877861837, guid: cad7373686d79a81e963d2881c27666a, type: 3}
   agent: {fileID: 657511075}
@@ -1153,7 +1150,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.20392157, g: 0.4117647, b: 0.8039216, a: 1}
+  m_Color: {r: 0.28702387, g: 0.46864322, b: 0.8113208, a: 1}
   m_Intensity: 0.73
   m_Range: 10
   m_SpotAngle: 30
@@ -1360,7 +1357,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   maxHealth: 40
-  enemyLevel: 5
   damage: 20
   xpOrbPreFab: {fileID: 4996593011877861837, guid: cad7373686d79a81e963d2881c27666a, type: 3}
   agent: {fileID: 849361597}
@@ -1516,6 +1512,7 @@ Transform:
   m_Children:
   - {fileID: 1432209033}
   - {fileID: 1287639339}
+  - {fileID: 1165027682}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1165027681
@@ -1543,15 +1540,17 @@ Transform:
   m_GameObject: {fileID: 1165027681}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 81.02636, y: 446.12433, z: 215.19672}
+  m_LocalPosition: {x: -415.82288, y: 444.5269, z: -99.015686}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1743665100}
   - {fileID: 630716922}
+  - {fileID: 1514260587}
   - {fileID: 326458460}
+  - {fileID: 1173941273}
   - {fileID: 352172204}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1110060849}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1170828013
 PrefabInstance:
@@ -1671,7 +1670,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   maxHealth: 40
-  enemyLevel: 5
   damage: 20
   xpOrbPreFab: {fileID: 4996593011877861837, guid: cad7373686d79a81e963d2881c27666a, type: 3}
   agent: {fileID: 1170828017}
@@ -1691,6 +1689,111 @@ MonoBehaviour:
   attackRange: 12
   playerInSightRange: 0
   playerInAttackRange: 0
+--- !u!1 &1173941272
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1173941273}
+  - component: {fileID: 1173941276}
+  - component: {fileID: 1173941275}
+  - component: {fileID: 1173941274}
+  m_Layer: 0
+  m_Name: Cube (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1173941273
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173941272}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.89411086, z: -0, w: 0.44784567}
+  m_LocalPosition: {x: 443.5, y: -305.7, z: 455.7}
+  m_LocalScale: {x: 690.49567, y: 122.47614, z: 8.197673}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1165027682}
+  m_LocalEulerAnglesHint: {x: 0, y: 126.789, z: 0}
+--- !u!65 &1173941274
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173941272}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1173941275
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173941272}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1173941276
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173941272}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1287639338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1843,7 +1946,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   maxHealth: 40
-  enemyLevel: 5
   damage: 20
   xpOrbPreFab: {fileID: 4996593011877861837, guid: cad7373686d79a81e963d2881c27666a, type: 3}
   agent: {fileID: 1406897631}
@@ -1981,7 +2083,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   maxHealth: 40
-  enemyLevel: 5
   damage: 20
   xpOrbPreFab: {fileID: 4996593011877861837, guid: cad7373686d79a81e963d2881c27666a, type: 3}
   agent: {fileID: 1431055366}
@@ -2125,6 +2226,111 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 8e9c433710ba3ab4b8001683037ab636, type: 2}
   m_BuildHeightMesh: 0
+--- !u!1 &1514260586
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1514260587}
+  - component: {fileID: 1514260590}
+  - component: {fileID: 1514260589}
+  - component: {fileID: 1514260588}
+  m_Layer: 0
+  m_Name: Cube (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1514260587
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514260586}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.8995282, z: -0, w: 0.4368628}
+  m_LocalPosition: {x: 797, y: -305.7, z: -79.6}
+  m_LocalScale: {x: 469.83987, y: 122.47614, z: 8.197673}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1165027682}
+  m_LocalEulerAnglesHint: {x: 0, y: 128.192, z: 0}
+--- !u!65 &1514260588
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514260586}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1514260589
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514260586}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1514260590
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514260586}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1577105390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2243,7 +2449,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   maxHealth: 40
-  enemyLevel: 5
   damage: 20
   xpOrbPreFab: {fileID: 4996593011877861837, guid: cad7373686d79a81e963d2881c27666a, type: 3}
   agent: {fileID: 1577105394}
@@ -2381,7 +2586,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   maxHealth: 40
-  enemyLevel: 5
   damage: 20
   xpOrbPreFab: {fileID: 4996593011877861837, guid: cad7373686d79a81e963d2881c27666a, type: 3}
   agent: {fileID: 1613447642}
@@ -2519,7 +2723,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   maxHealth: 40
-  enemyLevel: 5
   damage: 20
   xpOrbPreFab: {fileID: 4996593011877861837, guid: cad7373686d79a81e963d2881c27666a, type: 3}
   agent: {fileID: 1663249864}
@@ -2657,7 +2860,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   maxHealth: 40
-  enemyLevel: 5
   damage: 20
   xpOrbPreFab: {fileID: 4996593011877861837, guid: cad7373686d79a81e963d2881c27666a, type: 3}
   agent: {fileID: 1682767077}
@@ -2900,7 +3102,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   maxHealth: 40
-  enemyLevel: 5
   damage: 20
   xpOrbPreFab: {fileID: 4996593011877861837, guid: cad7373686d79a81e963d2881c27666a, type: 3}
   agent: {fileID: 1774474440}
@@ -3038,7 +3239,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   maxHealth: 40
-  enemyLevel: 5
   damage: 20
   xpOrbPreFab: {fileID: 4996593011877861837, guid: cad7373686d79a81e963d2881c27666a, type: 3}
   agent: {fileID: 1813631181}
@@ -3636,5 +3836,4 @@ SceneRoots:
   - {fileID: 1110060849}
   - {fileID: 180985314}
   - {fileID: 134898599}
-  - {fileID: 1165027682}
   - {fileID: 1931248886}
