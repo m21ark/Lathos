@@ -52,8 +52,10 @@ public class HUDController : MonoBehaviour
 
         // Update boss health bar
         if (GameLogic.instance.isInBossBattle){
-            SetBarSize(boss.health, boss.maxHealth, scales[2], bossHealthBar);
-            ToggleParentActive(bossHealthBar, true);
+            if(boss.health > 0){
+                SetBarSize(boss.health, boss.maxHealth, scales[2], bossHealthBar);
+                ToggleParentActive(bossHealthBar, true);
+            }else ToggleParentActive(bossHealthBar, false);
         } else ToggleParentActive(bossHealthBar, false);
         
         // Update player

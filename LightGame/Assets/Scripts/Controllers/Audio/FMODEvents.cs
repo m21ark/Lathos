@@ -6,10 +6,12 @@ using FMODUnity;
 public class FMODEvents : MonoBehaviour
 {
     [field: Header("Ambience")]
-    [field: SerializeField] public EventReference ambience { get; private set; }
+    [field: SerializeField] public EventReference ambience1 { get; private set; }
+    [field: SerializeField] public EventReference ambience2 { get; private set; }
 
     [field: Header("Music")]
-    [field: SerializeField] public EventReference music { get; private set; }
+    [field: SerializeField] public EventReference musicPiano { get; private set; }
+    [field: SerializeField] public EventReference musicBoss { get; private set; }
 
     [field: Header("Player Movement SFX")]
     [field: SerializeField] public EventReference playerFootsteps { get; private set; }

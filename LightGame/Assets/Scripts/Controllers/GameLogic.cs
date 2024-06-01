@@ -17,6 +17,8 @@ public class GameLogic : MonoBehaviour
 
     [HideInInspector] public bool isInBossBattle;
 
+    private bool hasGameEnded = false;
+
     // Game Logic Fields
     private float lightDecreaseTimer = 0f;
     private int healTickTime = 5;
@@ -49,6 +51,23 @@ public class GameLogic : MonoBehaviour
         Time.timeScale = 1;
 
         toggleCursor(false); // Hide cursor during gameplay
+
+        StartCoroutine(DelayedStart());
+    }
+
+    private IEnumerator DelayedStart(){
+
+        yield return new WaitForSeconds(1f);
+
+        // Play music
+        AudioManager.instance.PlayMusic(SceneManager.GetActiveScene().name);
+
+        yield return new WaitForSeconds(1f);
+
+        // If its room1, start tutorial dialogue
+        if(SceneManager.GetActiveScene().name == "Room1")
+            DialogueController.instance.StartDialogue("Tutorial");
+
     }
 
     public void CheckIfInBossFight(){
@@ -72,7 +91,6 @@ public class GameLogic : MonoBehaviour
     void Update()
     {
         RefreshPlayer();
-
         handlePlayerLight();
 
         // TODO: For debugging purposes
@@ -83,8 +101,14 @@ public class GameLogic : MonoBehaviour
             
         // Check end game conditions
         if (isInBossBattle)
-            if (boss.health <= 0) StartCoroutine(endGame(true));
-        if (!player.isAlive()) StartCoroutine(endGame(false));
+            if (boss.health <= 0 && !hasGameEnded){
+                hasGameEnded = true;
+                StartCoroutine(endGame(true));
+            } 
+        if (!player.isAlive() && !hasGameEnded){
+            hasGameEnded = true; 
+            StartCoroutine(endGame(false));
+        }
     }
 
     void handlePlayerLight()
@@ -166,8 +190,16 @@ public class GameLogic : MonoBehaviour
         }
     }
 
+    private void RemoveAllEnemies(){
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Mob");
+        foreach (GameObject enemy in enemies)
+            Destroy(enemy);
+    }
+
     IEnumerator endGame(bool playerWon)
     {
+        AudioManager.instance.StopMusic();
+
         if(!playerWon){
             TextMeshProUGUI end_msg = endMenu.transform.Find("EndGameSMS").GetComponent<TextMeshProUGUI>();
             end_msg.text = "You died!";
@@ -177,8 +209,12 @@ public class GameLogic : MonoBehaviour
             toggleCursor(true);
         }else{
 
+            RemoveAllEnemies();
+
             player.Heal(100);
             player.IncrementLight(100);
+
+            yield return new WaitForSecondsRealtime(1); 
         
             string playerClass = player.getClassName();
 

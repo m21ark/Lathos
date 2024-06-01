@@ -13,7 +13,7 @@ public class AntBehaviour : ProtoMob
         playerHealth.TakeDamage(damage);
     }
 
-    private void Update()
+    new private void Update()
     {
 
         // Check for sight and attack range
