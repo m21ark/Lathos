@@ -59,7 +59,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 567850910089595217}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7408646, z: -0, w: 0.6716545}
+  m_LocalRotation: {x: 0, y: 0.7408632, z: 0, w: 0.67165595}
   m_LocalPosition: {x: 16.31, y: -2.85, z: -10.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -104,7 +104,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   maxHealth: 40
-  enemyLevel: 5
   damage: 20
   xpOrbPreFab: {fileID: 4996593011877861837, guid: cad7373686d79a81e963d2881c27666a, type: 3}
   agent: {fileID: 7444176666240959941}
@@ -155,8 +154,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 567850910089595217}
   serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
+  m_Mass: 20
+  m_Drag: 5
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -1027,12 +1026,12 @@ MonoBehaviour:
   - {fileID: 3426577178254922406}
   - {fileID: 6964997677521416977}
   - {fileID: 5856111487395540973}
-  stepDistance: 0.7
-  raycastRange: 4
+  stepDistance: 1.51
+  raycastRange: 5.52
   rayCastHeight: 2
-  rayOffset: 0.7
-  bodyHeight: 1.4
-  startPosVariation: 0.7
+  rayOffset: 1.09
+  bodyHeight: 1.2
+  startPosVariation: 1.05
   walkDemoSpeed: 0
 --- !u!4 &4137058779733358660 stripped
 Transform:

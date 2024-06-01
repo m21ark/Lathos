@@ -149,7 +149,7 @@ public class AntProcedural : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit, raycastRange))
         {
-            if (Vector3.Distance(hit.point, currentLegPositions[index]) > stepDistance && !CheckIfAnyLegMoving())
+            if (Vector3.Distance(hit.point, currentLegPositions[index]) > stepDistance /*&& !CheckIfAnyLegMoving()*/)
             {
                 currentLegPositions[index] = hit.point;
                 raycastHitNormals[index] = hit.normal;
@@ -170,8 +170,9 @@ public class AntProcedural : MonoBehaviour
 
     private bool CheckIfAnyLegMoving()
     {
+        int numLegs = 0;
         for (int i = 0; i < 6; i++)
-            if (isLegMoving[i]) return true;
+            if (isLegMoving[i]) numLegs++;
         return false;
     }
 
