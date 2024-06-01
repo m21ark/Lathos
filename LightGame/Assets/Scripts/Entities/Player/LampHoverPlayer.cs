@@ -32,8 +32,10 @@ public class LampHoverPlayer : MonoBehaviour
 
     void GetPlayer()
     {
-        player = GameLogic.instance.player.transform;
-        cameraPivot = player.parent.transform.Find("CameraPivot").transform;
+        if(GameLogic.instance.player){
+             player = GameLogic.instance.player.transform;
+            cameraPivot = player.parent.transform.Find("CameraPivot").transform;
+        }  
     }
 
     void UpdateLightSource()
@@ -45,8 +47,12 @@ public class LampHoverPlayer : MonoBehaviour
 
     void FixedUpdate()
     {
-        UpdateLightSource();
-        MoveTowardsTarget();
+        if(player == null) GetPlayer();
+        else
+        {
+            UpdateLightSource();
+            MoveTowardsTarget();
+        }
     }
 
     void MoveTowardsTarget()
