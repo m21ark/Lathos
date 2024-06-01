@@ -190,6 +190,12 @@ public class GameLogic : MonoBehaviour
         }
     }
 
+    private void RemoveAllEnemies(){
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Mob");
+        foreach (GameObject enemy in enemies)
+            Destroy(enemy);
+    }
+
     IEnumerator endGame(bool playerWon)
     {
         AudioManager.instance.StopMusic();
@@ -203,8 +209,12 @@ public class GameLogic : MonoBehaviour
             toggleCursor(true);
         }else{
 
+            RemoveAllEnemies();
+
             player.Heal(100);
             player.IncrementLight(100);
+
+            yield return new WaitForSecondsRealtime(1); 
         
             string playerClass = player.getClassName();
 

@@ -164,6 +164,9 @@ public class AudioManager : MonoBehaviour
             emitter.Stop();
 
         musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
+        // Stop all OneShot sounds that are playing
+        RuntimeManager.StudioSystem.flushCommands();
     }
 
     public void PlayEnding(int num){
@@ -222,5 +225,13 @@ public class AudioManager : MonoBehaviour
 
     public void StopMusic(){
         musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
+    public void PauseMusic(){
+        musicInstance.setPaused(true);
+    }
+
+    public void ResumeMusic(){
+        musicInstance.setPaused(false);
     }
 }

@@ -186,10 +186,11 @@ public class MenuController : MonoBehaviour
             GameLogic.instance.isPaused = false;
             if (pauseMenuObj != null)
                 pauseMenuObj.SetActive(false);
+
+            AudioManager.instance.ResumeMusic();
         }
         else
         {
-
             // Pause Game
 
             // Re enable mouse cursor for the pause menu
@@ -199,6 +200,8 @@ public class MenuController : MonoBehaviour
             GameLogic.instance.isPaused = true;
             if (pauseMenuObj != null)
                 pauseMenuObj.SetActive(true);
+
+            AudioManager.instance.PauseMusic();
         }
     }
 
