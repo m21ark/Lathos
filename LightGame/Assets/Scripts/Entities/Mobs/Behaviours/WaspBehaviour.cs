@@ -56,8 +56,9 @@ public class WaspBehaviour : ProtoMob
             playerPos.y += 1.0f;
             Vector3 direction = (playerPos - projectileSpawnPoint.position).normalized;
 
-            // Quaternion rotation = Quaternion.LookRotation(direction);
-            GameObject spawnedProjectile = Instantiate(projectile, projectileSpawnPoint.position, Quaternion.identity);
+            Quaternion rotation = Quaternion.LookRotation(direction);
+            rotation *= Quaternion.Euler(-90f, 0f, 0f);
+            GameObject spawnedProjectile = Instantiate(projectile, projectileSpawnPoint.position, rotation);
             Rigidbody rb = spawnedProjectile.GetComponent<Rigidbody>();
 
             if (rb != null)
