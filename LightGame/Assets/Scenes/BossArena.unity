@@ -284,6 +284,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 1000000
       objectReference: {fileID: 0}
+    - target: {fileID: 6198090175105302839, guid: 41d92b121f4f76e15927fb9edc3fe944, type: 3}
+      propertyPath: A2ReloadTime
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
