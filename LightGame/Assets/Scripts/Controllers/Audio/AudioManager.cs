@@ -162,6 +162,8 @@ public class AudioManager : MonoBehaviour
 
         foreach (StudioEventEmitter emitter in emitters)
             emitter.Stop();
+
+        musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
     public void PlayEnding(int num){
@@ -193,5 +195,32 @@ public class AudioManager : MonoBehaviour
                 RuntimeManager.PlayOneShot(FMODEvents.instance.opening3);
                 break;
         }
+    }
+
+    public void PlayMusic(string sceneName){
+        switch(sceneName){
+            case "Room1":
+                InitializeMusic(FMODEvents.instance.musicPiano);
+                break;
+            case "Room2":
+                InitializeMusic(FMODEvents.instance.ambience1);
+                break;
+            case "Room3":
+                InitializeMusic(FMODEvents.instance.ambience1);
+                break;
+            case "Room4":
+                InitializeMusic(FMODEvents.instance.ambience1);
+                break;
+            case "Room5":
+                InitializeMusic(FMODEvents.instance.ambience2);
+                break;
+            case "BossArena":
+                InitializeMusic(FMODEvents.instance.musicBoss);
+                break;
+        }
+    }
+
+    public void StopMusic(){
+        musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }

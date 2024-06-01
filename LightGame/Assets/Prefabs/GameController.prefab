@@ -137,20 +137,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9d48d3459efc96da9dfe1330a063e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ambience>k__BackingField:
+  <ambience1>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <music>k__BackingField:
+      Data1: 873538271
+      Data2: 1312890282
+      Data3: -1252951119
+      Data4: -65117466
+    Path: event:/Ambience/Ambience dramatic
+  <ambience2>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 31862224
+      Data2: 1170150344
+      Data3: -1605489747
+      Data4: 1710030324
+    Path: event:/Ambience/Ambience stable
+  <musicPiano>k__BackingField:
+    Guid:
+      Data1: 1199117720
+      Data2: 1133995343
+      Data3: 1256908936
+      Data4: 1291278564
+    Path: event:/Ambience/Dramatic piano
+  <musicBoss>k__BackingField:
+    Guid:
+      Data1: 975412622
+      Data2: 1227207823
+      Data3: -365027919
+      Data4: -1416451473
+    Path: event:/Ambience/boss_music
   <playerFootsteps>k__BackingField:
     Guid:
       Data1: -1483887324

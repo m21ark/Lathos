@@ -15,7 +15,7 @@ public class WaspBehaviour : ProtoMob
     private float flapTime;
 
 
-    void Update()
+    new void Update()
     {
         base.Update();
         FlapWings();

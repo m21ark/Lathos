@@ -113,7 +113,7 @@ public class ProtoMob : MonoBehaviour
 
     public virtual void attack()
     {
-        Debug.Log("Attacking");
+        // Debug.Log("Attacking");
     }
 
     public virtual void ResetAttack()

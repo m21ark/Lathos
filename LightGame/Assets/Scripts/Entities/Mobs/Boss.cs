@@ -45,7 +45,7 @@ public class Boss : ProtoMob
         secondChild.SetActive(false);
     }
 
-    void Update()
+    new void Update()
     {
         // Check if boss needs to switch to new phase
         currentBossPhase = 1;
