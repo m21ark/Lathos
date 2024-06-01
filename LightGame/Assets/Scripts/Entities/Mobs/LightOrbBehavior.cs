@@ -9,7 +9,7 @@ public class LightOrbBehavior : MonoBehaviour
     public float accelerationSpeed = 40f; // Speed at which the object accelerates towards the lamp
     public float maxDistance = 40f; // Distance at which the object starts to accelerate towards the lamp
     public float baseSpeed = 0.5f;
-    public int lightValue = 1;
+    private int lightValue = 2;
 
     private void Start()
     {
@@ -38,7 +38,7 @@ public class LightOrbBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == lamp)
+        if (other.gameObject.CompareTag("Lamp"))
         {
             Destroy(gameObject);
             GameLogic.instance.player.IncrementLight(lightValue);
