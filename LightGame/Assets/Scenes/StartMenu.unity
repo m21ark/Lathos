@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641222, b: 0.57481664, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1266,7 +1266,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -5124,10 +5124,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "This is a game about recovering the light stolen by the evil king spider.
+  m_text: "This is a game about recovering the light stolen by the evil king beetle.
     Can you be the hero to bring the light back to the ever-sunny island where the
     tree folk lived?\n\nPlayer controls: \n                                    AWSD
-    to move\n                                    Mouse right click to shoot\n                                   
+    to move\n                                    Mouse left click to shoot\n                                   
     Move Camera with mouse\n                                    Press ESC to pause"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1f5e50b854a7274d6bd35f5fb7df6118, type: 2}
@@ -5262,7 +5262,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "You don't a saved instance of the game. \nStart a new game?"
+  m_text: "You don't have a saved instance of the game. \nStart a new game?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1f5e50b854a7274d6bd35f5fb7df6118, type: 2}
   m_sharedMaterial: {fileID: 9143614950465064298, guid: 1f5e50b854a7274d6bd35f5fb7df6118, type: 2}
