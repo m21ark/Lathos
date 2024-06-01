@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 978852884161177263}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.22, y: 1, z: -5.29}
+  m_LocalPosition: {x: 1.22, y: 1, z: -3.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43,8 +43,8 @@ Camera:
   m_GameObject: {fileID: 978852884161177263}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.27450982, g: 0.31764707, b: 0.3764706, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -220,6 +220,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerBody
       objectReference: {fileID: 0}
+    - target: {fileID: 3828798096592346724, guid: 179c2b999f195394989801ac4c0951a4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4497212812806079710, guid: 179c2b999f195394989801ac4c0951a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -311,14 +315,17 @@ MonoBehaviour:
   A0Damage: 5
   A0ReloadTime: 0.3
   A0ChargeRate: 0
+  stopsMovementA0: 0
   A1Prefab: {fileID: 0}
   A1Damage: 20
   A1ReloadTime: 0
   A1ChargeRate: 0
+  stopsMovementA1: 0
   A2Prefab: {fileID: 0}
   A2Damage: 30
   A2ReloadTime: 0
   A2ChargeRate: 0
+  stopsMovementA2: 0
   lastAttackTime: 0
   lastAttack1Time: 0
   lastAttack2Time: 0
@@ -326,6 +333,9 @@ MonoBehaviour:
   isAttack1ing: 0
   isAttack2ing: 0
   lastDashTime: 0
+  pendingA0Animate: 0
+  pendingA1Animate: 0
+  pendingA2Animate: 0
 --- !u!1001 &7431497500951317251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -378,9 +388,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerLamp
       objectReference: {fileID: 0}
-    - target: {fileID: 3842046110191625838, guid: aef73bba2aa789b46944ed8b68b4bc47, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 8781030119430346462, guid: aef73bba2aa789b46944ed8b68b4bc47, type: 3}
+      propertyPath: m_Radius
+      value: 1.17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
