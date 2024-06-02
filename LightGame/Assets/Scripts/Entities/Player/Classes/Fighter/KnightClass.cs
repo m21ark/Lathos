@@ -31,7 +31,7 @@ public class KnightClass : FighterClass
     private IEnumerator GenerateVFXDimenstionalSlash()
     {
         yield return new WaitForSeconds(A2StartOffset1);
-        // Quaternion rotation = cameraPivot.transform.rotation;
-        GameObject vfx = Instantiate(A2VFX, transform.position, Quaternion.identity);
+        Quaternion rotation = cameraPivot.transform.rotation;
+        GameObject vfx = Instantiate(A2VFX, transform.position, rotation);
     }
 }
