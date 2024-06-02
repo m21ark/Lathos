@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.13107938, g: 0.09078825, b: 0.140284, a: 1}
+  m_IndirectSpecularColor: {r: 0.13105237, g: 0.09076675, b: 0.14026159, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -128,6 +128,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 216820486853216497, guid: 41d92b121f4f76e15927fb9edc3fe944, type: 3}
   m_PrefabInstance: {fileID: 649860160}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &210345471
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1162234724972830604, guid: f6f5a02c6ef86d5a1821f7992d4dd6a2, type: 3}
+      propertyPath: m_Name
+      value: Player_Fighter
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547184242331172084, guid: f6f5a02c6ef86d5a1821f7992d4dd6a2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 414.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547184242331172084, guid: f6f5a02c6ef86d5a1821f7992d4dd6a2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -148.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547184242331172084, guid: f6f5a02c6ef86d5a1821f7992d4dd6a2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 955.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547184242331172084, guid: f6f5a02c6ef86d5a1821f7992d4dd6a2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547184242331172084, guid: f6f5a02c6ef86d5a1821f7992d4dd6a2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547184242331172084, guid: f6f5a02c6ef86d5a1821f7992d4dd6a2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547184242331172084, guid: f6f5a02c6ef86d5a1821f7992d4dd6a2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547184242331172084, guid: f6f5a02c6ef86d5a1821f7992d4dd6a2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547184242331172084, guid: f6f5a02c6ef86d5a1821f7992d4dd6a2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547184242331172084, guid: f6f5a02c6ef86d5a1821f7992d4dd6a2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f6f5a02c6ef86d5a1821f7992d4dd6a2, type: 3}
 --- !u!1001 &275723932
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -235,6 +292,10 @@ PrefabInstance:
     - target: {fileID: 1162234724972830604, guid: 41d92b121f4f76e15927fb9edc3fe944, type: 3}
       propertyPath: m_Name
       value: Player_Wizard
+      objectReference: {fileID: 0}
+    - target: {fileID: 1162234724972830604, guid: 41d92b121f4f76e15927fb9edc3fe944, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1547184242331172084, guid: 41d92b121f4f76e15927fb9edc3fe944, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1039,3 +1100,4 @@ SceneRoots:
   - {fileID: 4802008214203688468}
   - {fileID: 649860160}
   - {fileID: 1017251718}
+  - {fileID: 210345471}
