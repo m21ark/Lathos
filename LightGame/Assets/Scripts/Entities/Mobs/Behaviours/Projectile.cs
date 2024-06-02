@@ -32,6 +32,8 @@ public class Projectile : ProtoAttack
                 playerHealth.TakeDamage(projDamage);
             }
             Destroy(gameObject);
+        } else if (collider.gameObject.CompareTag("Fireplace")) {
+            Destroy(gameObject);
         }
     }
 
