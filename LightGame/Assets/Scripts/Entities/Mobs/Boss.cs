@@ -13,8 +13,8 @@ public class Boss : ProtoMob
 
     // Summoning Logic
     private float lastSummonTime;
-    public float summonFrequency = 10.0f;
-    [SerializeField] public GameObject[] minionPrefab;
+    public float summonFrequency = 5.0f;
+    [SerializeField] private GameObject[] minionPrefab;
 
     // Child visibility (accessed via hierarchy)
     private GameObject firstChild;
@@ -22,7 +22,6 @@ public class Boss : ProtoMob
 
     public Transform leftWing;
     public Transform rightWing;
-
 
     private float rotationSpeed = 16.0f; // Speed of rotation
     private float upspeed = 0.5f;
@@ -36,6 +35,8 @@ public class Boss : ProtoMob
 
     private bool isJumping = false;
     private bool isLanding = false;
+
+    public int numberOfSummons = 50;
 
     void Start()
     {
@@ -56,8 +57,9 @@ public class Boss : ProtoMob
         float healthPercentage = (float)health / maxHealth;
 
         if (healthPercentage <= bossPhaseThreshold2Percentage) currentBossPhase = 2;
-        if (healthPercentage <= bossPhaseThreshold3Percentage) currentBossPhase = 3;
 
+        currentBossPhase = 2;
+        if (numberOfSummons <= 0) currentBossPhase = 3;
 
         // Apply different boss behavior depending on current phase  
         switch (currentBossPhase)
@@ -83,26 +85,25 @@ public class Boss : ProtoMob
 
             if (rb != null)
             {
-
                 spawnedProjectile.GetComponent<Projectile>().Fire(10, direction);
-
             }
         }
     }
 
     private void Phase1Behavior()
     {
-
-        // TODO: if player is close to the bettle then fly and to another position
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
         if (isJumping)
         {
-            // if rotation is similar to target rotation
-            Debug.Log(Quaternion.Angle(secondChild.transform.rotation, Quaternion.Euler(phase3TargetRotation)));
             if (isLanding || Quaternion.Angle(secondChild.transform.rotation, Quaternion.Euler(phase3TargetRotation)) < 0.01f)
             {
                 LerpToGroundPhase();
+                // put the secondchild rotation to 36.753f, -4.393f, 0.866f and activate the first child ...another way to do this
+                // secondChild.transform.rotation = Quaternion.Euler(36.753f, -4.393f, 0.866f);
+                // firstChild.SetActive(true);
+                // secondChild.SetActive(false);
+                // isJumping = false;
                 isLanding = true && isJumping;
             }
             else
@@ -110,19 +111,16 @@ public class Boss : ProtoMob
                 LerpToFlightPhase();
             }
             FlapWings();
-            agent.baseOffset = Mathf.Lerp(agent.baseOffset, 15f, Time.deltaTime * upspeed);
             return;
-
         }
         else
         {
-            // attack player 
             AttackPlayer();
         }
 
         if (distanceToPlayer < 10.0f)
         {
-            Vector3 newPosition = transform.position + Random.insideUnitSphere * 80.0f;
+            Vector3 newPosition = transform.position + Random.insideUnitSphere * 70.0f;
             UnityEngine.AI.NavMeshHit hit;
             if (UnityEngine.AI.NavMesh.SamplePosition(newPosition, out hit, 30.0f, UnityEngine.AI.NavMesh.AllAreas))
             {
@@ -132,37 +130,68 @@ public class Boss : ProtoMob
         }
         else
         {
-            // secondChild.transform.LookAt(player);
-            // firstChild.transform.LookAt(player);
+            secondChild.transform.LookAt(player);
+            firstChild.transform.LookAt(player);
         }
-
     }
-
-
 
     private void Phase2Behavior()
     {
-        // Summon minion if 10s cooldown has passed
-        if (Time.time - lastSummonTime >= summonFrequency) SummonMinions();
+        Debug.Log("Phase 2");
+        Debug.Log("Number of summons: " + numberOfSummons);
+
+        if (Time.time - lastSummonTime >= summonFrequency && numberOfSummons > 0) SummonMinions();
 
         LerpToFlightPhase();
+        agent.radius = 1.0f;
+
+        disableBoxCollider();
+
+        Vector3 targetPosition = player.position + new Vector3(5, 5, 0); // stupid but the only thing that worked
+        agent.SetDestination(targetPosition);
+
         FlapWings();
+        isJumping = true;
     }
+
 
     private void Phase3Behavior()
     {
-        // set agent offset to 10
-        agent.baseOffset = Mathf.Lerp(agent.baseOffset, 15f, Time.deltaTime * upspeed);
-        agent.radius = 1.0f;
+        // phase 3 behavior
+        if (isJumping)
+        {
+            LerpToGroundPhase();
+            FlapWings();
+            return;
+        }
 
-        agent.SetDestination(player.position);
+        agent.radius = 7.12f;
 
+        FollowPlayer();
+
+        enabledBoxCollider();
     }
 
+    private void disableBoxCollider()
+    {
+        BoxCollider boxCollider = GetComponent<BoxCollider>();
+        if (boxCollider != null)
+        {
+            boxCollider.enabled = false;
+        }
+    }
+
+    private void enabledBoxCollider()
+    {
+        BoxCollider boxCollider = GetComponent<BoxCollider>();
+        if (boxCollider != null)
+        {
+            boxCollider.enabled = true;
+        }
+    }
 
     private void LerpToFlightPhase()
     {
-        // You should make visible the second child and make invisible the first child
         if (firstChild != null && secondChild != null)
         {
             firstChild.SetActive(false);
@@ -171,36 +200,30 @@ public class Boss : ProtoMob
 
         Quaternion targetRotation = Quaternion.Euler(phase3TargetRotation);
         secondChild.transform.rotation = Quaternion.RotateTowards(secondChild.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+
+        agent.baseOffset = Mathf.Lerp(agent.baseOffset, 15f, Time.deltaTime * upspeed);
     }
 
     private void LerpToGroundPhase()
     {
         Quaternion targetRotation = Quaternion.Euler(36.753f, -4.393f, 0.866f);
         secondChild.transform.rotation = Quaternion.RotateTowards(secondChild.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-        // Ensure the boss has landed (y position is back to original ground position)
 
-        agent.baseOffset = Mathf.Lerp(agent.baseOffset, -0.23f, Time.deltaTime * upspeed * 20.0f);
-        Debug.Log(Quaternion.Angle(targetRotation, secondChild.transform.rotation));
-        if (Quaternion.Angle(targetRotation, secondChild.transform.rotation) < 0.01f && secondChild.transform.rotation.y > -4.393f
-            && agent.baseOffset < 0.40f
-        )  // Adding a small threshold to handle floating-point precision
+        agent.baseOffset = Mathf.Lerp(agent.baseOffset, -0.23f, Time.deltaTime * upspeed * 3.0f);
+        if (Quaternion.Angle(targetRotation, secondChild.transform.rotation) < 0.01f && secondChild.transform.rotation.y > -4.393f && agent.baseOffset < 0.40f)
         {
             agent.baseOffset = -0.23f;
-            // Make the first child visible and the second child invisible
             if (firstChild != null && secondChild != null)
             {
                 firstChild.SetActive(true);
                 secondChild.SetActive(false);
             }
-            secondChild.transform.LookAt(player);
-            firstChild.transform.LookAt(player);
+            //secondChild.transform.LookAt(player);
+            //firstChild.transform.LookAt(player);
 
             isJumping = false;
         }
     }
-
-
-
 
     private void FlapWings()
     {
@@ -211,29 +234,17 @@ public class Boss : ProtoMob
         rightWing.localRotation = Quaternion.Euler(29.202f, -flapAngle - 12.446f, 48.228f);
     }
 
-
-    public void Move2()
+    public void FollowPlayer()
     {
         agent.SetDestination(player.position);
     }
-
-    // void OnCollisionEnter(Collision collision)
-    // {
-    //     // Deal Damage ... TODO: maybe change this to put like ant
-    //     if (collision.gameObject.CompareTag("Player"))
-    //         GameLogic.instance.player.TakeDamage(damage);
-    // }
 
     public override void AttackPlayer()
     {
         agent.SetDestination(transform.position);
 
-        // Look at the player
-        // transform.LookAt(player);
-
         if (!alreadyAttacked)
         {
-            // Attack code here
             ShootProjectile();
 
             alreadyAttacked = true;
@@ -245,12 +256,14 @@ public class Boss : ProtoMob
     {
         float summonRadius = 12f;
         float summonProbability = 0.3f;
+        Debug.Log("Spawned minions");
 
-        // If randomize hits, summon 2 minions
         if (Random.value < summonProbability)
         {
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 4; i++)
             {
+                numberOfSummons--;
+                health -= 25; // cost of summoning minions ... TODO: create a var
                 Vector3 randomOffset = Random.insideUnitSphere * summonRadius;
                 randomOffset.y = 0f;
                 Vector3 potentialPosition = transform.position + randomOffset;
@@ -258,23 +271,18 @@ public class Boss : ProtoMob
                 RaycastHit hit;
                 int layerMask = LayerMask.GetMask("WhatIsGround");
 
-                // Perform a raycast downwards from a high point above the potential position
                 if (Physics.Raycast(potentialPosition + Vector3.up * 50, Vector3.down, out hit, Mathf.Infinity, layerMask))
                 {
                     Vector3 summonPosition = hit.point;
 
-                    // Random minion prefab
                     int randomIndex = Random.Range(0, minionPrefab.Length);
                     GameObject pref = minionPrefab[randomIndex];
                     pref.GetComponent<ProtoMob>().player = player;
-                    GameObject newMinion = Instantiate(pref, summonPosition, Quaternion.identity);
+                    Instantiate(pref, summonPosition, Quaternion.identity);
                 }
             }
 
-            // Reset the cooldown timer
             lastSummonTime = Time.time;
         }
     }
-
-
 }

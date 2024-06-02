@@ -513,9 +513,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5800565933432842254, guid: 5cc57aeb3e705434789fb7fe7f548a11, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 6572000176981897908, guid: 5cc57aeb3e705434789fb7fe7f548a11, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7401352537149557942, guid: 5cc57aeb3e705434789fb7fe7f548a11, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7502684319918383280, guid: 5cc57aeb3e705434789fb7fe7f548a11, type: 3}
       propertyPath: m_Name
       value: Bettle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7626509378099445813, guid: 5cc57aeb3e705434789fb7fe7f548a11, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 21.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 8121357048834876645, guid: 5cc57aeb3e705434789fb7fe7f548a11, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8938851835098091303, guid: 5cc57aeb3e705434789fb7fe7f548a11, type: 3}
       propertyPath: projectileSpawnPoint

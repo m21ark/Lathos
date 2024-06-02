@@ -723,6 +723,7 @@ MonoBehaviour:
   flapFrequency: 20
   flapAmplitude: 35
   phase3TargetRotation: {x: 0, y: 180, z: 0}
+  numberOfSummons: 50
 --- !u!65 &8331739338706358804
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1435,7 +1436,7 @@ MonoBehaviour:
   - {fileID: 4882869469147684825}
   - {fileID: 3569490117854368693}
   stepDistance: 4.25
-  raycastRange: 10.57
+  raycastRange: 50.7
   rayCastHeight: 3.53
   rayOffset: 1.32
   bodyHeight: 5
