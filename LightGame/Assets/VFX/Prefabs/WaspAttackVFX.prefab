@@ -54,17 +54,20 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 25
+      - m_Value: 15
         m_Name: ParticlesSpawnRate
         m_Overridden: 1
-      - m_Value: 0.05
+      - m_Value: 0.03
         m_Name: TrailSize
         m_Overridden: 1
       - m_Value: 1
         m_Name: SpinVelocity
         m_Overridden: 1
-      - m_Value: 2.5
+      - m_Value: 2
         m_Name: TrailLifetime
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: ArrowOffsetPosition
         m_Overridden: 1
     m_Vector2f:
       m_Array:
@@ -84,10 +87,10 @@ VisualEffect:
         m_Overridden: 1
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 3.25449, y: 5.992157, z: 0.8389018, w: 1}
+      - m_Value: {x: 0.8470587, y: 2.8945146, z: 5.992157, w: 1}
         m_Name: ArrowColor
         m_Overridden: 1
-      - m_Value: {x: 2.338876, y: 4.237095, z: 0.6779353, w: 1}
+      - m_Value: {x: 0.6876958, y: 2.09299, z: 4.237095, w: 1}
         m_Name: ParticlesColor
         m_Overridden: 1
       - m_Value: {x: 0.8269175, y: 1.4980392, z: 0.23968633, w: 1}
@@ -105,7 +108,7 @@ VisualEffect:
       m_Array:
       - m_Value:
           serializedVersion: 2
-          key0: {r: 2.338876, g: 4.237095, b: 0.6779353, a: 1}
+          key0: {r: 0.6876958, g: 2.2920365, b: 4.237095, a: 1}
           key1: {r: 0, g: 0, b: 0, a: 0.9577465}
           key2: {r: 0, g: 0, b: 0, a: 0}
           key3: {r: 0, g: 0, b: 0, a: 0}
@@ -145,7 +148,7 @@ VisualEffect:
       - m_Value: 1
         m_Name: TrailExists
         m_Overridden: 0
-      - m_Value: 1
+      - m_Value: 0
         m_Name: SmokeExists
         m_Overridden: 1
       - m_Value: 1
