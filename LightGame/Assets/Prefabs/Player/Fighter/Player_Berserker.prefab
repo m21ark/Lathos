@@ -766,7 +766,7 @@ MonoBehaviour:
   A2TimeSpan: 3
   A2BuffMult: 1.5
   A2DebuffMult: 0.5
-  A0StartOffset1: 0.6
+  A0StartOffset1: 0.3
   A1StartOffset1: 0.8
 --- !u!4 &646587067788642612 stripped
 Transform:
