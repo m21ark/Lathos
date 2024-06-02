@@ -5634,9 +5634,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 121207562825532481, guid: 25c84bfa7a4980545bb176e4ee378e10, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3822794074442804030, guid: 25c84bfa7a4980545bb176e4ee378e10, type: 3}
       propertyPath: m_Name
       value: WaspAttackVFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822794074442804030, guid: 25c84bfa7a4980545bb176e4ee378e10, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4655631795671836400, guid: 25c84bfa7a4980545bb176e4ee378e10, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6736,7 +6744,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2546968641009656781, guid: 3ff539a94e25ed248b9f07e0df4e1170, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3533332667290892391, guid: 3ff539a94e25ed248b9f07e0df4e1170, type: 3}
       propertyPath: m_Name
@@ -6744,7 +6752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3533332667290892391, guid: 3ff539a94e25ed248b9f07e0df4e1170, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8300319850337468237, guid: 3ff539a94e25ed248b9f07e0df4e1170, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7402,6 +7410,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8099238515441073439, guid: 054431854631b9c48be68e1ab3ce7b2c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1942271342444053489, guid: 054431854631b9c48be68e1ab3ce7b2c, type: 3}
@@ -7418,7 +7430,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3308247269881723435, guid: 202a49426eb244f47841a8fcbdec7681, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5935459615783201052, guid: 202a49426eb244f47841a8fcbdec7681, type: 3}
       propertyPath: m_Name
@@ -7426,7 +7438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5935459615783201052, guid: 202a49426eb244f47841a8fcbdec7681, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8910071240887361715, guid: 202a49426eb244f47841a8fcbdec7681, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7588,7 +7600,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2968587258635488321, guid: 53489ef43af223b418281000c5c64271, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5364785788191493758, guid: 53489ef43af223b418281000c5c64271, type: 3}
       propertyPath: m_Name
@@ -7596,7 +7608,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5364785788191493758, guid: 53489ef43af223b418281000c5c64271, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8222,11 +8234,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1080289873259876659, guid: c5fee2fcff0219e4ea09420eecfd5a18, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3444087386857784340, guid: c5fee2fcff0219e4ea09420eecfd5a18, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3454131879439987762, guid: c5fee2fcff0219e4ea09420eecfd5a18, type: 3}
       propertyPath: m_LocalPosition.x
