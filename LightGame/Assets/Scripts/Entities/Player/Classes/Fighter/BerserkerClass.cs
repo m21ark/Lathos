@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.VFX;
 
 public class BerserkerClass : FighterClass
 {
@@ -13,6 +14,8 @@ public class BerserkerClass : FighterClass
 
     public float A0StartOffset1 = 0.8f;
     public float A1StartOffset1 = 0.8f;
+
+    public GameObject A2VFX;
 
     public override void Attack()
     {
@@ -29,6 +32,19 @@ public class BerserkerClass : FighterClass
 
     public override void SpecialAbility()
     {
+        GameObject vfx = Instantiate(A2VFX, transform.position, transform.rotation);
+        BerserkLogic berserkLogic = vfx.GetComponent<BerserkLogic>();
+        berserkLogic.berserkDuration = A2TimeSpan;
+        // Get the Skinned Mesh Renderer
+        SkinnedMeshRenderer skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+        // Get VFX Component
+        VisualEffect vfxComponent = vfx.GetComponent<VisualEffect>();
+        // Set the Skinned Mesh Renderer to the VFX
+        if (vfxComponent != null && skinnedMeshRenderer != null)
+        {
+            Debug.Log("Setting Skinned Mesh Renderer");
+            vfxComponent.SetSkinnedMeshRenderer("SkinnedMeshRenderer", skinnedMeshRenderer);
+        }
         StartCoroutine(ActivateSpecialAbility());
         AudioManager.instance.PlayOneShot(FMODEvents.instance.playerBerserkerA2, transform.position, 0.15f);
     }

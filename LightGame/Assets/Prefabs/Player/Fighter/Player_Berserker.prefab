@@ -747,7 +747,7 @@ MonoBehaviour:
   stopsMovementA1: 0
   A2Prefab: {fileID: 0}
   A2Damage: 30
-  A2ReloadTime: 2
+  A2ReloadTime: 15
   A2ChargeRate: 0
   stopsMovementA2: 1
   lastAttackTime: 0
@@ -763,11 +763,12 @@ MonoBehaviour:
   A0StartOffset: 0.3
   A1StartOffset: 0.3
   A1TimeDelta: 0.8
-  A2TimeSpan: 3
+  A2TimeSpan: 7
   A2BuffMult: 1.5
   A2DebuffMult: 0.5
   A0StartOffset1: 0.3
   A1StartOffset1: 0.8
+  A2VFX: {fileID: 5888413907889666774, guid: 9163d8d6f3ef62f45b2c0675d38d75a3, type: 3}
 --- !u!4 &646587067788642612 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3860184868053501211, guid: 179c2b999f195394989801ac4c0951a4, type: 3}

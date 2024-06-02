@@ -7,9 +7,9 @@ public class BerserkLogic : MonoBehaviour
 {
     [SerializeField] private Material berserkMaterial;
     [SerializeField] private AnimationCurve berserkValueCurve;
-    [SerializeField] private float berserkDuration;
     [SerializeField] private ScriptableRendererFeature fullScreenBerserk;
     [SerializeField] private Material fullScreenBerserkMaterial;
+    public float berserkDuration;
     private float _timer;
     private bool _isBerserk;
 
@@ -44,5 +44,9 @@ public class BerserkLogic : MonoBehaviour
             fullScreenBerserk.SetActive(false);
             Destroy(gameObject);
         }
+    }
+
+    private void OnDestroy() {
+        fullScreenBerserk.SetActive(false);
     }
 }
