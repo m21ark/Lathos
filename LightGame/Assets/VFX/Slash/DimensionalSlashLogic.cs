@@ -7,6 +7,7 @@ public class DimensionalSlashScreenLogic : MonoBehaviour
 {
     [SerializeField] private float delay;
     [SerializeField] private float slashDuration;
+    [SerializeField] private float afterEffectDuration;
     [SerializeField] private ScriptableRendererFeature fullScreenInverted;
 
     private void OnEnable() {
@@ -19,6 +20,7 @@ public class DimensionalSlashScreenLogic : MonoBehaviour
         fullScreenInverted.SetActive(true);
         yield return new WaitForSeconds(slashDuration);
         fullScreenInverted.SetActive(false);
+        yield return new WaitForSeconds(afterEffectDuration);
         Destroy(gameObject);
     }
 
