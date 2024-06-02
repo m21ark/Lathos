@@ -718,6 +718,11 @@ MonoBehaviour:
   minionPrefab:
   - {fileID: 567850910089595217, guid: abd886abfa8df4243903c6a85c906713, type: 3}
   - {fileID: 6383518155344518752, guid: 7940069026d1c8145b4300f584002b57, type: 3}
+  predefinedTransforms:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   leftWing: {fileID: 6034501461890866371}
   rightWing: {fileID: 4355680691973921393}
   flapFrequency: 20
@@ -849,7 +854,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 76abc3495d7487b48abadfaceeb82675, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.82
+      value: 1.29
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 76abc3495d7487b48abadfaceeb82675, type: 3}
       propertyPath: m_LocalPosition.z

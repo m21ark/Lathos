@@ -15,6 +15,7 @@ public class Boss : ProtoMob
     private float lastSummonTime;
     public float summonFrequency = 5.0f;
     [SerializeField] private GameObject[] minionPrefab;
+    public List<Transform> predefinedTransforms = new List<Transform>();
 
     // Child visibility (accessed via hierarchy)
     private GameObject firstChild;
@@ -36,8 +37,10 @@ public class Boss : ProtoMob
     private bool isJumping = false;
     private bool isLanding = false;
 
-    public int numberOfSummons = 50;
+    private bool bullMode = false;
 
+    public int numberOfSummons = 50;
+    private int indexOfPosition = 0;
     void Start()
     {
         lastSummonTime = Time.time;
@@ -57,8 +60,6 @@ public class Boss : ProtoMob
         float healthPercentage = (float)health / maxHealth;
 
         if (healthPercentage <= bossPhaseThreshold2Percentage) currentBossPhase = 2;
-
-        currentBossPhase = 2;
         if (numberOfSummons <= 0) currentBossPhase = 3;
 
         // Apply different boss behavior depending on current phase  
@@ -118,14 +119,11 @@ public class Boss : ProtoMob
             AttackPlayer();
         }
 
-        if (distanceToPlayer < 10.0f)
+        if (distanceToPlayer < 12.0f)
         {
-            Vector3 newPosition = transform.position + Random.insideUnitSphere * 70.0f;
-            UnityEngine.AI.NavMeshHit hit;
-            if (UnityEngine.AI.NavMesh.SamplePosition(newPosition, out hit, 30.0f, UnityEngine.AI.NavMesh.AllAreas))
-            {
-                agent.SetDestination(hit.position);
-            }
+            // select a pos from the list indexOfPosition
+            agent.SetDestination(predefinedTransforms[indexOfPosition % predefinedTransforms.Count].position);
+            indexOfPosition++;
             isJumping = true;
         }
         else
@@ -137,8 +135,6 @@ public class Boss : ProtoMob
 
     private void Phase2Behavior()
     {
-        Debug.Log("Phase 2");
-        Debug.Log("Number of summons: " + numberOfSummons);
 
         if (Time.time - lastSummonTime >= summonFrequency && numberOfSummons > 0) SummonMinions();
 
@@ -164,13 +160,49 @@ public class Boss : ProtoMob
             FlapWings();
             return;
         }
+    
 
         agent.radius = 7.12f;
 
         FollowPlayer();
 
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+        // if close to the player then increase the speed and acceleration
+        Debug.Log("Distance to player: " + distanceToPlayer);
+        if (distanceToPlayer < attackRange)
+        {
+            agent.speed = 13.0f;
+            agent.acceleration = 60.0f;
+
+            if (distanceToPlayer < 12.0f)
+            {
+                AttackPlayer2();
+
+            }
+        }
+        else
+        {
+            agent.speed = 7.0f;
+            agent.acceleration = 8.0f;
+        }
+
         enabledBoxCollider();
     }
+
+    private void AttackPlayer2()
+    {
+        if (!alreadyAttacked)
+        {
+
+            // take player damage
+            ProtoClass playerHealth = player.GetComponent<ProtoClass>();
+            playerHealth.TakeDamage(damage);
+
+            alreadyAttacked = true;
+            Invoke(nameof(ResetAttack), timeBetweenAttacks);
+        }
+    }
+
 
     private void disableBoxCollider()
     {
@@ -218,8 +250,11 @@ public class Boss : ProtoMob
                 firstChild.SetActive(true);
                 secondChild.SetActive(false);
             }
-            //secondChild.transform.LookAt(player);
-            //firstChild.transform.LookAt(player);
+            // set rotation to  36.753f, -4.393f, 0.866f
+            secondChild.transform.localRotation = Quaternion.Euler(36.753f, -4.393f, 0.866f);
+
+            // set local rotation to 0 0 0
+            firstChild.transform.localRotation = Quaternion.Euler(0, 0, 0);
 
             isJumping = false;
         }
