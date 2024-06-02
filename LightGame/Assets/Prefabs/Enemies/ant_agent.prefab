@@ -116,7 +116,7 @@ MonoBehaviour:
     m_Bits: 128
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
-  timeBetweenAttacks: 0.5
+  timeBetweenAttacks: 1
   alreadyAttacked: 0
   projectile: {fileID: 0}
   sightRange: 40

@@ -74,7 +74,7 @@ public class AntBehaviour : ProtoMob
             Vector3 targetPosition = leader.position + direction.normalized * 10f;
 
             // Ensure the target position is within 20 units of the initial position
-            if (Vector3.Distance(initialPosition, targetPosition) <= 30f)
+            if (Vector3.Distance(initialPosition, targetPosition) <= walkPointRange)
             {
                 // Perform a raycast to check if the target position is on the ground
                 if (Physics.Raycast(targetPosition, Vector3.down, out RaycastHit hit, 12f, whatIsGround))
@@ -107,7 +107,7 @@ public class AntBehaviour : ProtoMob
             Vector3 targetPosition = transform.position + direction.normalized * 5f;
 
             // Ensure the target position is within 20 units of the initial position
-            if (Vector3.Distance(initialPosition, targetPosition) <= 30f)
+            if (Vector3.Distance(initialPosition, targetPosition) <= walkPointRange)
             {
                 // Perform a raycast to check if the target position is on the ground
                 if (Physics.Raycast(targetPosition, Vector3.down, out RaycastHit hit, 12f, whatIsGround))
