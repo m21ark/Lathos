@@ -517,6 +517,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bettle
       objectReference: {fileID: 0}
+    - target: {fileID: 8938851835098091303, guid: 5cc57aeb3e705434789fb7fe7f548a11, type: 3}
+      propertyPath: projectileSpawnPoint
+      value: 
+      objectReference: {fileID: 275723934}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -525,6 +529,11 @@ PrefabInstance:
 --- !u!4 &275723933 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4042849436841336016, guid: 5cc57aeb3e705434789fb7fe7f548a11, type: 3}
+  m_PrefabInstance: {fileID: 275723932}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &275723934 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2550217687822449431, guid: 5cc57aeb3e705434789fb7fe7f548a11, type: 3}
   m_PrefabInstance: {fileID: 275723932}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &577067879
