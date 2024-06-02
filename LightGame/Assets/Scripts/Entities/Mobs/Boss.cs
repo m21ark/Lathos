@@ -239,7 +239,7 @@ public class Boss : ProtoMob
     private void LerpToGroundPhase()
     {
         Quaternion targetRotation = Quaternion.Euler(36.753f, -4.393f, 0.866f);
-        secondChild.transform.rotation = Quaternion.RotateTowards(secondChild.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        secondChild.transform.rotation = Quaternion.RotateTowards(secondChild.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime * 2.0f);
 
         agent.baseOffset = Mathf.Lerp(agent.baseOffset, -0.23f, Time.deltaTime * upspeed * 3.0f);
         if (Quaternion.Angle(targetRotation, secondChild.transform.rotation) < 0.01f && secondChild.transform.rotation.y > -4.393f && agent.baseOffset < 0.40f)
