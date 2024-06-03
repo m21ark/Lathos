@@ -35,7 +35,7 @@ public class Woodlouse : ProtoMob
 
     public override void attack()
     {
-        Debug.Log("Attacking Woodlouse");
+        // Debug.Log("Attacking Woodlouse");
 
         // Invoke the MoveBack method after a delay
         Invoke(nameof(MoveBack), timeBetweenAttacks - 0.2f);
