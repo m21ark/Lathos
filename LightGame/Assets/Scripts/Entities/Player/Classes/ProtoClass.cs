@@ -179,16 +179,23 @@ public class ProtoClass : MonoBehaviour
         attackDirection = attackDirectionTemp;
     }
 
-    public void DelayAttackPhysical(GameObject prefab, int damage, float delay){
-        StartCoroutine(DelayAttackLaunchEnum(prefab, damage, delay));
+    public void DelayAttackPhysical(GameObject prefab, int damage, float delay, bool horizontal = true){
+        Debug.Log("horizontal: " + horizontal);
+        StartCoroutine(DelayAttackLaunchEnum(prefab, damage, delay, horizontal));
     }
 
-    private IEnumerator DelayAttackLaunchEnum(GameObject prefab, int damage, float delay){
+    private IEnumerator DelayAttackLaunchEnum(GameObject prefab, int damage, float delay, bool horizontal = true){
         ProtoAttack attack;
         Vector3 attackDirection;
         yield return new WaitForSeconds(delay);
         GenerateAttack(prefab, out attack, out attackDirection);
-        attack.transform.parent.transform.rotation = Quaternion.Euler(0, cameraPivot.transform.rotation.eulerAngles.y, 0);
+
+        Debug.Log("horizontal: " + horizontal);
+        if (horizontal){
+            attack.transform.parent.transform.rotation = Quaternion.Euler(0, cameraPivot.transform.rotation.eulerAngles.y, 0);
+        }else{
+            attack.transform.parent.transform.rotation = cameraPivot.transform.rotation;
+        }
         attack.Fire(damage, attackDirection);
     }
 

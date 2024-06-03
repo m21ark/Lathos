@@ -473,6 +473,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1547184242331172084}
     m_Modifications:
+    - target: {fileID: 233844391384194145, guid: 179c2b999f195394989801ac4c0951a4, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1843292622125724202, guid: 179c2b999f195394989801ac4c0951a4, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1843292622125724202, guid: 179c2b999f195394989801ac4c0951a4, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 2994722325471669256, guid: 179c2b999f195394989801ac4c0951a4, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 3803489130963567667, guid: 179c2b999f195394989801ac4c0951a4, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3828798096592346724, guid: 179c2b999f195394989801ac4c0951a4, type: 3}
       propertyPath: m_Name
       value: PlayerBody
@@ -521,6 +541,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6904854655147884170, guid: 179c2b999f195394989801ac4c0951a4, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7532661722920361636, guid: 179c2b999f195394989801ac4c0951a4, type: 3}
       propertyPath: m_Controller
       value: 
@@ -532,6 +556,10 @@ PrefabInstance:
     - target: {fileID: 7969891225610937114, guid: 179c2b999f195394989801ac4c0951a4, type: 3}
       propertyPath: m_Name
       value: Armature.004
+      objectReference: {fileID: 0}
+    - target: {fileID: 7969891225610937114, guid: 179c2b999f195394989801ac4c0951a4, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -627,8 +655,8 @@ MonoBehaviour:
   attackSpeed: 1
   A0Prefab: {fileID: 4923962845166056162, guid: d25d25d10bad8df4cb5154a551934f71, type: 3}
   A0Damage: 10
-  A0ReloadTime: 0.3
-  A0ChargeRate: 0
+  A0ReloadTime: 0.8
+  A0ChargeRate: 0.3
   stopsMovementA0: 0
   A1Prefab: {fileID: 4923962845166056162, guid: fe094fba59af82f41875d0ff78f5290b, type: 3}
   A1Damage: 20
