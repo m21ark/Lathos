@@ -25,4 +25,22 @@ public class SharpshooterA2 : ProtoAttack
             Destroy(gameObject.transform.parent.gameObject);
 
     }
+
+    public override void Fire(int damage, Vector3 direction, params (string key, object value)[] kwargs)
+    {
+
+        this.kwargs = kwargs;
+
+        // override the default prefab with the prefab from the kwargs
+        direction = (Vector3)GetKwarg("attackDirection", kwargs);
+
+        attackRb = gameObject.GetComponent<Rigidbody>();
+        if (attackRb != null) attackRb.velocity = direction * speed;
+
+        projDamage = damage;
+
+        // Despawn attack when despawn time is reached
+        Destroy(gameObject.transform.parent.gameObject, despawnTime);
+    }
+
 }

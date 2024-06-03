@@ -180,7 +180,6 @@ public class ProtoClass : MonoBehaviour
     }
 
     public void DelayAttackPhysical(GameObject prefab, int damage, float delay, bool horizontal = true){
-        Debug.Log("horizontal: " + horizontal);
         StartCoroutine(DelayAttackLaunchEnum(prefab, damage, delay, horizontal));
     }
 
@@ -190,7 +189,6 @@ public class ProtoClass : MonoBehaviour
         yield return new WaitForSeconds(delay);
         GenerateAttack(prefab, out attack, out attackDirection);
 
-        Debug.Log("horizontal: " + horizontal);
         if (horizontal){
             attack.transform.parent.transform.rotation = Quaternion.Euler(0, cameraPivot.transform.rotation.eulerAngles.y, 0);
         }else{

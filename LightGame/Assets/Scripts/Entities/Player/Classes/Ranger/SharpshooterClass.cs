@@ -30,10 +30,11 @@ public class SharpshooterClass : RangerClass
 
     private IEnumerator ActivateSpecialAbility()
     {
+        Vector3 fixedDirection = gameObject.transform.forward;
         yield return new WaitForSeconds(1.9f);
         ProtoAttack attack;
         Vector3 attackDirection;
         GenerateAttack(A2Prefab, out attack, out attackDirection);
-        attack.Fire(A2Damage, attackDirection);
+        attack.Fire(A2Damage, attackDirection, ("attackDirection" , fixedDirection));
     }
 }

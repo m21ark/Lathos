@@ -667,7 +667,7 @@ MonoBehaviour:
   A2Damage: 30
   A2ReloadTime: 2
   A2ChargeRate: 0
-  stopsMovementA2: 0
+  stopsMovementA2: 1
   lastAttackTime: 0
   lastAttack1Time: 0
   lastAttack2Time: 0

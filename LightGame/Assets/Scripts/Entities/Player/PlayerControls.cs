@@ -135,7 +135,7 @@ public class PlayerController : MonoBehaviour
         CalculateVel();
 
         // Rotate the player based on camera rotation on the y-axis only if moving
-        if (this.direction != Vector3.zero)
+        if (this.direction != Vector3.zero && !attackingStandingStill)
             CharacterFaceDirection();
 
         // Jumping
@@ -149,7 +149,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Dash
-        if (Input.GetKeyDown(dashKey) && player.lastDashTime <= 0 ) 
+        if (Input.GetKeyDown(dashKey) && player.lastDashTime <= 0 && !attackingStandingStill) 
             StartCoroutine(Dash());
         else player.lastDashTime -= Time.deltaTime;
 
@@ -202,6 +202,7 @@ public class PlayerController : MonoBehaviour
             
         while (elapsedTime < duration)
         {
+            if(attackingStandingStill) break; // if the player is attacking and standing still, stop the dash (special case for attacks that require standing still)
             float t = elapsedTime / duration;
             rb.velocity += dashDirection * player.dashSpeed;
             elapsedTime += Time.deltaTime;
