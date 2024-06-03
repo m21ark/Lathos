@@ -37,8 +37,6 @@ public class Boss : ProtoMob
     private bool isJumping = false;
     private bool isLanding = false;
 
-    private bool bullMode = false;
-
     public int numberOfSummons = 50;
     private int indexOfPosition = 0;
     void Start()
@@ -168,7 +166,6 @@ public class Boss : ProtoMob
 
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
         // if close to the player then increase the speed and acceleration
-        Debug.Log("Distance to player: " + distanceToPlayer);
         if (distanceToPlayer < attackRange)
         {
             agent.speed = 13.0f;
@@ -291,7 +288,6 @@ public class Boss : ProtoMob
     {
         float summonRadius = 12f;
         float summonProbability = 0.3f;
-        Debug.Log("Spawned minions");
 
         if (Random.value < summonProbability)
         {
