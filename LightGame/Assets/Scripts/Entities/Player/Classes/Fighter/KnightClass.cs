@@ -7,6 +7,7 @@ public class KnightClass : FighterClass
     public float A0StartOffset1 = 0.3f;
     public float A1StartOffset1 = 0.3f;
     public float A2StartOffset1 = 0.3f;
+    private float offsetDistance = 1.0f;
     public GameObject A2VFX;
 
     public override void Attack()
@@ -23,7 +24,7 @@ public class KnightClass : FighterClass
 
     public override void SpecialAbility()
     {   
-        DelayAttackPhysical(A2Prefab, A2Damage, A2StartOffset1);
+        DelayAttackPhysical(A2Prefab, A2Damage, A2StartOffset1, false);
         StartCoroutine(GenerateVFXDimenstionalSlash());
         AudioManager.instance.PlayOneShot(FMODEvents.instance.playerKnightA2, transform.position, 0.3f);
     }
@@ -32,6 +33,6 @@ public class KnightClass : FighterClass
     {
         yield return new WaitForSeconds(A2StartOffset1);
         Quaternion rotation = cameraPivot.transform.rotation;
-        GameObject vfx = Instantiate(A2VFX, transform.position, rotation);
+        GameObject vfx = Instantiate(A2VFX, transform.position + cameraPivot.transform.forward , rotation);
     }
 }
