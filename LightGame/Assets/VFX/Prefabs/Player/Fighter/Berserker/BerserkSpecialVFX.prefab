@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 8098067027728852190}
   - component: {fileID: 6736189780113132126}
   - component: {fileID: 2821617133859264506}
-  - component: {fileID: 7505731441992057307}
-  - component: {fileID: 6883784665849198626}
   m_Layer: 0
   m_Name: BerserkSpecialVFX
   m_TagString: Untagged
@@ -91,9 +89,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  berserkDuration: 20
   fullScreenBerserk: {fileID: -8746055704807623958, guid: 9def459175d2502e9bbba6d49bdb443f, type: 2}
   fullScreenBerserkMaterial: {fileID: 2100000, guid: 00245d58e65723746bc0ac1e5da584d5, type: 2}
+  vfx: {fileID: 6736189780113132126}
+  berserkDuration: 20
 --- !u!2083052967 &6736189780113132126
 VisualEffect:
   m_ObjectHideFlags: 0
@@ -115,21 +114,27 @@ VisualEffect:
       - m_Value: 50
         m_Name: Duration
         m_Overridden: 1
+      - m_Value: 35
+        m_Name: ParticlesSpawnRate
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
       m_Array:
-      - m_Value: {x: -0.000004325711, y: 234.45227, z: 0}
+      - m_Value: {x: 0, y: 0, z: 0}
         m_Name: Transform_angles
         m_Overridden: 1
-      - m_Value: {x: -6.16, y: 1.65, z: 3.63}
+      - m_Value: {x: 0, y: 0, z: 0}
         m_Name: Transform_position
         m_Overridden: 1
       - m_Value: {x: 1, y: 1, z: 1}
         m_Name: Transform_scale
         m_Overridden: 1
     m_Vector4f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 22.894423, y: 0.38157374, z: 0, w: 1}
+        m_Name: ParticlesColor
+        m_Overridden: 1
     m_Uint:
       m_Array: []
     m_Int:
@@ -187,34 +192,3 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &7505731441992057307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5888413907889666774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdafc37f32b176349b1684c4455b98e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ExecuteInEditor: 1
-  m_Bindings:
-  - {fileID: 6883784665849198626}
-  m_VisualEffect: {fileID: 6736189780113132126}
---- !u!114 &6883784665849198626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5888413907889666774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fdfea1f838247c40921a07afedde962, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Property:
-    m_Name: Transform
-  Target: {fileID: 0}

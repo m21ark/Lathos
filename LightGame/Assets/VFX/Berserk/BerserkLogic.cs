@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Rendering.Universal;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class BerserkLogic : MonoBehaviour
 {
@@ -9,17 +10,26 @@ public class BerserkLogic : MonoBehaviour
     [SerializeField] private AnimationCurve berserkValueCurve;
     [SerializeField] private ScriptableRendererFeature fullScreenBerserk;
     [SerializeField] private Material fullScreenBerserkMaterial;
+    [SerializeField] private VisualEffect vfx;
     public float berserkDuration;
-    private float _timer;
-    private bool _isBerserk;
+    private float _timer = 0.0f;
+    private bool _isBerserk = false;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Initialize()
     {
         _isBerserk = true;
         _timer = 0.0f;
         fullScreenBerserkMaterial.SetFloat("_Intensity", 0.0f);
         fullScreenBerserk.SetActive(true);
+        vfx.Play();
+    }
+
+    void CleanUp()
+    {
+        _isBerserk = false;
+        fullScreenBerserkMaterial.SetFloat("_Intensity", 0.0f);
+        fullScreenBerserk.SetActive(false);
+        vfx.Stop();
     }
 
     // Update is called once per frame
@@ -41,12 +51,11 @@ public class BerserkLogic : MonoBehaviour
         // If the timer is greater than the duration, we should stop the berserk mode
         if (_timer >= berserkDuration)
         {
-            fullScreenBerserk.SetActive(false);
-            Destroy(gameObject);
+            CleanUp();
         }
     }
 
     private void OnDestroy() {
-        fullScreenBerserk.SetActive(false);
+        CleanUp();
     }
 }

@@ -32,19 +32,10 @@ public class BerserkerClass : FighterClass
 
     public override void SpecialAbility()
     {
-        GameObject vfx = Instantiate(A2VFX, transform.position, transform.rotation);
-        BerserkLogic berserkLogic = vfx.GetComponent<BerserkLogic>();
+        BerserkLogic berserkLogic = A2VFX.GetComponent<BerserkLogic>();
         berserkLogic.berserkDuration = A2TimeSpan;
-        // Get the Skinned Mesh Renderer
-        SkinnedMeshRenderer skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
-        // Get VFX Component
-        VisualEffect vfxComponent = vfx.GetComponent<VisualEffect>();
-        // Set the Skinned Mesh Renderer to the VFX
-        if (vfxComponent != null && skinnedMeshRenderer != null)
-        {
-            Debug.Log("Setting Skinned Mesh Renderer");
-            vfxComponent.SetSkinnedMeshRenderer("SkinnedMeshRenderer", skinnedMeshRenderer);
-        }
+        berserkLogic.Initialize();
+        
         StartCoroutine(ActivateSpecialAbility());
         AudioManager.instance.PlayOneShot(FMODEvents.instance.playerBerserkerA2, transform.position, 0.15f);
     }
