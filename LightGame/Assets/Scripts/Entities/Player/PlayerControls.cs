@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
     {
         if (movement == Vector3.zero) return movement;
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, 2f))
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 2f, ~LayerMask.GetMask("LampLight")))
             movement = Vector3.ProjectOnPlane(movement, hit.normal);
         return movement.normalized;
     }
@@ -149,7 +149,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Dash
-        if (Input.GetKeyDown(dashKey) && player.lastDashTime <= 0 ) 
+        if (Input.GetKeyDown(dashKey) && player.lastDashTime <= 0 && !attackingStandingStill) 
             StartCoroutine(Dash());
         else player.lastDashTime -= Time.deltaTime;
 
