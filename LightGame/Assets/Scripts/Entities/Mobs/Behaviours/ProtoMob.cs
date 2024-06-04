@@ -30,7 +30,7 @@ public class ProtoMob : MonoBehaviour
     [Header("Attacking")]
     public float timeBetweenAttacks;
     public bool alreadyAttacked;
-    
+
     protected bool attackedByPlayer;
     public GameObject projectile;
     public GameObject deathVFX = null;
@@ -41,7 +41,7 @@ public class ProtoMob : MonoBehaviour
     public bool playerInSightRange, playerInAttackRange;
 
 
-    
+
     protected Vector3 initialPosition;
 
     private void Awake()
@@ -53,6 +53,8 @@ public class ProtoMob : MonoBehaviour
 
     protected void Update()
     {
+
+        if (player == null) { player = GameObject.FindGameObjectWithTag("Player").transform; }
         // Check for sight and attack range
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);

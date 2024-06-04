@@ -15,7 +15,7 @@ public class AntBehaviour : ProtoMob
 
     new private void Update()
     {
-
+        if (player == null) { player = GameObject.FindGameObjectWithTag("Player").transform; }
         // Check for sight and attack range
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
