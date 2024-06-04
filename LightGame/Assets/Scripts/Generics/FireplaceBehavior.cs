@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+
 
 public class FireplaceBehavior : MonoBehaviour{
     private bool isLit = false;
@@ -26,7 +28,7 @@ public class FireplaceBehavior : MonoBehaviour{
                     DialogueController.instance.StartDialogue(dialogueOnEnterID);
             }
         }           
-        // RepelEnemies(other);
+
     }
 
     private void OnTriggerStay(Collider other){
@@ -37,20 +39,14 @@ public class FireplaceBehavior : MonoBehaviour{
             player.Heal(1);
             player.IncrementLight(1);        
         }
-        // RepelEnemies(other);
+
     }
 
     private IEnumerator FadeOut(){
         yield return new WaitForSeconds(fadeOutTime);
         FireLightObj.SetActive(false);
-    }
 
-    private void RepelEnemies(Collider other){
-       if (other.CompareTag("Mob"))
-        {
-            Vector3 directionToCenter = transform.position - other.transform.position;
-            directionToCenter.Normalize();
-            other.GetComponent<Rigidbody>().AddForce(-directionToCenter * 10f, ForceMode.Impulse);
-        }
+        // disable navmesh agent
+        GetComponent<NavMeshAgent>().enabled = false;
     }
 }
