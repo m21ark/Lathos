@@ -276,10 +276,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerLamp
       objectReference: {fileID: 0}
-    - target: {fileID: 8781030119430346462, guid: aef73bba2aa789b46944ed8b68b4bc47, type: 3}
-      propertyPath: m_Radius
-      value: 1.17
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
