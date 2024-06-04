@@ -173,7 +173,8 @@ public class PlayerController : MonoBehaviour
         if (player.isAttacking || player.isAttack1ing || player.isAttack2ing)
         {
             this.direction = cameraPivot.forward;
-            CharacterFaceDirection();
+            // CharacterFaceDirection();
+            ForceCharacterFaceCrosshair();
         }
     }
 
