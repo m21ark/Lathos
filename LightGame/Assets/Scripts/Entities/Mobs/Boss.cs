@@ -53,6 +53,8 @@ public class Boss : ProtoMob
 
     new void Update()
     {
+        if (player == null) { player = GameObject.FindGameObjectWithTag("Player").transform; }
+        
         // Check if boss needs to switch to new phase
         currentBossPhase = 1;
         float healthPercentage = (float)health / maxHealth;
