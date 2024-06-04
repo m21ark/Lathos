@@ -152,9 +152,12 @@ public class ProtoMob : MonoBehaviour
         attackedByPlayer = true;
     }
 
-    public void OnDestroy()
+    public void OnDisable()
     {
         if (deathVFX == null) return;
+
+        if (!gameObject.scene.isLoaded) return;
+
         // Generate the explosion VFX when the projectile is destroyed
         GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
         Destroy(explosion, 5);

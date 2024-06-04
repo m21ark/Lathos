@@ -54,9 +54,10 @@ public class Projectile : ProtoAttack
         }
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         if (explosionVFX == null) return;
+        if (!gameObject.scene.isLoaded) return;
         // Generate the explosion VFX when the projectile is destroyed
         GameObject explosion = Instantiate(explosionVFX, transform.position, Quaternion.identity);
         Destroy(explosion, 5);

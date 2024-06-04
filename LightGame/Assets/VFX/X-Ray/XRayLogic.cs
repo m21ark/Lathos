@@ -81,7 +81,6 @@ public class XRayLogic : MonoBehaviour
     private void ChangePlayerAndLampLayer(string layerName)
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        player.layer = LayerMask.NameToLayer(layerName);
         ChangeLayerAllChildren(player.transform, layerName);
 
         GameObject lamp = GameObject.FindGameObjectWithTag("Lamp");

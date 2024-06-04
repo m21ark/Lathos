@@ -664,8 +664,8 @@ MonoBehaviour:
   A1ChargeRate: 0
   stopsMovementA1: 0
   A2Prefab: {fileID: 4923962845166056162, guid: 933712b994aba9647b6c0e006c76415d, type: 3}
-  A2Damage: 30
-  A2ReloadTime: 2
+  A2Damage: 100
+  A2ReloadTime: 10
   A2ChargeRate: 0
   stopsMovementA2: 1
   lastAttackTime: 0
