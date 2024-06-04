@@ -42,7 +42,7 @@ public class LampHoverPlayer : MonoBehaviour
     {
         playerLight = player.GetComponent<ProtoClass>().collectedLight;
         Light light = lightSource.GetComponent<Light>();
-        light.intensity = playerLight * 0.04f;
+        light.intensity = playerLight * 0.05f;
     }
 
     void FixedUpdate()
