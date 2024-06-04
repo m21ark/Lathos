@@ -500,6 +500,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9136884579124047377, guid: c73ce45e99f9011d4985dd35dd0435cd, type: 3}
+      propertyPath: persistentData
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -816,7 +820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1162234724972830604, guid: cd427aec706d2feafa7aa59cca67992d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1547184242331172084, guid: cd427aec706d2feafa7aa59cca67992d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1387,6 +1391,10 @@ PrefabInstance:
     - target: {fileID: 1162234724972830604, guid: a18b52640d5b6fb73945a0b91986231b, type: 3}
       propertyPath: m_Name
       value: Player_Ranger
+      objectReference: {fileID: 0}
+    - target: {fileID: 1162234724972830604, guid: a18b52640d5b6fb73945a0b91986231b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1547184242331172084, guid: a18b52640d5b6fb73945a0b91986231b, type: 3}
       propertyPath: m_LocalPosition.x
