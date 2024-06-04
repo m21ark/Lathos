@@ -1,356 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9046514930084256065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/VoiceLines.bank
-  m_EditorClassIdentifier: 
-  Path: ../Audio/Build/Desktop/VoiceLines.bank
-  Name: VoiceLines
-  StudioPath: bank:/VoiceLines
-  lastModified: 638529139868628274
-  FileSizes:
-  - Name: Desktop
-    Value: 1717984
-  Exists: 1
---- !u!114 &-8504346839564471673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Main character movement/Action events
-  m_EditorClassIdentifier: 
-  Path: event:/Main character movement/Action events
-  Guid:
-    Data1: 1197957088
-    Data2: 1149885137
-    Data3: -1132888164
-    Data4: -1992153272
-  Banks:
-  - {fileID: -2339479710055509579}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-8328485457690807333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambience/Ambience dramatic
-  m_EditorClassIdentifier: 
-  Path: event:/Ambience/Ambience dramatic
-  Guid:
-    Data1: 873538271
-    Data2: 1312890282
-    Data3: -1252951119
-    Data4: -65117466
-  Banks:
-  - {fileID: -580545229915876968}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 53814
---- !u!114 &-7806273975191960044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/VoiceLines/opening
-  m_EditorClassIdentifier: 
-  Path: event:/VoiceLines/opening
-  Guid:
-    Data1: -1213878492
-    Data2: 1244128633
-    Data3: 319819709
-    Data4: 1386035081
-  Banks:
-  - {fileID: -9046514930084256065}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 72333
---- !u!114 &-6350795798555074766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: ../Audio/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638514084842941565
-  FileSizes:
-  - Name: Desktop
-    Value: 1388
-  Exists: 1
---- !u!114 &-6168625917356190380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX abilities/Wizard ability
-  m_EditorClassIdentifier: 
-  Path: event:/SFX abilities/Wizard ability
-  Guid:
-    Data1: 1777179059
-    Data2: 1179459782
-    Data3: 196928694
-    Data4: -1868967731
-  Banks:
-  - {fileID: -2587570861499691353}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-6167549015657919686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambience/Ambience stable
-  m_EditorClassIdentifier: 
-  Path: event:/Ambience/Ambience stable
-  Guid:
-    Data1: 31862224
-    Data2: 1170150344
-    Data3: -1605489747
-    Data4: 1710030324
-  Banks:
-  - {fileID: 3419332620765416718}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-5819907700520327637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX abilities/Sharpshooter
-  m_EditorClassIdentifier: 
-  Path: event:/SFX abilities/Sharpshooter
-  Guid:
-    Data1: -2095309614
-    Data2: 1268863760
-    Data3: 211133598
-    Data4: -798860428
-  Banks:
-  - {fileID: 2459042495137615457}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-5255175139410349203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Main character movement/Hitting once
-  m_EditorClassIdentifier: 
-  Path: event:/Main character movement/Hitting once
-  Guid:
-    Data1: 2001664695
-    Data2: 1102073962
-    Data3: 1133333415
-    Data4: 648846674
-  Banks:
-  - {fileID: 2459042495137615457}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-5131723413223201352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Abilities.bank
-  m_EditorClassIdentifier: 
-  Path: ../Audio/Build/Desktop/Abilities.bank
-  Name: Abilities
-  StudioPath: bank:/Abilities
-  lastModified: 638514084842866451
-  FileSizes:
-  - Name: Desktop
-    Value: 364672
-  Exists: 1
---- !u!114 &-4468450704671432471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambience/boss_music
-  m_EditorClassIdentifier: 
-  Path: event:/Ambience/boss_music
-  Guid:
-    Data1: 975412622
-    Data2: 1227207823
-    Data3: -365027919
-    Data4: -1416451473
-  Banks:
-  - {fileID: -580545229915876968}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 298945
---- !u!114 &-4369592218774171058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Main character movement/Action events
-  m_EditorClassIdentifier: 
-  Path: event:/Main character movement/Action events
-  Guid:
-    Data1: 1197957088
-    Data2: 1149885137
-    Data3: -1132888164
-    Data4: -1992153272
-  Banks:
-  - {fileID: 1410741829041854718}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-4226137929381867347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: ../Audio/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638514084842941565
-  FileSizes:
-  - Name: Desktop
-    Value: 1388
-  Exists: 1
---- !u!114 &-4106447136886336308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/VoiceLines/opening3
-  m_EditorClassIdentifier: 
-  Path: event:/VoiceLines/opening3
-  Guid:
-    Data1: -2088008448
-    Data2: 1214566562
-    Data3: -343585367
-    Data4: 217399928
-  Banks:
-  - {fileID: -9046514930084256065}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-3888032577658131118
+--- !u!114 &-7697850886769490348
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -369,7 +19,7 @@ MonoBehaviour:
     Data3: -2071035741
     Data4: 1087966466
   Banks:
-  - {fileID: -9046514930084256065}
+  - {fileID: -3165412433010525700}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -377,7 +27,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-3337142912049874255
+--- !u!114 &-6546337064026193369
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -387,192 +37,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambience/Ambience dramatic
+  m_Name: event:/VoiceLines/opening
   m_EditorClassIdentifier: 
-  Path: event:/Ambience/Ambience dramatic
+  Path: event:/VoiceLines/opening
   Guid:
-    Data1: 873538271
-    Data2: 1312890282
-    Data3: -1252951119
-    Data4: -65117466
+    Data1: -1213878492
+    Data2: 1244128633
+    Data3: 319819709
+    Data4: 1386035081
   Banks:
-  - {fileID: -773135254051920106}
+  - {fileID: -3165412433010525700}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
---- !u!114 &-3182976882673636305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX abilities/Sharpshooter
-  m_EditorClassIdentifier: 
-  Path: event:/SFX abilities/Sharpshooter
-  Guid:
-    Data1: -2095309614
-    Data2: 1268863760
-    Data3: 211133598
-    Data4: -798860428
-  Banks:
-  - {fileID: -2587570861499691353}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-3009059764004945580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambience/Dramatic piano
-  m_EditorClassIdentifier: 
-  Path: event:/Ambience/Dramatic piano
-  Guid:
-    Data1: 1199117720
-    Data2: 1133995343
-    Data3: 1256908936
-    Data4: 1291278564
-  Banks:
-  - {fileID: -580545229915876968}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 40045
---- !u!114 &-2587570861499691353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Abilities.bank
-  m_EditorClassIdentifier: 
-  Path: ../Audio/Build/Desktop/Abilities.bank
-  Name: Abilities
-  StudioPath: bank:/Abilities
-  lastModified: 638514084842866451
-  FileSizes:
-  - Name: Desktop
-    Value: 364672
-  Exists: 1
---- !u!114 &-2423370302901495447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Main character movement/sword 2
-  m_EditorClassIdentifier: 
-  Path: event:/Main character movement/sword 2
-  Guid:
-    Data1: -39726303
-    Data2: 1112944182
-    Data3: 1638709904
-    Data4: -1709180065
-  Banks:
-  - {fileID: 9063726596643881184}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 560
---- !u!114 &-2411626906417223040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: ../Audio/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638514001224556019
-  FileSizes:
-  - Name: Desktop
-    Value: 1036
-  Exists: 1
---- !u!114 &-2339479710055509579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Characer movements.bank
-  m_EditorClassIdentifier: 
-  Path: ../Audio/Build/Desktop/Characer movements.bank
-  Name: Characer movements
-  StudioPath: bank:/Characer movements
-  lastModified: 638529139868569664
-  FileSizes:
-  - Name: Desktop
-    Value: 294368
-  Exists: 1
---- !u!114 &-2305876707376458427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX abilities/Sharpshooter
-  m_EditorClassIdentifier: 
-  Path: event:/SFX abilities/Sharpshooter
-  Guid:
-    Data1: -2095309614
-    Data2: 1268863760
-    Data3: 211133598
-    Data4: -798860428
-  Banks:
-  - {fileID: 294170834671118855}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-2248283412353513648
+  Length: 72333
+--- !u!114 &-6121267713998094496
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -591,7 +73,7 @@ MonoBehaviour:
     Data3: 152284850
     Data4: 1010730972
   Banks:
-  - {fileID: -5131723413223201352}
+  - {fileID: -4615220380858143358}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -599,416 +81,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-2161831280884506868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX abilities/Wizard ability
-  m_EditorClassIdentifier: 
-  Path: event:/SFX abilities/Wizard ability
-  Guid:
-    Data1: 1777179059
-    Data2: 1179459782
-    Data3: 196928694
-    Data4: -1868967731
-  Banks:
-  - {fileID: 2459042495137615457}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-2152649109298519009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sword variations/Sword sounds random
-  m_EditorClassIdentifier: 
-  Path: event:/Sword variations/Sword sounds random
-  Guid:
-    Data1: 1024282196
-    Data2: 1227611184
-    Data3: -566128000
-    Data4: 1998924180
-  Banks:
-  - {fileID: 3702533273841866055}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-1487941778553780727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX abilities/Sharpshooter
-  m_EditorClassIdentifier: 
-  Path: event:/SFX abilities/Sharpshooter
-  Guid:
-    Data1: -2095309614
-    Data2: 1268863760
-    Data3: 211133598
-    Data4: -798860428
-  Banks:
-  - {fileID: -5131723413223201352}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-773135254051920106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Ambience.bank
-  m_EditorClassIdentifier: 
-  Path: ../Audio/Build/Desktop/Ambience.bank
-  Name: Ambience
-  StudioPath: bank:/Ambience
-  lastModified: 638514001224525908
-  FileSizes:
-  - Name: Desktop
-    Value: 958368
-  Exists: 1
---- !u!114 &-733140203288766676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Sword.bank
-  m_EditorClassIdentifier: 
-  Path: ../Audio/Build/Desktop/Sword.bank
-  Name: Sword
-  StudioPath: bank:/Sword
-  lastModified: 638514001224566198
-  FileSizes:
-  - Name: Desktop
-    Value: 179328
-  Exists: 1
---- !u!114 &-580545229915876968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Ambience.bank
-  m_EditorClassIdentifier: 
-  Path: ../Audio/Build/Desktop/Ambience.bank
-  Name: Ambience
-  StudioPath: bank:/Ambience
-  lastModified: 638529139868549481
-  FileSizes:
-  - Name: Desktop
-    Value: 5426784
-  Exists: 1
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: 2450608712365836312}
-  - {fileID: 2459042495137615457}
-  - {fileID: -580545229915876968}
-  - {fileID: -2339479710055509579}
-  - {fileID: -2411626906417223040}
-  - {fileID: 9063726596643881184}
-  - {fileID: -9046514930084256065}
-  EditorEvents:
-  - {fileID: 1618553184652506767}
-  - {fileID: 5674064285160735432}
-  - {fileID: -2161831280884506868}
-  - {fileID: -5819907700520327637}
-  - {fileID: -8504346839564471673}
-  - {fileID: 4566486764112080616}
-  - {fileID: 2450366115662639873}
-  - {fileID: -2423370302901495447}
-  - {fileID: -7806273975191960044}
-  - {fileID: 4973994937702872557}
-  - {fileID: 3533310584010835267}
-  - {fileID: 8413517418891207946}
-  - {fileID: -4106447136886336308}
-  - {fileID: -3888032577658131118}
-  - {fileID: 6514131332659450946}
-  - {fileID: 6506766291844778887}
-  - {fileID: 5315172414698682652}
-  - {fileID: 6530709570178568181}
-  - {fileID: -5255175139410349203}
-  - {fileID: 1601165121914444871}
-  - {fileID: 5819088054040366867}
-  - {fileID: -4468450704671432471}
-  - {fileID: -3009059764004945580}
-  - {fileID: 5930603583047422431}
-  - {fileID: -8328485457690807333}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: -2411626906417223040}
-  StringsBanks:
-  - {fileID: 2450608712365836312}
-  cacheTime: 638529139868628274
-  cacheVersion: 131617
---- !u!114 &5652942996200681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: ../Audio/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638514084842941565
-  FileSizes:
-  - Name: Desktop
-    Value: 1036
-  Exists: 1
---- !u!114 &294170834671118855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Abilities.bank
-  m_EditorClassIdentifier: 
-  Path: ../Audio/Build/Desktop/Abilities.bank
-  Name: Abilities
-  StudioPath: bank:/Abilities
-  lastModified: 638514001224485191
-  FileSizes:
-  - Name: Desktop
-    Value: 364672
-  Exists: 1
---- !u!114 &1362430357555829969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Main character movement/Action events
-  m_EditorClassIdentifier: 
-  Path: event:/Main character movement/Action events
-  Guid:
-    Data1: 1197957088
-    Data2: 1149885137
-    Data3: -1132888164
-    Data4: -1992153272
-  Banks:
-  - {fileID: 9087095521652176878}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &1410741829041854718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Characer movements.bank
-  m_EditorClassIdentifier: 
-  Path: ../Audio/Build/Desktop/Characer movements.bank
-  Name: Characer movements
-  StudioPath: bank:/Characer movements
-  lastModified: 638514084842931570
-  FileSizes:
-  - Name: Desktop
-    Value: 277856
-  Exists: 1
---- !u!114 &1517395465052882745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX abilities/Sorcerer ability
-  m_EditorClassIdentifier: 
-  Path: event:/SFX abilities/Sorcerer ability
-  Guid:
-    Data1: 368178690
-    Data2: 1093117865
-    Data3: 152284850
-    Data4: 1010730972
-  Banks:
-  - {fileID: 294170834671118855}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &1601165121914444871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX abilities/Throwing amber ball
-  m_EditorClassIdentifier: 
-  Path: event:/SFX abilities/Throwing amber ball
-  Guid:
-    Data1: 2051122134
-    Data2: 1259039619
-    Data3: -885221987
-    Data4: 1656012649
-  Banks:
-  - {fileID: 2459042495137615457}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &1618553184652506767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX abilities/Sorcerer ability
-  m_EditorClassIdentifier: 
-  Path: event:/SFX abilities/Sorcerer ability
-  Guid:
-    Data1: 368178690
-    Data2: 1093117865
-    Data3: 152284850
-    Data4: 1010730972
-  Banks:
-  - {fileID: 2459042495137615457}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &2450366115662639873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Main character movement/running no hearbeat
-  m_EditorClassIdentifier: 
-  Path: event:/Main character movement/running no hearbeat
-  Guid:
-    Data1: -1483887324
-    Data2: 1245694992
-    Data3: 404977079
-    Data4: 530718489
-  Banks:
-  - {fileID: -2339479710055509579}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1300
---- !u!114 &2450608712365836312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: ../Audio/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638529139868576965
-  FileSizes:
-  - Name: Desktop
-    Value: 2192
-  Exists: 1
---- !u!114 &2459042495137615457
+--- !u!114 &-4615220380858143358
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1028,7 +101,7 @@ MonoBehaviour:
   - Name: Desktop
     Value: 398784
   Exists: 1
---- !u!114 &2653106234083983284
+--- !u!114 &-4028243415323557551
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1037,25 +110,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambience/Ambience stable
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
   m_EditorClassIdentifier: 
-  Path: event:/Ambience/Ambience stable
-  Guid:
-    Data1: 31862224
-    Data2: 1170150344
-    Data3: -1605489747
-    Data4: 1710030324
-  Banks:
-  - {fileID: 2844171154485210760}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &2653353714577825206
+  Path: ../Audio/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638529139868576965
+  FileSizes:
+  - Name: Desktop
+    Value: 2192
+  Exists: 1
+--- !u!114 &-3957055536964401876
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1074,7 +140,7 @@ MonoBehaviour:
     Data3: -1927178590
     Data4: -1108409678
   Banks:
-  - {fileID: -5131723413223201352}
+  - {fileID: -4615220380858143358}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -1082,546 +148,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &2784754355652821987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX abilities/Sorcerer ability
-  m_EditorClassIdentifier: 
-  Path: event:/SFX abilities/Sorcerer ability
-  Guid:
-    Data1: 368178690
-    Data2: 1093117865
-    Data3: 152284850
-    Data4: 1010730972
-  Banks:
-  - {fileID: -2587570861499691353}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &2844171154485210760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Ambience.bank
-  m_EditorClassIdentifier: 
-  Path: ../Audio/Build/Desktop/Ambience.bank
-  Name: Ambience
-  StudioPath: bank:/Ambience
-  lastModified: 638514084842911531
-  FileSizes:
-  - Name: Desktop
-    Value: 958368
-  Exists: 1
---- !u!114 &3074719835582523467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX abilities/Wizard ability
-  m_EditorClassIdentifier: 
-  Path: event:/SFX abilities/Wizard ability
-  Guid:
-    Data1: 1777179059
-    Data2: 1179459782
-    Data3: 196928694
-    Data4: -1868967731
-  Banks:
-  - {fileID: -5131723413223201352}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &3179160927412233545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX abilities/Wizard ability
-  m_EditorClassIdentifier: 
-  Path: event:/SFX abilities/Wizard ability
-  Guid:
-    Data1: 1777179059
-    Data2: 1179459782
-    Data3: 196928694
-    Data4: -1868967731
-  Banks:
-  - {fileID: 294170834671118855}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &3419332620765416718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Ambience.bank
-  m_EditorClassIdentifier: 
-  Path: ../Audio/Build/Desktop/Ambience.bank
-  Name: Ambience
-  StudioPath: bank:/Ambience
-  lastModified: 638514084842911531
-  FileSizes:
-  - Name: Desktop
-    Value: 958368
-  Exists: 1
---- !u!114 &3533310584010835267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/VoiceLines/ranger_ending
-  m_EditorClassIdentifier: 
-  Path: event:/VoiceLines/ranger_ending
-  Guid:
-    Data1: -1010484801
-    Data2: 1232224573
-    Data3: 219798424
-    Data4: 825777410
-  Banks:
-  - {fileID: -9046514930084256065}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 22465
---- !u!114 &3622537381354613986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sword variations/Sword sounds random
-  m_EditorClassIdentifier: 
-  Path: event:/Sword variations/Sword sounds random
-  Guid:
-    Data1: 1024282196
-    Data2: 1227611184
-    Data3: -566128000
-    Data4: 1998924180
-  Banks:
-  - {fileID: 9134210516154420011}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &3702533273841866055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Sword.bank
-  m_EditorClassIdentifier: 
-  Path: ../Audio/Build/Desktop/Sword.bank
-  Name: Sword
-  StudioPath: bank:/Sword
-  lastModified: 638514084842961563
-  FileSizes:
-  - Name: Desktop
-    Value: 179328
-  Exists: 1
---- !u!114 &4324759733273901564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: ../Audio/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638514084842941565
-  FileSizes:
-  - Name: Desktop
-    Value: 1036
-  Exists: 1
---- !u!114 &4566486764112080616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sword variations/Sword sounds random
-  m_EditorClassIdentifier: 
-  Path: event:/Sword variations/Sword sounds random
-  Guid:
-    Data1: 1024282196
-    Data2: 1227611184
-    Data3: -566128000
-    Data4: 1998924180
-  Banks:
-  - {fileID: 9063726596643881184}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &4973994937702872557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/VoiceLines/fighter_ending
-  m_EditorClassIdentifier: 
-  Path: event:/VoiceLines/fighter_ending
-  Guid:
-    Data1: 2126031210
-    Data2: 1148534951
-    Data3: 284143236
-    Data4: 474911614
-  Banks:
-  - {fileID: -9046514930084256065}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 24215
---- !u!114 &5315172414698682652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sword variations/MegaSlash
-  m_EditorClassIdentifier: 
-  Path: event:/Sword variations/MegaSlash
-  Guid:
-    Data1: -219984526
-    Data2: 1155521062
-    Data3: 1418902157
-    Data4: 1225278161
-  Banks:
-  - {fileID: 9063726596643881184}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &5674064285160735432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX abilities/MajicProjectiles
-  m_EditorClassIdentifier: 
-  Path: event:/SFX abilities/MajicProjectiles
-  Guid:
-    Data1: -406302136
-    Data2: 1249865289
-    Data3: -1927178590
-    Data4: -1108409678
-  Banks:
-  - {fileID: 2459042495137615457}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &5819088054040366867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Main character movement/jumping ground
-  m_EditorClassIdentifier: 
-  Path: event:/Main character movement/jumping ground
-  Guid:
-    Data1: -1523328244
-    Data2: 1105357449
-    Data3: -2088535678
-    Data4: -108437555
-  Banks:
-  - {fileID: 2459042495137615457}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &5930603583047422431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambience/Ambience stable
-  m_EditorClassIdentifier: 
-  Path: event:/Ambience/Ambience stable
-  Guid:
-    Data1: 31862224
-    Data2: 1170150344
-    Data3: -1605489747
-    Data4: 1710030324
-  Banks:
-  - {fileID: -580545229915876968}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 24000
---- !u!114 &6506766291844778887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/VoiceLines/opening1
-  m_EditorClassIdentifier: 
-  Path: event:/VoiceLines/opening1
-  Guid:
-    Data1: -1092987499
-    Data2: 1268300136
-    Data3: -881879393
-    Data4: -965765216
-  Banks:
-  - {fileID: -9046514930084256065}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &6514131332659450946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/VoiceLines/opening2
-  m_EditorClassIdentifier: 
-  Path: event:/VoiceLines/opening2
-  Guid:
-    Data1: 2132692602
-    Data2: 1330469879
-    Data3: 1035405244
-    Data4: -770961106
-  Banks:
-  - {fileID: -9046514930084256065}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &6530709570178568181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sword variations/RotatingSlash
-  m_EditorClassIdentifier: 
-  Path: event:/Sword variations/RotatingSlash
-  Guid:
-    Data1: 300601767
-    Data2: 1237183439
-    Data3: -1305033849
-    Data4: -2037598901
-  Banks:
-  - {fileID: 9063726596643881184}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &7003227338457382320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambience/Ambience stable
-  m_EditorClassIdentifier: 
-  Path: event:/Ambience/Ambience stable
-  Guid:
-    Data1: 31862224
-    Data2: 1170150344
-    Data3: -1605489747
-    Data4: 1710030324
-  Banks:
-  - {fileID: -773135254051920106}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &7018501698123773997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX abilities/MajicProjectiles
-  m_EditorClassIdentifier: 
-  Path: event:/SFX abilities/MajicProjectiles
-  Guid:
-    Data1: -406302136
-    Data2: 1249865289
-    Data3: -1927178590
-    Data4: -1108409678
-  Banks:
-  - {fileID: 294170834671118855}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &7267981442410414473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sword variations/Sword sounds random
-  m_EditorClassIdentifier: 
-  Path: event:/Sword variations/Sword sounds random
-  Guid:
-    Data1: 1024282196
-    Data2: 1227611184
-    Data3: -566128000
-    Data4: 1998924180
-  Banks:
-  - {fileID: -733140203288766676}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &8233839462240851577
+--- !u!114 &-3814512407711971684
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1636,12 +163,12 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Characer movements.bank
   Name: Characer movements
   StudioPath: bank:/Characer movements
-  lastModified: 638514001224546072
+  lastModified: 638529139868569664
   FileSizes:
   - Name: Desktop
-    Value: 277856
+    Value: 294368
   Exists: 1
---- !u!114 &8413517418891207946
+--- !u!114 &-3165412433010525700
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1650,52 +177,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/VoiceLines/mage_ending
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/VoiceLines.bank
   m_EditorClassIdentifier: 
-  Path: event:/VoiceLines/mage_ending
-  Guid:
-    Data1: 1198712550
-    Data2: 1235992119
-    Data3: 120854704
-    Data4: 1577797187
-  Banks:
-  - {fileID: -9046514930084256065}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 23457
---- !u!114 &8419775395020738904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Main character movement/Action events
-  m_EditorClassIdentifier: 
-  Path: event:/Main character movement/Action events
-  Guid:
-    Data1: 1197957088
-    Data2: 1149885137
-    Data3: -1132888164
-    Data4: -1992153272
-  Banks:
-  - {fileID: 8233839462240851577}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &8426485825528198236
+  Path: ../Audio/Build/Desktop/VoiceLines.bank
+  Name: VoiceLines
+  StudioPath: bank:/VoiceLines
+  lastModified: 638529139868628274
+  FileSizes:
+  - Name: Desktop
+    Value: 1717984
+  Exists: 1
+--- !u!114 &-2915372088718575532
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1714,15 +207,15 @@ MonoBehaviour:
     Data3: -1252951119
     Data4: -65117466
   Banks:
-  - {fileID: 3419332620765416718}
+  - {fileID: 1702929288291381940}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
---- !u!114 &8592647172432751164
+  Length: 53814
+--- !u!114 &-2178547275268158504
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1732,16 +225,43 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX abilities/MajicProjectiles
+  m_Name: event:/SFX abilities/Sharpshooter
   m_EditorClassIdentifier: 
-  Path: event:/SFX abilities/MajicProjectiles
+  Path: event:/SFX abilities/Sharpshooter
   Guid:
-    Data1: -406302136
-    Data2: 1249865289
-    Data3: -1927178590
-    Data4: -1108409678
+    Data1: -2095309614
+    Data2: 1268863760
+    Data3: 211133598
+    Data4: -798860428
   Banks:
-  - {fileID: -2587570861499691353}
+  - {fileID: -4615220380858143358}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1431595604276639112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX abilities/Wizard ability
+  m_EditorClassIdentifier: 
+  Path: event:/SFX abilities/Wizard ability
+  Guid:
+    Data1: 1777179059
+    Data2: 1179459782
+    Data3: 196928694
+    Data4: -1868967731
+  Banks:
+  - {fileID: -4615220380858143358}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -1749,7 +269,54 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &9063726596643881184
+--- !u!114 &-1017816360449050846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sword variations/MegaSlash
+  m_EditorClassIdentifier: 
+  Path: event:/Sword variations/MegaSlash
+  Guid:
+    Data1: -219984526
+    Data2: 1155521062
+    Data3: 1418902157
+    Data4: 1225278161
+  Banks:
+  - {fileID: -188361267499890506}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-241886985879767513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638514001224556019
+  FileSizes:
+  - Name: Desktop
+    Value: 1036
+  Exists: 1
+--- !u!114 &-188361267499890506
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1769,7 +336,7 @@ MonoBehaviour:
   - Name: Desktop
     Value: 135968
   Exists: 1
---- !u!114 &9087095521652176878
+--- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1778,38 +345,51 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Characer movements.bank
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  Path: ../Audio/Build/Desktop/Characer movements.bank
-  Name: Characer movements
-  StudioPath: bank:/Characer movements
-  lastModified: 638514084842931570
-  FileSizes:
-  - Name: Desktop
-    Value: 277856
-  Exists: 1
---- !u!114 &9134210516154420011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Sword.bank
-  m_EditorClassIdentifier: 
-  Path: ../Audio/Build/Desktop/Sword.bank
-  Name: Sword
-  StudioPath: bank:/Sword
-  lastModified: 638514084842961563
-  FileSizes:
-  - Name: Desktop
-    Value: 179328
-  Exists: 1
---- !u!114 &9196810136755855875
+  EditorBanks:
+  - {fileID: -4028243415323557551}
+  - {fileID: -4615220380858143358}
+  - {fileID: 1702929288291381940}
+  - {fileID: -3814512407711971684}
+  - {fileID: -241886985879767513}
+  - {fileID: -188361267499890506}
+  - {fileID: -3165412433010525700}
+  EditorEvents:
+  - {fileID: -6121267713998094496}
+  - {fileID: 1316644106004486894}
+  - {fileID: -3957055536964401876}
+  - {fileID: -1431595604276639112}
+  - {fileID: 569702281846437944}
+  - {fileID: -2178547275268158504}
+  - {fileID: 4236127451718976083}
+  - {fileID: 2544334004739748306}
+  - {fileID: 7487374543292657401}
+  - {fileID: 3940032855377848093}
+  - {fileID: -2915372088718575532}
+  - {fileID: 5226678342822396333}
+  - {fileID: 3270841209363646300}
+  - {fileID: 411584895699651372}
+  - {fileID: 316903713445242542}
+  - {fileID: -1017816360449050846}
+  - {fileID: 9129033343963075698}
+  - {fileID: 579259296477617650}
+  - {fileID: -7697850886769490348}
+  - {fileID: -6546337064026193369}
+  - {fileID: 6953681769636399537}
+  - {fileID: 2759390861804008553}
+  - {fileID: 6370170288446123699}
+  - {fileID: 1468374774705381864}
+  - {fileID: 478414256165664270}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -241886985879767513}
+  StringsBanks:
+  - {fileID: -4028243415323557551}
+  cacheTime: 638529139868628274
+  cacheVersion: 131617
+--- !u!114 &316903713445242542
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1819,17 +399,469 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambience/Ambience dramatic
+  m_Name: event:/Sword variations/Sword sounds random
   m_EditorClassIdentifier: 
-  Path: event:/Ambience/Ambience dramatic
+  Path: event:/Sword variations/Sword sounds random
   Guid:
-    Data1: 873538271
-    Data2: 1312890282
-    Data3: -1252951119
-    Data4: -65117466
+    Data1: 1024282196
+    Data2: 1227611184
+    Data3: -566128000
+    Data4: 1998924180
   Banks:
-  - {fileID: 2844171154485210760}
+  - {fileID: -188361267499890506}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &411584895699651372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Main character movement/sword 2
+  m_EditorClassIdentifier: 
+  Path: event:/Main character movement/sword 2
+  Guid:
+    Data1: -39726303
+    Data2: 1112944182
+    Data3: 1638709904
+    Data4: -1709180065
+  Banks:
+  - {fileID: -188361267499890506}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 560
+--- !u!114 &478414256165664270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/mage_ending
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/mage_ending
+  Guid:
+    Data1: 1198712550
+    Data2: 1235992119
+    Data3: 120854704
+    Data4: 1577797187
+  Banks:
+  - {fileID: -3165412433010525700}
   IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 23457
+--- !u!114 &569702281846437944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Main character movement/Hitting once
+  m_EditorClassIdentifier: 
+  Path: event:/Main character movement/Hitting once
+  Guid:
+    Data1: 2001664695
+    Data2: 1102073962
+    Data3: 1133333415
+    Data4: 648846674
+  Banks:
+  - {fileID: -4615220380858143358}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &579259296477617650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/opening3
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/opening3
+  Guid:
+    Data1: -2088008448
+    Data2: 1214566562
+    Data3: -343585367
+    Data4: 217399928
+  Banks:
+  - {fileID: -3165412433010525700}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1316644106004486894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Main character movement/jumping ground
+  m_EditorClassIdentifier: 
+  Path: event:/Main character movement/jumping ground
+  Guid:
+    Data1: -1523328244
+    Data2: 1105357449
+    Data3: -2088535678
+    Data4: -108437555
+  Banks:
+  - {fileID: -4615220380858143358}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1468374774705381864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/ranger_ending
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/ranger_ending
+  Guid:
+    Data1: -1010484801
+    Data2: 1232224573
+    Data3: 219798424
+    Data4: 825777410
+  Banks:
+  - {fileID: -3165412433010525700}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 22465
+--- !u!114 &1702929288291381940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Ambience.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio/Build/Desktop/Ambience.bank
+  Name: Ambience
+  StudioPath: bank:/Ambience
+  lastModified: 638529139868549481
+  FileSizes:
+  - Name: Desktop
+    Value: 5426784
+  Exists: 1
+--- !u!114 &2544334004739748306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/boss_music
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/boss_music
+  Guid:
+    Data1: 975412622
+    Data2: 1227207823
+    Data3: -365027919
+    Data4: -1416451473
+  Banks:
+  - {fileID: 1702929288291381940}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 298945
+--- !u!114 &2759390861804008553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/opening2
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/opening2
+  Guid:
+    Data1: 2132692602
+    Data2: 1330469879
+    Data3: 1035405244
+    Data4: -770961106
+  Banks:
+  - {fileID: -3165412433010525700}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3270841209363646300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Main character movement/Action events
+  m_EditorClassIdentifier: 
+  Path: event:/Main character movement/Action events
+  Guid:
+    Data1: 1197957088
+    Data2: 1149885137
+    Data3: -1132888164
+    Data4: -1992153272
+  Banks:
+  - {fileID: -3814512407711971684}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3940032855377848093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Ambience stable
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Ambience stable
+  Guid:
+    Data1: 31862224
+    Data2: 1170150344
+    Data3: -1605489747
+    Data4: 1710030324
+  Banks:
+  - {fileID: 1702929288291381940}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 24000
+--- !u!114 &4236127451718976083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX abilities/Throwing amber ball
+  m_EditorClassIdentifier: 
+  Path: event:/SFX abilities/Throwing amber ball
+  Guid:
+    Data1: 2051122134
+    Data2: 1259039619
+    Data3: -885221987
+    Data4: 1656012649
+  Banks:
+  - {fileID: -4615220380858143358}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5226678342822396333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Main character movement/running no hearbeat
+  m_EditorClassIdentifier: 
+  Path: event:/Main character movement/running no hearbeat
+  Guid:
+    Data1: -1483887324
+    Data2: 1245694992
+    Data3: 404977079
+    Data4: 530718489
+  Banks:
+  - {fileID: -3814512407711971684}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1300
+--- !u!114 &6370170288446123699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/opening1
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/opening1
+  Guid:
+    Data1: -1092987499
+    Data2: 1268300136
+    Data3: -881879393
+    Data4: -965765216
+  Banks:
+  - {fileID: -3165412433010525700}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6953681769636399537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/fighter_ending
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/fighter_ending
+  Guid:
+    Data1: 2126031210
+    Data2: 1148534951
+    Data3: 284143236
+    Data4: 474911614
+  Banks:
+  - {fileID: -3165412433010525700}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 24215
+--- !u!114 &7487374543292657401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Dramatic piano
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Dramatic piano
+  Guid:
+    Data1: 1199117720
+    Data2: 1133995343
+    Data3: 1256908936
+    Data4: 1291278564
+  Banks:
+  - {fileID: 1702929288291381940}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 40045
+--- !u!114 &9129033343963075698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sword variations/RotatingSlash
+  m_EditorClassIdentifier: 
+  Path: event:/Sword variations/RotatingSlash
+  Guid:
+    Data1: 300601767
+    Data2: 1237183439
+    Data3: -1305033849
+    Data4: -2037598901
+  Banks:
+  - {fileID: -188361267499890506}
+  IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
