@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7747441971570393318}
   - component: {fileID: -8840414093145122604}
   m_Layer: 0
-  m_Name: BeetleAttackVFX 1
+  m_Name: BeetleAttackVFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,8 +31,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -1.461, y: 2.422, z: 7.035}
-  m_LocalScale: {x: 2, y: 1.4, z: 2}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
@@ -54,10 +54,10 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 15
+      - m_Value: 60
         m_Name: ParticlesSpawnRate
         m_Overridden: 1
-      - m_Value: 0.03
+      - m_Value: 0.05
         m_Name: TrailSize
         m_Overridden: 1
       - m_Value: 1
@@ -73,29 +73,29 @@ VisualEffect:
       m_Array:
       - m_Value: {x: 0.3, y: 0.5}
         m_Name: SmokeSize
-        m_Overridden: 1
+        m_Overridden: 0
     m_Vector3f:
       m_Array:
-      - m_Value: {x: -0.9, y: 0.5, z: -0.9}
+      - m_Value: {x: -1.2, y: 0.3, z: -1.2}
         m_Name: ParticlesVelocityInterval1
         m_Overridden: 1
-      - m_Value: {x: 0.9, y: 1, z: 0.9}
+      - m_Value: {x: 1.2, y: 0.5, z: 1.2}
         m_Name: ParticlesVelocityInterval2
         m_Overridden: 1
-      - m_Value: {x: 0.2, y: 0.3, z: 0.2}
+      - m_Value: {x: 1.2, y: 1.2, z: 1.2}
         m_Name: ArrowScale
         m_Overridden: 1
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 0.8470587, y: 2.8945146, z: 5.992157, w: 1}
+      - m_Value: {x: 11.001244, y: 1.5828309, z: 23.968634, w: 1}
         m_Name: ArrowColor
         m_Overridden: 1
-      - m_Value: {x: 0.6876958, y: 2.09299, z: 4.237095, w: 1}
+      - m_Value: {x: 8.247091, y: 1.9973842, z: 11.984313, w: 1}
         m_Name: ParticlesColor
         m_Overridden: 1
-      - m_Value: {x: 0.8269175, y: 1.4980392, z: 0.23968633, w: 1}
+      - m_Value: {x: 1.2842062, y: 0.2431372, z: 1.4980392, w: 1}
         m_Name: SmokeColor
-        m_Overridden: 1
+        m_Overridden: 0
     m_Uint:
       m_Array: []
     m_Int:
@@ -108,7 +108,7 @@ VisualEffect:
       m_Array:
       - m_Value:
           serializedVersion: 2
-          key0: {r: 0.6876958, g: 2.2920365, b: 4.237095, a: 1}
+          key0: {r: 3.015429, g: 0.9725487, b: 5.992157, a: 1}
           key1: {r: 0, g: 0, b: 0, a: 0.9577465}
           key2: {r: 0, g: 0, b: 0, a: 0}
           key3: {r: 0, g: 0, b: 0, a: 0}
@@ -140,8 +140,11 @@ VisualEffect:
         m_Overridden: 1
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 3613567641014311022, guid: b4dc58d6a1733d747afb266369827341, type: 3}
+      - m_Value: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
         m_Name: Mesh
+        m_Overridden: 1
+      - m_Value: {fileID: 0}
+        m_Name: MainTexture
         m_Overridden: 1
     m_Bool:
       m_Array:
@@ -259,3 +262,4 @@ MonoBehaviour:
   despawnTime: 5
   ignorePlayerCol: 1
   despawnOnCol: 1
+  explosionVFX: {fileID: 487567892614235217, guid: 38cc72c258276b0409c3ac4d15869465, type: 3}

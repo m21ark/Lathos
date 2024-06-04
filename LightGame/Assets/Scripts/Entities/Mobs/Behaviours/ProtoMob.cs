@@ -33,6 +33,7 @@ public class ProtoMob : MonoBehaviour
     
     protected bool attackedByPlayer;
     public GameObject projectile;
+    public GameObject deathVFX = null;
 
     // States
     [Header("States")]
@@ -149,6 +150,14 @@ public class ProtoMob : MonoBehaviour
         health -= damage;
         if (health <= 0) Die();
         attackedByPlayer = true;
+    }
+
+    public void OnDestroy()
+    {
+        if (deathVFX == null) return;
+        // Generate the explosion VFX when the projectile is destroyed
+        GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
+        Destroy(explosion, 5);
     }
 
 }

@@ -119,6 +119,7 @@ MonoBehaviour:
   timeBetweenAttacks: 1
   alreadyAttacked: 0
   projectile: {fileID: 0}
+  deathVFX: {fileID: 623764437020487396, guid: badec73c557306245ac9214c67bc5827, type: 3}
   sightRange: 40
   attackRange: 2.3
   playerInSightRange: 0

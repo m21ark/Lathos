@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Projectile : ProtoAttack
 {
-
+    [SerializeField] private GameObject explosionVFX = null;
     public override void Fire(int damage, Vector3 direction, params (string key, object value)[] kwargs)
     {
         attackRb = gameObject.GetComponent<Rigidbody>();
@@ -52,5 +52,13 @@ public class Projectile : ProtoAttack
             // Destroy the projectile after hitting the player
             Destroy(gameObject);
         }
+    }
+
+    private void OnDestroy()
+    {
+        if (explosionVFX == null) return;
+        // Generate the explosion VFX when the projectile is destroyed
+        GameObject explosion = Instantiate(explosionVFX, transform.position, Quaternion.identity);
+        Destroy(explosion, 5);
     }
 }

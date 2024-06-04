@@ -7,7 +7,7 @@ public class KnightClass : FighterClass
     public float A0StartOffset1 = 0.3f;
     public float A1StartOffset1 = 0.3f;
     public float A2StartOffset1 = 0.3f;
-    private float offsetDistance = 1.0f;
+    // private float offsetDistance = 1.0f;
     public GameObject A2VFX;
 
     public override void Attack()
