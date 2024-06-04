@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.13105282, g: 0.09076703, b: 0.1402626, a: 1}
+  m_IndirectSpecularColor: {r: 0.13105237, g: 0.09076675, b: 0.14026159, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2126,22 +2126,6 @@ PrefabInstance:
     - target: {fileID: 1547184242331172084, guid: 792a1537b0f992083b045a526f9e2ff9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5132316814921023470, guid: 792a1537b0f992083b045a526f9e2ff9, type: 3}
-      propertyPath: A0ReloadTime
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7778701404013849043, guid: 792a1537b0f992083b045a526f9e2ff9, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0.32941177
-      objectReference: {fileID: 0}
-    - target: {fileID: 7778701404013849043, guid: 792a1537b0f992083b045a526f9e2ff9, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0.2901961
-      objectReference: {fileID: 0}
-    - target: {fileID: 7778701404013849043, guid: 792a1537b0f992083b045a526f9e2ff9, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.25490198
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
