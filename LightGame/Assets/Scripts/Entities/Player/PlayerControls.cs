@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody rb;
     private ProtoClass player;
-    private Transform cameraPivot;
+    public Transform cameraPivot;
 
     [HideInInspector] public bool isGrounded = false;
     [HideInInspector] public bool isJumping = false;
@@ -88,7 +88,6 @@ public class PlayerController : MonoBehaviour
         this.direction = cameraPivot.forward;
         Vector3 targetDirection = new Vector3(this.direction.x, 0, this.direction.z);
         if (targetDirection != Vector3.zero) transform.rotation = Quaternion.LookRotation(targetDirection);
-        Debug.Log("Forcing character to face crosshair");
     }
 
 

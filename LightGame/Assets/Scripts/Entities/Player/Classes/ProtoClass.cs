@@ -202,6 +202,11 @@ public class ProtoClass : MonoBehaviour
     public void GenerateVFX(GameObject vfx, int duration = 5, Vector3 offsetPosition = new Vector3(), Quaternion rotation = new Quaternion())
     {
         GameObject vfxInstance = Instantiate(vfx, transform.position, Quaternion.identity);
+        vfxInstance.transform.rotation = rotation;
+
+        // offset the position of the VFX
+        vfxInstance.transform.position += offsetPosition;
+        
         vfxInstance.SetActive(true);
         Destroy(vfxInstance, duration);
     }
