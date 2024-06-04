@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/VoiceLines.bank
   Name: VoiceLines
   StudioPath: bank:/VoiceLines
-  lastModified: 638527915147011168
+  lastModified: 638527848404523429
   FileSizes:
   - Name: Desktop
     Value: 1717984
@@ -520,7 +520,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638519280654055061
+  lastModified: 638528469383148892
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -540,7 +540,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Characer movements.bank
   Name: Characer movements
   StudioPath: bank:/Characer movements
-  lastModified: 638528555971109261
+  lastModified: 638528451390334141
   FileSizes:
   - Name: Desktop
     Value: 294368
@@ -735,7 +735,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638528555971099263
+  lastModified: 638528469383108892
   FileSizes:
   - Name: Desktop
     Value: 5426784
@@ -791,7 +791,7 @@ MonoBehaviour:
   - {fileID: -2411626906417223040}
   StringsBanks:
   - {fileID: 2450608712365836312}
-  cacheTime: 638528555971119263
+  cacheTime: 638528469383148892
   cacheVersion: 131617
 --- !u!114 &5652942996200681
 MonoBehaviour:
@@ -1003,7 +1003,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638528555971119263
+  lastModified: 638528469383148892
   FileSizes:
   - Name: Desktop
     Value: 2192
@@ -1023,7 +1023,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Abilities.bank
   Name: Abilities
   StudioPath: bank:/Abilities
-  lastModified: 638527921278116194
+  lastModified: 638527913029648391
   FileSizes:
   - Name: Desktop
     Value: 398784
@@ -1764,7 +1764,7 @@ MonoBehaviour:
   Path: ../Audio/Build/Desktop/Sword.bank
   Name: Sword
   StudioPath: bank:/Sword
-  lastModified: 638527915146966129
+  lastModified: 638527878025702615
   FileSizes:
   - Name: Desktop
     Value: 135968

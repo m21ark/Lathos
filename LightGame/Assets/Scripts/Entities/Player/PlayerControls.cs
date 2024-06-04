@@ -84,6 +84,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void ForceCharacterFaceCrosshair(){
+        this.direction = cameraPivot.forward;
+        Vector3 targetDirection = new Vector3(this.direction.x, 0, this.direction.z);
+        if (targetDirection != Vector3.zero) transform.rotation = Quaternion.LookRotation(targetDirection);
+        Debug.Log("Forcing character to face crosshair");
+    }
+
+
     private void CalculateVel()
     {
         // if the player is performing an attack that requires standing still, don't move

@@ -32,7 +32,8 @@ public class SharpshooterA2 : ProtoAttack
         this.kwargs = kwargs;
 
         // override the default prefab with the prefab from the kwargs
-        //direction = (Vector3)GetKwarg("attackDirection", kwargs);
+        Vector3 staticDirection = (Vector3)GetKwarg("attackDirection", kwargs);
+        direction = new Vector3(staticDirection.x, direction.y, staticDirection.z);
 
         attackRb = gameObject.GetComponent<Rigidbody>();
         if (attackRb != null) attackRb.velocity = direction * speed;

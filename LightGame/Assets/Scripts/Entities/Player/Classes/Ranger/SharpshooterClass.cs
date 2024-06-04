@@ -30,7 +30,9 @@ public class SharpshooterClass : RangerClass
 
     private IEnumerator ActivateSpecialAbility()
     {
+        GetComponent<PlayerController>().ForceCharacterFaceCrosshair();
         Vector3 fixedDirection = gameObject.transform.forward;
+
         yield return new WaitForSeconds(1.9f);
         ProtoAttack attack;
         Vector3 attackDirection;
