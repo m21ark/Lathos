@@ -20,8 +20,6 @@ public class GameLogic : MonoBehaviour
     private bool hasGameEnded = false;
 
     // Game Logic Fields
-    private float lightDecreaseTimer = 0f;
-    private int healTickTime = 5;
     [HideInInspector] public bool isPaused = false;
     [HideInInspector] public bool[] endingsUnlocked = { false, false, false };
 
@@ -91,13 +89,6 @@ public class GameLogic : MonoBehaviour
     void Update()
     {
         RefreshPlayer();
-        handlePlayerLight();
-
-        // TODO: For debugging purposes
-        if (Input.GetKeyDown(KeyCode.H)){
-            player.Heal(100);
-            player.IncrementLight(100);
-        }
             
         // Check end game conditions
         if (isInBossBattle)
@@ -108,31 +99,6 @@ public class GameLogic : MonoBehaviour
         if (!player.isAlive() && !hasGameEnded){
             hasGameEnded = true; 
             StartCoroutine(endGame(false));
-        }
-    }
-
-    void handlePlayerLight()
-    {
-
-        lightDecreaseTimer += Time.deltaTime;
-
-        // If one second has passed, decrease the player's light or damage them if they have no light
-        if (lightDecreaseTimer >= 1f)
-        {
-            lightDecreaseTimer -= 1f;
-            healTickTime--;
-
-            if (player.collectedLight > 0){
-                player.IncrementLight(-1);
-
-                // If player life is below max, heal them expending light points (once every 5 seconds)
-                if (!player.IsAtMaxHealth() && healTickTime <=0)
-                {
-                    player.Heal(10);
-                    player.IncrementLight(-5);
-                    healTickTime = 5;
-                }
-            } else player.TakeDamage(1);
         }
     }
 

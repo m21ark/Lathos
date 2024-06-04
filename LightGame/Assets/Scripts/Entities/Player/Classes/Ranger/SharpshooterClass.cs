@@ -5,6 +5,7 @@ public class SharpshooterClass : RangerClass
 {
     public GameObject VFXAbility;
     public GameObject VFXSpecialAbility;
+    
     public override void Attack()
     {
         ProtoAttack attack;

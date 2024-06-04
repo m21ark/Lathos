@@ -4263,7 +4263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   boss: {fileID: 0}
-  persistentData: 0
+  persistentData: 1
   endMenu: {fileID: 946654975150626795}
   isInBossBattle: 0
   isPaused: 0

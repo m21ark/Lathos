@@ -63,6 +63,50 @@ public class ProtoClass : MonoBehaviour
     [HideInInspector] public bool pendingA1Animate = false;
     [HideInInspector] public bool pendingA2Animate = false;
 
+    // Light decrease timer + Regeneration timer   
+    private float lightTickTimer;
+    private float healTickTimer;
+
+    private float lightTickTime = 1f; // Time between light ticks
+    private float healTickTime = 0.25f; // Time between heal ticks
+    private float healTickTimeDelayAfterDamage = 5f; // Time to wait after taking damage to start healing
+
+    private int lightTickDamage = 1; // Damage per tick
+    private int lightTickDecrease = 1; // Light decrease per tick
+    private int lightTickHeal = 3; // Heal per tick
+    private int lightTickHealCost = 1; // Light cost per heal
+
+    void Update(){
+        HandlePlayerLight();
+        HandlePlayerRegeneration();
+    }
+
+    void HandlePlayerRegeneration(){
+        healTickTimer += Time.deltaTime;
+
+        // Heal the player if time has passed, costing light to do so
+        if (healTickTimer >= healTickTime)
+        {
+            healTickTimer -= healTickTime;
+            if (!IsAtMaxHealth())
+            {
+                Heal(lightTickHeal);
+                IncrementLight(-lightTickHealCost);
+            }
+        }
+    }
+
+    void HandlePlayerLight(){
+        lightTickTimer += Time.deltaTime;
+
+        // If time has passed, decrement player light
+        if (lightTickTimer >= lightTickTime)
+        {
+            lightTickTimer -= lightTickTime;
+            IncrementLight(-lightTickDecrease);
+        }
+    }
+
     public bool hasPendingAnimation(int num)
     {
         bool aux = false;
@@ -91,6 +135,10 @@ public class ProtoClass : MonoBehaviour
         cameraPivot = transform.parent.transform.Find("CameraPivot");
         health = maxHealth;
         collectedLight = 100;
+
+        // Set the timers
+        lightTickTimer = lightTickTime;
+        healTickTimer = healTickTime;
     }
 
     public bool isAlive()
@@ -103,6 +151,10 @@ public class ProtoClass : MonoBehaviour
         health -= Mathf.RoundToInt(damage / armor);
         if (health <= 0)
             Die();
+
+        // Reset the regeneration timer
+        healTickTimer = 0;
+        healTickTimer -= healTickTimeDelayAfterDamage;
     }
 
     public void Heal(int heal)
