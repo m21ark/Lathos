@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 direction;
 
     private bool attackingStandingStill = false;
+    private bool attackAnimationEnded = true;
 
     private KeyCode attackKey = KeyCode.K;
     private KeyCode attack1Key = KeyCode.E;
@@ -131,9 +132,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void UnlockMovementAfterAttack()
+    public void AttackAnimationEnded()
     {
         attackingStandingStill = false;
+        attackAnimationEnded = true;
     }
 
     void Move()
@@ -142,7 +144,7 @@ public class PlayerController : MonoBehaviour
         CalculateVel();
 
         // Rotate the player based on camera rotation on the y-axis only if moving
-        if (this.direction != Vector3.zero && !attackingStandingStill)
+        if (this.direction != Vector3.zero && !attackingStandingStill && attackAnimationEnded)
             CharacterFaceDirection();
 
         // Jumping
@@ -173,7 +175,7 @@ public class PlayerController : MonoBehaviour
         if (player.isAttacking || player.isAttack1ing || player.isAttack2ing)
         {
             this.direction = cameraPivot.forward;
-            CharacterFaceDirection();
+            ForceCharacterFaceCrosshair();
         }
     }
 
@@ -233,6 +235,7 @@ public class PlayerController : MonoBehaviour
         {
             attackAction();
             pendingAnimation = true;
+            attackAnimationEnded = false;
             lastAttackTime = reloadTime;
         }
 
