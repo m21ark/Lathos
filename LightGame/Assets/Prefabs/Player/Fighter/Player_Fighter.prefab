@@ -557,18 +557,18 @@ MonoBehaviour:
   dashCooldown: 1
   dashSpeed: 25
   collectedLight: 0
-  maxHealth: 100
-  health: 100
+  maxHealth: 150
+  health: 150
   armor: 1
   attackSpeed: 1
   A0Prefab: {fileID: 7115518648037137970, guid: 817690073061f57258f92e2aa5a9cb21, type: 3}
-  A0Damage: 5
+  A0Damage: 8
   A0ReloadTime: 1
   A0ChargeRate: 0.5
   stopsMovementA0: 0
   A1Prefab: {fileID: 7115518648037137970, guid: 95b36c4753a496d4cb96978abfc6da93, type: 3}
-  A1Damage: 20
-  A1ReloadTime: 3
+  A1Damage: 12
+  A1ReloadTime: 4
   A1ChargeRate: 0
   stopsMovementA1: 0
   A2Prefab: {fileID: 3606385658551136691, guid: 91a72390f34447e4a8c7cb8faac1b885, type: 3}

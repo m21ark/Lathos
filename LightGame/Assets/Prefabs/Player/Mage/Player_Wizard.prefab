@@ -883,7 +883,7 @@ MonoBehaviour:
   stopsMovementA0: 0
   A1Prefab: {fileID: 4923962845166056162, guid: f33686e9088711c41b8867184c4d9d1c, type: 3}
   A1Damage: 30
-  A1ReloadTime: 4
+  A1ReloadTime: 8
   A1ChargeRate: 0
   stopsMovementA1: 0
   A2Prefab: {fileID: 4923962845166056162, guid: e5b625ba3710b1b49adc47808ad538e0, type: 3}

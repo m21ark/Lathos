@@ -11,8 +11,12 @@ public class SorcererTag : MonoBehaviour
     // on init, create a text game object on top of the target with the stack counter
     void Start()
     {
+        Vector3 pos = this.transform.position;
+        if (this.gameObject.tag == "Boss") {
+            pos.y += 12.0f;
+        }
         // Create a new Visual Effect Component
-        VFXStacks = Instantiate(VFXStacks, this.transform.position, Quaternion.identity);
+        VFXStacks = Instantiate(VFXStacks, pos, Quaternion.identity);
 
         // Set the parent of the VFX
         VFXStacks.transform.SetParent(this.transform);
@@ -36,11 +40,12 @@ public class SorcererTag : MonoBehaviour
     }
 
     // on destroy, remove the stack counter text
-    void OnDestroy()
+    void OnDisable()
     {
+        if (!gameObject.scene.isLoaded) return;
         VFXExplosion = Instantiate(VFXExplosion, this.transform.position, Quaternion.identity);
         VFXExplosion.transform.localScale = new Vector3(2.0f, 2.0f, 2.0f);
         Destroy(VFXExplosion.gameObject, 2.0f);
-        //Destroy(VFXStacks.gameObject);
+        Destroy(VFXStacks.gameObject);
     }
 }

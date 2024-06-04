@@ -565,13 +565,13 @@ MonoBehaviour:
   armor: 1
   attackSpeed: 1
   A0Prefab: {fileID: 7115518648037137970, guid: 382030af18117b24397df83d95e9650f, type: 3}
-  A0Damage: 10
+  A0Damage: 14
   A0ReloadTime: 0.3
   A0ChargeRate: 0
   stopsMovementA0: 0
   A1Prefab: {fileID: 7115518648037137970, guid: 5ccb51a3a1b4ce5418a6aa50e6c26f7a, type: 3}
-  A1Damage: 20
-  A1ReloadTime: 3
+  A1Damage: 40
+  A1ReloadTime: 6
   A1ChargeRate: 0
   stopsMovementA1: 0
   A2Prefab: {fileID: 0}

@@ -237,6 +237,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bettle
       objectReference: {fileID: 0}
+    - target: {fileID: 8121357048834876645, guid: 5cc57aeb3e705434789fb7fe7f548a11, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8938851835098091303, guid: 5cc57aeb3e705434789fb7fe7f548a11, type: 3}
       propertyPath: attackRange
       value: 35
@@ -727,6 +731,10 @@ PrefabInstance:
     - target: {fileID: 1162234724972830604, guid: 792a1537b0f992083b045a526f9e2ff9, type: 3}
       propertyPath: m_Name
       value: Player_Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 1162234724972830604, guid: 792a1537b0f992083b045a526f9e2ff9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1547184242331172084, guid: 792a1537b0f992083b045a526f9e2ff9, type: 3}
       propertyPath: m_LocalPosition.x
