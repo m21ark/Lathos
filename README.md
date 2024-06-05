@@ -12,6 +12,34 @@ This video game project was made as part of our DDJD course at the Faculty of En
 Game Engine: Unity 2022.3.20f1
 Pipeline: URP (Universal Render Pipeline)
 
+## Features
+
+**Immersive Storyline:**
+
+- Explore the tragic history of Dásos and its inhabitants.
+- Uncover hidden secrets and lore through engaging dialogues and endgame revelations.
+
+**Dynamic Gameplay:**
+
+- Navigate through six distinct sections, each filled with unique enemies and challenges.
+- Battle against waves of darkness using diverse combat abilities and magical powers.
+- Collect light fragments to enhance your abilities and progress further.
+
+**Class and Subclass System:**
+
+- Choose from three primary classes: Ranger, Fighter, and Mage.
+- Unlock additional subclasses with unique abilities to tailor your playstyle.
+
+**Atmospheric World:**
+  
+- Experience the hauntingly beautiful landscapes of a darkened island.
+- Utilize the magical lamp to light your path and fend off encroaching shadows.
+
+**Multiple Endings:**
+
+- Unlock three different endings based on your chosen class.
+- Discover the full story and complete the game 100% by achieving all endings.
+
 ## The Story
 
 In an island called Dásos, engulfed by eternal darkness, the lone hero, armed with a companion magical lamp, sets out to reclaim the stolen light from malevolent insect creatures, confronting the island's darkest secrets to restore radiance to its desolate homeland. Guided by the flickering flame and driven by a quest for revenge, the hero battles through waves of darkness, facing off against the dark insect forces and their ruler to bring hope back to the once-vibrant island.
