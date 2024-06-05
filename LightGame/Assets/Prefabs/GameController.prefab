@@ -5099,8 +5099,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 380, y: 135}
-  m_SizeDelta: {x: 450, y: 50}
+  m_AnchoredPosition: {x: 380, y: 180.00003}
+  m_SizeDelta: {x: 500, y: 49.1535}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3372020828287812674
 CanvasRenderer:
@@ -5130,7 +5130,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ola 1
+  m_text: Employ agile battle tactics by unleashing a barrage of thrown leaves, striking
+    foes with surprising speed. Activating overdrive, they surge with increased attack
+    speed, while their special move unleashes a devastating shotgun-like burst of
+    leaves in a wide cone
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1f5e50b854a7274d6bd35f5fb7df6118, type: 2}
   m_sharedMaterial: {fileID: 9143614950465064298, guid: 1f5e50b854a7274d6bd35f5fb7df6118, type: 2}
@@ -5157,8 +5160,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 43
+  m_fontSizeBase: 43
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6279,8 +6282,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -380.00006, y: 135}
-  m_SizeDelta: {x: 450, y: 50}
+  m_AnchoredPosition: {x: -380.00006, y: 180}
+  m_SizeDelta: {x: 500, y: 49.1535}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1881404230438591931
 CanvasRenderer:
@@ -6310,7 +6313,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ola 1
+  m_text: A master of light's essence that casts spells with imbued splash damage
+    and can harness ancient knowledge to conjure massive energy balls. As an ultimate
+    technique, divine beams can be summoned from the skies to incinerate any who
+    dare cross their path
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1f5e50b854a7274d6bd35f5fb7df6118, type: 2}
   m_sharedMaterial: {fileID: 9143614950465064298, guid: 1f5e50b854a7274d6bd35f5fb7df6118, type: 2}
@@ -6337,8 +6343,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 43
+  m_fontSizeBase: 43
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

@@ -85,7 +85,7 @@ public class ProtoClass : MonoBehaviour
         healTickTimer += Time.deltaTime;
 
         // Heal the player if time has passed, costing light to do so
-        if (healTickTimer >= healTickTime)
+        if (healTickTimer >= healTickTime && collectedLight > 0)
         {
             healTickTimer -= healTickTime;
             if (!IsAtMaxHealth())
@@ -99,11 +99,15 @@ public class ProtoClass : MonoBehaviour
     void HandlePlayerLight(){
         lightTickTimer += Time.deltaTime;
 
-        // If time has passed, decrement player light
+        // If time has passed, decrement player light. If light is 0, deal damage
         if (lightTickTimer >= lightTickTime)
         {
             lightTickTimer -= lightTickTime;
-            IncrementLight(-lightTickDecrease);
+            
+            if(collectedLight > 0)
+                IncrementLight(-lightTickDecrease);
+            else
+                TakeDamage(lightTickDamage);
         }
     }
 
