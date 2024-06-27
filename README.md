@@ -1,5 +1,10 @@
 # Láthos: Chronicles of Dásos
 
+## Videos
+
+- Game Trailer [here](https://www.youtube.com/watch?v=0lHc4eiYs9k)
+- Full gameplay [here](https://www.youtube.com/watch?v=4NQeVb3CXHQ)
+
 ## About the Project
 
 This video game project was made as part of our DDJD course at the Faculty of Engineering of the University of Porto. The students are from 2 different courses: 
