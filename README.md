@@ -1,9 +1,22 @@
 # Láthos: Chronicles of Dásos
 
-## Videos
+## Play our Game
 
-- Game Trailer [here](https://www.youtube.com/watch?v=0lHc4eiYs9k)
-- Full gameplay [here](https://www.youtube.com/watch?v=4NQeVb3CXHQ)
+If you are interested in playing our indie game, download it now:
+
+[![Itch.io](https://img.shields.io/badge/Itch.io-FA5C5C?style=for-the-badge&logo=itchio&logoColor=white)](https://up202004891.itch.io/chronicles-of-dasos)
+
+## Watch Our Videos
+
+### 🔹 Game Trailer  
+
+[![Youtube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=0lHc4eiYs9k)
+
+
+### 🔹 Full Gameplay 
+
+[![Youtube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=4NQeVb3CXHQ)
+
 
 ## About the Project
 
